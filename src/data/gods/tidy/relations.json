@@ -1,0 +1,307 @@
+[
+  {
+    "source": "Ometeotl",
+    "target": "Oxomoco",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Ometeotl",
+    "target": "Cipactonal",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Ometeotl",
+    "target": "Huitzilopochtli",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Ometeotl",
+    "target": "Quetzalcoatl",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Ometeotl",
+    "target": "Tezcatlipoca",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Ometeotl",
+    "target": "Xipe Totec",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Ometeotl",
+    "target": "Tlaloc",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Ometeotl",
+    "target": "Xiuhtecuhtli",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Quetzalcoatl",
+    "target": "Xipe Totec",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Quetzalcoatl",
+    "target": "Huitzilopochtli",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Quetzalcoatl",
+    "target": "Tezcatlipoca",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Quetzalcoatl",
+    "target": "Tlaloc",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Quetzalcoatl",
+    "target": "Mictlantecuhtli",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Tezcatlipoca",
+    "target": "Xipe Totec",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Tezcatlipoca",
+    "target": "Quetzalcoatl",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Tezcatlipoca",
+    "target": "Huitzilopochtli",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Tezcatlipoca",
+    "target": "Quetzalcoatl",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Xipe Totec",
+    "target": "Ometeotl",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Xipe Totec",
+    "target": "Quetzalcoatl",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Xipe Totec",
+    "target": "Huitzilopochtli",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Xipe Totec",
+    "target": "Tezcatlipoca",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Xipe Totec",
+    "target": "Mixcoatl",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Xipe Totec",
+    "target": "Tezcatlipoca",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Huitzilopochtli",
+    "target": "Mixcoatl",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Huitzilopochtli",
+    "target": "Ometeotl",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Huitzilopochtli",
+    "target": "Xipe Totec",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Huitzilopochtli",
+    "target": "Tezcatlipoca",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Huitzilopochtli",
+    "target": "Quetzalcoatl",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Huitzilopochtli",
+    "target": "Tezcatlipoca",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Tlaltecuhtli",
+    "target": "Quetzalcoatl",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Tlaltecuhtli",
+    "target": "Tezcatlipoca",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Tlaltecuhtli",
+    "target": "Tlaloc",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Mictlantecuhtli",
+    "target": "Xiuhtecuhtli",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Xiuhtecuhtli",
+    "target": "Mictlantecuhtli",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Tlaloc",
+    "target": "Ometeotl",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Tlaloc",
+    "target": "Tezcatlipoca",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Tlaloc",
+    "target": "Quetzalcoatl",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Tlaloc",
+    "target": "Tlaltecuhtli",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Tlaloc",
+    "target": "Xochipilli",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Tonatiuh",
+    "target": "Quetzalcoatl",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Tonatiuh",
+    "target": "Huitzilopochtli",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Tonatiuh",
+    "target": "Tlaltecuhtli",
+    "Type": "equality (brother/sister)"
+  },
+  {
+    "source": "Tonatiuh",
+    "target": "Huitzilopochtli",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Tonatiuh",
+    "target": "Tlaltecuhtli",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Tonatiuh",
+    "target": "Xiuhtecuhtli",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Tonatiuh",
+    "target": "Quetzalcoatl",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Oxomoco",
+    "target": "Ometeotl",
+    "Type": "submission (son/daughter/killed by)"
+  },
+  {
+    "source": "Oxomoco",
+    "target": "Cipactonal",
+    "Type": "relation (married / sexual)"
+  },
+  {
+    "source": "Mixcoatl",
+    "target": "Quetzalcoatl",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Mixcoatl",
+    "target": "Tezcatlipoca",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Mixcoatl",
+    "target": "Huitzilopochtli",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Mixcoatl",
+    "target": "Tezcatlipoca",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Mixcoatl",
+    "target": "Huitzilopochtli",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Mixcoatl",
+    "target": "Xipe Totec",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Yacatecuhtli",
+    "target": "Quetzalcoatl",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Xochipilli",
+    "target": "Mayahuel",
+    "Type": "relation (married / sexual)"
+  },
+  {
+    "source": "Xochipilli",
+    "target": "Tlaloc",
+    "Type": "Aspect"
+  },
+  {
+    "source": "Teteo Innan",
+    "target": "Xiuhtecuhtli",
+    "Type": "relation (married / sexual)"
+  },
+  {
+    "source": "Teteo Innan",
+    "target": "Huitzilopochtli",
+    "Type": "authority (parent of)"
+  },
+  {
+    "source": "Mayahuel",
+    "target": "Xochipilli",
+    "Type": "relation (married / sexual)"
+  },
+  {
+    "source": "Mayahuel",
+    "target": "Quetzalcoatl",
+    "Type": "relation (married / sexual)"
+  }
+]

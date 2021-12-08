@@ -1,0 +1,62 @@
+﻿Name,source-relation,source-target,Type,source,target
+A,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Oxomoco-0df063935a4e4d2ba98d2e24e3d43642,authority (parent of),Ometeotl,Oxomoco
+B,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Cipactonal-ec19f296b3aa4883b871a73b6f14f19b,authority (parent of),Ometeotl,Cipactonal
+C,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,authority (parent of),Ometeotl,Huitzilopochtli
+,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,authority (parent of),Ometeotl,Quetzalcoatl
+,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,authority (parent of),Ometeotl,Tezcatlipoca
+,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,authority (parent of),Ometeotl,Xipe Totec
+,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,authority (parent of),Ometeotl,Tlaloc
+,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,https://www.notion.so/Xiuhtecuhtli-83f5a151e34a4545949293af0975242e,Aspect,Ometeotl,Xiuhtecuhtli
+,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,equality (brother/sister),Quetzalcoatl,Xipe Totec
+,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,equality (brother/sister),Quetzalcoatl,Huitzilopochtli
+,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,equality (brother/sister),Quetzalcoatl,Tezcatlipoca
+,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,Aspect,Quetzalcoatl,Tlaloc
+,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,https://www.notion.so/Mictlantecuhtli-fac647eb6944423fb2e469139476efe2,submission (son/daughter/killed by),Quetzalcoatl,Mictlantecuhtli
+,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,equality (brother/sister),Tezcatlipoca,Xipe Totec
+,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,equality (brother/sister),Tezcatlipoca,Quetzalcoatl
+,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,equality (brother/sister),Tezcatlipoca,Huitzilopochtli
+,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,Aspect,Tezcatlipoca,Quetzalcoatl
+,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,submission (son/daughter/killed by),Xipe Totec,Ometeotl
+,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,equality (brother/sister),Xipe Totec,Quetzalcoatl
+,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,equality (brother/sister),Xipe Totec,Huitzilopochtli
+,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,equality (brother/sister),Xipe Totec,Tezcatlipoca
+,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,authority (parent of),Xipe Totec,Mixcoatl
+,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,Aspect,Xipe Totec,Tezcatlipoca
+,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,submission (son/daughter/killed by),Huitzilopochtli,Mixcoatl
+,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,submission (son/daughter/killed by),Huitzilopochtli,Ometeotl
+,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,equality (brother/sister),Huitzilopochtli,Xipe Totec
+,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,equality (brother/sister),Huitzilopochtli,Tezcatlipoca
+,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,equality (brother/sister),Huitzilopochtli,Quetzalcoatl
+,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,Aspect,Huitzilopochtli,Tezcatlipoca
+,https://www.notion.so/Tlaltecuhtli-19128374fd8848f6a4ec88a7e1db0460,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,submission (son/daughter/killed by),Tlaltecuhtli,Quetzalcoatl
+,https://www.notion.so/Tlaltecuhtli-19128374fd8848f6a4ec88a7e1db0460,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,submission (son/daughter/killed by),Tlaltecuhtli,Tezcatlipoca
+,https://www.notion.so/Tlaltecuhtli-19128374fd8848f6a4ec88a7e1db0460,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,Aspect,Tlaltecuhtli,Tlaloc
+,https://www.notion.so/Mictlantecuhtli-fac647eb6944423fb2e469139476efe2,https://www.notion.so/Xiuhtecuhtli-83f5a151e34a4545949293af0975242e,equality (brother/sister),Mictlantecuhtli,Xiuhtecuhtli
+,https://www.notion.so/Xiuhtecuhtli-83f5a151e34a4545949293af0975242e,https://www.notion.so/Mictlantecuhtli-fac647eb6944423fb2e469139476efe2,equality (brother/sister),Xiuhtecuhtli,Mictlantecuhtli
+,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,submission (son/daughter/killed by),Tlaloc,Ometeotl
+,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,equality (brother/sister),Tlaloc,Tezcatlipoca
+,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,Aspect,Tlaloc,Quetzalcoatl
+,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,https://www.notion.so/Tlaltecuhtli-19128374fd8848f6a4ec88a7e1db0460,Aspect,Tlaloc,Tlaltecuhtli
+,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,https://www.notion.so/Xochipilli-127bb066c2ff407faf305a94cd74d024,Aspect,Tlaloc,Xochipilli
+,https://www.notion.so/Tonatiuh-43c43d7d2e7e48219a6ad6982f7c3742,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,submission (son/daughter/killed by),Tonatiuh,Quetzalcoatl
+,https://www.notion.so/Tonatiuh-43c43d7d2e7e48219a6ad6982f7c3742,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,equality (brother/sister),Tonatiuh,Huitzilopochtli
+,https://www.notion.so/Tonatiuh-43c43d7d2e7e48219a6ad6982f7c3742,https://www.notion.so/Tlaltecuhtli-19128374fd8848f6a4ec88a7e1db0460,equality (brother/sister),Tonatiuh,Tlaltecuhtli
+,https://www.notion.so/Tonatiuh-43c43d7d2e7e48219a6ad6982f7c3742,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,Aspect,Tonatiuh,Huitzilopochtli
+,https://www.notion.so/Tonatiuh-43c43d7d2e7e48219a6ad6982f7c3742,https://www.notion.so/Tlaltecuhtli-19128374fd8848f6a4ec88a7e1db0460,Aspect,Tonatiuh,Tlaltecuhtli
+,https://www.notion.so/Tonatiuh-43c43d7d2e7e48219a6ad6982f7c3742,https://www.notion.so/Xiuhtecuhtli-83f5a151e34a4545949293af0975242e,Aspect,Tonatiuh,Xiuhtecuhtli
+,https://www.notion.so/Tonatiuh-43c43d7d2e7e48219a6ad6982f7c3742,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,Aspect,Tonatiuh,Quetzalcoatl
+,https://www.notion.so/Oxomoco-0df063935a4e4d2ba98d2e24e3d43642,https://www.notion.so/Ometeotl-4ed487d74766468f9fa549a5fe6e03af,submission (son/daughter/killed by),Oxomoco,Ometeotl
+,https://www.notion.so/Oxomoco-0df063935a4e4d2ba98d2e24e3d43642,https://www.notion.so/Cipactonal-ec19f296b3aa4883b871a73b6f14f19b,relation (married / sexual),Oxomoco,Cipactonal
+,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,authority (parent of),Mixcoatl,Quetzalcoatl
+,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,authority (parent of),Mixcoatl,Tezcatlipoca
+,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,authority (parent of),Mixcoatl,Huitzilopochtli
+,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,https://www.notion.so/Tezcatlipoca-36f5eeab041143e98a3143c7aa87f084,Aspect,Mixcoatl,Tezcatlipoca
+,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,Aspect,Mixcoatl,Huitzilopochtli
+,https://www.notion.so/Mixcoatl-a37dd4b1760346408fcb92c35bda6d59,https://www.notion.so/Xipe-Totec-61881bea3f214e20b78a30a375dc5090,Aspect,Mixcoatl,Xipe Totec
+,https://www.notion.so/Yacatecuhtli-2938c3df57c64ee5b2b997ef46fa9675,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,Aspect,Yacatecuhtli,Quetzalcoatl
+,https://www.notion.so/Xochipilli-127bb066c2ff407faf305a94cd74d024,https://www.notion.so/Mayahuel-86d7a5e62b204da38a30e16f17ce56f6,relation (married / sexual),Xochipilli,Mayahuel
+,https://www.notion.so/Xochipilli-127bb066c2ff407faf305a94cd74d024,https://www.notion.so/Tlaloc-87c53cdb6e1e4206ab647a81bf2f9496,Aspect,Xochipilli,Tlaloc
+,https://www.notion.so/Teteo-Innan-420aaad2df0142cbb4d1824145e262a1,https://www.notion.so/Xiuhtecuhtli-83f5a151e34a4545949293af0975242e,relation (married / sexual),Teteo Innan,Xiuhtecuhtli
+,https://www.notion.so/Teteo-Innan-420aaad2df0142cbb4d1824145e262a1,https://www.notion.so/Huitzilopochtli-15fb0d2c228a4887ae8fde72353c5364,authority (parent of),Teteo Innan,Huitzilopochtli
+,https://www.notion.so/Mayahuel-86d7a5e62b204da38a30e16f17ce56f6,https://www.notion.so/Xochipilli-127bb066c2ff407faf305a94cd74d024,relation (married / sexual),Mayahuel,Xochipilli
+,https://www.notion.so/Mayahuel-86d7a5e62b204da38a30e16f17ce56f6,https://www.notion.so/Quetzalcoatl-e27cb302d64c4ce6b808656258f44439,relation (married / sexual),Mayahuel,Quetzalcoatl
