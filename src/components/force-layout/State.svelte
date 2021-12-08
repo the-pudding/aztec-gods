@@ -8,7 +8,7 @@
     schemeCategory10
   } from "d3";
   import { setContext } from "svelte";
-  // import { derived, writable } from "svelte/store";
+  import { derived, writable } from "svelte/store";
   import points from "../../data/gods/tidy/gods.json";
   import links from "../../data/gods/tidy/relations.json";
 
@@ -41,21 +41,51 @@
     .domain([...new Set(points.map((d) => d.Type))])
     .range(["#4bc5ca", "#F14057", "#FD9126", "#fbe237"]);
 
+  $: godDomain = [...new Set(points.map((d) => d.id))];
+
+  // Interaction
+  const createInteraction = () => {
+    const { subscribe, set } = writable(undefined);
+    return {
+      subscribe,
+      highlight: (d) => set(d),
+      lowlight: () => set(undefined)
+    };
+  };
+  const interaction = createInteraction();
+
+  // Context
   $: context = {
     bounds,
     points,
     links,
     radius: RADIUS,
     linkTypeColorScale,
-    godTypeColorScale
+    godTypeColorScale,
+    godDomain,
+    interaction
   };
   $: setContext("chart-state", context);
 </script>
 
-<div bind:clientWidth={width}>
-  {#if width > 0}
-    <svg {width} height={bounds.height}>
-      <slot />
-    </svg>
-  {/if}
+<div class="wrapper">
+  <div bind:clientWidth={width}>
+    {#if width > 0}
+      <svg {width} height={bounds.height}>
+        <slot />
+      </svg>
+    {/if}
+  </div>
+  <div class="controls"><slot name="controls" /></div>
 </div>
+
+<style>
+  .wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 1rem;
+  }
+  .controls {
+    background: #f4f4f4;
+  }
+</style>

@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
 
-  const { bounds, points, links, radius, linkTypeColorScale, godTypeColorScale } =
+  const { bounds, points, interaction, links, radius, linkTypeColorScale, godTypeColorScale } =
     getContext("chart-state");
 
   import {
@@ -43,7 +43,7 @@
       .restart();
   }
 
-  $: console.log(bounds);
+  $: console.log($interaction);
 </script>
 
 <g transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
@@ -62,7 +62,7 @@
         r={radius}
         cx={point.x}
         cy={point.y}
-        fill="#efefef"
+        fill={$interaction && $interaction === point.id ? godTypeColorScale(point.Type) : "#efefef"}
         stroke={godTypeColorScale(point.Type)}
         stroke-width={2}
       />
