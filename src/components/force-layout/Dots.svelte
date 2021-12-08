@@ -1,0 +1,71 @@
+<script>
+  import { getContext } from "svelte";
+
+  const { bounds, points, interaction, links, radius, linkTypeColorScale, godTypeColorScale } =
+    getContext("chart-state");
+
+  import { forceSimulation, forceCollide, forceLink } from "d3-force";
+
+  const initialNodes = points.map((d) => ({ ...d }));
+  const simulation = forceSimulation(initialNodes);
+
+  let mutableNodes = [];
+  let mutableLinks = [];
+
+  simulation.on("tick", () => {
+    mutableNodes = [...simulation.nodes()];
+    mutableLinks = [...links];
+  });
+
+  $: {
+    simulation
+      .force(
+        "collide",
+        forceCollide()
+          .radius(radius + 6)
+          .iterations(3)
+      )
+      .force(
+        "link",
+        forceLink(links).id((d) => d.id)
+      )
+      .alpha(1)
+      .restart();
+  }
+</script>
+
+<g transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
+  <g transform={`translate(${bounds.chartWidth / 2}, ${bounds.chartHeight / 2})`}>
+    {#each mutableLinks as link}
+      <line
+        x1={link.source.x}
+        y1={link.source.y}
+        x2={link.target.x}
+        y2={link.target.y}
+        stroke={linkTypeColorScale(link.Type)}
+        stroke-width={$interaction &&
+        ($interaction === link.source.id || $interaction === link.target.id)
+          ? 3
+          : 1}
+      />
+    {/each}
+    {#each mutableNodes as point}
+      <circle
+        r={radius}
+        cx={point.x}
+        cy={point.y}
+        fill={$interaction && $interaction === point.id ? godTypeColorScale(point.Type) : "#efefef"}
+        stroke={godTypeColorScale(point.Type)}
+        stroke-width={2}
+      />
+      <text x={point.x} y={point.y} dominant-baseline="middle">{point.id}</text>
+    {/each}
+  </g>
+</g>
+
+<style>
+  text {
+    text-anchor: middle;
+    font-size: 10px;
+  }
+</style>

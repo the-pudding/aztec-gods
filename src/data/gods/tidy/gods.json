@@ -1,0 +1,146 @@
+[
+  {
+    "id": "Ometeotl",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Primordial",
+    "Domain": "Creation",
+    "Symbol": "Spark of light, Spiral, Tree"
+  },
+  {
+    "id": "Quetzalcoatl",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Creation",
+    "Domain": "Art, Wind",
+    "Symbol": "Breath"
+  },
+  {
+    "id": "Tezcatlipoca",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Creation",
+    "Domain": "Destruction, Magic",
+    "Symbol": "All seeing eye, Fog, Mist"
+  },
+  {
+    "id": "Xipe Totec",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Creation",
+    "Domain": "Fertility",
+    "Symbol": "Corn, Seed growing"
+  },
+  {
+    "id": "Huitzilopochtli",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Creation",
+    "Domain": "War",
+    "Symbol": "Sword"
+  },
+  {
+    "id": "Tlaltecuhtli",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Elemental",
+    "Domain": "",
+    "Symbol": ""
+  },
+  {
+    "id": "Mictlantecuhtli",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Elemental",
+    "Domain": "Underworld",
+    "Symbol": "Skull"
+  },
+  {
+    "id": "Xiuhtecuhtli",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Elemental",
+    "Domain": "Fire, Hearth",
+    "Symbol": "Flame"
+  },
+  {
+    "id": "Tlaloc",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Elemental",
+    "Domain": "Rain, Water",
+    "Symbol": "Raindrops"
+  },
+  {
+    "id": "Tonatiuh",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "Sun",
+    "Symbol": "Sun"
+  },
+  {
+    "id": "Oxomoco",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "",
+    "Symbol": ""
+  },
+  {
+    "id": "Cipactonal",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "",
+    "Symbol": ""
+  },
+  {
+    "id": "Mixcoatl",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "Hunting",
+    "Symbol": "Bow, Spear"
+  },
+  {
+    "id": "Yacatecuhtli",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "Trade",
+    "Symbol": "Cacao bean, Money"
+  },
+  {
+    "id": "Xochipilli",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "",
+    "Symbol": ""
+  },
+  {
+    "id": "Teteo Innan",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "Birth, Hearth",
+    "Symbol": "Globe, Venus Figure"
+  },
+  {
+    "id": "Mayahuel",
+    "Entity": "God",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "Alcohol, Pleasure, Pulque",
+    "Symbol": "Agave"
+  },
+  {
+    "id": "Monsters",
+    "Entity": "Monster",
+    "Main": "Yes",
+    "Type": "Human God",
+    "Domain": "",
+    "Symbol": ""
+  }
+]
