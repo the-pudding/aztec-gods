@@ -42,8 +42,6 @@
       .alpha(1)
       .restart();
   }
-
-  $: console.log($interaction);
 </script>
 
 <g transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
@@ -55,6 +53,10 @@
         x2={link.target.x}
         y2={link.target.y}
         stroke={linkTypeColorScale(link.Type)}
+        stroke-width={$interaction &&
+        ($interaction === link.source.id || $interaction === link.target.id)
+          ? 3
+          : 1}
       />
     {/each}
     {#each mutableNodes as point}
