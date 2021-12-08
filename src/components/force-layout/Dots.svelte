@@ -4,15 +4,7 @@
   const { bounds, points, interaction, links, radius, linkTypeColorScale, godTypeColorScale } =
     getContext("chart-state");
 
-  import {
-    forceSimulation,
-    forceX,
-    forceY,
-    forceManyBody,
-    forceCollide,
-    forceLink,
-    forceCenter
-  } from "d3-force";
+  import { forceSimulation, forceCollide, forceLink } from "d3-force";
 
   const initialNodes = points.map((d) => ({ ...d }));
   const simulation = forceSimulation(initialNodes);
@@ -27,8 +19,6 @@
 
   $: {
     simulation
-      // .force("x", forceX(bounds.center[0]).strength(0.01))
-      // .force("y", forceY(bounds.center[1]).strength(0.01))
       .force(
         "collide",
         forceCollide()
