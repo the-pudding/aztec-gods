@@ -102,10 +102,12 @@
 <div class="wrapper">
   <div class="chart-wrapper" bind:clientWidth={width}>
     {#if width > 0}
-      <svg {width} height={bounds.height}>
-        <slot name="svg" />
+      <svg class="chart-svg" width={bounds.width} height={bounds.height}>
+        <slot name="chart-svg" />
       </svg>
-      <div class="chart-html" {width} height={bounds.height} />
+      <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
+        <slot name="chart-html" />
+      </div>
     {/if}
   </div>
   <div class="controls"><slot name="controls" /></div>
@@ -116,9 +118,11 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     margin: 1rem;
+    position: relative;
   }
 
-  .chart-html {
+  .chart-html,
+  .chart-svg {
     position: absolute;
     top: 0;
     left: 0;

@@ -29,7 +29,7 @@
           : 1}
       />
     {/each}
-    {#each $mutableNodes as point}
+    <!-- {#each $mutableNodes as point}
       <g transform={`translate(${point.x}, ${point.y})`}>
         <circle
           r={radius}
@@ -44,7 +44,7 @@
         <image x={0} y={0} href="../../img/Quetzalcoatl.jpg" height={radius} width={radius} />
       </g>
       <text x={point.x} y={point.y} dominant-baseline="middle">{point.id}</text>
-    {/each}
+    {/each} -->
   </g>
 </g>
 
