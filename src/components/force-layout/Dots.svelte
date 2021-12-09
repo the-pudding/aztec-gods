@@ -47,10 +47,3 @@
     {/each} -->
   </g>
 </g>
-
-<style>
-  text {
-    text-anchor: middle;
-    font-size: 10px;
-  }
-</style>
