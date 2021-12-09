@@ -1,8 +1,10 @@
 <script>
   import {
     extent,
-    forceSimulation,
     scaleLinear,
+    forceSimulation,
+    forceCollide,
+    forceLink,
     scaleOrdinal,
     scaleTime,
     schemeCategory10
@@ -43,6 +45,33 @@
 
   $: godDomain = [...new Set(points.map((d) => d.id))];
 
+  // Simulation
+  const initialNodes = points.map((d) => ({ ...d }));
+  const simulation = forceSimulation(initialNodes);
+
+  const _mutableNodes = writable([]);
+  const _mutableLinks = writable([]);
+
+  simulation.on("tick", () => {
+    $_mutableNodes = [...simulation.nodes()];
+    $_mutableLinks = [...links];
+  });
+
+  $: {
+    simulation
+      .force(
+        "collide",
+        forceCollide()
+          .radius(RADIUS + 6)
+          .iterations(3)
+      )
+      .force(
+        "link",
+        forceLink(links).id((d) => d.id)
+      )
+      .alpha(1)
+      .restart();
+  }
   // Interaction
   const createInteraction = () => {
     const { subscribe, set } = writable(undefined);
@@ -63,17 +92,22 @@
     linkTypeColorScale,
     godTypeColorScale,
     godDomain,
+    mutableNodes: _mutableNodes,
+    mutableLinks: _mutableLinks,
     interaction
   };
   $: setContext("chart-state", context);
 </script>
 
 <div class="wrapper">
-  <div bind:clientWidth={width}>
+  <div class="chart-wrapper" bind:clientWidth={width}>
     {#if width > 0}
-      <svg {width} height={bounds.height}>
-        <slot />
+      <svg class="chart-svg" width={bounds.width} height={bounds.height}>
+        <slot name="chart-svg" />
       </svg>
+      <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
+        <slot name="chart-html" />
+      </div>
     {/if}
   </div>
   <div class="controls"><slot name="controls" /></div>
@@ -84,6 +118,14 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     margin: 1rem;
+    position: relative;
+  }
+
+  .chart-html,
+  .chart-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   .controls {
     background: #f4f4f4;
