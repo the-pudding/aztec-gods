@@ -25,7 +25,7 @@
           ? 4
           : 1}px solid {godTypeColorScale(
           point.Type
-        )}; background-image: url('/img/{point.id}.jpg'); 
+        )}; background-image: url('/aztec-gods/img/{point.id}.jpg'); 
         "
       >
         {point.id}
