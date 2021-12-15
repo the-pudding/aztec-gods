@@ -13,30 +13,35 @@
     links,
     radius,
     linkTypeColorScale,
-    godTypeColorScale,
+    godColorScale,
     mutableNodes,
     radiusScale,
     mutableLinks
   } = getContext("chart-state");
+
+  $: rad = radiusScale(getImportance(god));
+  $: name = getName(god);
+  $: color = godColorScale(getImportance(god));
+  $: showName = getImportance(god) === "main";
 </script>
 
 <div
   class="god"
-  style="width:{radiusScale(getImportance(god))}px; height:{radiusScale(
-    getImportance(god)
-  )}px; left:{god.x}px; top:{god.y}px; border: {$interaction && $interaction === getName(god)
+  style="width:{rad}px; height:{rad}px; left:{god.x}px; top:{god.y}px; border: {$interaction &&
+  $interaction === name
     ? 4
-    : 1}px solid {godTypeColorScale(getRelationType(god))}; background-image: url('/img/{getName(
-    god
-  )}.jpg'); 
-        "
+    : 1}px solid {color}; background-image: url('/img/{name}.jpg');"
+  on:mouseenter={() => interaction.highlight(getName(god))}
+  on:focus={() => interaction.highlight(getName(god))}
+  on:mouseout={() => interaction.highlight(undefined)}
+  on:blur={() => interaction.highlight(undefined)}
 >
-  {getName(god)}
+  {showName ? name : ""}
 </div>
 
 <style>
   .god {
-    background: aliceblue;
+    background: #fff;
     font-size: 8px;
 
     position: absolute;

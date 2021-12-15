@@ -15,7 +15,7 @@
   import links from "../../data/gods/tidy/relations.json";
 
   let width = 0;
-  const height = 500; //width / 2;
+  const height = 800; //width / 2;
 
   $: center = [width / 2, height / 2];
   const RADIUS = 35;
@@ -44,13 +44,13 @@
     .domain([...new Set(links.map((d) => getRelationType(d)))])
     .range(schemeCategory10);
 
-  $: godTypeColorScale = scaleOrdinal()
-    .domain([...new Set(points.map((d) => getRelationType(d)))])
+  $: godColorScale = scaleOrdinal()
+    .domain(["main", "second", "minor"])
     .range(["#4bc5ca", "#F14057", "#FD9126", "#fbe237"]);
 
   $: godDomain = [...new Set(points.map((d) => getName(d)))];
 
-  $: radiusScale = scaleOrdinal().domain(["main", "second", "minor"]).range([50, 10, 4]);
+  $: radiusScale = scaleOrdinal().domain(["main", "second", "minor"]).range([60, 16, 6]);
 
   // Simulation
   const initialNodes = points.map((d) => ({ ...d }));
@@ -69,7 +69,7 @@
       .force(
         "collide",
         forceCollide()
-          .radius((d) => radiusScale(getImportance(d)))
+          .radius((d) => radiusScale(getImportance(d)) * 0.8)
           .iterations(3)
       )
       .force(
@@ -100,7 +100,7 @@
     links,
     radius: RADIUS,
     linkTypeColorScale,
-    godTypeColorScale,
+    godColorScale,
     godDomain,
     radiusScale,
     mutableNodes: _mutableNodes,
@@ -111,6 +111,7 @@
 </script>
 
 <div class="wrapper">
+  <div class="controls"><slot name="controls" /></div>
   <div class="chart-wrapper" bind:clientWidth={width}>
     {#if width > 0}
       <svg class="chart-svg" width={bounds.width} height={bounds.height}>
@@ -121,15 +122,15 @@
       </div>
     {/if}
   </div>
-  <div class="controls"><slot name="controls" /></div>
 </div>
 
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 0.5fr 3fr;
     margin: 1rem;
     position: relative;
+    height: 100vh;
   }
 
   .chart-html,

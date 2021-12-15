@@ -12,7 +12,7 @@
     links,
     radius,
     linkTypeColorScale,
-    godTypeColorScale,
+    godColorScale,
     mutableNodes,
     radiusScale,
     mutableLinks

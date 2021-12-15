@@ -9,7 +9,6 @@
   import Controls from "$components/force-layout/Controls.svelte";
 </script>
 
-<h1>Gods Pantheon Cartography</h1>
 <main>
   <State>
     <Links slot="chart-svg" />
@@ -17,9 +16,3 @@
     <Controls slot="controls" />
   </State>
 </main>
-
-<style>
-  h1 {
-    margin: 1rem;
-  }
-</style>
