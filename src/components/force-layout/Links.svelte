@@ -5,6 +5,8 @@
     bounds,
     points,
     interaction,
+    getName,
+    getRelationType,
     links,
     radius,
     linkTypeColorScale,
@@ -16,19 +18,19 @@
 
 <g transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
   <g transform={`translate(${bounds.chartWidth / 2}, ${bounds.chartHeight / 2})`}>
-    <!-- {#each $mutableLinks as link}
+    {#each $mutableLinks as link}
       <line
         x1={link.source.x}
         y1={link.source.y}
         x2={link.target.x}
         y2={link.target.y}
-        stroke={linkTypeColorScale(link.Type)}
+        stroke={linkTypeColorScale(getRelationType(link))}
         stroke-width={$interaction &&
-        ($interaction === link.source.id || $interaction === link.target.id)
+        ($interaction === getName(link.source) || $interaction === getName(link.target))
           ? 3
           : 1}
       />
-    {/each} -->
+    {/each}
     <!-- {#each $mutableNodes as point}
       <g transform={`translate(${point.x}, ${point.y})`}>
         <circle
