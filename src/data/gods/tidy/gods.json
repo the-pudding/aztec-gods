@@ -1,146 +1,747 @@
 [
   {
-    "id": "Ometeotl",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Primordial",
-    "Domain": "Creation",
-    "Symbol": "Spark of light, Spiral, Tree"
+    "name": "Acolnahuacatl",
+    "importance": "minor",
+    "keywords": "death, underworld, puma, animal"
   },
   {
-    "id": "Quetzalcoatl",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Creation",
-    "Domain": "Art, Wind",
-    "Symbol": "Breath"
+    "name": "Acuecucyoticihuati",
+    "importance": "minor",
+    "keywords": "water, nature, sea, child, birth"
   },
   {
-    "id": "Tezcatlipoca",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Creation",
-    "Domain": "Destruction, Magic",
-    "Symbol": "All seeing eye, Fog, Mist"
+    "name": "Acxomocuil",
+    "importance": "second",
+    "keywords": "trade, wine, alcohol, sex, minor"
   },
   {
-    "id": "Xipe Totec",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Creation",
-    "Domain": "Fertility",
-    "Symbol": "Corn, Seed growing"
+    "name": "Ahkinshok",
+    "importance": "minor",
+    "keywords": "nature, animals, earth, bees,honey, food, fire"
   },
   {
-    "id": "Huitzilopochtli",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Creation",
-    "Domain": "War",
-    "Symbol": "Sword"
+    "name": "Ahuiateteo",
+    "importance": "minor",
+    "keywords": "pleasure, alcohol, excess, spirit, gambling, sex, south, food"
   },
   {
-    "id": "Tlaltecuhtli",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Elemental",
-    "Domain": "",
-    "Symbol": ""
+    "name": "Ahuitzotl",
+    "importance": "second",
+    "keywords": "water, nature, monster, dog, monkey, animal, beaver, otter"
   },
   {
-    "id": "Mictlantecuhtli",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Elemental",
-    "Domain": "Underworld",
-    "Symbol": "Skull"
+    "name": "Amapan",
+    "importance": "minor",
+    "keywords": "pleasure, war, game"
   },
   {
-    "id": "Xiuhtecuhtli",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Elemental",
-    "Domain": "Fire, Hearth",
-    "Symbol": "Flame"
+    "name": "Amimitl",
+    "importance": "minor",
+    "keywords": "water, hunting, fish, fishing, food"
   },
   {
-    "id": "Tlaloc",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Elemental",
-    "Domain": "Rain, Water",
-    "Symbol": "Raindrops"
+    "name": "Atlacoya",
+    "importance": "second",
+    "keywords": "water, death, pulque, alcohol, fertility"
   },
   {
-    "id": "Tonatiuh",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "Sun",
-    "Symbol": "Sun"
+    "name": "Atlaua",
+    "importance": "second",
+    "keywords": "water, hunting, sacrifice, south, fish, arrows, weapon, death"
   },
   {
-    "id": "Oxomoco",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "",
-    "Symbol": ""
+    "name": "Ayauhteotl",
+    "importance": "second",
+    "keywords": "night, pleasure, sin, excess, dark, fame, glory"
   },
   {
-    "id": "Cipactonal",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "",
-    "Symbol": ""
+    "name": "Ayopechcatl",
+    "importance": "minor",
+    "keywords": "child, birth, fertility, newborn, minor"
   },
   {
-    "id": "Mixcoatl",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "Hunting",
-    "Symbol": "Bow, Spear"
+    "name": "Azcatl",
+    "importance": "minor",
+    "keywords": "nature, animals, fertility, ant, food, maize, earth"
   },
   {
-    "id": "Yacatecuhtli",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "Trade",
-    "Symbol": "Cacao bean, Money"
+    "name": "Camaxtli",
+    "importance": "main",
+    "keywords": "war, hunting, fire, fate, hope, sun, primordial, celestial, night"
   },
   {
-    "id": "Xochipilli",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "",
-    "Symbol": ""
+    "name": "Ce Acati",
+    "importance": "minor",
+    "keywords": "primordial, minor, creation"
   },
   {
-    "id": "Teteo Innan",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "Birth, Hearth",
-    "Symbol": "Globe, Venus Figure"
+    "name": "Centeotl",
+    "importance": "main",
+    "keywords": "fertility, maize, medecine, birth, food, alcohol, pulque, celestial, dance, music, excess, art, sport, fun, herbs, trade"
   },
   {
-    "id": "Mayahuel",
-    "Entity": "God",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "Alcohol, Pleasure, Pulque",
-    "Symbol": "Agave"
+    "name": "Centzon Huitznahua",
+    "importance": "second",
+    "keywords": "celestial, star, moon, sun, night, south"
   },
   {
-    "id": "Monsters",
-    "Entity": "Monster",
-    "Main": "Yes",
-    "Type": "Human God",
-    "Domain": "",
-    "Symbol": ""
+    "name": "Centzon Totochtin",
+    "importance": "second",
+    "keywords": "pulque, pleasure, excess, alcohol, animal, rabbit"
+  },
+  {
+    "name": "Chalchiuhcihuatl",
+    "importance": "minor",
+    "keywords": "corn, maize, sacrifice, youth"
+  },
+  {
+    "name": "Chalchiuhtecolotl",
+    "importance": "minor",
+    "keywords": "death, night, animals, magic, sorcery, owl"
+  },
+  {
+    "name": "Chalchiuhtlatonac",
+    "importance": "second",
+    "keywords": "water, fertility, minor, sea, birth"
+  },
+  {
+    "name": "Chalchiuhtlicue",
+    "importance": "main",
+    "keywords": "nature, fertility, water, rain, storm, birth, travel, sea, trade"
+  },
+  {
+    "name": "Chalchiutotolin",
+    "importance": "second",
+    "keywords": "illness, death, disorder, chaos, fate, magic, disease, destruction, evil, animal"
+  },
+  {
+    "name": "Chalmecacihuatl",
+    "importance": "second",
+    "keywords": "death, underworld, sacrifice"
+  },
+  {
+    "name": "Chantico",
+    "importance": "second",
+    "keywords": "nature, fertility, war, fire, gold, trade, animal"
+  },
+  {
+    "name": "Chicomecoatl",
+    "importance": "second",
+    "keywords": "fertility, maize, food, wealth, sacrifice"
+  },
+  {
+    "name": "Chiconahui Ehecatl",
+    "importance": "minor",
+    "keywords": "primordial, minor"
+  },
+  {
+    "name": "Chiconahui Itzcuintli",
+    "importance": "minor",
+    "keywords": "lapidary, stone, death, minor"
+  },
+  {
+    "name": "Chimalma",
+    "importance": "second",
+    "keywords": "fertility, life, death, rebirth, birth, primordial, youth, purity"
+  },
+  {
+    "name": "Cihuapipiltzin",
+    "importance": "minor",
+    "keywords": "death, child, travel, minor"
+  },
+  {
+    "name": "Cihuatecayotl",
+    "importance": "minor",
+    "keywords": "west, wind, minor"
+  },
+  {
+    "name": "Cihuateteo",
+    "importance": "second",
+    "keywords": "child, death, birth, spirits, west, fertility"
+  },
+  {
+    "name": "Cinteteo",
+    "importance": "minor",
+    "keywords": "maize, earth, fertility, food"
+  },
+  {
+    "name": "Cipactli",
+    "importance": "main",
+    "keywords": "earth, animal, primordial, monster, underworld, death, dark"
+  },
+  {
+    "name": "Cipactonal",
+    "importance": "main",
+    "keywords": "celestial, science, magic, primordial, time, food, fertility, astrology, sun, day, sky"
+  },
+  {
+    "name": "Citlalatonac",
+    "importance": "main",
+    "keywords": "celestial, primordial, star, night, sky"
+  },
+  {
+    "name": "Citlalicue",
+    "importance": "main",
+    "keywords": "celestial, primordial, night, star, earth, death, dark"
+  },
+  {
+    "name": "Coatlicue",
+    "importance": "main",
+    "keywords": "fertility, nature, fire, earth, celestial, death, primordial, rebirth, sacrifice, trade, war, child, birth, violence, moon, celestial, midwives, purity"
+  },
+  {
+    "name": "Cochimetl",
+    "importance": "minor",
+    "keywords": "trading, travel, minor"
+  },
+  {
+    "name": "Coyolxauhqui",
+    "importance": "second",
+    "keywords": "celestial, earth, star, moon"
+  },
+  {
+    "name": "Coyotlinaual",
+    "importance": "minor",
+    "keywords": "craft, art, trade"
+  },
+  {
+    "name": "Cuaxolotl",
+    "importance": "second",
+    "keywords": "home, child, underworld, birth"
+  },
+  {
+    "name": "Ehecatl",
+    "importance": "second",
+    "keywords": "earth, wind, nature, celestial, science, primordial, love, pleasure, fertility"
+  },
+  {
+    "name": "Huehuecoyotl",
+    "importance": "second",
+    "keywords": "animals, arts, nature, trickster, chaos, music, wild, pleasure, excess"
+  },
+  {
+    "name": "Huehueteotl",
+    "importance": "second",
+    "keywords": "fire, celestial, primordial, north, celestial, time, trade"
+  },
+  {
+    "name": "Huitzilopochtli",
+    "importance": "main",
+    "keywords": "war, fire, sun, storm, primordial, sacrifice"
+  },
+  {
+    "name": "Huixtocihuatl",
+    "importance": "second",
+    "keywords": "fertility, nature, ocean, sea, water, salt, food, trade, minor"
+  },
+  {
+    "name": "Ilamatecuhtli",
+    "importance": "second",
+    "keywords": "death, earth, celestial, war, craft, primordial, old"
+  },
+  {
+    "name": "Ilancueye",
+    "importance": "second",
+    "keywords": "maize, fertility, minor"
+  },
+  {
+    "name": "Ilhuicamina",
+    "importance": "minor",
+    "keywords": "sun, minor"
+  },
+  {
+    "name": "Inta",
+    "importance": "minor",
+    "keywords": "sun, minor"
+  },
+  {
+    "name": "Itzaccihuatl",
+    "importance": "minor",
+    "keywords": "hunt, animal, minor, nature, earth, mountain, disease, healing"
+  },
+  {
+    "name": "Itzcuintli",
+    "importance": "second",
+    "keywords": "death, animal, home, monster"
+  },
+  {
+    "name": "Itzpapalotl",
+    "importance": "second",
+    "keywords": "night, earth, fertility, fire, animals, hunting, sacrifice, pleasure, lightning, magic"
+  },
+  {
+    "name": "Itztlacoliuhqui",
+    "importance": "second",
+    "keywords": "earth, stone, cold, justice, celestial, north, night, destruction"
+  },
+  {
+    "name": "Itztli",
+    "importance": "second",
+    "keywords": "death, earth, sacrifice"
+  },
+  {
+    "name": "Ixcozauhqui",
+    "importance": "minor",
+    "keywords": "minor, trade, fire"
+  },
+  {
+    "name": "Ixcuina",
+    "importance": "second",
+    "keywords": "nature, fertility, sex, excess, pleasure, filth"
+  },
+  {
+    "name": "Ixnextli",
+    "importance": "second",
+    "keywords": "fertility, nature, trade"
+  },
+  {
+    "name": "Ixquimilli",
+    "importance": "second",
+    "keywords": "night, war, magic, justice, cold, stone"
+  },
+  {
+    "name": "Ixquitecatl",
+    "importance": "minor",
+    "keywords": "magic, healing, pulque, fertility, minor"
+  },
+  {
+    "name": "Ixtlilton",
+    "importance": "second",
+    "keywords": "healing, pleasure, child, pulque, fire, science, medecine, game, fun, alcohol, fire, fertility, rain, sex"
+  },
+  {
+    "name": "Itztapaltotec",
+    "importance": "minor",
+    "keywords": "earth, fertility, craft"
+  },
+  {
+    "name": "Macuil Cozcacuahtli",
+    "importance": "second",
+    "keywords": "pleasure, excess, gambling, sex, south, pulque"
+  },
+  {
+    "name": "Macuil Cuetzpalin",
+    "importance": "second",
+    "keywords": "pleasure, excess, gambling, sex, south, pulque"
+  },
+  {
+    "name": "Macuil Malinalli",
+    "importance": "minor",
+    "keywords": "pleasure, excess, gambling, sex, south, pulque"
+  },
+  {
+    "name": "Macuil Ocelotl",
+    "importance": "minor",
+    "keywords": "trade, feather"
+  },
+  {
+    "name": "Macuil Tochtli",
+    "importance": "second",
+    "keywords": "pleasure, excess, gambling, sex, sout, war, death, pulque"
+  },
+  {
+    "name": "Macuil Xochitl",
+    "importance": "second",
+    "keywords": "pleasure, music, art, dance, gambling, nature, excess, game"
+  },
+  {
+    "name": "Malinalxochi",
+    "importance": "second",
+    "keywords": "magic, animal, earth, underworld, minor"
+  },
+  {
+    "name": "Matlalcueitl",
+    "importance": "minor",
+    "keywords": "earth, rain, fertility, minor"
+  },
+  {
+    "name": "Mayahuel",
+    "importance": "second",
+    "keywords": "fertility, nature, pulque, medicine, excess, alcohol, science, food, love"
+  },
+  {
+    "name": "Metztli",
+    "importance": "second",
+    "keywords": "earth, celestial, minor, sacrifice, sun, moon, dark"
+  },
+  {
+    "name": "Micapetlacalli",
+    "importance": "minor",
+    "keywords": "death, underworld, minor"
+  },
+  {
+    "name": "Mictlancihuatl",
+    "importance": "second",
+    "keywords": "death, underworld"
+  },
+  {
+    "name": "Mictlantecuhtli",
+    "importance": "main",
+    "keywords": "death, celestial, underworld, primordial, dark"
+  },
+  {
+    "name": "Miquiztlitecuhtli",
+    "importance": "minor",
+    "keywords": "death, disease, sacrifice, minor"
+  },
+  {
+    "name": "Mixcoatl",
+    "importance": "main",
+    "keywords": "hunting, war, celestial"
+  },
+  {
+    "name": "Nanahuatzin",
+    "importance": "second",
+    "keywords": "sun, sacrifice, courage"
+  },
+  {
+    "name": "Nappatecutli",
+    "importance": "second",
+    "keywords": "craft, travel, trade, art, rain"
+  },
+  {
+    "name": "Naui oxomatli",
+    "importance": "minor",
+    "keywords": "earth, minor, fire"
+  },
+  {
+    "name": "Nextepeua",
+    "importance": "minor",
+    "keywords": "death, underworld"
+  },
+  {
+    "name": "Omacatl",
+    "importance": "minor",
+    "keywords": "pleasure, death, art, excess, minor"
+  },
+  {
+    "name": "Ome Tochtli",
+    "importance": "second",
+    "keywords": "fertility, nature, excess, pleasure, pulque, alcohol"
+  },
+  {
+    "name": "Omecihuatl",
+    "importance": "second",
+    "keywords": "primordial, creation"
+  },
+  {
+    "name": "Ometecuhtli",
+    "importance": "main",
+    "keywords": "primordial, celestial, duality"
+  },
+  {
+    "name": "Ometeotl",
+    "importance": "main",
+    "keywords": "primordial, duality, food"
+  },
+  {
+    "name": "Opotchli",
+    "importance": "second",
+    "keywords": "hunting, war, water, sacrifice"
+  },
+  {
+    "name": "Otontecuhtli",
+    "importance": "minor",
+    "keywords": "fire, earth, nature, love, game, dance, pleasure, sex, trade, birth"
+  },
+  {
+    "name": "Oxomoco",
+    "importance": "main",
+    "keywords": "celestial, primordial, fertility, night, dark, astrology, science, sky"
+  },
+  {
+    "name": "Painal",
+    "importance": "second",
+    "keywords": "war, travel, sacrifice"
+  },
+  {
+    "name": "Papaztec",
+    "importance": "minor",
+    "keywords": "pulque, alcohol, excess"
+  },
+  {
+    "name": "Patecatl",
+    "importance": "second",
+    "keywords": "pulque, healing, medecine, alcohol, fertility, minor"
+  },
+  {
+    "name": "Piltzintecuhtli",
+    "importance": "second",
+    "keywords": "celestial, youth, healing, sun, summer, night, drug, excess"
+  },
+  {
+    "name": "Piquete Zina",
+    "importance": "second",
+    "keywords": "animal, night, dark,  bat, fertility, minor"
+  },
+  {
+    "name": "Popocatepetl",
+    "importance": "minor",
+    "keywords": "earth, water, fertility, nature, sacrifice, rain, mountain"
+  },
+  {
+    "name": "Quetzalcoatl",
+    "importance": "main",
+    "keywords": "primordial, fertility, magic, science, religion, trade, wind, time, healing, art, pleasure, east"
+  },
+  {
+    "name": "Quilaztli",
+    "importance": "second",
+    "keywords": "fertility, birth"
+  },
+  {
+    "name": "Tecciztecatl",
+    "importance": "second",
+    "keywords": "celestial, moon, coward, earth"
+  },
+  {
+    "name": "Techalotl",
+    "importance": "minor",
+    "keywords": "nature, animal, monster, dance, pleasure, excess"
+  },
+  {
+    "name": "Techlotl",
+    "importance": "minor",
+    "keywords": "death, animal, underworld, night"
+  },
+  {
+    "name": "Tepeyollotl",
+    "importance": "second",
+    "keywords": "death, animal, nature, mountain, earth, sun"
+  },
+  {
+    "name": "Tepoztecatl",
+    "importance": "second",
+    "keywords": "pulque, animal, alcohol, excess, food, fertility"
+  },
+  {
+    "name": "Teteo Innan",
+    "importance": "main",
+    "keywords": "earth, fertility, primordial, nature, war, violence, birth"
+  },
+  {
+    "name": "Tetzahauteotl",
+    "importance": "minor",
+    "keywords": "minor, war"
+  },
+  {
+    "name": "Tezcatlipoca",
+    "importance": "main",
+    "keywords": "primordial, magic, night, death, war, destruction, chaos, north, celestial, evil, destruction, royalty, travel, sacrifice, moon, religion"
+  },
+  {
+    "name": "Tezcatzoncatl",
+    "importance": "minor",
+    "keywords": "pulque, alcohol, excess, animal, rabbit"
+  },
+  {
+    "name": "Titlacahuan",
+    "importance": "second",
+    "keywords": "fate, evil, minor"
+  },
+  {
+    "name": "Tlacotzontli",
+    "importance": "minor",
+    "keywords": "travel, trade, sacrifice"
+  },
+  {
+    "name": "Tlahui",
+    "importance": "minor",
+    "keywords": "animal, scorpion, minor"
+  },
+  {
+    "name": "Tlahuizcalpantecuhtli",
+    "importance": "second",
+    "keywords": "sun, death, celestial, destruction, east, science, time, fertility, rebirth, sun"
+  },
+  {
+    "name": "Tlalchi Tonatiuh",
+    "importance": "second",
+    "keywords": "sun, underworld, minor"
+  },
+  {
+    "name": "Tlaloc",
+    "importance": "main",
+    "keywords": "nature, fertility, sacrifice, water, rain, disease, lightning, storm, sea"
+  },
+  {
+    "name": "Tlaloque",
+    "importance": "second",
+    "keywords": "death, rain, sacrifice, minor, nature, monster, mountain, eart, water"
+  },
+  {
+    "name": "Tlaltecayoa",
+    "importance": "minor",
+    "keywords": "pulque, earth, minor"
+  },
+  {
+    "name": "Tlatecuhtli",
+    "importance": "main",
+    "keywords": "earth, birth, children, monster, sacrifice, night, primordial, celestial, sun, life, animal"
+  },
+  {
+    "name": "Tlatlauhqui Tezcatlipoca",
+    "importance": "minor",
+    "keywords": "minor, fertility"
+  },
+  {
+    "name": "Tlazolteotl",
+    "importance": "second",
+    "keywords": "fertility, pleasure, magic, purity, filth, excess, disease, sex, woman, monster, moon"
+  },
+  {
+    "name": "Tlazopilli",
+    "importance": "minor",
+    "keywords": "minor, flower, nature, fun"
+  },
+  {
+    "name": "Tloque Nahuaque",
+    "importance": "main",
+    "keywords": "primordial, creation"
+  },
+  {
+    "name": "Tomiyauhtecuhtli",
+    "importance": "minor",
+    "keywords": "rain, fertility, minor"
+  },
+  {
+    "name": "Tonacacihuatl",
+    "importance": "main",
+    "keywords": "primordial, celestial, creation"
+  },
+  {
+    "name": "Tonacatecuhtli",
+    "importance": "main",
+    "keywords": "fertility, nature, primordial, celestial, fate"
+  },
+  {
+    "name": "Tonatiuh",
+    "importance": "main",
+    "keywords": "sun, war, east, underworld, celestial"
+  },
+  {
+    "name": "Tzapatlan Tenen",
+    "importance": "second",
+    "keywords": "healing, minor, medicine"
+  },
+  {
+    "name": "Tzitzimime",
+    "importance": "minor",
+    "keywords": "fertility, birth, death, evil"
+  },
+  {
+    "name": "Tzitzimitl",
+    "importance": "second",
+    "keywords": "earth, night, fertility, primordial, alcohol"
+  },
+  {
+    "name": "Tzontemoc",
+    "importance": "minor",
+    "keywords": "death, underworld, minor"
+  },
+  {
+    "name": "Uappatzin",
+    "importance": "minor",
+    "keywords": "pleasure, war, game"
+  },
+  {
+    "name": "Xaman Ek",
+    "importance": "minor",
+    "keywords": "north, star, trade, minor"
+  },
+  {
+    "name": "Xilonen",
+    "importance": "second",
+    "keywords": "fertility, maize, minor"
+  },
+  {
+    "name": "Xipe Totec",
+    "importance": "main",
+    "keywords": "primordial, fertility, craft, rebirth, craft, trade, war, east, sacrifice, west, youth, male, love"
+  },
+  {
+    "name": "Xiuhcoatl",
+    "importance": "second",
+    "keywords": "sun, fire"
+  },
+  {
+    "name": "Xiuhtecuhtli",
+    "importance": "main",
+    "keywords": "primordial, fire, earth, time, sacrifice, war, trade"
+  },
+  {
+    "name": "Xiuhtlati",
+    "importance": "minor",
+    "keywords": "trade, travel, minor"
+  },
+  {
+    "name": "Xochipilli",
+    "importance": "second",
+    "keywords": "art, fertility, pleasure, excess, dance, game, education, love, summer, rain, lust"
+  },
+  {
+    "name": "Xochiquetzal",
+    "importance": "second",
+    "keywords": "pleasure, craft, nature, arts, excess, love, sex, craft, trade, fertility, house, birth, game"
+  },
+  {
+    "name": "Xolotl",
+    "importance": "second",
+    "keywords": "animal, death, disease, lightning, underworld, game, north, celestial, rebirth, food, luck, fate, fire, magic"
+  },
+  {
+    "name": "Yacapitzahuac",
+    "importance": "minor",
+    "keywords": "trade, minor, travel"
+  },
+  {
+    "name": "Yacatecuhtli",
+    "importance": "second",
+    "keywords": "travel, trade, war"
+  },
+  {
+    "name": "Yaotl",
+    "importance": "minor",
+    "keywords": "war, scorpion, monster, animal, minor"
+  },
+  {
+    "name": "Yauhqueme",
+    "importance": "minor",
+    "keywords": "fertility, rain, minor"
+  },
+  {
+    "name": "Yauhtecatl",
+    "importance": "minor",
+    "keywords": "pulque, alcohol"
+  },
+  {
+    "name": "Yayauhqui Tezcatlipoca",
+    "importance": "minor",
+    "keywords": "minor"
+  },
+  {
+    "name": "Yohual Tonatiuh",
+    "importance": "minor",
+    "keywords": "sun, minor"
+  },
+  {
+    "name": "Yohualtecuhtli",
+    "importance": "minor",
+    "keywords": "underworld, minor"
+  },
+  {
+    "name": "Yohualticitl",
+    "importance": "second",
+    "keywords": "night, birth, children, cooking, child, purity, clean, food, life"
+  },
+  {
+    "name": "Youaltepuztli",
+    "importance": "minor",
+    "keywords": "death, night, monster, soul"
+  },
+  {
+    "name": "Zacazontli",
+    "importance": "minor",
+    "keywords": "trade, travel, minor"
   }
 ]

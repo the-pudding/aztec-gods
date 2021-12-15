@@ -76,7 +76,7 @@ relationships <- rel_clean %>% mutate(is_unique = target %in% source) %>%
   filter(is_unique == TRUE) %>%
   select(1:3)
 
-write(toJSON(relationships, pretty = T), "./tidy/relationships.json")
+write(toJSON(relationships, pretty = T), "./tidy/relations.json")
 
 
 
