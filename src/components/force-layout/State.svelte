@@ -34,16 +34,18 @@
     chartWidth: width - margins.left - margins.right,
     chartHeight: height - margins.top - margins.bottom
   };
+  const getRelationType = (d) => d.relation;
+  const getName = (d) => d.name;
 
   $: linkTypeColorScale = scaleOrdinal()
-    .domain([...new Set(links.map((d) => d.Type))])
+    .domain([...new Set(links.map((d) => getRelationType(d)))])
     .range(schemeCategory10);
 
   $: godTypeColorScale = scaleOrdinal()
-    .domain([...new Set(points.map((d) => d.Type))])
+    .domain([...new Set(points.map((d) => getRelationType(d)))])
     .range(["#4bc5ca", "#F14057", "#FD9126", "#fbe237"]);
 
-  $: godDomain = [...new Set(points.map((d) => d.id))];
+  $: godDomain = [...new Set(points.map((d) => getName(d)))];
 
   // Simulation
   const initialNodes = points.map((d) => ({ ...d }));
@@ -67,7 +69,7 @@
       )
       .force(
         "link",
-        forceLink(links).id((d) => d.id)
+        forceLink(links).id((d) => getName(d))
       )
       .alpha(1)
       .restart();
@@ -86,6 +88,8 @@
   // Context
   $: context = {
     bounds,
+    getName,
+    getRelationType,
     points,
     links,
     radius: RADIUS,

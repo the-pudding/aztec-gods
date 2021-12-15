@@ -4,6 +4,8 @@
   const {
     bounds,
     points,
+    getName,
+    getRelationType,
     interaction,
     links,
     radius,
@@ -21,21 +23,21 @@
         class="god"
         style="width:{radius * 2}px; height:{radius *
           2}px; left:{point.x}px; top:{point.y}px; border: {$interaction &&
-        $interaction === point.id
+        $interaction === getName(point)
           ? 4
           : 1}px solid {godTypeColorScale(
-          point.Type
-        )}; background-image: url('/aztec-gods/img/{point.id}.jpg'); 
+          getRelationType(point)
+        )}; background-image: url('/img/{getName(point)}.jpg'); 
         "
       >
-        {point.id}
+        {getName(point)}
       </div>
     {/each}
   </div>
 </div>
 
 <!-- background:{$interaction &&
-  $interaction === point.id
+  $interaction === getName(point)
     ? godTypeColorScale(point.Type)
     : '#efefef'}; -->
 <style>

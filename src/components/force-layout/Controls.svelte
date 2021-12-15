@@ -1,7 +1,8 @@
 <script>
   import { getContext } from "svelte";
 
-  const { points, interaction, godTypeColorScale, linkTypeColorScale } = getContext("chart-state");
+  const { points, interaction, getName, godTypeColorScale, linkTypeColorScale } =
+    getContext("chart-state");
 </script>
 
 <div class="wrapper">
@@ -9,8 +10,8 @@
     <span>Highlight a God:</span>
     {#each points as god}
       <button
-        on:click={() => interaction.highlight(god.id)}
-        style="color: {godTypeColorScale(god.Type)}">{god.id}</button
+        on:click={() => interaction.highlight(getName(god))}
+        style="color: {godTypeColorScale(god.Type)}">{getName(god)}</button
       >
     {/each}
   </div>

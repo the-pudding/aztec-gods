@@ -16,7 +16,7 @@
 
 <g transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
   <g transform={`translate(${bounds.chartWidth / 2}, ${bounds.chartHeight / 2})`}>
-    {#each $mutableLinks as link}
+    <!-- {#each $mutableLinks as link}
       <line
         x1={link.source.x}
         y1={link.source.y}
@@ -28,7 +28,7 @@
           ? 3
           : 1}
       />
-    {/each}
+    {/each} -->
     <!-- {#each $mutableNodes as point}
       <g transform={`translate(${point.x}, ${point.y})`}>
         <circle
