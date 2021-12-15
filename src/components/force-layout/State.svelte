@@ -34,9 +34,12 @@
     chartWidth: width - margins.left - margins.right,
     chartHeight: height - margins.top - margins.bottom
   };
+
+  // Accessors
   const getRelationType = (d) => d.relation;
   const getName = (d) => d.name;
-
+  const getImportance = (d) => d.importance;
+  // Scales
   $: linkTypeColorScale = scaleOrdinal()
     .domain([...new Set(links.map((d) => getRelationType(d)))])
     .range(schemeCategory10);
@@ -46,6 +49,8 @@
     .range(["#4bc5ca", "#F14057", "#FD9126", "#fbe237"]);
 
   $: godDomain = [...new Set(points.map((d) => getName(d)))];
+
+  $: radiusScale = scaleOrdinal().domain(["main", "second", "minor"]).range([50, 10, 4]);
 
   // Simulation
   const initialNodes = points.map((d) => ({ ...d }));
@@ -64,7 +69,7 @@
       .force(
         "collide",
         forceCollide()
-          .radius(RADIUS + 6)
+          .radius((d) => radiusScale(getImportance(d)))
           .iterations(3)
       )
       .force(
@@ -90,12 +95,14 @@
     bounds,
     getName,
     getRelationType,
+    getImportance,
     points,
     links,
     radius: RADIUS,
     linkTypeColorScale,
     godTypeColorScale,
     godDomain,
+    radiusScale,
     mutableNodes: _mutableNodes,
     mutableLinks: _mutableLinks,
     interaction
