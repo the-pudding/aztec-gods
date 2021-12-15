@@ -3,15 +3,36 @@
 
   import { getContext } from "svelte";
 
-  const { points, interaction, getName, getImportance, godColorScale, linkTypeColorScale } =
-    getContext("chart-state");
+  const {
+    points,
+    interaction,
+    keyword,
+    keywords,
+    getName,
+    getImportance,
+    godColorScale,
+    linkTypeColorScale
+  } = getContext("chart-state");
 
   $: grouped = groups(points, (d) => getImportance(d));
+
+  $: console.log($keyword);
 </script>
 
 <div class="wrapper">
   <div>
-    <span><strong>{$interaction}</strong></span>
+    <h3>
+      Keywords <small
+        style="text-decoration: underline; cursor: pointer;"
+        on:click={() => keyword.lowlight()}>unset</small
+      >
+    </h3>
+    {#each keywords as k}
+      <button on:click={() => keyword.highlight(k)}>{k}</button>
+    {/each}
+
+    <h3>Gods <small>{$interaction}</small></h3>
+
     {#each grouped as group}
       <div>
         {#each group[1].sort((a, b) => ascending(a, b)) as god}
@@ -35,7 +56,9 @@
 
 <style>
   .wrapper {
-    padding: 0.4rem;
+    padding: 0.5rem;
+    max-height: 100vh;
+    overflow: scroll;
   }
   span {
     font-weight: 300;

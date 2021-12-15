@@ -16,13 +16,17 @@
     godColorScale,
     mutableNodes,
     radiusScale,
-    mutableLinks
+    mutableLinks,
+    keyword
   } = getContext("chart-state");
 
   $: rad = radiusScale(getImportance(god));
   $: name = getName(god);
   $: color = godColorScale(getImportance(god));
   $: showName = getImportance(god) === "main";
+
+  $: keywordHighlight = god[$keyword] === "1";
+  $: opacity = $keyword && !keywordHighlight ? 0.1 : 1;
 </script>
 
 <div
@@ -30,7 +34,10 @@
   style="width:{rad}px; height:{rad}px; left:{god.x}px; top:{god.y}px; border: {$interaction &&
   $interaction === name
     ? 4
-    : 1}px solid {color}; background-image: url('/img/{name}.jpg');"
+    : 1}px solid {color}; 
+    opacity:{opacity};
+background-image: url('/img/{name}.jpg');
+    "
   on:mouseenter={() => interaction.highlight(getName(god))}
   on:focus={() => interaction.highlight(getName(god))}
   on:mouseout={() => interaction.highlight(undefined)}
