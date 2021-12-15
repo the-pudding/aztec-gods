@@ -10,10 +10,11 @@ gods <- raw %>%
 
 gods_with_keywords <- gods %>%
   separate_rows(keywords, sep = ",") %>%
-  mutate(keywords = str_squish(keywords), hasKeyword = TRUE) %>% 
-  pivot_wider(names_from = "keywords", values_from = hasKeyword, values_fill = FALSE)
+  mutate(keywords = str_squish(keywords), hasKeyword = "1") %>% 
+  pivot_wider(names_from = "keywords", values_from = "hasKeyword")
   
 write(toJSON(gods, pretty = T), "./tidy/gods.json")
+write(toJSON(gods_with_keywords, pretty = T, factor = "string", auto_unbox = T, na = "string"), "./tidy/gods_details.json")
 
 
 # Individual relationships
