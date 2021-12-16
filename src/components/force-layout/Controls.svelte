@@ -4,6 +4,7 @@
   import { getContext } from "svelte";
 
   const {
+    bounds,
     points,
     interaction,
     keyword,
@@ -15,11 +16,9 @@
   } = getContext("chart-state");
 
   $: grouped = groups(points, (d) => getImportance(d));
-
-  $: console.log($keyword);
 </script>
 
-<div class="wrapper">
+<div class="wrapper" style="height:{bounds.height}px;">
   <div>
     <h3>
       Keywords <small

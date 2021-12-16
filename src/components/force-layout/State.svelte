@@ -16,7 +16,7 @@
   import links from "../../data/gods/tidy/relations.json";
 
   let width = 0;
-  const height = 800; //width / 2;
+  const height = 600; //width / 2;
 
   $: center = [width / 2, height / 2];
   const RADIUS = 35;
@@ -54,7 +54,6 @@
   $: radiusScale = scaleOrdinal().domain(["main", "second", "minor"]).range([60, 16, 6]);
 
   $: keywords = Object.keys(points[0]).slice(2, points.length);
-  $: console.log("keywords", keywords);
 
   // Simulation
   const initialNodes = points.map((d) => ({ ...d }));
@@ -133,6 +132,7 @@
   <div class="chart-wrapper" bind:clientWidth={width}>
     {#if width > 0}
       <svg class="chart-svg" width={bounds.width} height={bounds.height}>
+        <!-- <rect x={0} y={0} width={bounds.width} height={bounds.height} fill="#efefef" /> -->
         <slot name="chart-svg" />
       </svg>
       <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
@@ -145,7 +145,7 @@
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: 0.5fr 3fr;
+    grid-template-columns: 0.7fr 3fr;
     margin: 1rem;
     position: relative;
     height: 100vh;

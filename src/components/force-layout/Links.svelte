@@ -12,7 +12,8 @@
     linkTypeColorScale,
     godColorScale,
     mutableNodes,
-    mutableLinks
+    mutableLinks,
+    keyword
   } = getContext("chart-state");
 </script>
 
@@ -26,6 +27,7 @@
         y2={link.target.y}
         stroke={linkTypeColorScale(getRelationType(link))}
         stroke-opacity={$interaction &&
+        !$keyword &&
         ($interaction === getName(link.source) || $interaction === getName(link.target))
           ? 1
           : 0}
