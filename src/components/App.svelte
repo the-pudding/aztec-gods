@@ -1,7 +1,18 @@
-<script>
-  import Demo from "$components/helpers/Demo.svelte";
-  import Footer from "$components/Footer.svelte";
+<script context="module">
+  export const prerender = true;
 </script>
 
-<Demo />
-<!-- <Footer /> -->
+<script>
+  import Links from "$components/force-layout/Links.svelte";
+  import State from "$components/force-layout/State.svelte";
+  import Gods from "$components/force-layout/Gods.svelte";
+  import Controls from "$components/force-layout/Controls.svelte";
+</script>
+
+<main>
+  <State>
+    <Links slot="chart-svg" />
+    <Gods slot="chart-html" />
+    <Controls slot="controls" />
+  </State>
+</main>
