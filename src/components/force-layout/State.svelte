@@ -7,7 +7,8 @@
     forceLink,
     scaleOrdinal,
     scaleTime,
-    schemeCategory10
+    schemeCategory10,
+    forceCenter
   } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
@@ -79,16 +80,7 @@
         "link",
         forceLink(links).id((d) => getName(d))
       )
-      // .force("bouding-box", () => {
-      //   $_mutableNodes.forEach((node) => {
-      //     let radius = radiusScale(getImportance(d)) * 0.8;
-
-      //     node.x = Math.max(node.x, bounds.margins.left + radius);
-      //     node.x = Math.min(node.x, bounds.chartWidth - radius);
-      //     node.y = Math.max(node.y, bounds.margins.top + radius);
-      //     node.y = Math.min(node.y, bounds.chartHeight - radius);
-      //   });
-      // })
+      .force("center", forceCenter())
       .alpha(1)
       .restart();
   }
