@@ -4,3 +4,7 @@ node_modules
 /.svelte-kit
 /build
 /functions
+/docs
+
+.Rhistory
+.RData

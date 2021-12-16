@@ -7,15 +7,16 @@
     forceLink,
     scaleOrdinal,
     scaleTime,
-    schemeCategory10
+    schemeCategory10,
+    forceCenter
   } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
-  import points from "../../data/gods/tidy/gods.json";
+  import points from "../../data/gods/tidy/gods_details.json";
   import links from "../../data/gods/tidy/relations.json";
 
   let width = 0;
-  const height = 500; //width / 2;
+  const height = 600; //width / 2;
 
   $: center = [width / 2, height / 2];
   const RADIUS = 35;
@@ -35,15 +36,24 @@
     chartHeight: height - margins.top - margins.bottom
   };
 
+  // Accessors
+  const getRelationType = (d) => d.relation;
+  const getName = (d) => d.name;
+  const getImportance = (d) => d.importance;
+  // Scales
   $: linkTypeColorScale = scaleOrdinal()
-    .domain([...new Set(links.map((d) => d.Type))])
+    .domain([...new Set(links.map((d) => getRelationType(d)))])
     .range(schemeCategory10);
 
-  $: godTypeColorScale = scaleOrdinal()
-    .domain([...new Set(points.map((d) => d.Type))])
+  $: godColorScale = scaleOrdinal()
+    .domain(["main", "second", "minor"])
     .range(["#4bc5ca", "#F14057", "#FD9126", "#fbe237"]);
 
-  $: godDomain = [...new Set(points.map((d) => d.id))];
+  $: godDomain = [...new Set(points.map((d) => getName(d)))];
+
+  $: radiusScale = scaleOrdinal().domain(["main", "second", "minor"]).range([60, 16, 6]);
+
+  $: keywords = Object.keys(points[0]).slice(2, points.length);
 
   // Simulation
   const initialNodes = points.map((d) => ({ ...d }));
@@ -62,13 +72,14 @@
       .force(
         "collide",
         forceCollide()
-          .radius(RADIUS + 6)
+          .radius((d) => radiusScale(getImportance(d)) * 0.8)
           .iterations(3)
       )
       .force(
         "link",
-        forceLink(links).id((d) => d.id)
+        forceLink(links).id((d) => getName(d))
       )
+      .force("center", forceCenter())
       .alpha(1)
       .restart();
   }
@@ -83,26 +94,45 @@
   };
   const interaction = createInteraction();
 
+  // Keywords
+  const createKeywordHighlight = () => {
+    const { subscribe, set } = writable(undefined);
+    return {
+      subscribe,
+      highlight: (d) => set(d),
+      lowlight: () => set(undefined)
+    };
+  };
+  const keyword = createKeywordHighlight();
+
   // Context
   $: context = {
     bounds,
+    getName,
+    getRelationType,
+    getImportance,
+    keywords,
     points,
     links,
     radius: RADIUS,
     linkTypeColorScale,
-    godTypeColorScale,
+    godColorScale,
     godDomain,
+    radiusScale,
     mutableNodes: _mutableNodes,
     mutableLinks: _mutableLinks,
-    interaction
+    interaction,
+    keyword
   };
   $: setContext("chart-state", context);
 </script>
 
 <div class="wrapper">
+  <div class="controls"><slot name="controls" /></div>
   <div class="chart-wrapper" bind:clientWidth={width}>
     {#if width > 0}
       <svg class="chart-svg" width={bounds.width} height={bounds.height}>
+        <!-- <rect x={0} y={0} width={bounds.width} height={bounds.height} fill="#efefef" /> -->
         <slot name="chart-svg" />
       </svg>
       <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
@@ -110,15 +140,15 @@
       </div>
     {/if}
   </div>
-  <div class="controls"><slot name="controls" /></div>
 </div>
 
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 0.7fr 3fr;
     margin: 1rem;
     position: relative;
+    height: 100vh;
   }
 
   .chart-html,

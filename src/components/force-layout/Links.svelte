@@ -5,12 +5,15 @@
     bounds,
     points,
     interaction,
+    getName,
+    getRelationType,
     links,
     radius,
     linkTypeColorScale,
-    godTypeColorScale,
+    godColorScale,
     mutableNodes,
-    mutableLinks
+    mutableLinks,
+    keyword
   } = getContext("chart-state");
 </script>
 
@@ -22,9 +25,14 @@
         y1={link.source.y}
         x2={link.target.x}
         y2={link.target.y}
-        stroke={linkTypeColorScale(link.Type)}
+        stroke={linkTypeColorScale(getRelationType(link))}
+        stroke-opacity={$interaction &&
+        !$keyword &&
+        ($interaction === getName(link.source) || $interaction === getName(link.target))
+          ? 1
+          : 0}
         stroke-width={$interaction &&
-        ($interaction === link.source.id || $interaction === link.target.id)
+        ($interaction === getName(link.source) || $interaction === getName(link.target))
           ? 3
           : 1}
       />
@@ -36,9 +44,9 @@
           cx={0}
           cy={0}
           fill={$interaction && $interaction === point.id
-            ? godTypeColorScale(point.Type)
+            ? godColorScale(point.Type)
             : "#efefef"}
-          stroke={godTypeColorScale(point.Type)}
+          stroke={godColorScale(point.Type)}
           stroke-width={2}
         />
         <image x={0} y={0} href="../../img/Quetzalcoatl.jpg" height={radius} width={radius} />

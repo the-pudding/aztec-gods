@@ -1,17 +1,46 @@
 <script>
+  import { ascending, groups } from "d3";
+
   import { getContext } from "svelte";
 
-  const { points, interaction, godTypeColorScale, linkTypeColorScale } = getContext("chart-state");
+  const {
+    bounds,
+    points,
+    interaction,
+    keyword,
+    keywords,
+    getName,
+    getImportance,
+    godColorScale,
+    linkTypeColorScale
+  } = getContext("chart-state");
+
+  $: grouped = groups(points, (d) => getImportance(d));
 </script>
 
-<div class="wrapper">
+<div class="wrapper" style="height:{bounds.height}px;">
   <div>
-    <span>Highlight a God:</span>
-    {#each points as god}
-      <button
-        on:click={() => interaction.highlight(god.id)}
-        style="color: {godTypeColorScale(god.Type)}">{god.id}</button
+    <h3>
+      Keywords <small
+        style="text-decoration: underline; cursor: pointer;"
+        on:click={() => keyword.lowlight()}>unset</small
       >
+    </h3>
+    {#each keywords as k}
+      <button on:click={() => keyword.highlight(k)}>{k}</button>
+    {/each}
+
+    <h3>Gods <small>{$interaction}</small></h3>
+
+    {#each grouped as group}
+      <div>
+        {#each group[1].sort((a, b) => ascending(a, b)) as god}
+          <button
+            on:click={() => interaction.highlight(getName(god))}
+            style="color: {godColorScale(getImportance(god))}">{getName(god)}</button
+          >
+        {/each}
+      </div>
     {/each}
   </div>
   <div style="margin-top: 0.5rem;">
@@ -26,14 +55,17 @@
 
 <style>
   .wrapper {
-    padding: 0.4rem;
+    padding: 0.5rem;
+    max-height: 100vh;
+    overflow: scroll;
   }
   span {
-    font-weight: 600;
+    font-weight: 300;
   }
   button {
-    padding: 0.2rem 0.4rem;
-    margin: 0 0.2rem 0.2rem 0;
+    font-size: 0.8rem;
+    padding: 0.1rem 0.2rem;
+    margin: 0 0.1rem 0.1rem 0;
     background: #fff;
   }
 </style>
