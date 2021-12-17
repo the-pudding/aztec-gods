@@ -40,6 +40,7 @@
   const getRelationType = (d) => d.relation;
   const getName = (d) => d.name;
   const getImportance = (d) => d.importance;
+
   // Scales
   $: linkTypeColorScale = scaleOrdinal()
     .domain([...new Set(links.map((d) => getRelationType(d)))])
@@ -55,34 +56,6 @@
 
   $: keywords = Object.keys(points[0]).slice(2, points.length);
 
-  // Simulation
-  const initialNodes = points.map((d) => ({ ...d }));
-  const simulation = forceSimulation(initialNodes);
-
-  const _mutableNodes = writable([]);
-  const _mutableLinks = writable([]);
-
-  simulation.on("tick", () => {
-    $_mutableNodes = [...simulation.nodes()];
-    $_mutableLinks = [...links];
-  });
-
-  $: {
-    simulation
-      .force(
-        "collide",
-        forceCollide()
-          .radius((d) => radiusScale(getImportance(d)) * 0.8)
-          .iterations(3)
-      )
-      .force(
-        "link",
-        forceLink(links).id((d) => getName(d))
-      )
-      .force("center", forceCenter())
-      .alpha(1)
-      .restart();
-  }
   // Interaction
   const createInteraction = () => {
     const { subscribe, set } = writable(undefined);
@@ -105,6 +78,50 @@
   };
   const keyword = createKeywordHighlight();
 
+  // Links
+  const createLinkHighlight = () => {
+    const { subscribe, set } = writable(undefined);
+    return {
+      subscribe,
+      highlight: (d) => set(d),
+      lowlight: () => set(undefined)
+    };
+  };
+  const linkHighlight = createKeywordHighlight();
+
+  // Simulation
+  $: initialLinks = links.filter((link) =>
+    $linkHighlight ? getRelationType(link) === $linkHighlight : true
+  );
+  const initialNodes = points.map((d) => ({ ...d }));
+  const simulation = forceSimulation(initialNodes);
+
+  const _mutableNodes = writable([]);
+  const _mutableLinks = writable([]);
+
+  simulation.on("tick", () => {
+    $_mutableNodes = [...simulation.nodes()];
+    $_mutableLinks = [...initialLinks];
+  });
+
+  $: {
+    simulation
+      .force(
+        "collide",
+        forceCollide()
+          .radius((d) => radiusScale(getImportance(d)) * 0.8)
+          .iterations(3)
+      )
+      .force(
+        "link",
+        forceLink(initialLinks).id((d) => getName(d))
+        // .distance((d) => (getRelationType(d) === "authority" ? 30 : 10))
+      )
+      .force("center", forceCenter())
+      .alpha(1)
+      .restart();
+  }
+
   // Context
   $: context = {
     bounds,
@@ -122,7 +139,8 @@
     mutableNodes: _mutableNodes,
     mutableLinks: _mutableLinks,
     interaction,
-    keyword
+    keyword,
+    linkHighlight
   };
   $: setContext("chart-state", context);
 </script>
@@ -156,6 +174,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    overflow: visible;
   }
   .controls {
     background: #f4f4f4;

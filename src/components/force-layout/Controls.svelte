@@ -8,6 +8,7 @@
     points,
     interaction,
     keyword,
+    linkHighlight,
     keywords,
     getName,
     getImportance,
@@ -21,6 +22,25 @@
 <div class="wrapper" style="height:{bounds.height}px;">
   <div>
     <h3>
+      Links <small
+        style="text-decoration: underline; cursor: pointer;"
+        on:click={() => linkHighlight.lowlight()}>unset</small
+      >
+    </h3>
+    {#each linkTypeColorScale.domain() as linkType}
+      <button
+        on:click={() => linkHighlight.highlight(linkType)}
+        style="color: {$linkHighlight === linkType
+          ? '#fff'
+          : linkTypeColorScale(linkType)}; background: {$linkHighlight === linkType
+          ? linkTypeColorScale(linkType)
+          : '#fff'}"
+      >
+        {linkType}
+      </button>
+    {/each}
+
+    <h3>
       Keywords <small
         style="text-decoration: underline; cursor: pointer;"
         on:click={() => keyword.lowlight()}>unset</small
@@ -31,7 +51,6 @@
     {/each}
 
     <h3>Gods <small>{$interaction}</small></h3>
-
     {#each grouped as group}
       <div>
         {#each group[1].sort((a, b) => ascending(a, b)) as god}
@@ -40,14 +59,6 @@
             style="color: {godColorScale(getImportance(god))}">{getName(god)}</button
           >
         {/each}
-      </div>
-    {/each}
-  </div>
-  <div style="margin-top: 0.5rem;">
-    <span>Links:</span>
-    {#each linkTypeColorScale.domain() as linkType}
-      <div style="color: {linkTypeColorScale(linkType)}">
-        {linkType}
       </div>
     {/each}
   </div>
