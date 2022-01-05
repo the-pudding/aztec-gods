@@ -78,8 +78,9 @@ relationships <- rel_clean %>% mutate(is_unique = target %in% source) %>%
   select(1:3)
 
 write(toJSON(relationships, pretty = T), "./tidy/relations.json")
-
-
+write.csv(not_sure, "./problems/not_sure.csv")
+write.csv(details, "./problems/details.csv")
+write.csv(weird_names, "./problems/not_clean.csv")
 
 #############################
 ## OLD ## From Notion #######
