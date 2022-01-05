@@ -1,7 +1,7 @@
 library(tidyverse)
 library(jsonlite)
 
-raw <- read.csv("./raw/light-db.csv", sep=";")
+raw <- read.csv("./raw/light-db.tsv", sep="\t")
 gods <- raw %>% 
   select("name" = "Name", 
          "importance" = "Importance..dark.green....main.gods..light.green....second.rank.gods..orange....minor.gods",
@@ -13,12 +13,12 @@ gods_with_keywords <- gods %>%
   mutate(keywords = str_squish(keywords), hasKeyword = "1") %>% 
   pivot_wider(names_from = "keywords", values_from = "hasKeyword")
   
-write(toJSON(gods, pretty = T), "./tidy/gods.json")
-write(toJSON(gods_with_keywords, pretty = T, factor = "string", auto_unbox = T, na = "string"), "./tidy/gods_details.json")
+# write(toJSON(gods, pretty = T), "./tidy/gods.json")
+# write(toJSON(gods_with_keywords, pretty = T, factor = "string", auto_unbox = T, na = "string"), "./tidy/gods_details.json")
 
 
 # Individual relationships
-light <- raw %>%
+all_rel <- raw %>%
   select(2, 7:11) %>%
   rename("submission" = "Submission.relationship..son.daughter.of.OR.killed.by.",
          "cooperation" = "Equal.relationship..sister.brother.OR.cooperation.help.from.",
@@ -26,31 +26,31 @@ light <- raw %>%
          "authority" = "Authority.on..father.mother.of.OR.killed.",
          "aspect" = "Aspects..other.gods.that.can.change.into.or.him.her.or.share.similar.domains.")
 
-submission <- light %>%
-  select(1, 2) %>% 
-  separate_rows(submission, sep = ", ") %>%
-  filter(submission != "") %>%
-  mutate(relation = "submission") %>%
-  rename("source" = "Name", "target" = "submission")
-cooperation <- light %>%
+# submission <- all_rel %>%
+#   select(1, 2) %>% 
+#   separate_rows(submission, sep = ", ") %>%
+#   filter(submission != "") %>%
+#   mutate(relation = "submission") %>%
+#   rename("source" = "Name", "target" = "submission")
+cooperation <- all_rel %>%
   select(1, 3) %>% 
   separate_rows(cooperation, sep = ", ") %>%
   filter(cooperation != "") %>%
   mutate(relation = "cooperation") %>%
   rename("source" = "Name", "target" = "cooperation")
-union <- light %>%
+union <- all_rel %>%
   select(1, 4) %>% 
   separate_rows(union, sep = ", ") %>%
   filter(union != "") %>%
   mutate(relation = "union") %>%
   rename("source" = "Name", "target" = "union")
-authority <- light %>%
+authority <- all_rel %>%
   select(1, 5) %>% 
   separate_rows(authority, sep = ", ") %>%
   filter(authority != "") %>%
   mutate(relation = "authority") %>%
   rename("source" = "Name", "target" = "authority")
-aspect <- light %>%
+aspect <- all_rel %>%
   select(1, 6) %>% 
   separate_rows(aspect, sep = ", ") %>%
   filter(aspect != "") %>%
@@ -58,7 +58,7 @@ aspect <- light %>%
   rename("source" = "Name", "target" = "aspect")
 
 # All relationships
-rel <- bind_rows(submission, cooperation, union, authority, aspect)
+rel <- bind_rows(cooperation, union, authority, aspect)
 not_sure <- rel %>% filter(grepl("([?$])", target))
 details <-  rel %>% filter(grepl("([.(.)])", target))
 
