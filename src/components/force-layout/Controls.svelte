@@ -70,9 +70,6 @@
     max-height: 100vh;
     overflow: scroll;
   }
-  span {
-    font-weight: 300;
-  }
   button {
     font-size: 0.8rem;
     padding: 0.1rem 0.2rem;

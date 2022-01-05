@@ -12,7 +12,7 @@
   } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
-  import points from "../../data/gods/tidy/gods_details.json";
+  import points from "../../data/gods/tidy/gods.json";
   import links from "../../data/gods/tidy/relations.json";
 
   let width = 0;

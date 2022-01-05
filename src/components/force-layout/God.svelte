@@ -25,7 +25,7 @@
   $: color = godColorScale(getImportance(god));
   $: showName = getImportance(god) === "main";
 
-  $: keywordHighlight = god[$keyword] === "1";
+  $: keywordHighlight = god[$keyword] >= 1;
   $: opacity = $keyword && !keywordHighlight ? 0.1 : 1;
 </script>
 
