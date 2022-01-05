@@ -1,17 +1,64 @@
 library(tidyverse)
 library(jsonlite)
 
-raw <- read.csv("./raw/light-db.tsv", sep="\t")
-gods <- raw %>% 
+gods_raw <- read.csv("./raw/light-db.tsv", sep="\t")
+gods_basic <- gods_raw %>% 
   select("name" = "Name", 
          "importance" = "Importance..dark.green....main.gods..light.green....second.rank.gods..orange....minor.gods",
-         "keywords" = "Keywords") %>%
+         "keyword" = "Keywords") %>%
   mutate(name = str_squish(name))
 
-gods_with_keywords <- gods %>%
-  separate_rows(keywords, sep = ",") %>%
-  mutate(keywords = str_squish(keywords), hasKeyword = "1") %>% 
-  pivot_wider(names_from = "keywords", values_from = "hasKeyword")
+# Keywords ("Domains")
+keywords_raw <- read.csv("./raw/keywords.tsv", sep="\t", header=F) %>%
+  rename("domain" = V1, "keyword" = V2)
+keywords <- keywords_raw %>% 
+  separate_rows(keyword, sep = ",") %>%
+  mutate(keyword = str_squish(keyword))
+
+kw_animals <- keywords %>% filter(domain == "Animals")
+kw_celestial <- keywords %>% filter(domain == "Celestial")
+kw_trade <- keywords %>% filter(domain == "Craft and trade")
+kw_death <- keywords %>% filter(domain == "Death")
+kw_violence <- keywords %>% filter(domain == "Evil and violence")
+kw_food <- keywords %>% filter(domain == "Food")
+kw_knowledge <- keywords %>% filter(domain == "Knowledge")
+kw_fertility <- keywords %>% filter(domain == "Life and fertility")
+kw_excess <- keywords %>% filter(domain == "Moral values and excess")
+kw_nature <- keywords %>% filter(domain == "Nature")
+kw_pleasure <- keywords %>% filter(domain == "Pleasure")
+
+gods_with_domains <- gods_basic %>%
+  separate_rows(keyword, sep = ",") %>%
+  mutate(keyword = str_squish(keyword)) %>%
+  mutate("animals" = ifelse(keyword %in% kw_animals$keyword, 1, 0),
+         "celestial" = ifelse(keyword %in% kw_celestial$keyword, 1, 0),
+         "trade" = ifelse(keyword %in% kw_trade$keyword, 1, 0),
+         "death" = ifelse(keyword %in% kw_death$keyword, 1, 0),
+         "violence" = ifelse(keyword %in% kw_violence$keyword, 1, 0),
+         "food" = ifelse(keyword %in% kw_food$keyword, 1, 0),
+         "knowledge" = ifelse(keyword %in% kw_knowledge$keyword, 1, 0),
+         "fertility" = ifelse(keyword %in% kw_fertility$keyword, 1, 0),
+         "excess" = ifelse(keyword %in% kw_excess$keyword, 1, 0),
+         "nature" = ifelse(keyword %in% kw_nature$keyword, 1, 0),
+         "pleasure" = ifelse(keyword %in% kw_pleasure$keyword, 1, 0))
+
+
+gods <- gods_with_domains %>% 
+  select(1, 2, 4:14) %>%
+  group_by(name) %>%
+  summarize(importance = first(importance), 
+            animals = sum(animals),
+            celestial = sum(celestial),
+            "trade" = sum(trade),
+            death = sum(death),
+            "violence" = sum(violence),
+            food = sum(food),
+            knowledge = sum(knowledge),
+            "fertility" = sum(fertility),
+            "excess" = sum(excess),
+            nature = sum(nature),
+            pleasure = sum(pleasure))
+
   
 # write(toJSON(gods, pretty = T), "./tidy/gods.json")
 # write(toJSON(gods_with_keywords, pretty = T, factor = "string", auto_unbox = T, na = "string"), "./tidy/gods_details.json")
@@ -81,18 +128,3 @@ write(toJSON(relationships, pretty = T), "./tidy/relations.json")
 write.csv(not_sure, "./problems/not_sure.csv")
 write.csv(details, "./problems/details.csv")
 write.csv(weird_names, "./problems/not_clean.csv")
-
-#############################
-## OLD ## From Notion #######
-gods_raw <- read.csv("./raw/notion/gods.csv")
-gods <- gods_raw %>% select(2:7) %>% rename("id" = Name)
-
-relations_raw <- read.csv("./raw/notion/relations.csv")
-relations <- relations_raw %>% select(5,6,4)
-
-# Exports
-#json <- toJSON(gods, pretty = T)
-#write(json, "./tidy/gods.json")
-
-#relations_json <- toJSON(relations, pretty = T)
-#write(relations_json, "./tidy/relations.json")
