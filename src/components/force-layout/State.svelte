@@ -51,7 +51,7 @@
 
   $: godColorScale = scaleOrdinal()
     .domain(typeScale)
-    .range(["#008AA1", "#C74300", "#5C8A73", "#B08699", "#D28360"]);
+    .range(["#008AA1", "#D28360", "#5C8A73", "#B08699", "#C74300"]);
 
   $: godDomain = [...new Set(points.map((d) => getName(d)))];
 
