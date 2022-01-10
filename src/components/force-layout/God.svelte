@@ -23,7 +23,7 @@
   $: rad = radiusScale(getImportance(god));
   $: name = getName(god);
   $: color = godColorScale(getImportance(god));
-  $: showName = getImportance(god) === "main";
+  $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
 
   $: keywordHighlight = god[$keyword] >= 1;
   $: opacity = $keyword && !keywordHighlight ? 0.1 : 1;
@@ -31,10 +31,10 @@
 
 <div
   class="god"
-  style="width:{rad}px; height:{rad}px; left:{god.x}px; top:{god.y}px; border: {$interaction &&
-  $interaction === name
-    ? 4
-    : 1}px solid {color}; 
+  style="width:{rad}px; height:{rad}px; left:{god.x}px; top:{god.y}px; border: {isMain
+    ? 6
+    : 0}px solid {color}; 
+    background-color: {isMain ? 'none' : color};
     opacity:{opacity};
 background-image: url('/aztec-gods/img/{name}.jpg');
     "
@@ -43,9 +43,13 @@ background-image: url('/aztec-gods/img/{name}.jpg');
   on:mouseout={() => interaction.highlight(undefined)}
   on:blur={() => interaction.highlight(undefined)}
 >
-  {showName ? name : ""}
+  {isMain ? name : ""}
 </div>
 
+<!-- $interaction &&
+  $interaction === name
+    ? 8
+    : 6 -->
 <style>
   .god {
     background: #fff;
@@ -53,7 +57,7 @@ background-image: url('/aztec-gods/img/{name}.jpg');
 
     position: absolute;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
+    border-radius: 2px;
     display: flex;
     justify-content: center;
     align-items: center;

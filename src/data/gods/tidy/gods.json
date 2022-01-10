@@ -1,7 +1,7 @@
 [
   {
     "name": "Acolnahuacatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -16,7 +16,7 @@
   },
   {
     "name": "Acuecucyoticihuati",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -31,7 +31,7 @@
   },
   {
     "name": "Acxomocuil",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -46,7 +46,7 @@
   },
   {
     "name": "Ahkinshok",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -61,7 +61,7 @@
   },
   {
     "name": "Ahuiateteo",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -76,7 +76,7 @@
   },
   {
     "name": "Ahuitzotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 6,
     "celestial": 0,
     "trade": 0,
@@ -91,7 +91,7 @@
   },
   {
     "name": "Amapan",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -106,7 +106,7 @@
   },
   {
     "name": "Amimitl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -121,7 +121,7 @@
   },
   {
     "name": "Atlacoya",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -136,7 +136,7 @@
   },
   {
     "name": "Atlaua",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -151,7 +151,7 @@
   },
   {
     "name": "Ayauhteotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -166,7 +166,7 @@
   },
   {
     "name": "Ayopechcatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -181,7 +181,7 @@
   },
   {
     "name": "Azcatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -196,7 +196,7 @@
   },
   {
     "name": "Camaxtli",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -211,7 +211,7 @@
   },
   {
     "name": "Ce Acati",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -221,12 +221,12 @@
     "knowledge": 0,
     "fertility": 0,
     "excess": 0,
-    "nature": 2,
+    "nature": 3,
     "pleasure": 0
   },
   {
     "name": "Centeotl",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 1,
@@ -241,7 +241,7 @@
   },
   {
     "name": "Centzon Huitznahua",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 5,
     "trade": 0,
@@ -256,7 +256,7 @@
   },
   {
     "name": "Centzon Totochtin",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -271,7 +271,7 @@
   },
   {
     "name": "Chalchiuhcihuatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -286,7 +286,7 @@
   },
   {
     "name": "Chalchiuhtecolotl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 1,
     "trade": 0,
@@ -301,7 +301,7 @@
   },
   {
     "name": "Chalchiuhtlatonac",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -316,7 +316,7 @@
   },
   {
     "name": "Chalchiuhtlicue",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -331,7 +331,7 @@
   },
   {
     "name": "Chalchiutotolin",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -346,7 +346,7 @@
   },
   {
     "name": "Chalmecacihuatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -361,7 +361,7 @@
   },
   {
     "name": "Chantico",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 2,
@@ -376,7 +376,7 @@
   },
   {
     "name": "Chicomecoatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -391,7 +391,7 @@
   },
   {
     "name": "Chiconahui Ehecatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -401,12 +401,12 @@
     "knowledge": 0,
     "fertility": 0,
     "excess": 0,
-    "nature": 1,
+    "nature": 2,
     "pleasure": 0
   },
   {
     "name": "Chiconahui Itzcuintli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -421,7 +421,7 @@
   },
   {
     "name": "Chimalma",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -436,7 +436,7 @@
   },
   {
     "name": "Cihuapipiltzin",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -451,7 +451,7 @@
   },
   {
     "name": "Cihuatecayotl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -466,7 +466,7 @@
   },
   {
     "name": "Cihuateteo",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -481,7 +481,7 @@
   },
   {
     "name": "Cinteteo",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -496,7 +496,7 @@
   },
   {
     "name": "Cipactli",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -511,7 +511,7 @@
   },
   {
     "name": "Cipactonal",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -526,7 +526,7 @@
   },
   {
     "name": "Citlalatonac",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 4,
     "trade": 0,
@@ -541,7 +541,7 @@
   },
   {
     "name": "Citlalicue",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -556,7 +556,7 @@
   },
   {
     "name": "Coatlicue",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 1,
@@ -571,7 +571,7 @@
   },
   {
     "name": "Cochimetl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -586,7 +586,7 @@
   },
   {
     "name": "Coyolxauhqui",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -601,7 +601,7 @@
   },
   {
     "name": "Coyotlinaual",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -616,7 +616,7 @@
   },
   {
     "name": "Cuaxolotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -631,7 +631,7 @@
   },
   {
     "name": "Ehecatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -646,7 +646,7 @@
   },
   {
     "name": "Huehuecoyotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -661,7 +661,7 @@
   },
   {
     "name": "Huehueteotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 2,
     "trade": 1,
@@ -676,7 +676,7 @@
   },
   {
     "name": "Huitzilopochtli",
-    "importance": "main",
+    "importance": "creation",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -691,7 +691,7 @@
   },
   {
     "name": "Huixtocihuatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -706,7 +706,7 @@
   },
   {
     "name": "Ilamatecuhtli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 1,
@@ -721,7 +721,7 @@
   },
   {
     "name": "Ilancueye",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -736,7 +736,7 @@
   },
   {
     "name": "Ilhuicamina",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -746,12 +746,12 @@
     "knowledge": 0,
     "fertility": 0,
     "excess": 0,
-    "nature": 0,
+    "nature": 1,
     "pleasure": 0
   },
   {
     "name": "Inta",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -761,12 +761,12 @@
     "knowledge": 0,
     "fertility": 0,
     "excess": 0,
-    "nature": 0,
+    "nature": 1,
     "pleasure": 0
   },
   {
     "name": "Itzaccihuatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -781,7 +781,7 @@
   },
   {
     "name": "Itzcuintli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -796,7 +796,7 @@
   },
   {
     "name": "Itzpapalotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -811,7 +811,7 @@
   },
   {
     "name": "Itztapaltotec",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -826,7 +826,7 @@
   },
   {
     "name": "Itztlacoliuhqui",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 2,
     "trade": 1,
@@ -841,7 +841,7 @@
   },
   {
     "name": "Itztli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -856,7 +856,7 @@
   },
   {
     "name": "Ixcozauhqui",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -871,7 +871,7 @@
   },
   {
     "name": "Ixcuina",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -886,7 +886,7 @@
   },
   {
     "name": "Ixnextli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -901,7 +901,7 @@
   },
   {
     "name": "Ixquimilli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 1,
@@ -916,7 +916,7 @@
   },
   {
     "name": "Ixquitecatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -931,7 +931,7 @@
   },
   {
     "name": "Ixtlilton",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -946,7 +946,7 @@
   },
   {
     "name": "Macuil Cozcacuahtli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -961,7 +961,7 @@
   },
   {
     "name": "Macuil Cuetzpalin",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -976,7 +976,7 @@
   },
   {
     "name": "Macuil Malinalli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -991,7 +991,7 @@
   },
   {
     "name": "Macuil Ocelotl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -1006,7 +1006,7 @@
   },
   {
     "name": "Macuil Tochtli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1021,7 +1021,7 @@
   },
   {
     "name": "Macuil Xochitl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1036,7 +1036,7 @@
   },
   {
     "name": "Malinalxochi",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -1051,7 +1051,7 @@
   },
   {
     "name": "Matlalcueitl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1066,7 +1066,7 @@
   },
   {
     "name": "Mayahuel",
-    "importance": "second",
+    "importance": "human",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1081,7 +1081,7 @@
   },
   {
     "name": "Metztli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1096,7 +1096,7 @@
   },
   {
     "name": "Micapetlacalli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1111,7 +1111,7 @@
   },
   {
     "name": "Mictlancihuatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1126,7 +1126,7 @@
   },
   {
     "name": "Mictlantecuhtli",
-    "importance": "main",
+    "importance": "elemental",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1141,7 +1141,7 @@
   },
   {
     "name": "Miquiztlitecuhtli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1156,7 +1156,7 @@
   },
   {
     "name": "Mixcoatl",
-    "importance": "main",
+    "importance": "human",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1171,7 +1171,7 @@
   },
   {
     "name": "Nanahuatzin",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1185,8 +1185,8 @@
     "pleasure": 0
   },
   {
-    "name": "Nappatecutli",
-    "importance": "second",
+    "name": "Nappatecuhtli",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 3,
@@ -1201,22 +1201,22 @@
   },
   {
     "name": "Naui oxomatli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
     "death": 0,
     "violence": 0,
-    "food": 0,
+    "food": 1,
     "knowledge": 0,
     "fertility": 1,
     "excess": 0,
-    "nature": 2,
+    "nature": 1,
     "pleasure": 0
   },
   {
     "name": "Nextepeua",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1231,7 +1231,7 @@
   },
   {
     "name": "Omacatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1246,7 +1246,7 @@
   },
   {
     "name": "Ome Tochtli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1261,52 +1261,52 @@
   },
   {
     "name": "Omecihuatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
     "death": 0,
     "violence": 0,
-    "food": 0,
+    "food": 2,
     "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
+    "fertility": 1,
+    "excess": 1,
     "nature": 2,
     "pleasure": 0
   },
   {
     "name": "Ometecuhtli",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
     "death": 0,
     "violence": 0,
-    "food": 0,
+    "food": 2,
     "knowledge": 0,
-    "fertility": 0,
+    "fertility": 1,
     "excess": 1,
     "nature": 1,
     "pleasure": 0
   },
   {
     "name": "Ometeotl",
-    "importance": "main",
+    "importance": "primordial",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
     "death": 0,
     "violence": 0,
-    "food": 1,
+    "food": 2,
     "knowledge": 0,
-    "fertility": 0,
+    "fertility": 1,
     "excess": 1,
     "nature": 1,
     "pleasure": 0
   },
   {
     "name": "Opochtli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1321,7 +1321,7 @@
   },
   {
     "name": "Otontecuhtli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -1336,7 +1336,7 @@
   },
   {
     "name": "Oxomoco",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1351,7 +1351,7 @@
   },
   {
     "name": "Painal",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -1366,7 +1366,7 @@
   },
   {
     "name": "Papaztec",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1381,7 +1381,7 @@
   },
   {
     "name": "Patecatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1396,7 +1396,7 @@
   },
   {
     "name": "Piltzintecuhtli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1411,7 +1411,7 @@
   },
   {
     "name": "Piquete Zina",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 1,
     "trade": 0,
@@ -1426,7 +1426,7 @@
   },
   {
     "name": "Popocatepetl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1441,7 +1441,7 @@
   },
   {
     "name": "Quetzalcoatl",
-    "importance": "main",
+    "importance": "creation",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -1456,7 +1456,7 @@
   },
   {
     "name": "Quilaztli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1471,7 +1471,7 @@
   },
   {
     "name": "Tecciztecatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 2,
     "trade": 0,
@@ -1486,7 +1486,7 @@
   },
   {
     "name": "Techalotl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -1501,7 +1501,7 @@
   },
   {
     "name": "Techlotl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -1516,7 +1516,7 @@
   },
   {
     "name": "Tepeyollotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -1531,7 +1531,7 @@
   },
   {
     "name": "Tepoztecatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -1546,7 +1546,7 @@
   },
   {
     "name": "Teteo Innan",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1561,7 +1561,7 @@
   },
   {
     "name": "Tetzahauteotl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1576,7 +1576,7 @@
   },
   {
     "name": "Tezcatlipoca",
-    "importance": "main",
+    "importance": "creation",
     "animals": 0,
     "celestial": 3,
     "trade": 1,
@@ -1591,7 +1591,7 @@
   },
   {
     "name": "Tezcatzoncatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -1606,7 +1606,7 @@
   },
   {
     "name": "Titlacahuan",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1621,7 +1621,7 @@
   },
   {
     "name": "Tlacotzontli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -1636,7 +1636,7 @@
   },
   {
     "name": "Tlahui",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -1651,7 +1651,7 @@
   },
   {
     "name": "Tlahuizcalpantecuhtli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1666,7 +1666,7 @@
   },
   {
     "name": "Tlalchi Tonatiuh",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1681,7 +1681,7 @@
   },
   {
     "name": "Tlaloc",
-    "importance": "main",
+    "importance": "elemental",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1696,7 +1696,7 @@
   },
   {
     "name": "Tlaloque",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -1711,7 +1711,7 @@
   },
   {
     "name": "Tlaltecayoa",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1726,7 +1726,7 @@
   },
   {
     "name": "Tlaltecuhtli",
-    "importance": "main",
+    "importance": "elemental",
     "animals": 2,
     "celestial": 3,
     "trade": 0,
@@ -1741,7 +1741,7 @@
   },
   {
     "name": "Tlatlauhqui Tezcatlipoca",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1756,7 +1756,7 @@
   },
   {
     "name": "Tlazolteotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -1771,7 +1771,7 @@
   },
   {
     "name": "Tlazopilli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1786,7 +1786,7 @@
   },
   {
     "name": "Tloque Nahuaque",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1796,12 +1796,12 @@
     "knowledge": 0,
     "fertility": 0,
     "excess": 0,
-    "nature": 2,
+    "nature": 0,
     "pleasure": 0
   },
   {
     "name": "Tomiyauhtecuhtli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1816,7 +1816,7 @@
   },
   {
     "name": "Tonacacihuatl",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1831,7 +1831,7 @@
   },
   {
     "name": "Tonacatecuhtli",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1846,7 +1846,7 @@
   },
   {
     "name": "Tonatiuh",
-    "importance": "main",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 2,
     "trade": 0,
@@ -1861,7 +1861,7 @@
   },
   {
     "name": "Tzapatlan Tenen",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1876,7 +1876,7 @@
   },
   {
     "name": "Tzitzimime",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1891,7 +1891,7 @@
   },
   {
     "name": "Tzitzimitl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1906,7 +1906,7 @@
   },
   {
     "name": "Tzontemoc",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1921,7 +1921,7 @@
   },
   {
     "name": "Uappatzin",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1936,7 +1936,7 @@
   },
   {
     "name": "Xaman Ek",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 1,
@@ -1951,7 +1951,7 @@
   },
   {
     "name": "Xilonen",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1966,7 +1966,7 @@
   },
   {
     "name": "Xipe Totec",
-    "importance": "main",
+    "importance": "creation",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -1981,7 +1981,7 @@
   },
   {
     "name": "Xiuhcoatl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1996,7 +1996,7 @@
   },
   {
     "name": "Xiuhtecuhtli",
-    "importance": "main",
+    "importance": "elemental",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -2011,7 +2011,7 @@
   },
   {
     "name": "Xiuhtlati",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -2026,7 +2026,7 @@
   },
   {
     "name": "Xochipilli",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -2041,7 +2041,7 @@
   },
   {
     "name": "Xochiquetzal",
-    "importance": "second",
+    "importance": "human",
     "animals": 0,
     "celestial": 0,
     "trade": 3,
@@ -2056,7 +2056,7 @@
   },
   {
     "name": "Xolotl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -2071,7 +2071,7 @@
   },
   {
     "name": "Yacapitzahuac",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -2086,7 +2086,7 @@
   },
   {
     "name": "Yacatecuhtli",
-    "importance": "second",
+    "importance": "human",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -2101,7 +2101,7 @@
   },
   {
     "name": "Yaotl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 3,
     "celestial": 0,
     "trade": 0,
@@ -2116,7 +2116,7 @@
   },
   {
     "name": "Yauhqueme",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -2131,7 +2131,7 @@
   },
   {
     "name": "Yauhtecatl",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -2146,11 +2146,11 @@
   },
   {
     "name": "Yayauhqui Tezcatlipoca",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
-    "celestial": 0,
+    "celestial": 1,
     "trade": 0,
-    "death": 0,
+    "death": 2,
     "violence": 0,
     "food": 0,
     "knowledge": 0,
@@ -2161,24 +2161,9 @@
   },
   {
     "name": "Yohual Tonatiuh",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
-    "celestial": 1,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Yohualtecuhtli",
-    "importance": "minor",
-    "animals": 0,
-    "celestial": 0,
+    "celestial": 2,
     "trade": 0,
     "death": 1,
     "violence": 0,
@@ -2190,8 +2175,23 @@
     "pleasure": 0
   },
   {
+    "name": "Yohualtecuhtli",
+    "importance": "secondary",
+    "animals": 0,
+    "celestial": 0,
+    "trade": 0,
+    "death": 2,
+    "violence": 0,
+    "food": 0,
+    "knowledge": 0,
+    "fertility": 0,
+    "excess": 0,
+    "nature": 0,
+    "pleasure": 0
+  },
+  {
     "name": "Yohualticitl",
-    "importance": "second",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -2206,7 +2206,7 @@
   },
   {
     "name": "Youaltepuztli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -2221,7 +2221,7 @@
   },
   {
     "name": "Zacazontli",
-    "importance": "minor",
+    "importance": "secondary",
     "animals": 0,
     "celestial": 0,
     "trade": 2,

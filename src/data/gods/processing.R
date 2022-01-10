@@ -4,7 +4,7 @@ library(jsonlite)
 gods_raw <- read.csv("./raw/light-db.tsv", sep="\t")
 gods_basic <- gods_raw %>% 
   select("name" = "Name", 
-         "importance" = "Importance..dark.green....main.gods..light.green....second.rank.gods..orange....minor.gods",
+         "importance" = "type",
          "keyword" = "Keywords") %>%
   mutate(name = str_squish(name))
 
@@ -60,13 +60,13 @@ gods <- gods_with_domains %>%
             pleasure = sum(pleasure))
 
   
-# write(toJSON(gods, pretty = T), "./tidy/gods.json")
+write(toJSON(gods, pretty = T), "./tidy/gods.json")
 # write(toJSON(gods_with_keywords, pretty = T, factor = "string", auto_unbox = T, na = "string"), "./tidy/gods_details.json")
 
 
 # Individual relationships
-all_rel <- raw %>%
-  select(2, 7:11) %>%
+all_rel <- gods_raw %>%
+  select(2, 8:12) %>%
   rename("submission" = "Submission.relationship..son.daughter.of.OR.killed.by.",
          "cooperation" = "Equal.relationship..sister.brother.OR.cooperation.help.from.",
          "union" = "Equal.relationship...Union..Married.to..sexual.relation.with.",
@@ -118,6 +118,8 @@ rel_clean <- rel %>%
 diff <- length(unique(rel_clean$target)) - length(unique(rel_clean$source))
 
 weird_names <- rel_clean %>% mutate(is_unique = target %in% source) %>%
+  filter(is_unique == FALSE)
+weird_sources <- rel_clean %>% mutate(is_unique = source %in% target) %>%
   filter(is_unique == FALSE)
 
 relationships <- rel_clean %>% mutate(is_unique = target %in% source) %>%
