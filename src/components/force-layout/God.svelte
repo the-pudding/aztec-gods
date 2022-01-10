@@ -36,7 +36,7 @@
     : 0}px solid {color}; 
     background-color: {isMain ? 'none' : color};
     opacity:{opacity};
-background-image: url('/aztec-gods/img/{name}.jpg');
+background-image: url('/aztec-gods/img/{name}.png');
     "
   on:mouseenter={() => interaction.highlight(getName(god))}
   on:focus={() => interaction.highlight(getName(god))}
