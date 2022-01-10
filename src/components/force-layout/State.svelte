@@ -42,17 +42,24 @@
   const getImportance = (d) => d.importance;
 
   // Scales
+  const typeScale = ["primordial", "creation", "elemental", "human", "secondary"];
+  // $: typeScale = [...new Set(points.map((d) => getImportance(d)))];
+  $: console.log(typeScale);
   $: linkTypeColorScale = scaleOrdinal()
     .domain([...new Set(links.map((d) => getRelationType(d)))])
     .range(schemeCategory10);
 
   $: godColorScale = scaleOrdinal()
-    .domain(["main", "second", "minor"])
-    .range(["#4bc5ca", "#F14057", "#FD9126", "#fbe237"]);
+    .domain(typeScale)
+    .range(["#008AA1", "#C74300", "#5C8A73", "#B08699", "#D28360"]);
 
   $: godDomain = [...new Set(points.map((d) => getName(d)))];
 
-  $: radiusScale = scaleOrdinal().domain(["main", "second", "minor"]).range([60, 16, 6]);
+  const base = 20;
+  const gr = 1.62;
+  $: radiusScale = scaleOrdinal()
+    .domain(typeScale)
+    .range([base * (gr * 4), base * (gr * 3), base * (gr * 2), base * gr, base]);
 
   $: keywords = Object.keys(points[0]).slice(2, points.length);
 
