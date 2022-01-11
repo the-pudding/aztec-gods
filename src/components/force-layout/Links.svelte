@@ -25,18 +25,12 @@
         y1={link.source.y}
         x2={link.target.x}
         y2={link.target.y}
-        stroke={linkTypeColorScale(getRelationType(link))}
-        stroke-opacity={$interaction &&
-        !$keyword &&
-        ($interaction === getName(link.source) || $interaction === getName(link.target))
-          ? 1
-          : 0}
-        stroke-width={$interaction &&
-        ($interaction === getName(link.source) || $interaction === getName(link.target))
-          ? 3
-          : 1}
+        stroke="#CA4E46"
+        stroke-opacity={$interaction && $interaction === getName(link.source) ? 0.3 : 0}
+        stroke-width={$interaction && $interaction === getName(link.source) ? 3 : 1}
       />
     {/each}
+    <!-- stroke={linkTypeColorScale(getRelationType(link))} -->
     <!-- {#each $mutableNodes as point}
       <g transform={`translate(${point.x}, ${point.y})`}>
         <circle

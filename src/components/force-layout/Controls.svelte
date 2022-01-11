@@ -41,7 +41,7 @@
     {/each}
 
     <h3>
-      Keywords <small
+      Fade by Domain <small
         style="text-decoration: underline; cursor: pointer;"
         on:click={() => keyword.lowlight()}>unset</small
       >
@@ -50,7 +50,7 @@
       <button on:click={() => keyword.highlight(k)}>{k}</button>
     {/each}
 
-    <h3>Gods <small>{$interaction}</small></h3>
+    <h3>Find a God <small>{$interaction}</small></h3>
     {#each grouped as group}
       <div>
         {#each group[1].sort((a, b) => ascending(a, b)) as god}
