@@ -98,7 +98,7 @@
   // Scales
   const typeScale = ["primordial", "creation", "elemental", "human", "secondary"];
   // $: typeScale = [...new Set(points.map((d) => getImportance(d)))];
-  $: console.log(typeScale);
+
   $: linkTypeColorScale = scaleOrdinal()
     .domain([...new Set(links.map((d) => getRelationType(d)))])
     .range(schemeCategory10);
@@ -153,11 +153,8 @@
   const linkHighlight = createKeywordHighlight();
 
   // Simulation
-  $: initialLinks = links.filter(
-    (link) =>
-      //$linkHighlight ? getRelationType(link) === $linkHighlight : true
-      // getRelationType(link) === "aspect"
-      true
+  $: initialLinks = links.filter((link) =>
+    $linkHighlight ? getRelationType(link) === $linkHighlight : true
   );
   const initialNodes = points.map((d) => ({ ...d }));
   const simulation = forceSimulation(initialNodes);
