@@ -3,7 +3,7 @@
   import scrollama from "scrollama";
   import { onMount } from "svelte";
 
-  import { tez } from "$components/explain/tezcatlipoca";
+  import { tez, tezImg } from "$components/explain/tezcatlipoca";
 
   let selected = 0;
 
@@ -63,15 +63,15 @@
     <svg
       width="100%"
       height="100%"
-      viewBox="0 0 5320 5320"
+      viewBox="0 0 10640 10640"
       xmlns="http://www.w3.org/2000/svg"
       xml:space="preserve"
       style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round"
     >
-      <g mask={`url(#mask-${1})`}>{@html tez}</g>
+      <g mask={`url(#mask-${1})`}>{@html tezImg}</g>
 
       <mask id={`mask-${1}`}>
-        <rect x="0" y="0" width="5320" height="5320" fill="white" fill-opacity={0.1} />
+        <rect x="0" y="0" width="10640" height="10640" fill="white" fill-opacity={0.1} />
         <circle cx={data[selected].cx} cy={data[selected].cy} r={data[selected].r} fill="white" />
       </mask>
 
@@ -103,9 +103,6 @@
 <div class="outro">Next content</div>
 
 <style>
-  h1 {
-    margin: 2rem 0;
-  }
   circle {
     transition: cx 700ms, cy 700ms, r 700ms;
   }
@@ -136,7 +133,7 @@
   figure {
     position: -webkit-sticky;
     position: sticky;
-    height: 350px;
+    height: 550px;
     left: 0;
     top: 0;
     width: 100%;
