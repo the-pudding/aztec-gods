@@ -38,5 +38,9 @@
   "browserslist": "> 0.5%, last 4 versions, not ie <= 11, not ie_mob <= 11",
   "pudding": {
     "subdirectory": "aztec-gods"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.12.0",
+    "scrollama": "^3.0.1"
   }
 }
