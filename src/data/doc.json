@@ -1,1 +1,28 @@
-{"hed":"This is a Headline","dek":"This is a dek."}
+{
+  "tezcatlipoca-steps": [
+    { "id": "face", "text": "Yellow and black stripes are used for the face." },
+    { "id": "spear", "text": "The spear is used to judge humans." },
+    { "id": "mirror", "text": "The obsidian mirror is used for divination." },
+    {
+      "id": "headdress",
+      "text": "The elaborate headdress represents swirling smoke that emanates from his mirror."
+    },
+    {
+      "id": "foot",
+      "text": "Tezcatlipoca’s foot was bitten off by Tlaltecuhtli or Cipactli in a battle. It is sometimes replaced by smoke, a scroll or a snake."
+    },
+    { "id": "skin", "text": "Jaguar skin (main nahual of Tezcatlipoca)" },
+    {
+      "id": "pectoral",
+      "text": "Circular pectoral (“anáhuatl”) over the chest, made up of a white shell ring tied on by a red leather strap."
+    },
+    {
+      "id": "nose",
+      "text": "Nose plug made from jade as a religious and/or social ranking ornament."
+    },
+    {
+      "id": "ezpitzal",
+      "text": "Missing symbol in this illustration: the ezpitzal (gust of blood) symbolizing anger, rage or madness."
+    }
+  ]
+}
