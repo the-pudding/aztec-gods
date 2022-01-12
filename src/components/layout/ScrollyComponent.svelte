@@ -3,28 +3,38 @@
   import scrollama from "scrollama";
   import { onMount } from "svelte";
 
+  import { tez } from "$components/explain/tezcatlipoca";
+
   let selected = 0;
 
   const data = [
     {
       id: 1,
-      text: "Step 1",
-      color: "orange"
+      text: "Yellow and black stripes are used for the face.",
+      cx: 2000,
+      cy: 2000,
+      r: 700
     },
     {
       id: 2,
-      text: "Step 2",
-      color: "Orchid"
+      text: "Spear used to judge humans.",
+      cx: 3000,
+      cy: 3000,
+      r: 700
     },
     {
       id: 3,
-      text: "Step 3",
-      color: "crimson"
+      text: "Obsidian mirror is used for divination.",
+      cx: 1500,
+      cy: 1500,
+      r: 700
     },
     {
       id: 4,
-      text: "Step 4",
-      color: "LightSeaGreen"
+      text: "The elaborate headpiece represents swirling smokes that emanates from his mirror.",
+      cx: 800,
+      cy: 800,
+      r: 700
     }
   ];
 
@@ -47,15 +57,37 @@
 
 <svelte:window />
 
-<!-- <h1>SCROLLYTELLING IS FUN</h1> -->
 <div class="intro">Introduction</div>
 <section id="scrolly">
   <figure style="background:{data[selected].color}">
-    <p>{selected + 1}</p>
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 5320 5320"
+      xmlns="http://www.w3.org/2000/svg"
+      xml:space="preserve"
+      style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round"
+    >
+      <g mask={`url(#mask-${selected})`}>{@html tez}</g>
+      {#each data as d, i}
+        <mask id={`mask-${i}`}>
+          <rect x="0" y="0" width="5320" height="5320" fill="white" fill-opacity={0.1} />
+          <circle cx={d.cx} cy={d.cx} r={d.r} fill="white" />
+        </mask>
+      {/each}
+      <circle
+        cx={data[selected].cx}
+        cy={data[selected].cx}
+        r="700"
+        fill="none"
+        stroke="#C74300"
+        stroke-width="20"
+      />
+    </svg>
   </figure>
   <div>
     {#each data as d}
-      <div class="step" data-step={d.id} class:selected={selected === d.id} style="color:{d.color}">
+      <div class="step" data-step={d.id} class:selected={selected === d.id}>
         <p>{d.text}</p>
       </div>
     {/each}
@@ -82,9 +114,9 @@
     margin: 2rem 0;
     padding: 300px 2rem;
     text-align: center;
-    font-size: 5rem;
-    font-weight: 900;
-    background: rgba(200, 200, 200, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+    background: rgba(250, 250, 250, 0.9);
   }
 
   .selected {
@@ -95,7 +127,7 @@
   figure {
     position: -webkit-sticky;
     position: sticky;
-    height: 200px;
+    height: 350px;
     left: 0;
     top: 0;
     width: 100%;
@@ -103,7 +135,7 @@
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    background-color: cadetblue;
+    background-color: #efefef;
     z-index: 0;
   }
 
