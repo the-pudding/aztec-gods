@@ -75,13 +75,6 @@
         <circle cx={data[selected].cx} cy={data[selected].cy} r={data[selected].r} fill="white" />
       </mask>
 
-      <!-- <g mask={`url(#mask-${selected})`}>{@html tez}</g>
-      {#each data as d, i}
-        <mask id={`mask-${i}`}>
-          <rect x="0" y="0" width="5320" height="5320" fill="white" fill-opacity={0.1} />
-          <circle cx={d.cx} cy={d.cx} r={d.r} fill="white" />
-        </mask>
-      {/each} -->
       <circle
         cx={data[selected].cx}
         cy={data[selected].cx}
