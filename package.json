@@ -8,7 +8,8 @@
     "build": "svelte-kit build",
     "start": "svelte-kit start",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "svgo": "svgo -f ./src/svg/raw -o ./src/svg/optimized"
   },
   "devDependencies": {
     "@rollup/plugin-dsv": "2.0.2",
@@ -27,6 +28,7 @@
     "style-dictionary": "3.0.3",
     "svelte": "3.44.0",
     "svelte-preprocess": "4.9.8",
+    "svgo": "^2.8.0",
     "vite-plugin-svgstring": "1.0.0"
   },
   "type": "module",
