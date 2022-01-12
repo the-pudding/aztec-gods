@@ -68,13 +68,20 @@
       xml:space="preserve"
       style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round"
     >
-      <g mask={`url(#mask-${selected})`}>{@html tez}</g>
+      <g mask={`url(#mask-${1})`}>{@html tez}</g>
+
+      <mask id={`mask-${1}`}>
+        <rect x="0" y="0" width="5320" height="5320" fill="white" fill-opacity={0.1} />
+        <circle cx={data[selected].cx} cy={data[selected].cy} r={data[selected].r} fill="white" />
+      </mask>
+
+      <!-- <g mask={`url(#mask-${selected})`}>{@html tez}</g>
       {#each data as d, i}
         <mask id={`mask-${i}`}>
           <rect x="0" y="0" width="5320" height="5320" fill="white" fill-opacity={0.1} />
           <circle cx={d.cx} cy={d.cx} r={d.r} fill="white" />
         </mask>
-      {/each}
+      {/each} -->
       <circle
         cx={data[selected].cx}
         cy={data[selected].cx}
@@ -99,7 +106,9 @@
   h1 {
     margin: 2rem 0;
   }
-
+  circle {
+    transition: cx 700ms, cy 700ms, r 700ms;
+  }
   .intro {
     margin: 2rem 0;
     padding: 30rem 2rem;
