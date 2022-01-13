@@ -25,7 +25,7 @@
         y1={link.source.y}
         x2={link.target.x}
         y2={link.target.y}
-        stroke="#CA4E46"
+        stroke="#FE0000"
         stroke-opacity={$interaction && $interaction === getName(link.source) ? 0.3 : 0}
         stroke-width={$interaction && $interaction === getName(link.source) ? 3 : 1}
       />
