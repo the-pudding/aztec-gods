@@ -1,12 +1,15 @@
 {
   "category": {
-    "blue": "#4477AA",
-    "red": "#EE6677",
-    "green": "#228833",
-    "yellow": "#CCBB44",
-    "cyan": "#66CCEE",
-    "purple": "#AA3377",
-    "gray": "#BBBBBB"
+    "primordial": "#008AA1",
+    "creation": "#D28360",
+    "elemental": "#5C8A73",
+    "human": "#B08699",
+    "secondary": "#FE0000",
+    "primordialLight": "#EAF8FB",
+    "creationLight": "#FFF0E9",
+    "elementalLight": "#F3F7F5",
+    "humanLight": "#F9F6F8",
+    "secondaryLight": "#FFEDED"
   },
   "color": {
     "black": "#000000",
@@ -15,7 +18,7 @@
     "gray-medium": "#949494",
     "gray-light": "#c9c9c9",
     "off-white": "#f0f0f0",
-    "white": "#fff",
+    "white": "#ffffff",
     "purple": "#a239ca",
     "blue": "#4717f6",
     "green": "#34a29e",

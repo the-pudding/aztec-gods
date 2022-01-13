@@ -1,25 +1,34 @@
 {
-	"category": {
-		"blue": {
-			"value": "#4477AA"
-		},
-		"red": {
-			"value": "#EE6677"
-		},
-		"green": {
-			"value": "#228833"
-		},
-		"yellow": {
-			"value": "#CCBB44"
-		},
-		"cyan": {
-			"value": "#66CCEE"
-		},
-		"purple": {
-			"value": "#AA3377"
-		},
-		"gray": {
-			"value": "#BBBBBB"
-		}
-	}
+  "category": {
+    "primordial": {
+      "value": "#008AA1"
+    },
+    "creation": {
+      "value": "#D28360"
+    },
+    "elemental": {
+      "value": "#5C8A73"
+    },
+    "human": {
+      "value": "#B08699"
+    },
+    "secondary": {
+      "value": "#FE0000"
+    },
+    "primordialLight": {
+      "value": "#EAF8FB"
+    },
+    "creationLight": {
+      "value": "#FFF0E9"
+    },
+    "elementalLight": {
+      "value": "#F3F7F5"
+    },
+    "humanLight": {
+      "value": "#F9F6F8"
+    },
+    "secondaryLight": {
+      "value": "#FFEDED"
+    }
+  }
 }
