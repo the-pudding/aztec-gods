@@ -9,9 +9,14 @@
   import Controls from "$components/force-layout/Controls.svelte";
   import Scrolly from "$components/layout/Scrolly.svelte";
   import Masked from "$components/explain/Masked.svelte";
+  import Geometric from "$components/map/Geometric.svelte";
 </script>
 
 <div>
+  <Geometric />
+</div>
+
+<!-- <div>
   <State>
     <Links slot="chart-svg" />
     <Gods slot="chart-html" />
@@ -21,4 +26,4 @@
 
 <div>
   <Masked />
-</div>
+</div> -->
