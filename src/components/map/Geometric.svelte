@@ -42,49 +42,47 @@
   $: borderWidth = side * 0.05;
 </script>
 
-<Section>
-  <div class="chart-wrapper" bind:clientWidth={width}>
-    {#if width > 0}
-      <svg class="chart-svg" width={bounds.width} height={bounds.height}>
-        <!-- <rect x={0} y={0} width={bounds.width} height={bounds.height} fill="#efefef" /> -->
-        <slot name="chart-svg" />
-      </svg>
-      <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
-        <div style="transform: translate({bounds.margins.left}px, {bounds.margins.top}px)">
-          {#each gods as god}
-            <div
-              class="name"
-              style="left:{god.x}px; top:{god.y}px; color: #454545; transform: translate(-50%, -{(height *
-                0.13) /
-                2 +
-                14}px);"
-            >
-              {god.name}
-            </div>
-            <div
-              class="god"
-              style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
+<div class="chart-wrapper" bind:clientWidth={width}>
+  {#if width > 0}
+    <svg class="chart-svg" width={bounds.width} height={bounds.height}>
+      <!-- <rect x={0} y={0} width={bounds.width} height={bounds.height} fill="#efefef" /> -->
+      <slot name="chart-svg" />
+    </svg>
+    <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
+      <div style="transform: translate({bounds.margins.left}px, {bounds.margins.top}px)">
+        {#each gods as god}
+          <div
+            class="name"
+            style="left:{god.x}px; top:{god.y}px; color: {getMainGodColor(
+              god.importance
+            )}; transform: translate(-50%, -{(height * 0.13) / 2 + 11}px);"
+          >
+            {god.name}
+          </div>
+          <div
+            class="god"
+            style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
             background-color: {getLightGodColor(god.importance)};
             background-image: {`url('/static/img/${god.name}.png')`};
             border: {borderWidth}px solid {getMainGodColor(god.importance)};
             "
-            />
-          {/each}
-        </div>
+          />
+        {/each}
       </div>
-    {/if}
-  </div>
-</Section>
+    </div>
+  {/if}
+</div>
 
 <style>
   .name {
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
     position: absolute;
     transform: translateX(-50%);
+    text-transform: uppercase;
   }
   .god {
-    background: #fff;
     font-size: 8px;
 
     position: absolute;

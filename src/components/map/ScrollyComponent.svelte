@@ -4,38 +4,39 @@
   import { onMount } from "svelte";
 
   import { tez, tezImg } from "$components/explain/tezcatlipoca";
+  import Geometric from "$components/map/Geometric.svelte";
 
   let selected = 0;
 
   const data = [
     {
       id: 1,
-      text: "Yellow and black stripes are used for the face.",
+      text: "",
       cx: 2000,
       cy: 2000,
       r: 700
-    },
-    {
-      id: 2,
-      text: "Spear used to judge humans.",
-      cx: 3000,
-      cy: 3000,
-      r: 700
-    },
-    {
-      id: 3,
-      text: "Obsidian mirror is used for divination.",
-      cx: 1500,
-      cy: 1500,
-      r: 700
-    },
-    {
-      id: 4,
-      text: "The elaborate headpiece represents swirling smokes that emanates from his mirror.",
-      cx: 800,
-      cy: 800,
-      r: 700
     }
+    // {
+    //   id: 2,
+    //   text: "Spear used to judge humans.",
+    //   cx: 3000,
+    //   cy: 3000,
+    //   r: 700
+    // },
+    // {
+    //   id: 3,
+    //   text: "Obsidian mirror is used for divination.",
+    //   cx: 1500,
+    //   cy: 1500,
+    //   r: 700
+    // },
+    // {
+    //   id: 4,
+    //   text: "The elaborate headpiece represents swirling smokes that emanates from his mirror.",
+    //   cx: 800,
+    //   cy: 800,
+    //   r: 700
+    // }
   ];
 
   const handleStepEnter = (response) => {
@@ -59,7 +60,7 @@
 
 <!-- <div class="intro">Introduction</div> -->
 <section id="scrolly">
-  <figure style="background:{data[selected].color}" />
+  <figure><Geometric /></figure>
   <div>
     {#each data as d}
       <div class="step" data-step={d.id} class:selected={selected === d.id}>
@@ -69,8 +70,7 @@
   </div>
 </section>
 
-<div class="outro">Next content</div>
-
+<!-- <div class="outro">Next content</div> -->
 <style>
   circle {
     transition: cx 700ms, cy 700ms, r 700ms;
@@ -82,7 +82,6 @@
   }
   #scrolly {
     position: relative;
-    border: 1px solid gray;
   }
 
   .step {
@@ -91,26 +90,27 @@
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
-    background: rgba(250, 250, 250, 0.9);
+    /* background: rgba(250, 250, 250, 0.9); */
+    z-index: 100;
   }
 
   .selected {
-    background: rgba(200, 200, 200, 0.5);
+    /* background: rgba(200, 200, 200, 0.5); */
     color: white;
     transition: background 200ms;
   }
   figure {
     position: -webkit-sticky;
     position: sticky;
-    height: 550px;
+    width: 600px;
+    height: 600px;
     left: 0;
     top: 0;
-    width: 100%;
-    margin: 0;
+    /* width: 100%; */
+    margin: 0 auto;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    background-color: #efefef;
     z-index: 0;
   }
 

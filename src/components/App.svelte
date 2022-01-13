@@ -7,23 +7,23 @@
   import State from "$components/force-layout/State.svelte";
   import Gods from "$components/force-layout/Gods.svelte";
   import Controls from "$components/force-layout/Controls.svelte";
-  import Scrolly from "$components/layout/Scrolly.svelte";
+  import Scrolly from "$components/map/Scrolly.svelte";
   import Masked from "$components/explain/Masked.svelte";
   import Geometric from "$components/map/Geometric.svelte";
 </script>
 
 <div>
-  <Geometric />
+  <Masked />
 </div>
 
-<!-- <div>
+<div>
+  <Scrolly />
+</div>
+
+<div>
   <State>
     <Links slot="chart-svg" />
     <Gods slot="chart-html" />
     <Controls slot="controls" />
   </State>
 </div>
-
-<div>
-  <Masked />
-</div> -->
