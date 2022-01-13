@@ -29,6 +29,7 @@ const config = {
           $actions: path.resolve("./src/actions"),
           $components: path.resolve("./src/components"),
           $data: path.resolve("./src/data"),
+          $domain: path.resolve("./src/domain"),
           $stores: path.resolve("./src/stores"),
           $styles: path.resolve("./src/styles"),
           $svg: path.resolve("./src/svg"),
