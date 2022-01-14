@@ -1,4 +1,6 @@
 <script>
+  export let activeStep = "";
+
   import doc from "$data/doc.json";
 
   import Section from "$components/layout/Section.svelte";
@@ -40,6 +42,9 @@
 
   $: side = width * 0.12;
   $: borderWidth = side * 0.05;
+
+  $: console.log(gods);
+  $: console.log(activeStep);
 </script>
 
 <div class="chart-wrapper" bind:clientWidth={width}>
@@ -51,19 +56,22 @@
     <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
       <div style="transform: translate({bounds.margins.left}px, {bounds.margins.top}px)">
         {#each gods as god}
-          <div
-            class="name"
-            style="left:{god.x}px; top:{god.y}px; color: {getMainGodColor(
-              god.importance
-            )}; transform: translate(-50%, -{(height * 0.13) / 2 + 11}px);"
-          >
-            {god.name}
-          </div>
+          {#if activeStep.id === god.name}
+            <div
+              class="name"
+              style="left:{god.x}px; top:{god.y}px; color: {getMainGodColor(
+                god.importance
+              )}; transform: translate(-50%, -{(height * 0.13) / 2 + 11}px);"
+            >
+              {god.name}
+            </div>
+          {/if}
           <div
             class="god"
             style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
             background-color: {getLightGodColor(god.importance)};
             background-image: {`url('/aztec-gods/img/${god.name}.png')`};
+            opacity: {activeStep.type === god.importance ? 1 : 0.2};
             border: {borderWidth}px solid {getMainGodColor(god.importance)};
             "
           />
@@ -94,6 +102,8 @@
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
+
+    transition: opacity 200ms;
   }
 
   .chart-html,
