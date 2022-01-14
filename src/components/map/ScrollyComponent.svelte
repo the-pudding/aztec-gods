@@ -2,45 +2,17 @@
   export const ssr = false;
   import scrollama from "scrollama";
   import { onMount } from "svelte";
-
-  import { tez, tezImg } from "$components/explain/tezcatlipoca";
+  import doc from "$data/doc.json";
   import Geometric from "$components/map/Geometric.svelte";
 
   let selected = 0;
+  let activeStep = "";
 
-  const data = [
-    {
-      id: 1,
-      text: "",
-      cx: 2000,
-      cy: 2000,
-      r: 700
-    }
-    // {
-    //   id: 2,
-    //   text: "Spear used to judge humans.",
-    //   cx: 3000,
-    //   cy: 3000,
-    //   r: 700
-    // },
-    // {
-    //   id: 3,
-    //   text: "Obsidian mirror is used for divination.",
-    //   cx: 1500,
-    //   cy: 1500,
-    //   r: 700
-    // },
-    // {
-    //   id: 4,
-    //   text: "The elaborate headpiece represents swirling smokes that emanates from his mirror.",
-    //   cx: 800,
-    //   cy: 800,
-    //   r: 700
-    // }
-  ];
+  $: steps = doc.pantheon;
 
   const handleStepEnter = (response) => {
     selected = response.index;
+    activeStep = steps[response.index];
   };
 
   onMount(() => {
@@ -58,19 +30,21 @@
 
 <svelte:window />
 
-<!-- <div class="intro">Introduction</div> -->
 <section id="scrolly">
-  <figure><Geometric /></figure>
+  <figure><Geometric {activeStep} /></figure>
   <div>
-    {#each data as d}
-      <div class="step" data-step={d.id} class:selected={selected === d.id}>
-        <p>{d.text}</p>
+    {#each steps as step, i}
+      <div class="step" data-step={step.id} class:selected={selected === i}>
+        {#each step.text as p}
+          <p>{p}</p>
+        {/each}
       </div>
     {/each}
   </div>
 </section>
 
-<!-- <div class="outro">Next content</div> -->
+<div class="outro" />
+
 <style>
   circle {
     transition: cx 700ms, cy 700ms, r 700ms;
@@ -96,7 +70,7 @@
 
   .selected {
     /* background: rgba(200, 200, 200, 0.5); */
-    color: white;
+    color: crimson;
     transition: background 200ms;
   }
   figure {
