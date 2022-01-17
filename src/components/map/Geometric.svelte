@@ -68,7 +68,11 @@
             style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
             background-color: {getLightGodColor(god.importance)};
             background-image: {`url('/aztec-gods/img/${god.name}.png')`};
-            opacity: {activeStep.type === god.importance ? 1 : 0.2};
+            filter:{activeStep.id === god.name
+              ? `unset`
+              : activeStep.type === god.importance
+              ? `blur(1px)`
+              : `blur(4px)`};
             border: {borderWidth}px solid {getMainGodColor(god.importance)};
             "
           />
@@ -78,6 +82,7 @@
   {/if}
 </div>
 
+<!-- opacity: {activeStep.type === god.importance ? 1 : 0.2}; -->
 <style>
   .name {
     font-size: 0.6rem;
@@ -100,7 +105,7 @@
     background-repeat: no-repeat;
     box-sizing: border-box;
 
-    transition: opacity 200ms;
+    transition: filter 200ms;
   }
 
   .chart-html,
