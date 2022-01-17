@@ -100,7 +100,7 @@
   .wrapper {
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0;
   }
   .description {
     height: 60px;
