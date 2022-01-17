@@ -4,8 +4,10 @@
 </script>
 
 <script>
+  import Sources from "$components/Sources.svelte";
   import Heading from "$components/layout/Heading.svelte";
   import Intro from "$components/introduction/Intro.svelte";
+  import Hero from "$components/introduction/Hero.svelte";
   import Links from "$components/force-layout/Links.svelte";
   import State from "$components/force-layout/State.svelte";
   import Gods from "$components/force-layout/Gods.svelte";
@@ -15,6 +17,8 @@
   import Tlalte from "$components/iconography/Tlalte.svelte";
   import Geometric from "$components/map/Geometric.svelte";
 </script>
+
+<Hero />
 
 <Intro />
 
@@ -26,11 +30,10 @@
 
 <Scrolly />
 
-<!-- 
-<div>
-  <State>
-    <Links slot="chart-svg" />
-    <Gods slot="chart-html" />
-    <Controls slot="controls" />
-  </State>
-</div> -->
+<State>
+  <Links slot="chart-svg" />
+  <Gods slot="chart-html" />
+  <Controls slot="controls" />
+</State>
+
+<Sources />
