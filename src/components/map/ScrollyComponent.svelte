@@ -4,6 +4,7 @@
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
   import Geometric from "$components/map/Geometric.svelte";
+  import Section from "$components/layout/Section.svelte";
 
   let selected = 0;
   let activeStep = "";
@@ -30,50 +31,32 @@
 
 <svelte:window />
 
-<section id="scrolly">
-  <figure><Geometric {activeStep} /></figure>
-  <div>
-    {#each steps as step, i}
-      <div class="step" data-step={step.id} class:selected={selected === i}>
-        {#each step.text as p}
-          <p>{p}</p>
-        {/each}
-      </div>
-    {/each}
+<Section id="story-mode" centered>
+  <div id="scrolly">
+    <figure><Geometric {activeStep} /></figure>
+    <div class="scroll-area">
+      {#each steps as step, i}
+        <div class="step" data-step={step.id} class:selected={selected === i}>
+          {#each step.text as p}
+            <p>{p}</p>
+          {/each}
+        </div>
+      {/each}
+    </div>
   </div>
-</section>
-
-<div class="outro" />
+</Section>
 
 <style>
-  circle {
-    transition: cx 700ms, cy 700ms, r 700ms;
-  }
-  .intro {
-    margin: 2rem 0;
-    padding: 30rem 2rem;
-    background: #ccc;
-  }
   #scrolly {
     position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "figure scroll-area";
   }
 
-  .step {
-    margin: 2rem 0;
-    padding: 300px 2rem;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    /* background: rgba(250, 250, 250, 0.9); */
-    z-index: 100;
-  }
-
-  .selected {
-    /* background: rgba(200, 200, 200, 0.5); */
-    color: crimson;
-    transition: background 200ms;
-  }
   figure {
+    grid-area: figure;
+
     position: -webkit-sticky;
     position: sticky;
     width: 600px;
@@ -88,6 +71,27 @@
     z-index: 0;
   }
 
+  .scroll-area {
+    grid-area: scroll-area;
+  }
+  .step {
+    margin: 1rem 0;
+    padding: 300px 1rem;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    /* background: rgba(250, 250, 250, 0.9); */
+    filter: blur(3px);
+
+    z-index: 100;
+  }
+
+  .selected {
+    /* background: rgba(200, 200, 200, 0.5); */
+    filter: blur(0px);
+    transition: filter 400ms;
+  }
+
   figure p {
     text-align: center;
     padding: 1rem;
@@ -100,11 +104,5 @@
     font-size: 8rem;
     font-weight: 900;
     color: #fff;
-  }
-
-  .outro {
-    margin: 2rem;
-    padding: 30rem 2rem;
-    background: #ccc;
   }
 </style>

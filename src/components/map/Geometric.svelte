@@ -42,9 +42,6 @@
 
   $: side = width * 0.12;
   $: borderWidth = side * 0.05;
-
-  $: console.log(gods);
-  $: console.log(activeStep);
 </script>
 
 <div class="chart-wrapper" bind:clientWidth={width}>
