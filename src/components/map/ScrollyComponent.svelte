@@ -51,11 +51,11 @@
     position: relative;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: "figure scroll-area";
+    grid-template-areas: "viz-area scroll-area";
   }
 
   figure {
-    grid-area: figure;
+    grid-area: viz-area;
 
     position: -webkit-sticky;
     position: sticky;
@@ -92,7 +92,7 @@
     transition: filter 400ms;
   }
 
-  figure p {
+  /* figure p {
     text-align: center;
     padding: 1rem;
     position: absolute;
@@ -104,5 +104,5 @@
     font-size: 8rem;
     font-weight: 900;
     color: #fff;
-  }
+  } */
 </style>
