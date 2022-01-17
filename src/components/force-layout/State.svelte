@@ -211,7 +211,6 @@
 </script>
 
 <div class="wrapper">
-  <div class="controls"><slot name="controls" /></div>
   <div class="chart-wrapper" bind:clientWidth={width}>
     {#if width > 0}
       <svg class="chart-svg" width={bounds.width} height={bounds.height}>
@@ -223,17 +222,23 @@
       </div>
     {/if}
   </div>
+  <div class="controls"><slot name="controls" /></div>
 </div>
 
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: 0.7fr 3fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "viz-area meta-area";
+
     margin: 1rem;
     position: relative;
     height: 100vh;
   }
 
+  .chart-wrapper {
+    grid-area: viz-area;
+  }
   .chart-html,
   .chart-svg {
     position: absolute;
@@ -241,7 +246,8 @@
     left: 0;
     overflow: visible;
   }
+
   .controls {
-    background: #f4f4f4;
+    grid-area: meta-area;
   }
 </style>

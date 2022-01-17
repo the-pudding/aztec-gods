@@ -2,45 +2,18 @@
   export const ssr = false;
   import scrollama from "scrollama";
   import { onMount } from "svelte";
-
-  import { tez, tezImg } from "$components/explain/tezcatlipoca";
+  import doc from "$data/doc.json";
   import Geometric from "$components/map/Geometric.svelte";
+  import Section from "$components/layout/Section.svelte";
 
   let selected = 0;
+  let activeStep = "";
 
-  const data = [
-    {
-      id: 1,
-      text: "",
-      cx: 2000,
-      cy: 2000,
-      r: 700
-    }
-    // {
-    //   id: 2,
-    //   text: "Spear used to judge humans.",
-    //   cx: 3000,
-    //   cy: 3000,
-    //   r: 700
-    // },
-    // {
-    //   id: 3,
-    //   text: "Obsidian mirror is used for divination.",
-    //   cx: 1500,
-    //   cy: 1500,
-    //   r: 700
-    // },
-    // {
-    //   id: 4,
-    //   text: "The elaborate headpiece represents swirling smokes that emanates from his mirror.",
-    //   cx: 800,
-    //   cy: 800,
-    //   r: 700
-    // }
-  ];
+  $: steps = doc.pantheon;
 
   const handleStepEnter = (response) => {
     selected = response.index;
+    activeStep = steps[response.index];
   };
 
   onMount(() => {
@@ -58,48 +31,32 @@
 
 <svelte:window />
 
-<!-- <div class="intro">Introduction</div> -->
-<section id="scrolly">
-  <figure><Geometric /></figure>
-  <div>
-    {#each data as d}
-      <div class="step" data-step={d.id} class:selected={selected === d.id}>
-        <p>{d.text}</p>
-      </div>
-    {/each}
+<Section id="story-mode" centered>
+  <div id="scrolly">
+    <figure><Geometric {activeStep} /></figure>
+    <div class="scroll-area">
+      {#each steps as step, i}
+        <div class="step" data-step={step.id} class:selected={selected === i}>
+          {#each step.text as p}
+            <p>{p}</p>
+          {/each}
+        </div>
+      {/each}
+    </div>
   </div>
-</section>
+</Section>
 
-<!-- <div class="outro">Next content</div> -->
 <style>
-  circle {
-    transition: cx 700ms, cy 700ms, r 700ms;
-  }
-  .intro {
-    margin: 2rem 0;
-    padding: 30rem 2rem;
-    background: #ccc;
-  }
   #scrolly {
     position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "viz-area scroll-area";
   }
 
-  .step {
-    margin: 2rem 0;
-    padding: 300px 2rem;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    /* background: rgba(250, 250, 250, 0.9); */
-    z-index: 100;
-  }
-
-  .selected {
-    /* background: rgba(200, 200, 200, 0.5); */
-    color: white;
-    transition: background 200ms;
-  }
   figure {
+    grid-area: viz-area;
+
     position: -webkit-sticky;
     position: sticky;
     width: 600px;
@@ -114,7 +71,27 @@
     z-index: 0;
   }
 
-  figure p {
+  .scroll-area {
+    grid-area: scroll-area;
+  }
+  .step {
+    margin: 1rem 0;
+    padding: 300px 1rem;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+
+    opacity: 0.4;
+    transition: opacity 400ms;
+
+    z-index: 100;
+  }
+
+  .selected {
+    opacity: 1;
+  }
+
+  /* figure p {
     text-align: center;
     padding: 1rem;
     position: absolute;
@@ -126,11 +103,5 @@
     font-size: 8rem;
     font-weight: 900;
     color: #fff;
-  }
-
-  .outro {
-    margin: 2rem;
-    padding: 30rem 2rem;
-    background: #ccc;
-  }
+  } */
 </style>

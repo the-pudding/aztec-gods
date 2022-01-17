@@ -1,15 +1,5 @@
 [
   {
-    "source": "Ahuiateteo",
-    "target": "Nanahuatzin",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ahuiateteo",
-    "target": "Coyolxauhqui",
-    "relation": "cooperation"
-  },
-  {
     "source": "Amapan",
     "target": "Painal",
     "relation": "cooperation"
@@ -56,31 +46,6 @@
   },
   {
     "source": "Centzon Totochtin",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Centzon Totochtin",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Centzon Totochtin",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Centzon Totochtin",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Centzon Totochtin",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Centzon Totochtin",
     "target": "Ixtlilton",
     "relation": "cooperation"
   },
@@ -92,11 +57,6 @@
   {
     "source": "Centzon Totochtin",
     "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Centzon Totochtin",
-    "target": "Tezcatzoncatl",
     "relation": "cooperation"
   },
   {
@@ -136,11 +96,6 @@
   },
   {
     "source": "Chalchiuhtlicue",
-    "target": "Yohualticitl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Chalchiuhtlicue",
     "target": "Huixtocihuatl",
     "relation": "cooperation"
   },
@@ -160,18 +115,8 @@
     "relation": "cooperation"
   },
   {
-    "source": "Chalchiutotolin",
-    "target": "Ahuiateteo",
-    "relation": "cooperation"
-  },
-  {
     "source": "Chalmecacihuatl",
     "target": "Yacatecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Chalmecacihuatl",
-    "target": "Coyotlinaual",
     "relation": "cooperation"
   },
   {
@@ -190,28 +135,8 @@
     "relation": "cooperation"
   },
   {
-    "source": "Cihuapipiltzin",
-    "target": "Cihuateteo",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Cihuatecayotl",
-    "target": "Cihuateteo",
-    "relation": "cooperation"
-  },
-  {
     "source": "Cihuateteo",
     "target": "Tzitzimitl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Cihuateteo",
-    "target": "Cihuatecayotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Cihuateteo",
-    "target": "Tzitzimime",
     "relation": "cooperation"
   },
   {
@@ -242,11 +167,6 @@
   {
     "source": "Coatlicue",
     "target": "Huitzilopochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Coatlicue",
-    "target": "Tzitzimime",
     "relation": "cooperation"
   },
   {
@@ -400,6 +320,16 @@
     "relation": "cooperation"
   },
   {
+    "source": "Ilamacihuatl",
+    "target": "Ilamatecuhtli",
+    "relation": "cooperation"
+  },
+  {
+    "source": "Ilamatecuhtli",
+    "target": "Ilamacihuatl",
+    "relation": "cooperation"
+  },
+  {
     "source": "Itzaccihuatl",
     "target": "Tlaloque",
     "relation": "cooperation"
@@ -440,83 +370,8 @@
     "relation": "cooperation"
   },
   {
-    "source": "Ixquitecatl",
-    "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Ixtlilton",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Ome Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Tezcatzoncatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Tepoztecatl",
-    "relation": "cooperation"
-  },
-  {
     "source": "Ixtlilton",
     "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixtlilton",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixtlilton",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixtlilton",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixtlilton",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixtlilton",
-    "target": "Papaztec",
     "relation": "cooperation"
   },
   {
@@ -532,11 +387,6 @@
   {
     "source": "Ixtlilton",
     "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ixtlilton",
-    "target": "Tezcatzoncatl",
     "relation": "cooperation"
   },
   {
@@ -561,11 +411,6 @@
   },
   {
     "source": "Macuil Cozcacuahtli",
-    "target": "Macuil Malinalli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Cozcacuahtli",
     "target": "Macuil Cuetzpalin",
     "relation": "cooperation"
   },
@@ -586,92 +431,12 @@
   },
   {
     "source": "Macuil Cuetzpalin",
-    "target": "Macuil Malinalli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Cuetzpalin",
     "target": "Macuil Cozcacuahtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Malinalli",
-    "target": "Macuil Xochitl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Malinalli",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Malinalli",
-    "target": "Macuil Cuetzpalin",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Malinalli",
-    "target": "Macuil Cozcacuahtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Malinalli",
-    "target": "Ahuiateteo",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Ocelotl",
-    "target": "Macuil Xochitl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Ocelotl",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Ocelotl",
-    "target": "Macuil Cuetzpalin",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Ocelotl",
-    "target": "Macuil Cozcacuahtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Ocelotl",
-    "target": "Ahuiateteo",
     "relation": "cooperation"
   },
   {
     "source": "Macuil Tochtli",
     "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Tochtli",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Tochtli",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Tochtli",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Tochtli",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Tochtli",
-    "target": "Papaztec",
     "relation": "cooperation"
   },
   {
@@ -687,11 +452,6 @@
   {
     "source": "Macuil Tochtli",
     "target": "Macuil Xochitl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Tochtli",
-    "target": "Tezcatzoncatl",
     "relation": "cooperation"
   },
   {
@@ -706,11 +466,6 @@
   },
   {
     "source": "Macuil Tochtli",
-    "target": "Macuil Malinalli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Tochtli",
     "target": "Macuil Cuetzpalin",
     "relation": "cooperation"
   },
@@ -722,11 +477,6 @@
   {
     "source": "Macuil Xochitl",
     "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Xochitl",
-    "target": "Macuil Malinalli",
     "relation": "cooperation"
   },
   {
@@ -751,42 +501,12 @@
   },
   {
     "source": "Macuil Xochitl",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Xochitl",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Xochitl",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Xochitl",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Xochitl",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Xochitl",
     "target": "Ixtlilton",
     "relation": "cooperation"
   },
   {
     "source": "Macuil Xochitl",
     "target": "Ome Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Macuil Xochitl",
-    "target": "Tezcatzoncatl",
     "relation": "cooperation"
   },
   {
@@ -807,11 +527,6 @@
   {
     "source": "Malinalxochi",
     "target": "Centzon Huitznahua",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Matlalcueitl",
-    "target": "Tlaloque",
     "relation": "cooperation"
   },
   {
@@ -855,11 +570,6 @@
     "relation": "cooperation"
   },
   {
-    "source": "Nanahuatzin",
-    "target": "Ahuiateteo",
-    "relation": "cooperation"
-  },
-  {
     "source": "Nappatecuhtli",
     "target": "Tlaloque",
     "relation": "cooperation"
@@ -880,43 +590,8 @@
     "relation": "cooperation"
   },
   {
-    "source": "Naui oxomatli",
-    "target": "Teteo Innan",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Naui oxomatli",
-    "target": "Xochiquetzal",
-    "relation": "cooperation"
-  },
-  {
     "source": "Ome Tochtli",
     "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ome Tochtli",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ome Tochtli",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ome Tochtli",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ome Tochtli",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ome Tochtli",
-    "target": "Papaztec",
     "relation": "cooperation"
   },
   {
@@ -927,11 +602,6 @@
   {
     "source": "Ome Tochtli",
     "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Ome Tochtli",
-    "target": "Tezcatzoncatl",
     "relation": "cooperation"
   },
   {
@@ -980,63 +650,8 @@
     "relation": "cooperation"
   },
   {
-    "source": "Papaztec",
-    "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Ixtlilton",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Ome Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Tezcatzoncatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Tepoztecatl",
-    "relation": "cooperation"
-  },
-  {
     "source": "Patecatl",
     "target": "Centzon Totochtin",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Piltzintecuhtli",
-    "target": "Ahuiateteo",
     "relation": "cooperation"
   },
   {
@@ -1047,11 +662,6 @@
   {
     "source": "Popocatepetl",
     "target": "Patecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Quetzalcoatl",
-    "target": "Tzontemoc",
     "relation": "cooperation"
   },
   {
@@ -1091,11 +701,6 @@
   },
   {
     "source": "Quetzalcoatl",
-    "target": "Coyotlinaual",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Quetzalcoatl",
     "target": "Azcatl",
     "relation": "cooperation"
   },
@@ -1110,56 +715,6 @@
     "relation": "cooperation"
   },
   {
-    "source": "Techalotl",
-    "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Ixtlilton",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Ome Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Tezcatzoncatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Techalotl",
-    "target": "Tepoztecatl",
-    "relation": "cooperation"
-  },
-  {
     "source": "Techlotl",
     "target": "Chalchiuhtecolotl",
     "relation": "cooperation"
@@ -1171,42 +726,12 @@
   },
   {
     "source": "Tepoztecatl",
-    "target": "Tezcatzoncatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tepoztecatl",
     "target": "Ixtlilton",
     "relation": "cooperation"
   },
   {
     "source": "Tepoztecatl",
     "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tepoztecatl",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tepoztecatl",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tepoztecatl",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tepoztecatl",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tepoztecatl",
-    "target": "Techalotl",
     "relation": "cooperation"
   },
   {
@@ -1245,61 +770,6 @@
     "relation": "cooperation"
   },
   {
-    "source": "Tezcatzoncatl",
-    "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Ixtlilton",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Ome Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Tepoztecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlacotzontli",
-    "target": "Zacazontli",
-    "relation": "cooperation"
-  },
-  {
     "source": "Tlaloc",
     "target": "Tezcatlipoca",
     "relation": "cooperation"
@@ -1315,61 +785,6 @@
     "relation": "cooperation"
   },
   {
-    "source": "Tlaltecayoa",
-    "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Ixtlilton",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Ome Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Tezcatzoncatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlaltecayoa",
-    "target": "Tepoztecatl",
-    "relation": "cooperation"
-  },
-  {
     "source": "Tlaltecuhtli",
     "target": "Coatlicue",
     "relation": "cooperation"
@@ -1377,11 +792,6 @@
   {
     "source": "Tlaltecuhtli",
     "target": "Tlazolteotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tlazolteotl",
-    "target": "Tzitzimime",
     "relation": "cooperation"
   },
   {
@@ -1411,31 +821,6 @@
   },
   {
     "source": "Tomiyauhtecuhtli",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tomiyauhtecuhtli",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tomiyauhtecuhtli",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tomiyauhtecuhtli",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tomiyauhtecuhtli",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tomiyauhtecuhtli",
     "target": "Ixtlilton",
     "relation": "cooperation"
   },
@@ -1447,11 +832,6 @@
   {
     "source": "Tomiyauhtecuhtli",
     "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tomiyauhtecuhtli",
-    "target": "Tezcatzoncatl",
     "relation": "cooperation"
   },
   {
@@ -1485,11 +865,6 @@
     "relation": "cooperation"
   },
   {
-    "source": "Tzitzimime",
-    "target": "Cihuateteo",
-    "relation": "cooperation"
-  },
-  {
     "source": "Tzitzimitl",
     "target": "Cihuateteo",
     "relation": "cooperation"
@@ -1507,11 +882,6 @@
   {
     "source": "Tzitzimitl",
     "target": "Tzitzimitl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Tzontemoc",
-    "target": "Quetzalcoatl",
     "relation": "cooperation"
   },
   {
@@ -1590,11 +960,6 @@
     "relation": "cooperation"
   },
   {
-    "source": "Xiuhtlati",
-    "target": "Coyotlinaual",
-    "relation": "cooperation"
-  },
-  {
     "source": "Xochipilli",
     "target": "Xochiquetzal",
     "relation": "cooperation"
@@ -1625,21 +990,6 @@
     "relation": "cooperation"
   },
   {
-    "source": "Yacapitzahuac",
-    "target": "Cochimetl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Cochimetl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Yacapitzahuac",
-    "relation": "cooperation"
-  },
-  {
     "source": "Yacatecuhtli",
     "target": "Xolotl",
     "relation": "cooperation"
@@ -1647,86 +997,6 @@
   {
     "source": "Yacatecuhtli",
     "target": "Chalmecacihuatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhqueme",
-    "target": "Tlaloque",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Tomiyauhtecuhtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Techalotl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Yauhtecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Tlaltecayoa",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Ixquitecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Papaztec",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Ixtlilton",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Ome Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Macuil Tochtli",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Tezcatzoncatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yauhtecatl",
-    "target": "Tepoztecatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yohualticitl",
-    "target": "Chicomecoatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yohualticitl",
-    "target": "Chalchiuhtlicue",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yohualticitl",
-    "target": "Huixtocihuatl",
-    "relation": "cooperation"
-  },
-  {
-    "source": "Yohualticitl",
-    "target": "Tlaloque",
     "relation": "cooperation"
   },
   {
@@ -1747,11 +1017,6 @@
   {
     "source": "Chalchiuhtlicue",
     "target": "Nappatecuhtli",
-    "relation": "authority"
-  },
-  {
-    "source": "Chalchiuhtlicue",
-    "target": "Yauhqueme",
     "relation": "authority"
   },
   {
@@ -1911,31 +1176,6 @@
   },
   {
     "source": "Mayahuel",
-    "target": "Techalotl",
-    "relation": "authority"
-  },
-  {
-    "source": "Mayahuel",
-    "target": "Yauhtecatl",
-    "relation": "authority"
-  },
-  {
-    "source": "Mayahuel",
-    "target": "Tlaltecayoa",
-    "relation": "authority"
-  },
-  {
-    "source": "Mayahuel",
-    "target": "Ixquitecatl",
-    "relation": "authority"
-  },
-  {
-    "source": "Mayahuel",
-    "target": "Papaztec",
-    "relation": "authority"
-  },
-  {
-    "source": "Mayahuel",
     "target": "Ixtlilton",
     "relation": "authority"
   },
@@ -1947,11 +1187,6 @@
   {
     "source": "Mayahuel",
     "target": "Macuil Tochtli",
-    "relation": "authority"
-  },
-  {
-    "source": "Mayahuel",
-    "target": "Tezcatzoncatl",
     "relation": "authority"
   },
   {
@@ -1976,22 +1211,7 @@
   },
   {
     "source": "Mictlantecuhtli",
-    "target": "Yohualtecuhtli",
-    "relation": "authority"
-  },
-  {
-    "source": "Mictlantecuhtli",
-    "target": "Nextepeua",
-    "relation": "authority"
-  },
-  {
-    "source": "Mictlantecuhtli",
     "target": "Chalchiuhtecolotl",
-    "relation": "authority"
-  },
-  {
-    "source": "Mictlantecuhtli",
-    "target": "Acolnahuacatl",
     "relation": "authority"
   },
   {
@@ -2016,17 +1236,7 @@
   },
   {
     "source": "Mictlantecuhtli",
-    "target": "Tzontemoc",
-    "relation": "authority"
-  },
-  {
-    "source": "Mictlantecuhtli",
     "target": "Chalmecacihuatl",
-    "relation": "authority"
-  },
-  {
-    "source": "Mictlantecuhtli",
-    "target": "Micapetlacalli",
     "relation": "authority"
   },
   {
@@ -2057,11 +1267,6 @@
   {
     "source": "Mixcoatl",
     "target": "Malinalxochi",
-    "relation": "authority"
-  },
-  {
-    "source": "Mixcoatl",
-    "target": "Ce Acati",
     "relation": "authority"
   },
   {
@@ -2276,31 +1481,6 @@
   },
   {
     "source": "Patecatl",
-    "target": "Techalotl",
-    "relation": "authority"
-  },
-  {
-    "source": "Patecatl",
-    "target": "Yauhtecatl",
-    "relation": "authority"
-  },
-  {
-    "source": "Patecatl",
-    "target": "Tlaltecayoa",
-    "relation": "authority"
-  },
-  {
-    "source": "Patecatl",
-    "target": "Ixquitecatl",
-    "relation": "authority"
-  },
-  {
-    "source": "Patecatl",
-    "target": "Papaztec",
-    "relation": "authority"
-  },
-  {
-    "source": "Patecatl",
     "target": "Ixtlilton",
     "relation": "authority"
   },
@@ -2312,11 +1492,6 @@
   {
     "source": "Patecatl",
     "target": "Macuil Tochtli",
-    "relation": "authority"
-  },
-  {
-    "source": "Patecatl",
-    "target": "Tezcatzoncatl",
     "relation": "authority"
   },
   {
@@ -2471,11 +1646,6 @@
   },
   {
     "source": "Tlaloc",
-    "target": "Yauhqueme",
-    "relation": "authority"
-  },
-  {
-    "source": "Tlaloc",
     "target": "Huixtocihuatl",
     "relation": "authority"
   },
@@ -2515,11 +1685,6 @@
     "relation": "authority"
   },
   {
-    "source": "Tzitzimitl",
-    "target": "Tzitzimime",
-    "relation": "authority"
-  },
-  {
     "source": "Xochipilli",
     "target": "Macuil Xochitl",
     "relation": "authority"
@@ -2527,11 +1692,6 @@
   {
     "source": "Xochipilli",
     "target": "Macuil Tochtli",
-    "relation": "authority"
-  },
-  {
-    "source": "Xochipilli",
-    "target": "Macuil Malinalli",
     "relation": "authority"
   },
   {
@@ -2556,11 +1716,6 @@
   },
   {
     "source": "Xochiquetzal",
-    "target": "Macuil Malinalli",
-    "relation": "authority"
-  },
-  {
-    "source": "Xochiquetzal",
     "target": "Macuil Cuetzpalin",
     "relation": "authority"
   },
@@ -2568,16 +1723,6 @@
     "source": "Xochiquetzal",
     "target": "Macuil Cozcacuahtli",
     "relation": "authority"
-  },
-  {
-    "source": "Acolnahuacatl",
-    "target": "Mictlantecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Acuecucyoticihuati",
-    "target": "Chalchiuhtlicue",
-    "relation": "aspect"
   },
   {
     "source": "Acxomocuil",
@@ -2587,31 +1732,6 @@
   {
     "source": "Acxomocuil",
     "target": "Yacatecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ahkinshok",
-    "target": "Xiuhtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ahuiateteo",
-    "target": "Mayahuel",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ahuiateteo",
-    "target": "Xochipilli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ahuiateteo",
-    "target": "Tonatiuh",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ahuiateteo",
-    "target": "Mictlantecuhtli",
     "relation": "aspect"
   },
   {
@@ -2665,26 +1785,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Ayopechcatl",
-    "target": "Xochiquetzal",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ayopechcatl",
-    "target": "Mayahuel",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ayopechcatl",
-    "target": "Chalchiuhtlicue",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ayopechcatl",
-    "target": "Omecihuatl",
-    "relation": "aspect"
-  },
-  {
     "source": "Camaxtli",
     "target": "Mixcoatl",
     "relation": "aspect"
@@ -2697,11 +1797,6 @@
   {
     "source": "Camaxtli",
     "target": "Huitzilopochtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ce Acati",
-    "target": "Quetzalcoatl",
     "relation": "aspect"
   },
   {
@@ -2722,36 +1817,6 @@
   {
     "source": "Centeotl",
     "target": "Xipe Totec",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhcihuatl",
-    "target": "Xilonen",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhcihuatl",
-    "target": "Ilamatecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhcihuatl",
-    "target": "Chicomecoatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhcihuatl",
-    "target": "Teteo Innan",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhcihuatl",
-    "target": "Tlaltecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhcihuatl",
-    "target": "Chalchiuhtlicue",
     "relation": "aspect"
   },
   {
@@ -2776,37 +1841,12 @@
   },
   {
     "source": "Chalchiuhtlicue",
-    "target": "Chalchiuhcihuatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhtlicue",
-    "target": "Ayopechcatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhtlicue",
-    "target": "Matlalcueitl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhtlicue",
     "target": "Itzaccihuatl",
     "relation": "aspect"
   },
   {
     "source": "Chalchiuhtlicue",
-    "target": "Acuecucyoticihuati",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhtlicue",
     "target": "Centeotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chalchiuhtlicue",
-    "target": "Yohualticitl",
     "relation": "aspect"
   },
   {
@@ -2850,6 +1890,16 @@
     "relation": "aspect"
   },
   {
+    "source": "Chalmecacihuatl",
+    "target": "Omecihuatl",
+    "relation": "aspect"
+  },
+  {
+    "source": "Chamecatecuhtli",
+    "target": "Ometecuhtli",
+    "relation": "aspect"
+  },
+  {
     "source": "Chantico",
     "target": "Coatlicue",
     "relation": "aspect"
@@ -2870,26 +1920,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Chiconahui Ehecatl",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chiconahui Ehecatl",
-    "target": "Quetzalcoatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chiconahui Ehecatl",
-    "target": "Huitzilopochtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Chiconahui Ehecatl",
-    "target": "Xipe Totec",
-    "relation": "aspect"
-  },
-  {
     "source": "Chiconahui Itzcuintli",
     "target": "Chantico",
     "relation": "aspect"
@@ -2900,23 +1930,8 @@
     "relation": "aspect"
   },
   {
-    "source": "Cihuatecayotl",
-    "target": "Ehecatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Cihuatecayotl",
-    "target": "Quetzalcoatl",
-    "relation": "aspect"
-  },
-  {
     "source": "Cihuateteo",
     "target": "Coatlicue",
-    "relation": "aspect"
-  },
-  {
-    "source": "Cinteteo",
-    "target": "Centeotl",
     "relation": "aspect"
   },
   {
@@ -3025,33 +2040,8 @@
     "relation": "aspect"
   },
   {
-    "source": "Coatlicue",
-    "target": "Chalchiuhcihuatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Cochimetl",
-    "target": "Yacatecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Cochimetl",
-    "target": "Mayahuel",
-    "relation": "aspect"
-  },
-  {
     "source": "Coyolxauhqui",
     "target": "Tlazolteotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Coyotlinaual",
-    "target": "Xiuhtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Coyotlinaual",
-    "target": "Yacatecuhtli",
     "relation": "aspect"
   },
   {
@@ -3101,16 +2091,6 @@
   },
   {
     "source": "Huitzilopochtli",
-    "target": "Tetzahauteotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Huitzilopochtli",
-    "target": "Chiconahui Ehecatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Huitzilopochtli",
     "target": "Amimitl",
     "relation": "aspect"
   },
@@ -3155,23 +2135,33 @@
     "relation": "aspect"
   },
   {
-    "source": "Ilamatecuhtli",
+    "source": "Ilamacihuatl",
     "target": "Coatlicue",
     "relation": "aspect"
   },
   {
-    "source": "Ilamatecuhtli",
+    "source": "Ilamacihuatl",
     "target": "Chicomecoatl",
     "relation": "aspect"
   },
   {
-    "source": "Ilamatecuhtli",
+    "source": "Ilamacihuatl",
     "target": "Xilonen",
     "relation": "aspect"
   },
   {
-    "source": "Ilamatecuhtli",
+    "source": "Ilamacihuatl",
     "target": "Xochiquetzal",
+    "relation": "aspect"
+  },
+  {
+    "source": "Ilamacihuatl",
+    "target": "Omecihuatl",
+    "relation": "aspect"
+  },
+  {
+    "source": "Ilamatecuhtli",
+    "target": "Ometecuhtli",
     "relation": "aspect"
   },
   {
@@ -3182,16 +2172,6 @@
   {
     "source": "Ilancueye",
     "target": "Coatlicue",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ilhuicamina",
-    "target": "Xiuhtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Inta",
-    "target": "Xiuhtecuhtli",
     "relation": "aspect"
   },
   {
@@ -3245,21 +2225,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Ixcozauhqui",
-    "target": "Xiuhtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ixcozauhqui",
-    "target": "Tonatiuh",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ixcozauhqui",
-    "target": "Yacatecuhtli",
-    "relation": "aspect"
-  },
-  {
     "source": "Ixcuina",
     "target": "Tlazolteotl",
     "relation": "aspect"
@@ -3282,11 +2247,6 @@
   {
     "source": "Ixquimilli",
     "target": "Itztlacoliuhqui",
-    "relation": "aspect"
-  },
-  {
-    "source": "Ixquitecatl",
-    "target": "Tezcatlipoca",
     "relation": "aspect"
   },
   {
@@ -3325,28 +2285,13 @@
     "relation": "aspect"
   },
   {
-    "source": "Matlalcueitl",
-    "target": "Chalchiuhtlicue",
-    "relation": "aspect"
-  },
-  {
     "source": "Mayahuel",
     "target": "Tlazolteotl",
     "relation": "aspect"
   },
   {
     "source": "Mayahuel",
-    "target": "Cochimetl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Mayahuel",
     "target": "Coatlicue",
-    "relation": "aspect"
-  },
-  {
-    "source": "Metztli",
-    "target": "Yohualtecuhtli",
     "relation": "aspect"
   },
   {
@@ -3365,16 +2310,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Micapetlacalli",
-    "target": "Mictlancihuatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Mictlancihuatl",
-    "target": "Micapetlacalli",
-    "relation": "aspect"
-  },
-  {
     "source": "Mictlancihuatl",
     "target": "Omecihuatl",
     "relation": "aspect"
@@ -3382,11 +2317,6 @@
   {
     "source": "Mictlancihuatl",
     "target": "Chalmecacihuatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Mictlantecuhtli",
-    "target": "Tzontemoc",
     "relation": "aspect"
   },
   {
@@ -3401,17 +2331,7 @@
   },
   {
     "source": "Mictlantecuhtli",
-    "target": "Nextepeua",
-    "relation": "aspect"
-  },
-  {
-    "source": "Mictlantecuhtli",
     "target": "Chalchiuhtecolotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Mictlantecuhtli",
-    "target": "Acolnahuacatl",
     "relation": "aspect"
   },
   {
@@ -3472,11 +2392,6 @@
   {
     "source": "Miquiztlitecuhtli",
     "target": "Mictlantecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Mixcoatl",
-    "target": "Yohualtecuhtli",
     "relation": "aspect"
   },
   {
@@ -3555,21 +2470,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Nextepeua",
-    "target": "Mictlantecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Nextepeua",
-    "target": "Tonatiuh",
-    "relation": "aspect"
-  },
-  {
-    "source": "Omacatl",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
     "source": "Ome Tochtli",
     "target": "Tepoztecatl",
     "relation": "aspect"
@@ -3600,11 +2500,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Omecihuatl",
-    "target": "Ayopechcatl",
-    "relation": "aspect"
-  },
-  {
     "source": "Ometecuhtli",
     "target": "Xiuhtecuhtli",
     "relation": "aspect"
@@ -3700,11 +2595,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Ometeotl",
-    "target": "Ayopechcatl",
-    "relation": "aspect"
-  },
-  {
     "source": "Opochtli",
     "target": "Mixcoatl",
     "relation": "aspect"
@@ -3715,16 +2605,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Otontecuhtli",
-    "target": "Xiuhtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Otontecuhtli",
-    "target": "Yacatecuhtli",
-    "relation": "aspect"
-  },
-  {
     "source": "Oxomoco",
     "target": "Itzpapalotl",
     "relation": "aspect"
@@ -3732,11 +2612,6 @@
   {
     "source": "Painal",
     "target": "Huitzilopochtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Papaztec",
-    "target": "Tepoztecatl",
     "relation": "aspect"
   },
   {
@@ -3757,21 +2632,6 @@
   {
     "source": "Quetzalcoatl",
     "target": "Tlaloc",
-    "relation": "aspect"
-  },
-  {
-    "source": "Quetzalcoatl",
-    "target": "Yohualtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Quetzalcoatl",
-    "target": "Chiconahui Ehecatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Quetzalcoatl",
-    "target": "Ce Acati",
     "relation": "aspect"
   },
   {
@@ -3890,11 +2750,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Tetzahauteotl",
-    "target": "Huitzilopochtli",
-    "relation": "aspect"
-  },
-  {
     "source": "Tezcatlipoca",
     "target": "Tlaloc",
     "relation": "aspect"
@@ -3911,57 +2766,12 @@
   },
   {
     "source": "Tezcatlipoca",
-    "target": "Yohual Tonatiuh",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
     "target": "Piltzintecuhtli",
     "relation": "aspect"
   },
   {
     "source": "Tezcatlipoca",
-    "target": "Yohualtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
-    "target": "Yayauhqui Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
-    "target": "Yaotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
     "target": "Mixcoatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
-    "target": "Tlatlauhqui Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
-    "target": "Tezcatzoncatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
-    "target": "Omacatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
-    "target": "Ixquitecatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatlipoca",
-    "target": "Chiconahui Ehecatl",
     "relation": "aspect"
   },
   {
@@ -4045,16 +2855,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Tezcatzoncatl",
-    "target": "Mayahuel",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tezcatzoncatl",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
     "source": "Titlacahuan",
     "target": "Tezcatlipoca",
     "relation": "aspect"
@@ -4062,11 +2862,6 @@
   {
     "source": "Tlacotzontli",
     "target": "Yacatecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tlahui",
-    "target": "Tlazolteotl",
     "relation": "aspect"
   },
   {
@@ -4097,11 +2892,6 @@
   {
     "source": "Tlaloc",
     "target": "Popocatepetl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tlaloc",
-    "target": "Yauhqueme",
     "relation": "aspect"
   },
   {
@@ -4175,21 +2965,6 @@
     "relation": "aspect"
   },
   {
-    "source": "Tlatlauhqui Tezcatlipoca",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tlatlauhqui Tezcatlipoca",
-    "target": "Xipe Totec",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tlatlauhqui Tezcatlipoca",
-    "target": "Camaxtli",
-    "relation": "aspect"
-  },
-  {
     "source": "Tlazolteotl",
     "target": "Coyolxauhqui",
     "relation": "aspect"
@@ -4197,11 +2972,6 @@
   {
     "source": "Tlazolteotl",
     "target": "Teteo Innan",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tlazopilli",
-    "target": "Xochipilli",
     "relation": "aspect"
   },
   {
@@ -4276,21 +3046,6 @@
   },
   {
     "source": "Tonatiuh",
-    "target": "Yohual Tonatiuh",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tonatiuh",
-    "target": "Ixcozauhqui",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tonatiuh",
-    "target": "Tzontemoc",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tonatiuh",
     "target": "Xochipilli",
     "relation": "aspect"
   },
@@ -4335,28 +3090,8 @@
     "relation": "aspect"
   },
   {
-    "source": "Tzitzimime",
-    "target": "Itzpapalotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tzontemoc",
-    "target": "Mictlantecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Tzontemoc",
-    "target": "Tonatiuh",
-    "relation": "aspect"
-  },
-  {
     "source": "Uappatzin",
     "target": "Huitzilopochtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xaman Ek",
-    "target": "Yacatecuhtli",
     "relation": "aspect"
   },
   {
@@ -4391,17 +3126,7 @@
   },
   {
     "source": "Xipe Totec",
-    "target": "Tlatlauhqui Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xipe Totec",
     "target": "Centeotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xipe Totec",
-    "target": "Chiconahui Ehecatl",
     "relation": "aspect"
   },
   {
@@ -4412,36 +3137,6 @@
   {
     "source": "Xiuhcoatl",
     "target": "Xiuhtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtecuhtli",
-    "target": "Yohualtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtecuhtli",
-    "target": "Ixcozauhqui",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtecuhtli",
-    "target": "Inta",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtecuhtli",
-    "target": "Ilhuicamina",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtecuhtli",
-    "target": "Coyotlinaual",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtecuhtli",
-    "target": "Ahkinshok",
     "relation": "aspect"
   },
   {
@@ -4462,11 +3157,6 @@
   {
     "source": "Xiuhtecuhtli",
     "target": "Huitzilopochtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtecuhtli",
-    "target": "Otontecuhtli",
     "relation": "aspect"
   },
   {
@@ -4492,11 +3182,6 @@
   {
     "source": "Xiuhtecuhtli",
     "target": "Huehueteotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Xiuhtlati",
-    "target": "Yacatecuhtli",
     "relation": "aspect"
   },
   {
@@ -4555,23 +3240,8 @@
     "relation": "aspect"
   },
   {
-    "source": "Yacapitzahuac",
-    "target": "Yacatecuhtli",
-    "relation": "aspect"
-  },
-  {
     "source": "Yacatecuhtli",
     "target": "Macuil Tochtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Macuil Ocelotl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Coyotlinaual",
     "relation": "aspect"
   },
   {
@@ -4601,37 +3271,7 @@
   },
   {
     "source": "Yacatecuhtli",
-    "target": "Otontecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Xiuhtlati",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Xaman Ek",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
     "target": "Tlacotzontli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Ixcozauhqui",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Coyotlinaual",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yacatecuhtli",
-    "target": "Cochimetl",
     "relation": "aspect"
   },
   {
@@ -4680,88 +3320,8 @@
     "relation": "aspect"
   },
   {
-    "source": "Yaotl",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yauhqueme",
-    "target": "Tlaloc",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yayauhqui Tezcatlipoca",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yayauhqui Tezcatlipoca",
-    "target": "Mictlantecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohual Tonatiuh",
-    "target": "Tonatiuh",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohual Tonatiuh",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualtecuhtli",
-    "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualtecuhtli",
-    "target": "Mixcoatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualtecuhtli",
-    "target": "Xiuhtecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualtecuhtli",
-    "target": "Piltzintecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualtecuhtli",
-    "target": "Mictlantecuhtli",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualtecuhtli",
-    "target": "Quetzalcoatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualticitl",
-    "target": "Chicomecoatl",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualticitl",
-    "target": "Chalchiuhtlicue",
-    "relation": "aspect"
-  },
-  {
-    "source": "Yohualticitl",
-    "target": "Huixtocihuatl",
-    "relation": "aspect"
-  },
-  {
     "source": "Youaltepuztli",
     "target": "Tezcatlipoca",
-    "relation": "aspect"
-  },
-  {
-    "source": "Zacazontli",
-    "target": "Yacatecuhtli",
     "relation": "aspect"
   }
 ]
