@@ -80,16 +80,15 @@
     text-align: left;
     font-size: 1rem;
     font-weight: 500;
-    /* background: rgba(250, 250, 250, 0.9); */
-    filter: blur(3px);
+
+    opacity: 0.4;
+    transition: opacity 400ms;
 
     z-index: 100;
   }
 
   .selected {
-    /* background: rgba(200, 200, 200, 0.5); */
-    filter: blur(0px);
-    transition: filter 400ms;
+    opacity: 1;
   }
 
   /* figure p {
