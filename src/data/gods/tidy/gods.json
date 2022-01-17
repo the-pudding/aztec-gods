@@ -1,37 +1,8 @@
 [
   {
-    "name": "Acolnahuacatl",
-    "importance": "secondary",
-    "animals": 2,
-    "celestial": 0,
-    "trade": 0,
-    "death": 2,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Acuecucyoticihuati",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 3,
-    "excess": 0,
-    "nature": 3,
-    "pleasure": 0
-  },
-  {
     "name": "Acxomocuil",
     "importance": "secondary",
+    "bio": "God of merchants, pulque and sex. Like Tezcatlipoca, he's represented with a snake in place of his foot.",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -45,38 +16,9 @@
     "pleasure": 3
   },
   {
-    "name": "Ahkinshok",
-    "importance": "secondary",
-    "animals": 2,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 2,
-    "knowledge": 0,
-    "fertility": 1,
-    "excess": 0,
-    "nature": 3,
-    "pleasure": 0
-  },
-  {
-    "name": "Ahuiateteo",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 1,
-    "violence": 0,
-    "food": 2,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 4,
-    "nature": 1,
-    "pleasure": 5
-  },
-  {
     "name": "Ahuitzotl",
     "importance": "secondary",
+    "bio": "Mix between an otter, a monkey and a dog. He was feared due to his liking of human flesh, especially nails, eyes and teeth. He used the hand on his tail to drown fishermen.",
     "animals": 6,
     "celestial": 0,
     "trade": 0,
@@ -92,6 +34,7 @@
   {
     "name": "Amapan",
     "importance": "secondary",
+    "bio": "Patron deity of tlachtli, an aztec game where the ball represented the sun. Servant of Huitzilopochtli, is also associated with warfare.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -107,6 +50,7 @@
   {
     "name": "Amimitl",
     "importance": "secondary",
+    "bio": "Patron deity of the Otomi's city of Cuitlahuac, he's a minor god of lakes and fish hunters and aspect of Mixcoatl.",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -122,6 +66,7 @@
   {
     "name": "Atlacoya",
     "importance": "secondary",
+    "bio": "Goddess of drought and barren land, associated with the worship of pulque. She represents austerity and despair.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -137,6 +82,7 @@
   {
     "name": "Atlaua",
     "importance": "secondary",
+    "bio": "Minor god of the domesticated aquatic flow who protects fishermen and archers. His nahual is the quetzal bird.",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -152,6 +98,7 @@
   {
     "name": "Ayauhteotl",
     "importance": "secondary",
+    "bio": "Goddess of nightime, early morning mist and smoke, she's also associated with fame, infamy and vanity.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -165,23 +112,9 @@
     "pleasure": 3
   },
   {
-    "name": "Ayopechcatl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 4,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Azcatl",
     "importance": "secondary",
+    "bio": "Red ant which helped Quetzalcoatl to give maize, hidden inside a mountain, to feed the gods and humankind.",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -197,6 +130,7 @@
   {
     "name": "Camaxtli",
     "importance": "secondary",
+    "bio": "Tlaxcaltec creator god of hunting, war, fire, fate and hope. His cult merged with Huitzilopochtli",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -210,23 +144,9 @@
     "pleasure": 0
   },
   {
-    "name": "Ce Acati",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 3,
-    "pleasure": 0
-  },
-  {
     "name": "Centeotl",
     "importance": "secondary",
+    "bio": "Olmec, Totonac and mayan god of fertility. Gender-fluid entity revered by maize farmers but also midwives.",
     "animals": 0,
     "celestial": 1,
     "trade": 1,
@@ -242,6 +162,7 @@
   {
     "name": "Centzon Huitznahua",
     "importance": "secondary",
+    "bio": "Southern star gods. With Coyolxauhqui, their sister, they tried to kill their mother, Coatlicue. Huitzilipochtli massacred them, symbolising the sunrise and the disappearance of the stars.",
     "animals": 0,
     "celestial": 5,
     "trade": 0,
@@ -257,6 +178,7 @@
   {
     "name": "Centzon Totochtin",
     "importance": "secondary",
+    "bio": "Gods of pulque, drunknness and fertility, known for their frequent parties. There 400 of them, a synonym of infinity.",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -270,23 +192,9 @@
     "pleasure": 4
   },
   {
-    "name": "Chalchiuhcihuatl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 1,
-    "food": 2,
-    "knowledge": 0,
-    "fertility": 1,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Chalchiuhtecolotl",
     "importance": "secondary",
+    "bio": "Night owl god with fire eyes. Associated with magic and sorcery, he's an aspect or nahual of Tezcatlipoca.",
     "animals": 2,
     "celestial": 1,
     "trade": 0,
@@ -302,6 +210,7 @@
   {
     "name": "Chalchiuhtlatonac",
     "importance": "secondary",
+    "bio": "Aspect of the water goddess Chalchiuitlicue, which means She who shines like jade. She's also a protectof for midwives.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -317,6 +226,7 @@
   {
     "name": "Chalchiuhtlicue",
     "importance": "secondary",
+    "bio": "Goddess of water, especially running streams, lakes and ocean. Married to Tlaloc (who control the rain from the sky), she's also a patron of birth",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -332,6 +242,7 @@
   {
     "name": "Chalchiutotolin",
     "importance": "secondary",
+    "bio": "God of pestilence, disease, disorder, chaos and mystery. This aspect of Tezcatlipoca, depicted as a turkey, cleanse the humans of contamination, absolve them of guilt, and help them to overcome their fate.",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -347,6 +258,23 @@
   {
     "name": "Chalmecacihuatl",
     "importance": "secondary",
+    "bio": "Minor goddess of the underworld and sacrifices and wife of Tzontemoc or Chalmecatecuhtli. She can be depicted as a massive snake guarding the Mictlan.",
+    "animals": 0,
+    "celestial": 0,
+    "trade": 0,
+    "death": 2,
+    "violence": 1,
+    "food": 0,
+    "knowledge": 0,
+    "fertility": 0,
+    "excess": 0,
+    "nature": 0,
+    "pleasure": 0
+  },
+  {
+    "name": "Chamecatecuhtli",
+    "importance": "secondary",
+    "bio": "God of sacrifice, ruler of one of the nine levels of the underworld. He is closely related to Mictlantecuhtli ",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -362,6 +290,7 @@
   {
     "name": "Chantico",
     "importance": "secondary",
+    "bio": "Goddess of hearth, volcanic fires and personal treasure, she's also a patron of goldsmiths. She was transformed into a dog by Tonacatecuhtli fo breaking fast during a religious celebration.",
     "animals": 1,
     "celestial": 0,
     "trade": 2,
@@ -377,6 +306,7 @@
   {
     "name": "Chicomecoatl",
     "importance": "secondary",
+    "bio": "Depicted as a young girl, she's a goddess of nourishment and agriculture, especially maize and peas.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -390,23 +320,9 @@
     "pleasure": 0
   },
   {
-    "name": "Chiconahui Ehecatl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 2,
-    "pleasure": 0
-  },
-  {
     "name": "Chiconahui Itzcuintli",
     "importance": "secondary",
+    "bio": "Goddess of gem makers, associated with Chantico and Xiuhtecuhtli.",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -422,6 +338,7 @@
   {
     "name": "Chimalma",
     "importance": "secondary",
+    "bio": "Fertility goddess, patron of life and death. She's one of the mother of Quetzalcoatl and wife of Mixcoatl who accompanied the Azteca from Aztlan.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -435,38 +352,9 @@
     "pleasure": 0
   },
   {
-    "name": "Cihuapipiltzin",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 1,
-    "death": 1,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 1,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Cihuatecayotl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 2,
-    "pleasure": 0
-  },
-  {
     "name": "Cihuateteo",
     "importance": "secondary",
+    "bio": "Spirits of high-ranking women who've died during childbirth. They accompanied the sun from noon till sundown. Feared, they are also associated with lust and filth.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -480,23 +368,9 @@
     "pleasure": 0
   },
   {
-    "name": "Cinteteo",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 3,
-    "knowledge": 0,
-    "fertility": 2,
-    "excess": 0,
-    "nature": 1,
-    "pleasure": 0
-  },
-  {
     "name": "Cipactli",
     "importance": "secondary",
+    "bio": "Primordial earth, symbolised by a monstruous caiman. Tezcatlipoca and Quetzalcoatl dismembered it to create the earth and sky. It's also a guardian of one of the levels of Mictlan.",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -512,6 +386,7 @@
   {
     "name": "Cipactonal",
     "importance": "secondary",
+    "bio": "First man of the fifth sun created by Quetzalcoatl. Inventor of astrology and calendars, he also represents the sun.",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -527,6 +402,7 @@
   {
     "name": "Citlalatonac",
     "importance": "secondary",
+    "bio": "Creator of the stars who lives in the second level of Aztec heaven with his consort, Citlaticue. ",
     "animals": 0,
     "celestial": 4,
     "trade": 0,
@@ -542,6 +418,7 @@
   {
     "name": "Citlalicue",
     "importance": "secondary",
+    "bio": "Creator goddess of the Milky Way, stars, death, darkness and Earth. Lives in the second level of Aztec heaven with Citlalatonac.",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -557,6 +434,7 @@
   {
     "name": "Coatlicue",
     "importance": "secondary",
+    "bio": "Creator goddess of earth, fire, stars of the southern sky and birth. Depicted as a woman wearing a skirt of snakes, with sharp claws, as she was thirsty for sacrifices. Mother of Huitzilopochtli, she's also the inspiration of the weeping woman in mexican folklore.",
     "animals": 0,
     "celestial": 3,
     "trade": 1,
@@ -570,23 +448,9 @@
     "pleasure": 0
   },
   {
-    "name": "Cochimetl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 1,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Coyolxauhqui",
     "importance": "secondary",
+    "bio": "Earth goddess who tried to kill Coatlicue. Her head was tossed in the sky by his brother, Huitzilopochtli, and became the moon, which represent cowardice for Aztecs..",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -600,23 +464,9 @@
     "pleasure": 0
   },
   {
-    "name": "Coyotlinaual",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 2,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 1
-  },
-  {
     "name": "Cuaxolotl",
     "importance": "secondary",
+    "bio": "Goddess of the hearth who gave birth to twins, as she wears a mask on the back of her head. She's the female counterpart of Xolotl and an aspect of Chantico.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -632,6 +482,7 @@
   {
     "name": "Ehecatl",
     "importance": "secondary",
+    "bio": "Nagual of Quetzalcoatl which represents the west winds that bring rain. His breath helped to move the sun.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -647,6 +498,7 @@
   {
     "name": "Huehuecoyotl",
     "importance": "secondary",
+    "bio": "Trickster and shapeshifter god, associated both with wildness and wisdom, lust and arts, especially dance and music. He was also a guide in Mictlan.",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -662,6 +514,7 @@
   {
     "name": "Huehueteotl",
     "importance": "secondary",
+    "bio": "Other aspect or name of Xiuthecuhtli, he's a fatherly figure and ancien god of hearth, the fire of life, and time.",
     "animals": 0,
     "celestial": 2,
     "trade": 1,
@@ -677,6 +530,7 @@
   {
     "name": "Huitzilopochtli",
     "importance": "creation",
+    "bio": "God of war, thunderstorms, fire and sun. He's the original deity of the nomadic tribe of Mexica, also known as Aztecs. He was a warrior who need blood to win his battle against darkness.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -692,6 +546,7 @@
   {
     "name": "Huixtocihuatl",
     "importance": "secondary",
+    "bio": "Fertility goddess of ocean who discovered salt. Could be a daughter or an aspect of Chalchiuhtlicue",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -705,8 +560,25 @@
     "pleasure": 0
   },
   {
+    "name": "Ilamacihuatl",
+    "importance": "secondary",
+    "bio": "Lady of Creation. Goddess of weavers, her roar signalled war. She's the elderly version of Chicomecoatl and associated with earth, death, and the milky way",
+    "animals": 0,
+    "celestial": 1,
+    "trade": 1,
+    "death": 1,
+    "violence": 1,
+    "food": 0,
+    "knowledge": 0,
+    "fertility": 1,
+    "excess": 0,
+    "nature": 3,
+    "pleasure": 0
+  },
+  {
     "name": "Ilamatecuhtli",
     "importance": "secondary",
+    "bio": "Lord of Creation. Another nagual of Ometecuhtli",
     "animals": 0,
     "celestial": 1,
     "trade": 1,
@@ -722,6 +594,7 @@
   {
     "name": "Ilancueye",
     "importance": "secondary",
+    "bio": "One the several minor divinities of maize. She represented the withering corn husk surrounding a dried out maize cob",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -735,38 +608,9 @@
     "pleasure": 0
   },
   {
-    "name": "Ilhuicamina",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 1,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 1,
-    "pleasure": 0
-  },
-  {
-    "name": "Inta",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 1,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 1,
-    "pleasure": 0
-  },
-  {
     "name": "Itzaccihuatl",
     "importance": "secondary",
+    "bio": "Representation of the great white mountain Iztactepetl, she's a mountain goddess, guardian of animals needed for food. Mexica affected by blindness would worship her. ",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -782,6 +626,7 @@
   {
     "name": "Itzcuintli",
     "importance": "secondary",
+    "bio": "Sacred dog which guided the dead through Mictlan and guardian of home. This breed of hairless dog still actually exists.",
     "animals": 2,
     "celestial": 0,
     "trade": 0,
@@ -797,6 +642,7 @@
   {
     "name": "Itzpapalotl",
     "importance": "secondary",
+    "bio": "Aztec goddess of sacrifice, associated with earth and fertility, who rules Tomoanchan, and leader of Cihuateteo and Tzitzimime. Her nahual is the butterfly, a manifestation of the dead souls",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -812,6 +658,7 @@
   {
     "name": "Itztapaltotec",
     "importance": "secondary",
+    "bio": "Minor god of Agriculture and fertility, nagual of Xipe Totec, but also a patron of precious metallurgists. He's probably related to Itztli, who is also depicted as a personified knife. ",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -827,6 +674,7 @@
   {
     "name": "Itztlacoliuhqui",
     "importance": "secondary",
+    "bio": "Blind god of justice and punishment, associated with stone, cold and obsidian. Associated with night and north, he's a variant of Tezcatllipoca.",
     "animals": 0,
     "celestial": 2,
     "trade": 1,
@@ -842,6 +690,7 @@
   {
     "name": "Itztli",
     "importance": "secondary",
+    "bio": "God of sacrifice and the sacred obsidian stone knives used for ritual slaying. Servant of Tezcatlipoca",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -855,23 +704,9 @@
     "pleasure": 0
   },
   {
-    "name": "Ixcozauhqui",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 1,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 1,
-    "pleasure": 0
-  },
-  {
     "name": "Ixcuina",
     "importance": "secondary",
+    "bio": "Goddess of coton, associated, like her sisters, to sex and filth.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -887,6 +722,7 @@
   {
     "name": "Ixnextli",
     "importance": "secondary",
+    "bio": "Goddess of weavers and aspect of Xochiquetzal when she was exepelled from paradise.",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -902,6 +738,7 @@
   {
     "name": "Ixquimilli",
     "importance": "secondary",
+    "bio": "God of darkness, justice and punishment. Protectors of the sorcereres., he was linked to both Itztlacoliuhqui and Tezcatlipoca.",
     "animals": 0,
     "celestial": 1,
     "trade": 1,
@@ -915,23 +752,9 @@
     "pleasure": 0
   },
   {
-    "name": "Ixquitecatl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 2,
-    "knowledge": 2,
-    "fertility": 1,
-    "excess": 1,
-    "nature": 0,
-    "pleasure": 1
-  },
-  {
     "name": "Ixtlilton",
     "importance": "secondary",
+    "bio": "God of healing, dancing, festival and games. He played a role similar to the Sandman. Worshipped both as a agricultural and sexual god.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -947,6 +770,7 @@
   {
     "name": "Macuil Cozcacuahtli",
     "importance": "secondary",
+    "bio": "One of the five gods of excess and pleasure, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -962,6 +786,7 @@
   {
     "name": "Macuil Cuetzpalin",
     "importance": "secondary",
+    "bio": "One of the five gods of excess and pleasure, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -973,40 +798,11 @@
     "excess": 4,
     "nature": 1,
     "pleasure": 5
-  },
-  {
-    "name": "Macuil Malinalli",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 4,
-    "nature": 1,
-    "pleasure": 5
-  },
-  {
-    "name": "Macuil Ocelotl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 2,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
   },
   {
     "name": "Macuil Tochtli",
     "importance": "secondary",
+    "bio": "One of the five gods of excess and pleasure, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1022,6 +818,7 @@
   {
     "name": "Macuil Xochitl",
     "importance": "secondary",
+    "bio": "One of the five gods of excess and pleasure, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1037,6 +834,7 @@
   {
     "name": "Malinalxochi",
     "importance": "secondary",
+    "bio": "Underworld sorceress or goddess of snakes, scorpions and insects of the desert. Trying to slow down the journey of his half brother, Huiztilopochtli, and his people, she's abandonned and founded the city of Malinalco.",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -1050,23 +848,9 @@
     "pleasure": 0
   },
   {
-    "name": "Matlalcueitl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 3,
-    "excess": 0,
-    "nature": 2,
-    "pleasure": 0
-  },
-  {
     "name": "Mayahuel",
     "importance": "human",
+    "bio": "Goddess of the maguay plant and all his by-products, especially pulque. Said to have 400 breasts to nurture her children, she gave love to manking with her romance with Quetzalcoatl.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1082,6 +866,7 @@
   {
     "name": "Metztli",
     "importance": "secondary",
+    "bio": "Lowly god of darkness and worms who failed to sacrifice himslef to become the sun and, instead, became the moon.",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1095,23 +880,9 @@
     "pleasure": 0
   },
   {
-    "name": "Micapetlacalli",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 2,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Mictlancihuatl",
     "importance": "secondary",
+    "bio": "Mistress to Mictlantecuhtli and ruler of the deepest level of Mictlan. She was sacrified as a baby and magically grew to addulthood in the underworld.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1127,6 +898,7 @@
   {
     "name": "Mictlantecuhtli",
     "importance": "elemental",
+    "bio": "God of death and lord of Mictlan, the main Aztec underworld. Living in complete darkness, he guard the bones of dead people but also babies before their birth.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1142,6 +914,7 @@
   {
     "name": "Miquiztlitecuhtli",
     "importance": "secondary",
+    "bio": "God of violent death, such as suicide, accident, disease or homicide.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1157,6 +930,7 @@
   {
     "name": "Mixcoatl",
     "importance": "human",
+    "bio": "Chichimec and Otomi god of hunting, war, fire, sky and the Milky Way. Depending on the sources, he can be the father of Huitzilopochtli and Quetzalcoatl or a new form of Tezcatlipoca.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1172,6 +946,7 @@
   {
     "name": "Nanahuatzin",
     "importance": "secondary",
+    "bio": "Lowly goddess who sacrified herself, by jumping into a fire, to become the sun god Tonatiuh. She represented self-sacrifice and courage.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1187,6 +962,7 @@
   {
     "name": "Nappatecuhtli",
     "importance": "secondary",
+    "bio": "One of the Tlaloques (water gods), who invented the art of making mats, seats and cane screens with reed, sedge and canes.",
     "animals": 0,
     "celestial": 0,
     "trade": 3,
@@ -1200,53 +976,9 @@
     "pleasure": 1
   },
   {
-    "name": "Naui oxomatli",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 1,
-    "excess": 0,
-    "nature": 1,
-    "pleasure": 0
-  },
-  {
-    "name": "Nextepeua",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 2,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Omacatl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 1,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 1,
-    "nature": 0,
-    "pleasure": 3
-  },
-  {
     "name": "Ome Tochtli",
     "importance": "secondary",
+    "bio": "God of pulque and drunkeness, depicted as a rabbit. He's the leader of the Centzon Totochtin",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1262,6 +994,7 @@
   {
     "name": "Omecihuatl",
     "importance": "secondary",
+    "bio": "Female representation of the creator god Ometeotl. God of the near and the distant, of substance and duality, she was mainly revered by the high classes, especially in poetry.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1277,6 +1010,7 @@
   {
     "name": "Ometecuhtli",
     "importance": "secondary",
+    "bio": "Male representation of the creator god Ometeotl. God of the near and the distant, of substance and duality, he was mainly revered by the high classes, especially poetry.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1292,6 +1026,7 @@
   {
     "name": "Ometeotl",
     "importance": "primordial",
+    "bio": "Androgynous entity, responsible for the creation of the world, on the back of Cipactli, and the gods, but not mankind.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1307,6 +1042,7 @@
   {
     "name": "Opochtli",
     "importance": "secondary",
+    "bio": "One of the Tlaloques (water gods), inventor of the, fishnet, fishing rod, harpoon, oar to row and snare to kill birds.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1320,23 +1056,9 @@
     "pleasure": 0
   },
   {
-    "name": "Otontecuhtli",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 1,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 2,
-    "excess": 1,
-    "nature": 3,
-    "pleasure": 5
-  },
-  {
     "name": "Oxomoco",
     "importance": "secondary",
+    "bio": "First woman of the fifth sun created by Quetzalcoatl. Inventor of magic, she represents also the nightime and earth.",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1352,6 +1074,7 @@
   {
     "name": "Painal",
     "importance": "secondary",
+    "bio": "Swift messenger of Huitzilopochtli, who call men to god to war. Captured prisoners were regularly offered to him.",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -1365,23 +1088,9 @@
     "pleasure": 0
   },
   {
-    "name": "Papaztec",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 2,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 3,
-    "nature": 0,
-    "pleasure": 3
-  },
-  {
     "name": "Patecatl",
     "importance": "secondary",
+    "bio": "God of medecine and fertility who discovered, with his wife Mayahul, pulque. and especially its narcotic effect.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1397,6 +1106,7 @@
   {
     "name": "Piltzintecuhtli",
     "importance": "secondary",
+    "bio": "God of youth, symbolized by Mercury, and father of Centeotl. He was a manifestation of Tonatiuh or Xochipilli.",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1412,6 +1122,7 @@
   {
     "name": "Piquete Zina",
     "importance": "secondary",
+    "bio": "Zapotec bat god who represented maize and fertility.",
     "animals": 2,
     "celestial": 1,
     "trade": 0,
@@ -1427,6 +1138,7 @@
   {
     "name": "Popocatepetl",
     "importance": "secondary",
+    "bio": "Sacred volcano whose cult worshiped the earth, rain, water, and vegetation. Once a man, he was called away to war but his lover, Iztaccihuatl, died of grief. They ended up transformed into mourning mountains by the Gods.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1442,6 +1154,7 @@
   {
     "name": "Quetzalcoatl",
     "importance": "creation",
+    "bio": "One of the main divinity worshipped in Mesoamerica. He's  the god of agriculture, arts, love science and wind. Exiled by his brother Tezcatlipoca, his expected return has been seen, at first, as the arrival of Hernan Cortez in 1519.",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -1457,6 +1170,7 @@
   {
     "name": "Quilaztli",
     "importance": "secondary",
+    "bio": "Aspect of Coatlicue, associated with pregnancy, child birth and comestible plants.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1472,6 +1186,7 @@
   {
     "name": "Tecciztecatl",
     "importance": "secondary",
+    "bio": "Other name for Metztli. As the god of snails and worms, he failed to sacrifice himself to become the sun and was trasnformed into the moon. Symbol of cowardice.",
     "animals": 0,
     "celestial": 2,
     "trade": 0,
@@ -1485,23 +1200,9 @@
     "pleasure": 0
   },
   {
-    "name": "Techalotl",
-    "importance": "secondary",
-    "animals": 2,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 1,
-    "nature": 1,
-    "pleasure": 3
-  },
-  {
     "name": "Techlotl",
     "importance": "secondary",
+    "bio": "God of one of the levels of Mictlan (underworld) symbolized by an owl.",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -1517,6 +1218,7 @@
   {
     "name": "Tepeyollotl",
     "importance": "secondary",
+    "bio": "God of the heart of the mountain. Associated with jaguars, echoes, and earthquakes, he's an aspect of Tezcatlipoca.",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -1532,6 +1234,7 @@
   {
     "name": "Tepoztecatl",
     "importance": "secondary",
+    "bio": "One of the 400 Centzon Totochtin, the aztec gods of pulque. He was, at first, a local fertility deity from the town of Tepoztlan.",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -1547,6 +1250,7 @@
   {
     "name": "Teteo Innan",
     "importance": "secondary",
+    "bio": "Major group of female fertility deities, which combines terror and beauty, life and destruction. Seen as the mother of gods, they are associated with war and birth.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1560,23 +1264,9 @@
     "pleasure": 0
   },
   {
-    "name": "Tetzahauteotl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 1,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Tezcatlipoca",
     "importance": "creation",
+    "bio": "Omnipotent god of rulers, sorcerers or warriors, he rules night, death, discord, conflict, temptation, change and destruction. Symbolised by the jaguar, he's a rival of Quetzalcoatl and one of the most complex aztec god.",
     "animals": 0,
     "celestial": 3,
     "trade": 1,
@@ -1590,23 +1280,9 @@
     "pleasure": 0
   },
   {
-    "name": "Tezcatzoncatl",
-    "importance": "secondary",
-    "animals": 2,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 2,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 3,
-    "nature": 0,
-    "pleasure": 3
-  },
-  {
     "name": "Titlacahuan",
     "importance": "secondary",
+    "bio": "Omnipotent god of destiny with malevolent power. One of the many aspects of Tezcatlipoca.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1622,6 +1298,7 @@
   {
     "name": "Tlacotzontli",
     "importance": "secondary",
+    "bio": "God of roads and protector for merchants depicted with a huge coat. To please him, they would cut themselves among roads and give him paper banners cover in blood. ",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -1635,23 +1312,9 @@
     "pleasure": 0
   },
   {
-    "name": "Tlahui",
-    "importance": "secondary",
-    "animals": 2,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Tlahuizcalpantecuhtli",
     "importance": "secondary",
+    "bio": "Destructive god of the Morning Star, dawn and east. An aspect of Quetzalcoatl which lives in Mictlan. By way of anecdote, he has the longest name in aztec pantheon.",
     "animals": 0,
     "celestial": 3,
     "trade": 0,
@@ -1667,6 +1330,7 @@
   {
     "name": "Tlalchi Tonatiuh",
     "importance": "secondary",
+    "bio": "Chtonic underworld god. One of the aspect of Tonatiuh, when he makes it's daily journey from night to day.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1682,6 +1346,7 @@
   {
     "name": "Tlaloc",
     "importance": "elemental",
+    "bio": "Main aztec god, with Huitzilopochtli, who controls rain, hurricanes, fertility and lightning. He's also associated with springs, mountains and caves. Babies were drown to give him power. ",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1697,6 +1362,7 @@
   {
     "name": "Tlaloque",
     "importance": "secondary",
+    "bio": "Minor water-rain gods and servants of Tlaloc, which brought different kind of rain. They are also associated with mountains.",
     "animals": 1,
     "celestial": 0,
     "trade": 0,
@@ -1710,23 +1376,9 @@
     "pleasure": 0
   },
   {
-    "name": "Tlaltecayoa",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 1,
-    "excess": 1,
-    "nature": 1,
-    "pleasure": 1
-  },
-  {
     "name": "Tlaltecuhtli",
     "importance": "elemental",
+    "bio": "Sea monster creature, considered as the source of all living things. She's has to be kept benevolent by blood sacrifices, as she swallows the sun each night.",
     "animals": 2,
     "celestial": 3,
     "trade": 0,
@@ -1740,23 +1392,9 @@
     "pleasure": 0
   },
   {
-    "name": "Tlatlauhqui Tezcatlipoca",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 1,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Tlazolteotl",
     "importance": "secondary",
+    "bio": "Goddess of purification from filth, disease or excess, of sin, love, sex, regret and lamentation. She can turn into four aspects, a young moon, cruel and delightful, a sensual young woman, a priestess who bless married couples and a monster who destroy lovers and steal fortune.",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -1770,23 +1408,9 @@
     "pleasure": 3
   },
   {
-    "name": "Tlazopilli",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 2,
-    "pleasure": 2
-  },
-  {
     "name": "Tloque Nahuaque",
     "importance": "secondary",
+    "bio": "Unifying god whose cult rose under the aztec emperor Nezahualcoyotl. Can be seen as another form of Ometeotl.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1802,6 +1426,7 @@
   {
     "name": "Tomiyauhtecuhtli",
     "importance": "secondary",
+    "bio": "Minor rain and fertility god associated with a mountain, probably close to Lake Chalco and Xochimilco. ",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1817,6 +1442,7 @@
   {
     "name": "Tonacacihuatl",
     "importance": "secondary",
+    "bio": "Creator goddess which seems to be a terrestrial representation of Omecihuatl. ",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1832,6 +1458,7 @@
   {
     "name": "Tonacatecuhtli",
     "importance": "secondary",
+    "bio": "Possibly a aspect of Ometecuhtli, associated with agriculture and fate. Depicted as a wrinkled man, he was the god of sustenance.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1847,6 +1474,7 @@
   {
     "name": "Tonatiuh",
     "importance": "secondary",
+    "bio": "Sun god, protector of the warriors and symbolized by the eagle, he presides the fifth (and actual) world age. The gods sacrificed themselves to create him and men has to give him enough energy, through blood, to battle against darkness.",
     "animals": 0,
     "celestial": 2,
     "trade": 0,
@@ -1862,6 +1490,7 @@
   {
     "name": "Tzapatlan Tenen",
     "importance": "secondary",
+    "bio": "Goddess of nature, especially resin and turpentine which is used for healing ointments.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1875,23 +1504,9 @@
     "pleasure": 0
   },
   {
-    "name": "Tzitzimime",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 1,
-    "violence": 1,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 2,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Tzitzimitl",
     "importance": "secondary",
+    "bio": "Aged goddess of inertia and alcohol which ruled the Tzitzimime, who lived in the night sky.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1905,23 +1520,9 @@
     "pleasure": 1
   },
   {
-    "name": "Tzontemoc",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 2,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Uappatzin",
     "importance": "secondary",
+    "bio": "Patron deity of tlachtli, an aztec game where the ball represented the sun. Servant of Huitzilopochtli, is also associated with warfare.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1935,23 +1536,9 @@
     "pleasure": 2
   },
   {
-    "name": "Xaman Ek",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 1,
-    "trade": 1,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 1,
-    "pleasure": 0
-  },
-  {
     "name": "Xilonen",
     "importance": "secondary",
+    "bio": "Local vegetation goddess, associated with corn. She's an aspect of the maize goddess Chicomecoatl, personifying the weet and young maize plant.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -1967,6 +1554,7 @@
   {
     "name": "Xipe Totec",
     "importance": "creation",
+    "bio": "Fierce god of agriculture, fertility, seasons and renewal, he was also a protector of gold workers, jewelers and warriors. He flayed himself to give humanity food, and was shown as wearing a flayed human skin",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -1982,6 +1570,7 @@
   {
     "name": "Xiuhcoatl",
     "importance": "secondary",
+    "bio": "Snake's embodiment of the sun's rays an emblem of the god Xiuhtecuhtli. Huitzilopochtli used hit to kill Coyolxauhqui and the Centzon Huitznahua.",
     "animals": 0,
     "celestial": 1,
     "trade": 0,
@@ -1997,6 +1586,7 @@
   {
     "name": "Xiuhtecuhtli",
     "importance": "elemental",
+    "bio": "God of fire and time, protector of kings, warriors and pochtecas. One of the oldest cult in aztec mythology. He's also deeply conected with birth.",
     "animals": 0,
     "celestial": 0,
     "trade": 1,
@@ -2010,23 +1600,9 @@
     "pleasure": 0
   },
   {
-    "name": "Xiuhtlati",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 2,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Xochipilli",
     "importance": "secondary",
+    "bio": "Young god of feasting, painting, dancing, games, and writing. He represents the masculine aspect of eroticism, with its pleasures, dangers and responsabilities.",
     "animals": 0,
     "celestial": 0,
     "trade": 0,
@@ -2042,6 +1618,7 @@
   {
     "name": "Xochiquetzal",
     "importance": "human",
+    "bio": "Goddess of female sexuality, prostitutes, homosexuals, young mothers, flowers, pleasure and craft (embroiders, weavers, silversmiths and sculptors)",
     "animals": 0,
     "celestial": 0,
     "trade": 3,
@@ -2057,6 +1634,7 @@
   {
     "name": "Xolotl",
     "importance": "secondary",
+    "bio": "Canine companion and/or twin brother of Quetzalcoatl. God of twins, fire, sickness, deformity and bad luck, he accompanied the dead to Mictlan and nourrished the first men of the fifth sun.",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
@@ -2070,23 +1648,9 @@
     "pleasure": 1
   },
   {
-    "name": "Yacapitzahuac",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 2,
-    "death": 0,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
     "name": "Yacatecuhtli",
     "importance": "human",
+    "bio": "God of merchants and travelers, especially pochtecas. Depicted as a man with a long nose and a stick, je opens the way for Gods to travel to the mortal world and also clears a path for the imperial armies. ",
     "animals": 0,
     "celestial": 0,
     "trade": 2,
@@ -2096,136 +1660,17 @@
     "knowledge": 0,
     "fertility": 0,
     "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Yaotl",
-    "importance": "secondary",
-    "animals": 3,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 1,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Yauhqueme",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 1,
-    "knowledge": 0,
-    "fertility": 2,
-    "excess": 0,
-    "nature": 1,
-    "pleasure": 0
-  },
-  {
-    "name": "Yauhtecatl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 0,
-    "violence": 0,
-    "food": 2,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 2,
-    "nature": 0,
-    "pleasure": 2
-  },
-  {
-    "name": "Yayauhqui Tezcatlipoca",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 1,
-    "trade": 0,
-    "death": 2,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Yohual Tonatiuh",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 2,
-    "trade": 0,
-    "death": 1,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Yohualtecuhtli",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 0,
-    "death": 2,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Yohualticitl",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 1,
-    "trade": 0,
-    "death": 1,
-    "violence": 0,
-    "food": 2,
-    "knowledge": 0,
-    "fertility": 4,
-    "excess": 2,
     "nature": 0,
     "pleasure": 0
   },
   {
     "name": "Youaltepuztli",
     "importance": "secondary",
+    "bio": "Nocturnal collecting-soul monster, depicted as a beheaded cadaver with an hole in his torso, opening and closing rapidly  with a terrific sound. The bravest could try pick his black heart and crush it to make him disappear.  ",
     "animals": 1,
     "celestial": 1,
     "trade": 0,
     "death": 3,
-    "violence": 0,
-    "food": 0,
-    "knowledge": 0,
-    "fertility": 0,
-    "excess": 0,
-    "nature": 0,
-    "pleasure": 0
-  },
-  {
-    "name": "Zacazontli",
-    "importance": "secondary",
-    "animals": 0,
-    "celestial": 0,
-    "trade": 2,
-    "death": 0,
     "violence": 0,
     "food": 0,
     "knowledge": 0,

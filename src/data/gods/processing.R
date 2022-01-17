@@ -5,8 +5,10 @@ gods_raw <- read.csv("./raw/light-db.tsv", sep="\t")
 gods_basic <- gods_raw %>% 
   select("name" = "Name", 
          "importance" = "type",
-         "keyword" = "Keywords") %>%
+         "keyword" = "Keywords",
+         bio = Text) %>%
   mutate(name = str_squish(name))
+gods_main <- gods_basic %>% filter(importance != "secondary")
 
 # Keywords ("Domains")
 keywords_raw <- read.csv("./raw/keywords.tsv", sep="\t", header=F) %>%
@@ -44,9 +46,10 @@ gods_with_domains <- gods_basic %>%
 
 
 gods <- gods_with_domains %>% 
-  select(1, 2, 4:14) %>%
+  select(1, 2, 4:15) %>%
   group_by(name) %>%
-  summarize(importance = first(importance), 
+  summarize(importance = first(importance),
+            bio = first(bio),
             animals = sum(animals),
             celestial = sum(celestial),
             "trade" = sum(trade),
@@ -66,7 +69,7 @@ write(toJSON(gods, pretty = T), "./tidy/gods.json")
 
 # Individual relationships
 all_rel <- gods_raw %>%
-  select(2, 8:12) %>%
+  select(2, 9:13) %>%
   rename("submission" = "Submission.relationship..son.daughter.of.OR.killed.by.",
          "cooperation" = "Equal.relationship..sister.brother.OR.cooperation.help.from.",
          "union" = "Equal.relationship...Union..Married.to..sexual.relation.with.",
