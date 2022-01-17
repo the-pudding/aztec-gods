@@ -17,6 +17,7 @@
   } = getContext("chart-state");
 
   $: grouped = groups(points, (d) => getImportance(d));
+  $: interactionBio = $interaction ? points.filter((d) => d.name === $interaction)[0].bio : "";
 </script>
 
 <div class="wrapper" style="height:{bounds.height}px;">
@@ -50,6 +51,8 @@
       <button on:click={() => keyword.highlight(k)}>{k}</button>
     {/each}
 
+    <h3>{$interaction ?? ""}</h3>
+    <div>{interactionBio ?? ""}</div>
     <!-- <h3>Find a God <small>{$interaction}</small></h3>
     {#each grouped as group}
       <div>
