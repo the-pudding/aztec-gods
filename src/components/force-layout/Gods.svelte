@@ -5,6 +5,7 @@
   const {
     bounds,
     points,
+    layouts,
     getName,
     getRelationType,
     getImportance,
@@ -21,7 +22,7 @@
 
 <div style="transform: translate({bounds.margins.left}px, {bounds.margins.top}px)">
   <div style="transform: translate({bounds.chartWidth / 2}px, {bounds.chartHeight / 2}px)">
-    {#each $mutableNodes as point}
+    {#each layouts as point}
       <God god={point} />
     {/each}
   </div>

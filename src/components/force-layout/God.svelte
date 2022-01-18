@@ -16,6 +16,7 @@
     linkTypeColorScale,
     godColorScale,
     mutableNodes,
+    linkHighlight,
     radiusScale,
     mutableLinks,
     keyword
@@ -27,13 +28,13 @@
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
 
   $: keywordHighlight = god[$keyword] >= 1;
-  $: relatedGods = [
-    ...new Set(
-      $mutableLinks
-        .filter((link) => getName(link.source) === $interaction)
-        .map((d) => d.target.name)
-    )
-  ];
+  // $: relatedGods = [
+  //   ...new Set(
+  //     $mutableLinks
+  //       .filter((link) => getName(link.source) === $interaction)
+  //       .map((d) => d.target.name)
+  //   )
+  // ];
 
   // $: opacity =
   //   !$interaction || ($interaction && ($interaction === name || relatedGods.includes(name)))
@@ -45,14 +46,15 @@
       ? 1
       : $keyword && !$interaction
       ? fadeScale(god[$keyword])
-      : $interaction && ($interaction === name || relatedGods.includes(name))
+      : $interaction && $interaction === name // || relatedGods.includes(name))
       ? 1
       : 0.1;
 </script>
 
 <div
   class="god"
-  style="width:{rad}px; height:{rad}px; left:{god.x}px; top:{god.y}px; 
+  style="width:{rad}px; height:{rad}px; left:{god[$linkHighlight].x}px; top:{god[$linkHighlight]
+    .y}px; 
   background-color: {isMain ? 'transparent' : color};
   background-image: {isMain ? `url('/aztec-gods/img/${name}.png')` : 'unset'};
   opacity:{opacity};

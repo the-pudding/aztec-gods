@@ -125,7 +125,7 @@ const calculateForceLayout = async (relation) => {
     }))
   ];
 
-  return coord;
+  return { coord, links };
 };
 
 const getLayoutCoordinates = async () => {
@@ -135,13 +135,27 @@ const getLayoutCoordinates = async () => {
   const aspect = await calculateForceLayout("aspect");
 
   const godsCoord = gods.map((god, i) => ({
-    allLinks: allLinks[i],
-    cooperation: cooperation[i],
-    authority: authority[i],
-    aspect: aspect[i],
+    allLinks: allLinks.coord[i],
+    cooperation: cooperation.coord[i],
+    authority: authority.coord[i],
+    aspect: aspect.coord[i],
     ...god
   }));
-  fs.writeFileSync(`${CWD}/src/data/gods/tidy/force.json`, JSON.stringify(godsCoord));
+  // const linksCoord = links.map((link, i) => ({
+  //   allLinks: allLinks.links[i],
+  //   cooperation: cooperation.links[i],
+  //   authority: authority.links[i],
+  //   aspect: aspect.links[i],
+  //   ...link
+  // }));
+  const linksCoord = {
+    allLinks: allLinks.links,
+    cooperation: cooperation.links,
+    authority: authority.links,
+    aspect: aspect.links
+  };
+  fs.writeFileSync(`${CWD}/src/data/gods/tidy/layouts.json`, JSON.stringify(godsCoord));
+  fs.writeFileSync(`${CWD}/src/data/gods/tidy/links.json`, JSON.stringify(linksCoord));
 };
 
 (async () => {
