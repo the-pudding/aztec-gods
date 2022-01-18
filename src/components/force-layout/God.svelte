@@ -8,6 +8,7 @@
     points,
     getName,
     getRelationType,
+    layouts,
     getImportance,
     interaction,
     links,
@@ -30,9 +31,7 @@
   $: keywordHighlight = god[$keyword] >= 1;
   // $: relatedGods = [
   //   ...new Set(
-  //     $mutableLinks
-  //       .filter((link) => getName(link.source) === $interaction)
-  //       .map((d) => d.target.name)
+  //     layouts.filter((link) => getName(link.source) === $interaction).map((d) => d.target.name)
   //   )
   // ];
 
@@ -46,7 +45,7 @@
       ? 1
       : $keyword && !$interaction
       ? fadeScale(god[$keyword])
-      : $interaction && $interaction === name // || relatedGods.includes(name))
+      : $interaction && $interaction === name //|| relatedGods.includes(name)
       ? 1
       : 0.1;
 </script>
@@ -84,6 +83,6 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
-    transition: opacity 200ms;
+    transition: opacity 200ms, left 700ms, top 700ms;
   }
 </style>

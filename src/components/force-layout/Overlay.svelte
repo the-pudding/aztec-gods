@@ -8,6 +8,7 @@
     bounds,
     points,
     getName,
+    layouts,
     getRelationType,
     getImportance,
     interaction,
@@ -17,14 +18,15 @@
     godColorScale,
     mutableNodes,
     radiusScale,
-    mutableLinks
+    mutableLinks,
+    linkHighlight
   } = getContext("chart-state");
 
   // Overlay Logic
   $: delaunay = Delaunay.from(
-    $mutableNodes,
-    (d) => d.x + bounds.chartWidth / 2,
-    (d) => d.y + bounds.chartHeight / 2
+    layouts,
+    (d) => d[$linkHighlight].x + bounds.chartWidth / 2,
+    (d) => d[$linkHighlight].y + bounds.chartHeight / 2
   );
   $: voronoi = delaunay.voronoi([0, 0, bounds.chartWidth, bounds.chartHeight]);
 
@@ -32,7 +34,7 @@
   const findLocation = (e) => {
     const [x, y] = pointer(e, overlay);
     const location = delaunay.find(x, y);
-    const god = $mutableNodes[location];
+    const god = layouts[location];
     interaction.highlight(getName(god));
   };
 </script>
@@ -40,7 +42,7 @@
 <g data-name="overlay" transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
   <!-- <g transform={`translate(${bounds.chartWidth / 2}, ${bounds.chartHeight / 2})`}> -->
   {#if debug}
-    {#each $mutableNodes as p, i}
+    {#each layouts as p, i}
       <path
         d={voronoi.renderCell(i)}
         fill="hotpink"
