@@ -35,7 +35,7 @@
   <Gods slot="chart-html" />
   <g slot="chart-svg">
     <Links />
-    <Overlay debug />
+    <Overlay />
   </g>
   <Controls slot="controls" />
 </State>
