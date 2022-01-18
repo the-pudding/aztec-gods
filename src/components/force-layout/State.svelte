@@ -2,9 +2,9 @@
   import { scaleLinear, scaleOrdinal } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
-  import points from "../../data/gods/tidy/gods.json";
-  import layouts from "../../data/gods/tidy/layouts.json";
-  import links from "../../data/gods/tidy/links.json";
+  import layouts from "$data/gods/tidy/layouts.json";
+  import links from "$data/gods/tidy/links.json";
+  import { RADIUS_SCALE } from "$domain/constants.js";
 
   let width = 0;
   const height = 600; //width / 2;
@@ -39,15 +39,15 @@
     .domain(typeScale)
     .range(["#008AA1", "#D28360", "#5C8A73", "#B08699", "#FE0000"]);
 
-  $: godDomain = [...new Set(points.map((d) => getName(d)))];
+  $: godDomain = [...new Set(layouts.map((d) => getName(d)))];
 
-  const BASE = 20;
-  const GR = 1.62;
-  $: radiusScale = scaleOrdinal()
-    .domain(typeScale)
-    .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
+  // const BASE = 20;
+  // const GR = 1.62;
+  // $: radiusScale = scaleOrdinal()
+  //   .domain(typeScale)
+  //   .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
 
-  $: keywords = Object.keys(points[0]).slice(2, points.length);
+  $: keywords = Object.keys(layouts[0]).slice(2, layouts.length);
   $: fadeScale = scaleLinear().range([0.1, 1]).domain([0, 5]);
 
   // Interaction
@@ -97,7 +97,7 @@
     linkTypes,
     godColorScale,
     godDomain,
-    radiusScale,
+    radiusScale: RADIUS_SCALE,
     fadeScale,
     layouts,
     currentLinks,

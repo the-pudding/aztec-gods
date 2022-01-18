@@ -2,8 +2,8 @@ const CWD = process.cwd();
 import fs from "fs";
 import { readFile } from "fs/promises";
 
-import { scaleOrdinal, forceLink, forceSimulation, forceCenter, quadtree } from "d3";
-
+import { forceLink, forceSimulation, forceCenter, quadtree } from "d3";
+import { PADDING, RADIUS_SCALE } from "../src/domain/constants.js";
 const relations = JSON.parse(
   await readFile(new URL(`${CWD}/src/data/gods/tidy/relations.json`, import.meta.url))
 );
@@ -11,17 +11,15 @@ const gods = JSON.parse(
   await readFile(new URL(`${CWD}/src/data/gods/tidy/gods.json`, import.meta.url))
 );
 
-const typeScale = ["primordial", "creation", "elemental", "human", "secondary"];
-
 const getRelationType = (d) => d.relation;
 const getName = (d) => d.name;
 
-export const PADDING = 5;
-export const BASE = 20;
-export const GR = 1.62;
-export const radiusScale = scaleOrdinal()
-  .domain(typeScale)
-  .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
+// export const PADDING = 5;
+// export const BASE = 20;
+// export const GR = 1.62;
+// export const radiusScale = scaleOrdinal()
+//   .domain(typeScale)
+//   .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
 
 const rectCollide = (padding) => {
   let nodes;
@@ -38,8 +36,8 @@ const rectCollide = (padding) => {
         if (q.data && q.data !== d) {
           let x = d.x - q.data.x,
             y = d.y - q.data.y,
-            xSpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
-            ySpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
+            xSpacing = padding + (RADIUS_SCALE(q.data.importance) + RADIUS_SCALE(d.importance)) / 2,
+            ySpacing = padding + (RADIUS_SCALE(q.data.importance) + RADIUS_SCALE(d.importance)) / 2,
             absX = Math.abs(x),
             absY = Math.abs(y),
             l,
