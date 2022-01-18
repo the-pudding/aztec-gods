@@ -2,22 +2,7 @@
   import God from "./God.svelte";
   import { getContext } from "svelte";
 
-  const {
-    bounds,
-    points,
-    layouts,
-    getName,
-    getRelationType,
-    getImportance,
-    interaction,
-    links,
-    radius,
-    linkTypeColorScale,
-    godColorScale,
-    mutableNodes,
-    radiusScale,
-    mutableLinks
-  } = getContext("chart-state");
+  const { bounds, layouts } = getContext("chart-state");
 </script>
 
 <div style="transform: translate({bounds.margins.left}px, {bounds.margins.top}px)">

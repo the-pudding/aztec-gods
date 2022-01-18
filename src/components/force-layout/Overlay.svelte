@@ -1,26 +1,13 @@
 <script>
-  import { Delaunay, pointer, style } from "d3";
+  import { Delaunay, pointer } from "d3";
   import { getContext } from "svelte";
+
   export let noPointerEvents = false;
-  let overlay; // ref
   export let debug = false;
-  const {
-    bounds,
-    points,
-    getName,
-    layouts,
-    getRelationType,
-    getImportance,
-    interaction,
-    links,
-    radius,
-    linkTypeColorScale,
-    godColorScale,
-    mutableNodes,
-    radiusScale,
-    mutableLinks,
-    linkHighlight
-  } = getContext("chart-state");
+
+  let overlay; // ref
+
+  const { bounds, getName, layouts, interaction, linkHighlight } = getContext("chart-state");
 
   // Overlay Logic
   $: delaunay = Delaunay.from(
@@ -40,7 +27,6 @@
 </script>
 
 <g data-name="overlay" transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
-  <!-- <g transform={`translate(${bounds.chartWidth / 2}, ${bounds.chartHeight / 2})`}> -->
   {#if debug}
     {#each layouts as p, i}
       <path
@@ -64,19 +50,8 @@
     on:mouseout={() => interaction.highlight(undefined)}
     on:blur={() => interaction.highlight(undefined)}
   />
-  <!-- </g> -->
 </g>
-<!-- <div style="transform: translate({bounds.margins.left}px, {bounds.margins.top}px)">
-      <div style="transform: translate({bounds.chartWidth / 2}px, {bounds.chartHeight / 2}px)">
-        {#each $mutableNodes as point}
-        <God god={point} />
-        {/each}
-      </div>
-    </div>
-     -->
 
-<!-- on:mouseout={hideTooltip}
-    on:blur={hideTooltip} -->
 <style>
   rect {
     cursor: url("/aztec-gods/design-elements/pokeball.png") 12 12, auto;

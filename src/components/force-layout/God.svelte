@@ -4,22 +4,13 @@
   export let god;
 
   const {
-    bounds,
-    points,
     getName,
-    getRelationType,
-    layouts,
     getImportance,
     interaction,
-    links,
-    radius,
     fadeScale,
-    linkTypeColorScale,
     godColorScale,
-    mutableNodes,
     linkHighlight,
     radiusScale,
-    mutableLinks,
     currentLinks,
     keyword
   } = getContext("chart-state");
@@ -29,7 +20,7 @@
   $: color = godColorScale(getImportance(god));
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
 
-  $: keywordHighlight = god[$keyword] >= 1;
+  // $: keywordHighlight = god[$keyword] >= 1;
   $: relatedGods = [
     ...new Set(
       $currentLinks
@@ -37,12 +28,6 @@
         .map((d) => d.target.name)
     )
   ];
-
-  // $: opacity =
-  //   !$interaction || ($interaction && ($interaction === name || relatedGods.includes(name)))
-  //     ? 1
-  //     : 0.1;
-  // $: opacity = $keyword && !keywordHighlight ? 0.1 : 1;
   $: opacity =
     !$keyword && !$interaction
       ? 1

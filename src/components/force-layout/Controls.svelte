@@ -1,23 +1,10 @@
 <script>
-  import { ascending, groups } from "d3";
-
   import { getContext } from "svelte";
 
-  const {
-    bounds,
-    points,
-    interaction,
-    keyword,
-    linkHighlight,
-    keywords,
-    getName,
-    getImportance,
-    godColorScale,
-    linkTypes
-  } = getContext("chart-state");
+  const { bounds, layouts, interaction, keyword, linkHighlight, keywords, linkTypes } =
+    getContext("chart-state");
 
-  $: grouped = groups(points, (d) => getImportance(d));
-  $: interactionBio = $interaction ? points.filter((d) => d.name === $interaction)[0].bio : "";
+  $: interactionBio = $interaction ? layouts.filter((d) => d.name === $interaction)[0].bio : "";
 </script>
 
 <div class="wrapper" style="height:{bounds.height}px;">

@@ -15,13 +15,14 @@ const typeScale = ["primordial", "creation", "elemental", "human", "secondary"];
 
 const getRelationType = (d) => d.relation;
 const getName = (d) => d.name;
-const getImportance = (d) => d.importance;
-const PADDING = 5;
-const base = 20;
-const gr = 1.62;
-const radiusScale = scaleOrdinal()
+
+export const PADDING = 5;
+export const BASE = 20;
+export const GR = 1.62;
+export const radiusScale = scaleOrdinal()
   .domain(typeScale)
-  .range([base * (gr * 4), base * (gr * 3), base * (gr * 2), base * gr, base]);
+  .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
+
 const rectCollide = (padding) => {
   let nodes;
   // let padding = 2;

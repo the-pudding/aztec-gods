@@ -1,21 +1,7 @@
 <script>
   import { getContext } from "svelte";
 
-  const {
-    bounds,
-    points,
-    interaction,
-    getName,
-    getRelationType,
-    links,
-    radius,
-    linkTypeColorScale,
-    godColorScale,
-    mutableNodes,
-    mutableLinks,
-    keyword,
-    currentLinks
-  } = getContext("chart-state");
+  const { bounds, interaction, getName, currentLinks } = getContext("chart-state");
 </script>
 
 <g data-name="links" transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
@@ -31,23 +17,6 @@
         stroke-width={$interaction && $interaction === getName(link.source) ? 3 : 1}
       />
     {/each}
-    <!-- stroke={linkTypeColorScale(getRelationType(link))} -->
-    <!-- {#each $mutableNodes as point}
-      <g transform={`translate(${point.x}, ${point.y})`}>
-        <circle
-          r={radius}
-          cx={0}
-          cy={0}
-          fill={$interaction && $interaction === point.id
-            ? godColorScale(point.Type)
-            : "#efefef"}
-          stroke={godColorScale(point.Type)}
-          stroke-width={2}
-        />
-        <image x={0} y={0} href="../../img/Quetzalcoatl.jpg" height={radius} width={radius} />
-      </g>
-      <text x={point.x} y={point.y} dominant-baseline="middle">{point.id}</text>
-    {/each} -->
   </g>
 </g>
 

@@ -1,16 +1,5 @@
 <script>
-  import {
-    extent,
-    scaleLinear,
-    forceSimulation,
-    forceCollide,
-    forceLink,
-    scaleOrdinal,
-    scaleTime,
-    schemeCategory10,
-    forceCenter,
-    quadtree
-  } from "d3";
+  import { scaleLinear, scaleOrdinal } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
   import points from "../../data/gods/tidy/gods.json";
@@ -52,11 +41,11 @@
 
   $: godDomain = [...new Set(points.map((d) => getName(d)))];
 
-  const base = 20;
-  const gr = 1.62;
+  const BASE = 20;
+  const GR = 1.62;
   $: radiusScale = scaleOrdinal()
     .domain(typeScale)
-    .range([base * (gr * 4), base * (gr * 3), base * (gr * 2), base * gr, base]);
+    .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
 
   $: keywords = Object.keys(points[0]).slice(2, points.length);
   $: fadeScale = scaleLinear().range([0.1, 1]).domain([0, 5]);
@@ -104,17 +93,13 @@
     getRelationType,
     getImportance,
     keywords,
-    points,
-    // links,
     radius: RADIUS,
-    // linkTypeColorScale,
     linkTypes,
     godColorScale,
     godDomain,
     radiusScale,
     fadeScale,
     layouts,
-    // mutableLinks: _mutableLinks,
     currentLinks,
     interaction,
     keyword,
