@@ -17,7 +17,9 @@
     keyword
   } = getContext("chart-state");
 
-  $: rad = radiusScale(getImportance(god));
+  $: console.log($radiusScale.domain());
+  $: rad = $radiusScale(getImportance(god));
+  $: console.log(rad);
   $: name = getName(god);
   $: color = godColorScale(getImportance(god));
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
@@ -38,8 +40,6 @@
       : ($interaction && $interaction === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
-
-  $: console.log($xScale.range());
 </script>
 
 <div

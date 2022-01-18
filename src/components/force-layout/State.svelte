@@ -9,11 +9,12 @@
     GOD_COLORS,
     KEYWORDS,
     LINK_TYPES,
-    RADIUS_SCALE
+    TYPE_SCALE,
+    GR
   } from "$domain/constants.js";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
-  import { max, scaleLinear } from "d3";
+  import { max, scaleLinear, scaleOrdinal } from "d3";
 
   let width = writable(0);
   $: console.log($width);
@@ -55,6 +56,14 @@
   $: yScale = derived([bounds], ([$bounds]) =>
     scaleLinear().domain([-allMax, allMax]).range([$bounds.chartHeight, 0])
   );
+
+  $: radiusScale = derived([bounds], ([$bounds]) => {
+    let base = $bounds.chartWidth * 0.025;
+    return scaleOrdinal()
+      .domain(TYPE_SCALE)
+      .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
+  });
+
   $: godDomain = [...new Set(nodes.map((d) => getName(d)))];
 
   // Interaction
@@ -104,7 +113,7 @@
     linkTypes: LINK_TYPES,
     godColorScale: GOD_COLORS,
     godDomain,
-    radiusScale: RADIUS_SCALE,
+    radiusScale,
     fadeScale: FADE_SCALE,
     currentLinks,
     interaction,
