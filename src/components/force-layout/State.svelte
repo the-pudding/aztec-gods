@@ -15,7 +15,7 @@
   import { derived, writable } from "svelte/store";
   import points from "../../data/gods/tidy/gods.json";
   import layouts from "../../data/gods/tidy/layouts.json";
-  import links from "../../data/gods/tidy/relations.json";
+  import links from "../../data/gods/tidy/links.json";
 
   let width = 0;
   const height = 600; //width / 2;
@@ -45,11 +45,6 @@
 
   // Scales
   const typeScale = ["primordial", "creation", "elemental", "human", "secondary"];
-  // $: typeScale = [...new Set(points.map((d) => getImportance(d)))];
-
-  $: linkTypeColorScale = scaleOrdinal()
-    .domain([...new Set(links.map((d) => getRelationType(d)))])
-    .range(schemeCategory10);
 
   $: godColorScale = scaleOrdinal()
     .domain(typeScale)
@@ -64,7 +59,6 @@
     .range([base * (gr * 4), base * (gr * 3), base * (gr * 2), base * gr, base]);
 
   $: keywords = Object.keys(points[0]).slice(2, points.length);
-  // $: console.log(keywords);
   $: fadeScale = scaleLinear().range([0.1, 1]).domain([0, 5]);
 
   // Interaction
@@ -100,39 +94,8 @@
   };
   const linkHighlight = createLinkHighlight();
 
-  // Simulation
-  // $: initialLinks = links.filter((link) =>
-  //   $linkHighlight ? getRelationType(link) === $linkHighlight : true
-  // );
-  // const initialNodes = points.map((d) => ({ ...d }));
-  // const simulation = forceSimulation(initialNodes);
-
-  // const _mutableNodes = writable([]);
-  // const _mutableLinks = writable([]);
-
-  // simulation.on("tick", () => {
-  //   $_mutableNodes = [...simulation.nodes()];
-  //   $_mutableLinks = [...initialLinks];
-  // });
-
-  // $: {
-  //   simulation
-  //     .force("collide", rectCollide())
-  //     // .force(
-  //     //   "collide",
-  //     //   forceCollide()
-  //     //     .radius((d) => radiusScale(getImportance(d)) * 0.8)
-  //     //     .iterations(3)
-  //     // )
-  //     .force(
-  //       "link",
-  //       forceLink(initialLinks).id((d) => getName(d))
-  //       // .distance((d) => (getRelationType(d) === "authority" ? 30 : 10))
-  //     )
-  //     .force("center", forceCenter())
-  //     .alpha(1)
-  //     .restart();
-  // }
+  $: linkTypes = Object.keys(links);
+  $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
 
   // Context
   $: context = {
@@ -142,15 +105,17 @@
     getImportance,
     keywords,
     points,
-    links,
+    // links,
     radius: RADIUS,
-    linkTypeColorScale,
+    // linkTypeColorScale,
+    linkTypes,
     godColorScale,
     godDomain,
     radiusScale,
     fadeScale,
     layouts,
     // mutableLinks: _mutableLinks,
+    currentLinks,
     interaction,
     keyword,
     linkHighlight

@@ -75,31 +75,6 @@ const rectCollide = (padding) => {
   return force;
 };
 
-// const calculateForceLayoutAllLinks = async () => {
-//   let nodes = [...gods];
-//   let links = [...relations];
-//   const simulation = forceSimulation(nodes);
-
-//   simulation
-//     .force("collide", rectCollide(PADDING))
-//     .force(
-//       "link",
-//       forceLink(links).id((d) => getName(d))
-//     )
-//     .force("center", forceCenter())
-//     .alpha(1);
-
-//   for (let i = 0; i < 200; i++) simulation.tick();
-
-//   const coord = [
-//     ...nodes.map((n) => ({
-//       x: n.x,
-//       y: n.y
-//     }))
-//   ];
-
-//   return coord;
-// };
 const calculateForceLayout = async (relation) => {
   let nodes = [...gods];
   let links = relation
@@ -125,7 +100,15 @@ const calculateForceLayout = async (relation) => {
     }))
   ];
 
-  return { coord, links };
+  return {
+    coord,
+    links: links.map((l) => ({
+      source: { x: l.source.x, y: l.source.y, name: l.source.name },
+      target: { x: l.target.x, y: l.target.y, name: l.target.name },
+      relation: l.relation,
+      index: l.index
+    }))
+  };
 };
 
 const getLayoutCoordinates = async () => {

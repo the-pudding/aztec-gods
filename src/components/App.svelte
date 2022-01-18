@@ -20,7 +20,7 @@
 </script>
 
 <Hero />
-
+<!-- 
 <Intro />
 
 <Tezca />
@@ -29,13 +29,13 @@
 
 <Heading>Contextual Elements</Heading>
 
-<Scrolly />
+<Scrolly /> -->
 
 <State>
   <Gods slot="chart-html" />
   <g slot="chart-svg">
     <Links />
-    <Overlay />
+    <Overlay debug />
   </g>
   <Controls slot="controls" />
 </State>

@@ -13,13 +13,14 @@
     godColorScale,
     mutableNodes,
     mutableLinks,
-    keyword
+    keyword,
+    currentLinks
   } = getContext("chart-state");
 </script>
 
 <g data-name="links" transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
   <g transform={`translate(${bounds.chartWidth / 2}, ${bounds.chartHeight / 2})`}>
-    {#each $mutableLinks as link}
+    {#each $currentLinks as link}
       <line
         x1={link.source.x}
         y1={link.source.y}
