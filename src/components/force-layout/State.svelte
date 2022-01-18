@@ -213,13 +213,13 @@
 <div class="wrapper">
   <div class="chart-wrapper" bind:clientWidth={width}>
     {#if width > 0}
+      <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
+        <slot name="chart-html" />
+      </div>
       <svg class="chart-svg" width={bounds.width} height={bounds.height}>
         <!-- <rect x={0} y={0} width={bounds.width} height={bounds.height} fill="#efefef" /> -->
         <slot name="chart-svg" />
       </svg>
-      <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
-        <slot name="chart-html" />
-      </div>
     {/if}
   </div>
   <div class="controls"><slot name="controls" /></div>

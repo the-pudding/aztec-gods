@@ -11,6 +11,7 @@
   import Links from "$components/force-layout/Links.svelte";
   import State from "$components/force-layout/State.svelte";
   import Gods from "$components/force-layout/Gods.svelte";
+  import Overlay from "$components/force-layout/Overlay.svelte";
   import Controls from "$components/force-layout/Controls.svelte";
   import Scrolly from "$components/map/Scrolly.svelte";
   import Tezca from "$components/iconography/Tezca.svelte";
@@ -31,8 +32,11 @@
 <Scrolly />
 
 <State>
-  <Links slot="chart-svg" />
   <Gods slot="chart-html" />
+  <g slot="chart-svg">
+    <Links />
+    <Overlay />
+  </g>
   <Controls slot="controls" />
 </State>
 
