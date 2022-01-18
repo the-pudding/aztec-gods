@@ -27,7 +27,7 @@
 
 <Tlalte />
 
-<Heading>Contextual Elements</Heading>
+<!-- <Heading>Contextual Elements</Heading> -->
 
 <Scrolly />
 

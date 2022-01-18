@@ -1,79 +1,26 @@
 <script>
+  import nodes from "$data/gods/tidy/nodes.json";
+  import links from "$data/gods/tidy/links.json";
   import {
-    extent,
-    scaleLinear,
-    forceSimulation,
-    forceCollide,
-    forceLink,
-    scaleOrdinal,
-    scaleTime,
-    schemeCategory10,
-    forceCenter,
-    quadtree
-  } from "d3";
+    FADE_SCALE,
+    getImportance,
+    getName,
+    getRelationType,
+    GOD_COLORS,
+    KEYWORDS,
+    LINK_TYPES,
+    TYPE_SCALE,
+    GR
+  } from "$domain/constants.js";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
-  import points from "../../data/gods/tidy/gods.json";
-  import links from "../../data/gods/tidy/relations.json";
+  import { max, scaleLinear, scaleOrdinal } from "d3";
 
-  const rectCollide = () => {
-    let nodes;
-    let padding = 2;
-    function force(alpha) {
-      const quad = quadtree(
-        nodes,
-        (d) => d.x,
-        (d) => d.y
-      );
-      for (const d of nodes) {
-        quad.visit((q, x1, y1, x2, y2) => {
-          let updated = false;
-          if (q.data && q.data !== d) {
-            let x = d.x - q.data.x,
-              y = d.y - q.data.y,
-              xSpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
-              ySpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
-              absX = Math.abs(x),
-              absY = Math.abs(y),
-              l,
-              lx,
-              ly;
+  let width = writable(0);
+  $: console.log($width);
+  // $: height = $width / 2;
 
-            if (absX < xSpacing && absY < ySpacing) {
-              l = Math.sqrt(x * x + y * y);
-
-              lx = (absX - xSpacing) / l;
-              ly = (absY - ySpacing) / l;
-
-              // the one that's barely within the bounds probably triggered the collision
-              if (Math.abs(lx) > Math.abs(ly)) {
-                lx = 0;
-              } else {
-                ly = 0;
-              }
-              d.x -= x *= lx;
-              d.y -= y *= ly;
-              q.data.x += x;
-              q.data.y += y;
-
-              updated = true;
-            }
-          }
-          return updated;
-        });
-      }
-    }
-
-    force.initialize = (_) => (nodes = _);
-
-    return force;
-  };
-
-  let width = 0;
-  const height = 600; //width / 2;
-
-  $: center = [width / 2, height / 2];
-  const RADIUS = 35;
+  // $: center = [$width / 2, $height / 2];
   const margins = {
     top: 10,
     right: 10,
@@ -81,43 +28,43 @@
     left: 10
   };
 
-  $: bounds = {
-    width,
-    height,
+  // $: bounds = {
+  //   width,
+  //   height,
+  //   margins,
+  //   center,
+  //   chartWidth: width - margins.left - margins.right,
+  //   chartHeight: height - margins.top - margins.bottom
+  // };
+  const bounds = derived([width], ([$width]) => ({
+    width: $width,
+    height: $width,
     margins,
-    center,
-    chartWidth: width - margins.left - margins.right,
-    chartHeight: height - margins.top - margins.bottom
-  };
+    chartWidth: $width - margins.left - margins.right,
+    chartHeight: $width - margins.top - margins.bottom
+  }));
 
-  // Accessors
-  const getRelationType = (d) => d.relation;
-  const getName = (d) => d.name;
-  const getImportance = (d) => d.importance;
+  $: allX = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].x));
+  $: xMax = max(allX, (d) => Math.abs(d));
+  $: allY = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].y));
+  $: yMax = max(allY, (d) => Math.abs(d));
+  $: allMax = Math.max(xMax, yMax);
 
-  // Scales
-  const typeScale = ["primordial", "creation", "elemental", "human", "secondary"];
-  // $: typeScale = [...new Set(points.map((d) => getImportance(d)))];
+  $: xScale = derived([bounds], ([$bounds]) =>
+    scaleLinear().domain([-allMax, allMax]).range([0, $bounds.chartWidth])
+  );
+  $: yScale = derived([bounds], ([$bounds]) =>
+    scaleLinear().domain([-allMax, allMax]).range([$bounds.chartHeight, 0])
+  );
 
-  $: linkTypeColorScale = scaleOrdinal()
-    .domain([...new Set(links.map((d) => getRelationType(d)))])
-    .range(schemeCategory10);
+  $: radiusScale = derived([bounds], ([$bounds]) => {
+    let base = $bounds.chartWidth * 0.025;
+    return scaleOrdinal()
+      .domain(TYPE_SCALE)
+      .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
+  });
 
-  $: godColorScale = scaleOrdinal()
-    .domain(typeScale)
-    .range(["#008AA1", "#D28360", "#5C8A73", "#B08699", "#FE0000"]);
-
-  $: godDomain = [...new Set(points.map((d) => getName(d)))];
-
-  const base = 20;
-  const gr = 1.62;
-  $: radiusScale = scaleOrdinal()
-    .domain(typeScale)
-    .range([base * (gr * 4), base * (gr * 3), base * (gr * 2), base * gr, base]);
-
-  $: keywords = Object.keys(points[0]).slice(2, points.length);
-  // $: console.log(keywords);
-  $: fadeScale = scaleLinear().range([0.1, 1]).domain([0, 5]);
+  $: godDomain = [...new Set(nodes.map((d) => getName(d)))];
 
   // Interaction
   const createInteraction = () => {
@@ -143,66 +90,32 @@
 
   // Links
   const createLinkHighlight = () => {
-    const { subscribe, set } = writable(undefined);
+    const { subscribe, set } = writable("allLinks");
     return {
       subscribe,
       highlight: (d) => set(d),
       lowlight: () => set(undefined)
     };
   };
-  const linkHighlight = createKeywordHighlight();
-
-  // Simulation
-  $: initialLinks = links.filter((link) =>
-    $linkHighlight ? getRelationType(link) === $linkHighlight : true
-  );
-  const initialNodes = points.map((d) => ({ ...d }));
-  const simulation = forceSimulation(initialNodes);
-
-  const _mutableNodes = writable([]);
-  const _mutableLinks = writable([]);
-
-  simulation.on("tick", () => {
-    $_mutableNodes = [...simulation.nodes()];
-    $_mutableLinks = [...initialLinks];
-  });
-
-  $: {
-    simulation
-      .force("collide", rectCollide())
-      // .force(
-      //   "collide",
-      //   forceCollide()
-      //     .radius((d) => radiusScale(getImportance(d)) * 0.8)
-      //     .iterations(3)
-      // )
-      .force(
-        "link",
-        forceLink(initialLinks).id((d) => getName(d))
-        // .distance((d) => (getRelationType(d) === "authority" ? 30 : 10))
-      )
-      .force("center", forceCenter())
-      .alpha(1)
-      .restart();
-  }
+  const linkHighlight = createLinkHighlight();
+  $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
 
   // Context
   $: context = {
     bounds,
+    nodes,
+    xScale,
+    yScale,
     getName,
     getRelationType,
     getImportance,
-    keywords,
-    points,
-    links,
-    radius: RADIUS,
-    linkTypeColorScale,
-    godColorScale,
+    keywords: KEYWORDS,
+    linkTypes: LINK_TYPES,
+    godColorScale: GOD_COLORS,
     godDomain,
     radiusScale,
-    fadeScale,
-    mutableNodes: _mutableNodes,
-    mutableLinks: _mutableLinks,
+    fadeScale: FADE_SCALE,
+    currentLinks,
     interaction,
     keyword,
     linkHighlight
@@ -211,13 +124,13 @@
 </script>
 
 <div class="wrapper">
-  <div class="chart-wrapper" bind:clientWidth={width}>
-    {#if width > 0}
-      <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
+  <div class="chart-wrapper" bind:clientWidth={$width}>
+    {#if $width > 0}
+      <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
         <slot name="chart-html" />
       </div>
-      <svg class="chart-svg" width={bounds.width} height={bounds.height}>
-        <!-- <rect x={0} y={0} width={bounds.width} height={bounds.height} fill="#efefef" /> -->
+      <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+        <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
         <slot name="chart-svg" />
       </svg>
     {/if}

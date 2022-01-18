@@ -1,42 +1,17 @@
 <script>
-  import { ascending, groups } from "d3";
-
   import { getContext } from "svelte";
 
-  const {
-    bounds,
-    points,
-    interaction,
-    keyword,
-    linkHighlight,
-    keywords,
-    getName,
-    getImportance,
-    godColorScale,
-    linkTypeColorScale
-  } = getContext("chart-state");
+  const { bounds, nodes, interaction, keyword, linkHighlight, keywords, linkTypes } =
+    getContext("chart-state");
 
-  $: grouped = groups(points, (d) => getImportance(d));
-  $: interactionBio = $interaction ? points.filter((d) => d.name === $interaction)[0].bio : "";
+  $: interactionBio = $interaction ? nodes.filter((d) => d.name === $interaction)[0].bio : "";
 </script>
 
 <div class="wrapper" style="height:{bounds.height}px;">
   <div>
-    <h3>
-      Links <small
-        style="text-decoration: underline; cursor: pointer;"
-        on:click={() => linkHighlight.lowlight()}>unset</small
-      >
-    </h3>
-    {#each linkTypeColorScale.domain() as linkType}
-      <button
-        on:click={() => linkHighlight.highlight(linkType)}
-        style="color: {$linkHighlight === linkType
-          ? '#fff'
-          : linkTypeColorScale(linkType)}; background: {$linkHighlight === linkType
-          ? linkTypeColorScale(linkType)
-          : '#fff'}"
-      >
+    <h3>Links</h3>
+    {#each linkTypes as linkType}
+      <button on:click={() => linkHighlight.highlight(linkType)}>
         {linkType}
       </button>
     {/each}

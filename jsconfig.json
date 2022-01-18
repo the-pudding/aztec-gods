@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "aztec-gods",
     "paths": {
       "$actions/*": ["src/actions/*"],
       "$components/*": ["src/components/*"],
