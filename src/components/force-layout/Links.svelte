@@ -17,7 +17,7 @@
   } = getContext("chart-state");
 </script>
 
-<g transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
+<g data-name="links" transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
   <g transform={`translate(${bounds.chartWidth / 2}, ${bounds.chartHeight / 2})`}>
     {#each $mutableLinks as link}
       <line
