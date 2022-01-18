@@ -49,3 +49,9 @@
     {/each} -->
   </g>
 </g>
+
+<style>
+  line {
+    transition: opacity 200ms;
+  }
+</style>

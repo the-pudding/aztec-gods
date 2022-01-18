@@ -82,5 +82,6 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
+    transition: opacity 200ms;
   }
 </style>
