@@ -7,15 +7,16 @@
 
   let overlay; // ref
 
-  const { bounds, getName, nodes, interaction, linkHighlight } = getContext("chart-state");
+  const { bounds, xScale, yScale, getName, nodes, interaction, linkHighlight } =
+    getContext("chart-state");
 
   // Overlay Logic
   $: delaunay = Delaunay.from(
     nodes,
-    (d) => d[$linkHighlight].x + bounds.chartWidth / 2,
-    (d) => d[$linkHighlight].y + bounds.chartHeight / 2
+    (d) => $xScale(d[$linkHighlight].x),
+    (d) => $yScale(d[$linkHighlight].y)
   );
-  $: voronoi = delaunay.voronoi([0, 0, bounds.chartWidth, bounds.chartHeight]);
+  $: voronoi = delaunay.voronoi([0, 0, $bounds.chartWidth, $bounds.chartHeight]);
 
   // Manage interaction
   const findLocation = (e) => {
@@ -26,7 +27,7 @@
   };
 </script>
 
-<g data-name="overlay" transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
+<g data-name="overlay" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>
   {#if debug}
     {#each nodes as p, i}
       <path
@@ -42,8 +43,8 @@
     style="pointer-events: {noPointerEvents ? 'none' : 'auto'}"
     bind:this={overlay}
     fill-opacity={0}
-    width={bounds.chartWidth}
-    height={bounds.chartHeight}
+    width={$bounds.chartWidth}
+    height={$bounds.chartHeight}
     on:mousemove={findLocation}
     on:mouseenter={findLocation}
     on:focus={findLocation}

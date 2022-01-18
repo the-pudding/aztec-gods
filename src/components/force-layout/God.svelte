@@ -4,6 +4,8 @@
   export let god;
 
   const {
+    xScale,
+    yScale,
     getName,
     getImportance,
     interaction,
@@ -36,12 +38,14 @@
       : ($interaction && $interaction === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
+
+  $: console.log($xScale.range());
 </script>
 
 <div
   class="god"
-  style="width:{rad}px; height:{rad}px; left:{god[$linkHighlight].x}px; top:{god[$linkHighlight]
-    .y}px; 
+  style="width:{rad}px; height:{rad}px; 
+  left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   background-color: {isMain ? 'transparent' : color};
   background-image: {isMain ? `url('/aztec-gods/img/${name}.png')` : 'unset'};
   opacity:{opacity};

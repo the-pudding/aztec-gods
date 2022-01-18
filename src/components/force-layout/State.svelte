@@ -13,11 +13,13 @@
   } from "$domain/constants.js";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
+  import { max, scaleLinear } from "d3";
 
-  let width = 0;
-  const height = 600; //width / 2;
+  let width = writable(0);
+  $: console.log($width);
+  // $: height = $width / 2;
 
-  $: center = [width / 2, height / 2];
+  // $: center = [$width / 2, $height / 2];
   const margins = {
     top: 10,
     right: 10,
@@ -25,17 +27,34 @@
     left: 10
   };
 
-  $: bounds = {
-    width,
-    height,
+  // $: bounds = {
+  //   width,
+  //   height,
+  //   margins,
+  //   center,
+  //   chartWidth: width - margins.left - margins.right,
+  //   chartHeight: height - margins.top - margins.bottom
+  // };
+  const bounds = derived([width], ([$width]) => ({
+    width: $width,
+    height: $width,
     margins,
-    center,
-    chartWidth: width - margins.left - margins.right,
-    chartHeight: height - margins.top - margins.bottom
-  };
+    chartWidth: $width - margins.left - margins.right,
+    chartHeight: $width - margins.top - margins.bottom
+  }));
 
-  $: console.log(width);
+  $: allX = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].x));
+  $: xMax = max(allX, (d) => Math.abs(d));
+  $: allY = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].y));
+  $: yMax = max(allY, (d) => Math.abs(d));
+  $: allMax = Math.max(xMax, yMax);
 
+  $: xScale = derived([bounds], ([$bounds]) =>
+    scaleLinear().domain([-allMax, allMax]).range([0, $bounds.chartWidth])
+  );
+  $: yScale = derived([bounds], ([$bounds]) =>
+    scaleLinear().domain([-allMax, allMax]).range([$bounds.chartHeight, 0])
+  );
   $: godDomain = [...new Set(nodes.map((d) => getName(d)))];
 
   // Interaction
@@ -76,6 +95,8 @@
   $: context = {
     bounds,
     nodes,
+    xScale,
+    yScale,
     getName,
     getRelationType,
     getImportance,
@@ -94,13 +115,13 @@
 </script>
 
 <div class="wrapper">
-  <div class="chart-wrapper" bind:clientWidth={width}>
-    {#if width > 0}
-      <div class="chart-html" style="width:{bounds.width}px; height:{bounds.height}px;">
+  <div class="chart-wrapper" bind:clientWidth={$width}>
+    {#if $width > 0}
+      <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
         <slot name="chart-html" />
       </div>
-      <svg class="chart-svg" width={bounds.width} height={bounds.height}>
-        <!-- <rect x={0} y={0} width={bounds.width} height={bounds.height} fill="#efefef" /> -->
+      <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+        <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
         <slot name="chart-svg" />
       </svg>
     {/if}
