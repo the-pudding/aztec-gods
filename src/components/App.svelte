@@ -20,22 +20,22 @@
 </script>
 
 <Hero />
-<!-- 
+
 <Intro />
 
 <Tezca />
 
 <Tlalte />
 
-<Heading>Contextual Elements</Heading>
+<!-- <Heading>Contextual Elements</Heading> -->
 
-<Scrolly /> -->
+<Scrolly />
 
 <State>
   <Gods slot="chart-html" />
   <g slot="chart-svg">
     <Links />
-    <Overlay debug />
+    <Overlay />
   </g>
   <Controls slot="controls" />
 </State>
