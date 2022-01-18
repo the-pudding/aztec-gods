@@ -1,16 +1,23 @@
 <script>
-  import { scaleLinear, scaleOrdinal } from "d3";
-  import { setContext } from "svelte";
-  import { derived, writable } from "svelte/store";
   import layouts from "$data/gods/tidy/layouts.json";
   import links from "$data/gods/tidy/links.json";
-  import { RADIUS_SCALE } from "$domain/constants.js";
+  import {
+    FADE_SCALE,
+    getImportance,
+    getName,
+    getRelationType,
+    GOD_COLORS,
+    KEYWORDS,
+    LINK_TYPES,
+    RADIUS_SCALE
+  } from "$domain/constants.js";
+  import { setContext } from "svelte";
+  import { derived, writable } from "svelte/store";
 
   let width = 0;
   const height = 600; //width / 2;
 
   $: center = [width / 2, height / 2];
-  const RADIUS = 35;
   const margins = {
     top: 10,
     right: 10,
@@ -27,28 +34,7 @@
     chartHeight: height - margins.top - margins.bottom
   };
 
-  // Accessors
-  const getRelationType = (d) => d.relation;
-  const getName = (d) => d.name;
-  const getImportance = (d) => d.importance;
-
-  // Scales
-  const typeScale = ["primordial", "creation", "elemental", "human", "secondary"];
-
-  $: godColorScale = scaleOrdinal()
-    .domain(typeScale)
-    .range(["#008AA1", "#D28360", "#5C8A73", "#B08699", "#FE0000"]);
-
   $: godDomain = [...new Set(layouts.map((d) => getName(d)))];
-
-  // const BASE = 20;
-  // const GR = 1.62;
-  // $: radiusScale = scaleOrdinal()
-  //   .domain(typeScale)
-  //   .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
-
-  $: keywords = Object.keys(layouts[0]).slice(2, layouts.length);
-  $: fadeScale = scaleLinear().range([0.1, 1]).domain([0, 5]);
 
   // Interaction
   const createInteraction = () => {
@@ -83,22 +69,19 @@
   };
   const linkHighlight = createLinkHighlight();
 
-  $: linkTypes = Object.keys(links);
   $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
-
   // Context
   $: context = {
     bounds,
     getName,
     getRelationType,
     getImportance,
-    keywords,
-    radius: RADIUS,
-    linkTypes,
-    godColorScale,
+    keywords: KEYWORDS,
+    linkTypes: LINK_TYPES,
+    godColorScale: GOD_COLORS,
     godDomain,
     radiusScale: RADIUS_SCALE,
-    fadeScale,
+    fadeScale: FADE_SCALE,
     layouts,
     currentLinks,
     interaction,
