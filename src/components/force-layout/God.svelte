@@ -20,6 +20,7 @@
     linkHighlight,
     radiusScale,
     mutableLinks,
+    currentLinks,
     keyword
   } = getContext("chart-state");
 
@@ -29,11 +30,13 @@
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
 
   $: keywordHighlight = god[$keyword] >= 1;
-  // $: relatedGods = [
-  //   ...new Set(
-  //     layouts.filter((link) => getName(link.source) === $interaction).map((d) => d.target.name)
-  //   )
-  // ];
+  $: relatedGods = [
+    ...new Set(
+      $currentLinks
+        .filter((link) => getName(link.source) === $interaction)
+        .map((d) => d.target.name)
+    )
+  ];
 
   // $: opacity =
   //   !$interaction || ($interaction && ($interaction === name || relatedGods.includes(name)))
@@ -45,7 +48,7 @@
       ? 1
       : $keyword && !$interaction
       ? fadeScale(god[$keyword])
-      : $interaction && $interaction === name //|| relatedGods.includes(name)
+      : ($interaction && $interaction === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
 </script>
