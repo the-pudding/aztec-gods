@@ -82,7 +82,5 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
-
-    cursor: url("/aztec-gods/design-elements/pokeball.png") 12 12, auto;
   }
 </style>
