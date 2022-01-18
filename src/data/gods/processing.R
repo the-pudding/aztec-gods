@@ -88,12 +88,12 @@ cooperation <- all_rel %>%
   filter(cooperation != "") %>%
   mutate(relation = "cooperation") %>%
   rename("source" = "Name", "target" = "cooperation")
-# union <- all_rel %>%
-#   select(1, 4) %>% 
-#   separate_rows(union, sep = ", ") %>%
-#   filter(union != "") %>%
-#   mutate(relation = "union") %>%
-#   rename("source" = "Name", "target" = "union")
+union <- all_rel %>%
+  select(1, 4) %>%
+  separate_rows(union, sep = ", ") %>%
+  filter(union != "") %>%
+  mutate(relation = "cooperation") %>% # Union and cooperation merged
+  rename("source" = "Name", "target" = "union")
 authority <- all_rel %>%
   select(1, 5) %>% 
   separate_rows(authority, sep = ", ") %>%
@@ -108,7 +108,8 @@ aspect <- all_rel %>%
   rename("source" = "Name", "target" = "aspect")
 
 # All relationships
-rel <- bind_rows(cooperation, authority, aspect)
+rel <- bind_rows(union, cooperation, authority, aspect) %>%
+  distinct(source, target, relation)
 not_sure <- rel %>% filter(grepl("([?$])", target))
 details <-  rel %>% filter(grepl("([.(.)])", target))
 
