@@ -1,10 +1,10 @@
 <script>
   import { getContext } from "svelte";
 
-  const { bounds, layouts, interaction, keyword, linkHighlight, keywords, linkTypes } =
+  const { bounds, nodes, interaction, keyword, linkHighlight, keywords, linkTypes } =
     getContext("chart-state");
 
-  $: interactionBio = $interaction ? layouts.filter((d) => d.name === $interaction)[0].bio : "";
+  $: interactionBio = $interaction ? nodes.filter((d) => d.name === $interaction)[0].bio : "";
 </script>
 
 <div class="wrapper" style="height:{bounds.height}px;">

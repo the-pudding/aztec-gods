@@ -7,11 +7,11 @@
 
   let overlay; // ref
 
-  const { bounds, getName, layouts, interaction, linkHighlight } = getContext("chart-state");
+  const { bounds, getName, nodes, interaction, linkHighlight } = getContext("chart-state");
 
   // Overlay Logic
   $: delaunay = Delaunay.from(
-    layouts,
+    nodes,
     (d) => d[$linkHighlight].x + bounds.chartWidth / 2,
     (d) => d[$linkHighlight].y + bounds.chartHeight / 2
   );
@@ -21,14 +21,14 @@
   const findLocation = (e) => {
     const [x, y] = pointer(e, overlay);
     const location = delaunay.find(x, y);
-    const god = layouts[location];
+    const god = nodes[location];
     interaction.highlight(getName(god));
   };
 </script>
 
 <g data-name="overlay" transform={`translate(${bounds.margins.left}, ${bounds.margins.top})`}>
   {#if debug}
-    {#each layouts as p, i}
+    {#each nodes as p, i}
       <path
         d={voronoi.renderCell(i)}
         fill="hotpink"

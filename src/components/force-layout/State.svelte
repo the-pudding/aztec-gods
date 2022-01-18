@@ -1,5 +1,5 @@
 <script>
-  import layouts from "$data/gods/tidy/layouts.json";
+  import nodes from "$data/gods/tidy/nodes.json";
   import links from "$data/gods/tidy/links.json";
   import {
     FADE_SCALE,
@@ -34,7 +34,9 @@
     chartHeight: height - margins.top - margins.bottom
   };
 
-  $: godDomain = [...new Set(layouts.map((d) => getName(d)))];
+  $: console.log(width);
+
+  $: godDomain = [...new Set(nodes.map((d) => getName(d)))];
 
   // Interaction
   const createInteraction = () => {
@@ -68,11 +70,12 @@
     };
   };
   const linkHighlight = createLinkHighlight();
-
   $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
+
   // Context
   $: context = {
     bounds,
+    nodes,
     getName,
     getRelationType,
     getImportance,
@@ -82,7 +85,6 @@
     godDomain,
     radiusScale: RADIUS_SCALE,
     fadeScale: FADE_SCALE,
-    layouts,
     currentLinks,
     interaction,
     keyword,
