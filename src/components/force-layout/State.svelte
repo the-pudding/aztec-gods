@@ -1,26 +1,24 @@
 <script>
-  import nodes from "$data/gods/tidy/nodes.json";
   import links from "$data/gods/tidy/links.json";
+  import nodes from "$data/gods/tidy/nodes.json";
   import {
     FADE_SCALE,
     getImportance,
     getName,
     getRelationType,
     GOD_COLORS,
+    GR,
     KEYWORDS,
     LINK_TYPES,
-    TYPE_SCALE,
-    GR
+    mapOuterDomain,
+    TYPE_SCALE
   } from "$domain/constants.js";
+  import { scaleLinear, scaleOrdinal } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
-  import { max, scaleLinear, scaleOrdinal } from "d3";
 
   let width = writable(0);
-  $: console.log($width);
-  // $: height = $width / 2;
 
-  // $: center = [$width / 2, $height / 2];
   const margins = {
     top: 10,
     right: 10,
@@ -28,14 +26,6 @@
     left: 10
   };
 
-  // $: bounds = {
-  //   width,
-  //   height,
-  //   margins,
-  //   center,
-  //   chartWidth: width - margins.left - margins.right,
-  //   chartHeight: height - margins.top - margins.bottom
-  // };
   const bounds = derived([width], ([$width]) => ({
     width: $width,
     height: $width,
@@ -44,17 +34,11 @@
     chartHeight: $width - margins.top - margins.bottom
   }));
 
-  $: allX = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].x));
-  $: xMax = max(allX, (d) => Math.abs(d));
-  $: allY = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].y));
-  $: yMax = max(allY, (d) => Math.abs(d));
-  $: allMax = Math.max(xMax, yMax);
-
   $: xScale = derived([bounds], ([$bounds]) =>
-    scaleLinear().domain([-allMax, allMax]).range([0, $bounds.chartWidth])
+    scaleLinear().domain([-mapOuterDomain, mapOuterDomain]).range([0, $bounds.chartWidth])
   );
   $: yScale = derived([bounds], ([$bounds]) =>
-    scaleLinear().domain([-allMax, allMax]).range([$bounds.chartHeight, 0])
+    scaleLinear().domain([-mapOuterDomain, mapOuterDomain]).range([$bounds.chartHeight, 0])
   );
 
   $: radiusScale = derived([bounds], ([$bounds]) => {

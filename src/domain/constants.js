@@ -1,10 +1,12 @@
-import { scaleOrdinal, scaleLinear } from "d3";
+import { scaleOrdinal, scaleLinear, max } from "d3";
+import nodes from "$data/gods/tidy/nodes.json";
 
-export const TYPE_SCALE = ["primordial", "creation", "elemental", "human", "secondary"];
+// Layout
 export const PADDING = 5;
-// export const BASE = 20;
 export const GR = 1.62;
 
+// Domains
+export const TYPE_SCALE = ["primordial", "creation", "elemental", "human", "secondary"];
 export const KEYWORDS = [
   "animals",
   "celestial",
@@ -18,13 +20,19 @@ export const KEYWORDS = [
   "nature",
   "pleasure"
 ];
-
 export const LINK_TYPES = ["allLinks", "cooperation", "authority", "aspect"];
 
+// Maximum domain extent of the force layout
+const allX = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].x));
+const xMax = max(allX, (d) => Math.abs(d));
+const allY = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].y));
+const yMax = max(allY, (d) => Math.abs(d));
+export const mapOuterDomain = Math.max(xMax, yMax);
+
+// Scales
 export const GOD_COLORS = scaleOrdinal()
   .domain(TYPE_SCALE)
   .range(["#008AA1", "#D28360", "#5C8A73", "#B08699", "#FE0000"]);
-
 export const FADE_SCALE = scaleLinear().range([0.1, 1]).domain([0, 5]);
 
 // Accessors
