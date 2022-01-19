@@ -32,7 +32,7 @@
   {/each}
 </div>
 {#if step.illustration}
-  <img src="/static/illustrations/Simplified-{step.illustration}.png" alt="" />
+  <img src="/aztec-gods/illustrations/Simplified-{step.illustration}.png" alt="" />
 {/if}
 
 <style>
