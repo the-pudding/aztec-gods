@@ -9,7 +9,7 @@
 
 <div class="wrapper" style="height:{bounds.height}px;">
   <div>
-    <h3>Links</h3>
+    <h3>Organize Gods by relations of</h3>
     {#each linkTypes as linkType}
       <button
         on:click={() => linkHighlight.highlight(linkType)}
@@ -26,7 +26,7 @@
       >
     </h3>
     {#each keywords as k}
-      <button on:click={() => keyword.highlight(k)}>{k}</button>
+      <button on:click={() => keyword.highlight(k)} class:selected={k === $keyword}>{k}</button>
     {/each}
 
     <h3>{$interaction ?? ""}</h3>

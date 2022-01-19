@@ -70,7 +70,7 @@
 
   // Links
   const createLinkHighlight = () => {
-    const { subscribe, set } = writable("allLinks");
+    const { subscribe, set } = writable("geometric");
     return {
       subscribe,
       highlight: (d) => set(d),
@@ -78,6 +78,7 @@
     };
   };
   const linkHighlight = createLinkHighlight();
+
   $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
 
   // Scales
@@ -90,19 +91,24 @@
     return scaleLinear().domain(domain).range([$bounds.chartHeight, 0]);
   });
 
-  $: radiusScale = derived([bounds], ([$bounds]) => {
+  $: radiusScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
     let base = $bounds.chartWidth * 0.025;
-    return scaleOrdinal()
-      .domain(TYPE_SCALE)
-      .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
+    return $linkHighlight === "geometric"
+      ? scaleOrdinal()
+          .domain(["secondary"])
+          .range([base])
+          .unknown(base * (GR * 4))
+      : scaleOrdinal()
+          .domain(TYPE_SCALE)
+          .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
   });
 
-  $: currentNodes = writable(nodes);
+  $: _nodes = writable(nodes);
 
   // Context
   $: context = {
     bounds,
-    nodes: currentNodes,
+    nodes: _nodes,
     xScale,
     yScale,
     getName,
