@@ -4,6 +4,7 @@
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
   import Geometric from "$components/map/Geometric.svelte";
+  import Step from "$components/map/Step.svelte";
   import Section from "$components/layout/Section.svelte";
 
   let selected = 0;
@@ -36,11 +37,11 @@
     <figure><Geometric {activeStep} /></figure>
     <div class="scroll-area">
       {#each steps as step, i}
-        <div class="step" data-step={step.id} class:selected={selected === i}>
-          {#each step.text as p}
-            <p>{p}</p>
-          {/each}
-        </div>
+        <!-- <div class="step" data-step={step.id} class:selected={selected === i}> -->
+        <!-- {#each step.text as content} -->
+        <Step {step} selected={selected === i} />
+        <!-- {/each} -->
+        <!-- </div> -->
       {/each}
     </div>
   </div>
