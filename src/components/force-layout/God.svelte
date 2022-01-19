@@ -17,9 +17,8 @@
     keyword
   } = getContext("chart-state");
 
-  $: console.log($radiusScale.domain());
   $: rad = $radiusScale(getImportance(god));
-  $: console.log(rad);
+
   $: name = getName(god);
   $: color = godColorScale(getImportance(god));
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));

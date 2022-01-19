@@ -1,13 +1,9 @@
 <script>
   export let activeStep = "";
 
-  import doc from "$data/doc.json";
-
-  import Section from "$components/layout/Section.svelte";
-  import Scrolly from "$components/map/Scrolly.svelte";
+  import { getLightGodColor, getMainGodColor } from "$domain/getters";
   import points from "../../data/gods/tidy/gods.json";
   import { getGeometricPositions } from "./layout";
-  import { getMainGodColor, getLightGodColor } from "$domain/getters";
 
   let width = 0;
   $: height = width;
