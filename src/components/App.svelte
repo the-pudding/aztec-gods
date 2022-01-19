@@ -27,15 +27,15 @@
 
 <Tlalte />
 
-<!-- <Heading>Contextual Elements</Heading> -->
-
 <Scrolly />
 
 <State>
-  <Gods slot="chart-html" />
   <g slot="chart-svg">
     <Links />
-    <Overlay />
+  </g>
+  <Gods slot="chart-html" />
+  <g slot="chart-svg-overlay">
+    <Overlay debug />
   </g>
   <Controls slot="controls" />
 </State>
