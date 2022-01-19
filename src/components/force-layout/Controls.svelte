@@ -4,14 +4,17 @@
   const { bounds, nodes, interaction, keyword, linkHighlight, keywords, linkTypes } =
     getContext("chart-state");
 
-  $: interactionBio = $interaction ? nodes.filter((d) => d.name === $interaction)[0].bio : "";
+  $: interactionBio = $interaction ? $nodes.filter((d) => d.name === $interaction)[0].bio : "";
 </script>
 
 <div class="wrapper" style="height:{bounds.height}px;">
   <div>
-    <h3>Links</h3>
+    <h3>Organize Gods by relations of</h3>
     {#each linkTypes as linkType}
-      <button on:click={() => linkHighlight.highlight(linkType)}>
+      <button
+        on:click={() => linkHighlight.highlight(linkType)}
+        class:selected={linkType === $linkHighlight}
+      >
         {linkType}
       </button>
     {/each}
@@ -23,7 +26,7 @@
       >
     </h3>
     {#each keywords as k}
-      <button on:click={() => keyword.highlight(k)}>{k}</button>
+      <button on:click={() => keyword.highlight(k)} class:selected={k === $keyword}>{k}</button>
     {/each}
 
     <h3>{$interaction ?? ""}</h3>
@@ -52,6 +55,12 @@
     font-size: 0.8rem;
     padding: 0.1rem 0.2rem;
     margin: 0 0.1rem 0.1rem 0;
-    background: #fff;
+    background-color: var(--color-highlight-lighter);
+    color: var(--color-highlight);
+  }
+
+  .selected {
+    background-color: var(--color-highlight);
+    color: var(--color-highlight-lighter);
   }
 </style>

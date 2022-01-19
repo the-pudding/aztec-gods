@@ -1,5 +1,4 @@
-import { scaleOrdinal, scaleLinear, max } from "d3";
-import nodes from "$data/gods/tidy/nodes.json";
+import { scaleLinear, scaleOrdinal } from "d3";
 
 // Layout
 export const PADDING = 5;
@@ -20,14 +19,7 @@ export const KEYWORDS = [
   "nature",
   "pleasure"
 ];
-export const LINK_TYPES = ["allLinks", "cooperation", "authority", "aspect"];
-
-// Maximum domain extent of the force layout
-const allX = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].x));
-const xMax = max(allX, (d) => Math.abs(d));
-const allY = LINK_TYPES.flatMap((type) => nodes.map((d) => d[type].y));
-const yMax = max(allY, (d) => Math.abs(d));
-export const mapOuterDomain = Math.max(xMax, yMax);
+export const LINK_TYPES = ["geometric", "allLinks", "cooperation", "authority", "aspect"];
 
 // Scales
 export const GOD_COLORS = scaleOrdinal()

@@ -31,14 +31,29 @@
         .map((d) => d.target.name)
     )
   ];
+
+  $: layoutIsGeom = $linkHighlight === "geometric";
+  $: isHidden = layoutIsGeom && !isMain;
   $: opacity =
-    !$keyword && !$interaction
+    !$keyword && !$interaction && layoutIsGeom && isMain
+      ? 1
+      : isHidden
+      ? 0
+      : !$keyword && !$interaction
       ? 1
       : $keyword && !$interaction
       ? fadeScale(god[$keyword])
       : ($interaction && $interaction === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
+  // $: opacity =
+  //   !$keyword && !$interaction
+  //     ? 1
+  //     : $keyword && !$interaction
+  //     ? fadeScale(god[$keyword])
+  //     : ($interaction && $interaction === name) || relatedGods.includes(name)
+  //     ? 1
+  //     : 0.1;
 </script>
 
 <div
@@ -48,6 +63,7 @@
   background-color: {isMain ? 'transparent' : color};
   background-image: {isMain ? `url('/aztec-gods/img/${name}.png')` : 'unset'};
   opacity:{opacity};
+
   "
   on:mouseenter={() => interaction.highlight(getName(god))}
   on:focus={() => interaction.highlight(getName(god))}
@@ -74,6 +90,6 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
-    transition: opacity 200ms, left 700ms, top 700ms;
+    transition: opacity 200ms, left 700ms, top 700ms, width 700ms, height 700ms;
   }
 </style>
