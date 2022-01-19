@@ -10,10 +10,9 @@
     GR,
     KEYWORDS,
     LINK_TYPES,
-    mapOuterDomain,
     TYPE_SCALE
   } from "$domain/constants.js";
-  import { scaleLinear, scaleOrdinal } from "d3";
+  import { max, scaleLinear, scaleOrdinal } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
 
@@ -34,19 +33,16 @@
     chartHeight: $width - margins.top - margins.bottom
   }));
 
-  $: xScale = derived([bounds], ([$bounds]) =>
-    scaleLinear().domain([-mapOuterDomain, mapOuterDomain]).range([0, $bounds.chartWidth])
+  // Maximum domain extent of the force layout
+  $: allX = LINK_TYPES.filter((t) => t !== "geometric").flatMap((type) =>
+    nodes.map((d) => d[type].x)
   );
-  $: yScale = derived([bounds], ([$bounds]) =>
-    scaleLinear().domain([-mapOuterDomain, mapOuterDomain]).range([$bounds.chartHeight, 0])
+  $: xMax = max(allX, (d) => Math.abs(d));
+  $: allY = LINK_TYPES.filter((t) => t !== "geometric").flatMap((type) =>
+    nodes.map((d) => d[type].y)
   );
-
-  $: radiusScale = derived([bounds], ([$bounds]) => {
-    let base = $bounds.chartWidth * 0.025;
-    return scaleOrdinal()
-      .domain(TYPE_SCALE)
-      .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
-  });
+  $: yMax = max(allY, (d) => Math.abs(d));
+  $: mapOuterDomain = Math.max(xMax, yMax);
 
   $: godDomain = [...new Set(nodes.map((d) => getName(d)))];
 
@@ -84,10 +80,29 @@
   const linkHighlight = createLinkHighlight();
   $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
 
+  // Scales
+  $: xScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
+    let domain = $linkHighlight === "geometric" ? [0, 1] : [-mapOuterDomain, mapOuterDomain];
+    return scaleLinear().domain(domain).range([0, $bounds.chartWidth]);
+  });
+  $: yScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
+    let domain = $linkHighlight === "geometric" ? [0, 1] : [-mapOuterDomain, mapOuterDomain];
+    return scaleLinear().domain(domain).range([$bounds.chartHeight, 0]);
+  });
+
+  $: radiusScale = derived([bounds], ([$bounds]) => {
+    let base = $bounds.chartWidth * 0.025;
+    return scaleOrdinal()
+      .domain(TYPE_SCALE)
+      .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
+  });
+
+  $: currentNodes = writable(nodes);
+
   // Context
   $: context = {
     bounds,
-    nodes,
+    nodes: currentNodes,
     xScale,
     yScale,
     getName,

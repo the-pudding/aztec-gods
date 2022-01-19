@@ -12,7 +12,7 @@
 
   // Overlay Logic
   $: delaunay = Delaunay.from(
-    nodes,
+    $nodes,
     (d) => $xScale(d[$linkHighlight].x),
     (d) => $yScale(d[$linkHighlight].y)
   );
@@ -22,14 +22,14 @@
   const findLocation = (e) => {
     const [x, y] = pointer(e, overlay);
     const location = delaunay.find(x, y);
-    const god = nodes[location];
+    const god = $nodes[location];
     interaction.highlight(getName(god));
   };
 </script>
 
 <g data-name="overlay" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>
   {#if debug}
-    {#each nodes as p, i}
+    {#each $nodes as p, i}
       <path
         d={voronoi.renderCell(i)}
         fill="hotpink"
@@ -55,6 +55,6 @@
 
 <style>
   rect {
-    cursor: url("/aztec-gods/design-elements/pokeball.png") 12 12, auto;
+    cursor: url("/static/design-elements/pokeball.png") 12 12, auto;
   }
 </style>
