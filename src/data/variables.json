@@ -12,6 +12,10 @@
     "secondaryLight": "#FFEDED"
   },
   "color": {
+    "background": "#FFEEA8",
+    "background-lowlight": "#FFFDF3",
+    "highlight": "#FE0000",
+    "highlight-lighter": "#FBF2F2",
     "black": "#000000",
     "off-black": "#282828",
     "gray-dark": "#5b5b5b",

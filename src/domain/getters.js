@@ -32,3 +32,20 @@ export const getLightGodColor = (importance) => {
       return variables.category.secondaryLight;
   }
 };
+
+export const getGodImportanceLabel = (importance) => {
+  switch (importance) {
+    case "primordial":
+      return "primordial god";
+    case "creation":
+      return "creation god";
+    case "elemental":
+      return "elemental god";
+    case "human":
+      return "human god";
+    case "secondary":
+      return "secondary god";
+    default:
+      return "secondary god";
+  }
+};
