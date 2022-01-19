@@ -2,8 +2,14 @@ const CWD = process.cwd();
 import fs from "fs";
 import { readFile } from "fs/promises";
 
-import { forceLink, forceSimulation, forceCenter, quadtree } from "d3";
-import { PADDING, RADIUS_SCALE } from "../src/domain/constants.js";
+import { forceLink, forceSimulation, forceCenter, quadtree, scaleOrdinal } from "d3";
+import { PADDING, TYPE_SCALE, GR } from "../src/domain/constants.js";
+
+let BASE = 20;
+const radiusScale = scaleOrdinal()
+  .domain(TYPE_SCALE)
+  .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
+
 const relations = JSON.parse(
   await readFile(new URL(`${CWD}/src/data/gods/tidy/relations.json`, import.meta.url))
 );
@@ -14,12 +20,38 @@ const gods = JSON.parse(
 const getRelationType = (d) => d.relation;
 const getName = (d) => d.name;
 
-// export const PADDING = 5;
-// export const BASE = 20;
-// export const GR = 1.62;
-// export const radiusScale = scaleOrdinal()
-//   .domain(typeScale)
-//   .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * GR, BASE]);
+const getGeometricPositions = (god) => {
+  switch (god) {
+    case "Huitzilopochtli":
+      return { x: 0.5, y: 0.65 };
+    case "Mayahuel":
+      return { x: 0.5, y: 0.2 };
+    case "Mictlantecuhtli":
+      return { x: 0.35, y: 0.35 };
+    case "Mixcoatl":
+      return { x: 0.5, y: 0.8 };
+    case "Ometeotl":
+      return { x: 0.5, y: 0.5 };
+    case "Quetzalcoatl":
+      return { x: 0.35, y: 0.5 };
+    case "Tezcatlipoca":
+      return { x: 0.5, y: 0.35 };
+    case "Tlaloc":
+      return { x: 0.35, y: 0.65 };
+    case "Tlaltecuhtli":
+      return { x: 0.65, y: 0.35 };
+    case "Xipe Totec":
+      return { x: 0.65, y: 0.5 };
+    case "Xiuhtecuhtli":
+      return { x: 0.65, y: 0.65 };
+    case "Xochiquetzal":
+      return { x: 0.2, y: 0.5 };
+    case "Yacatecuhtli":
+      return { x: 0.8, y: 0.5 };
+    default:
+      return { x: 0.5, y: 0.5 };
+  }
+};
 
 const rectCollide = (padding) => {
   let nodes;
@@ -36,8 +68,8 @@ const rectCollide = (padding) => {
         if (q.data && q.data !== d) {
           let x = d.x - q.data.x,
             y = d.y - q.data.y,
-            xSpacing = padding + (RADIUS_SCALE(q.data.importance) + RADIUS_SCALE(d.importance)) / 2,
-            ySpacing = padding + (RADIUS_SCALE(q.data.importance) + RADIUS_SCALE(d.importance)) / 2,
+            xSpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
+            ySpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
             absX = Math.abs(x),
             absY = Math.abs(y),
             l,
@@ -75,7 +107,7 @@ const rectCollide = (padding) => {
 };
 
 const calculateForceLayout = async (relation) => {
-  let nodes = [...gods];
+  let nodes = [...gods]; // Not pure...
   let links = relation
     ? [...relations.filter((link) => getRelationType(link) === relation)]
     : [...relations];
@@ -111,12 +143,14 @@ const calculateForceLayout = async (relation) => {
 };
 
 const getLayoutCoordinates = async () => {
+  const geometric = [...gods].map((god) => getGeometricPositions(god.name));
   const allLinks = await calculateForceLayout(undefined);
   const cooperation = await calculateForceLayout("cooperation");
   const authority = await calculateForceLayout("authority");
   const aspect = await calculateForceLayout("aspect");
 
   const nodes = gods.map((god, i) => ({
+    geometric: geometric[i],
     allLinks: allLinks.coord[i],
     cooperation: cooperation.coord[i],
     authority: authority.coord[i],
@@ -124,6 +158,7 @@ const getLayoutCoordinates = async () => {
     ...god
   }));
   const linksCoord = {
+    geometric: [], // No links for geometric layout
     allLinks: allLinks.links,
     cooperation: cooperation.links,
     authority: authority.links,
