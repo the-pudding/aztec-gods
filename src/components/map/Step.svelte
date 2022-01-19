@@ -31,6 +31,9 @@
     </div>
   {/each}
 </div>
+{#if step.illustration}
+  <img src="/static/illustrations/Simplified-{step.illustration}.png" alt="" />
+{/if}
 
 <style>
   .step {
@@ -63,7 +66,7 @@
     padding: 0.825rem;
   }
   .step-item {
-    margin: 5rem 0;
+    margin: 3rem 0;
     padding: 0.825rem;
 
     border-width: 2px;
@@ -76,6 +79,10 @@
   }
   p {
     padding: 0;
-    margin: 0;
+    margin: 0 0 0.5rem 0;
+  }
+  img {
+    max-width: 35rem;
+    margin: 0 auto;
   }
 </style>
