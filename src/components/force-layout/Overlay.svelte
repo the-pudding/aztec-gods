@@ -58,6 +58,6 @@
 
 <style>
   rect {
-    cursor: url("/static/design-elements/pokeball.png") 12 12, auto;
+    cursor: url("/aztec-gods/design-elements/pokeball.png") 12 12, auto;
   }
 </style>
