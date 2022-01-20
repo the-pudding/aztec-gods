@@ -1,10 +1,11 @@
 <script>
   export let activeStep = "";
-
+  import loadImage from "$utils/loadImage";
   import { getLightGodColor, getMainGodColor } from "$domain/getters";
   import points from "../../data/gods/tidy/gods.json";
   import { getGeometricPositions } from "./layout";
-
+  const dev = process.env.NODE_ENV === "development";
+  $: promise = loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${activeStep.id}.png`);
   let width = 0;
   $: height = width;
 
@@ -59,19 +60,34 @@
               {god.name}
             </div>
           {/if}
-          <div
-            class="god"
-            style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
+          {#await promise}
+            <div
+              class="god"
+              style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
             background-color: {getLightGodColor(god.importance)};
-            background-image: {`url('/assets/gods/${god.name}.png')`};
             filter:{activeStep.id === god.name
-              ? `unset`
-              : activeStep.type === god.importance
-              ? `blur(1px)`
-              : `blur(4px)`};
+                ? `unset`
+                : activeStep.type === god.importance
+                ? `blur(1px)`
+                : `blur(4px)`};
             border: {borderWidth}px solid {getMainGodColor(god.importance)};
             "
-          />
+            />
+          {:then img}
+            <div
+              class="god"
+              style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
+            background-color: {getLightGodColor(god.importance)};
+            background-image: {`url(${img.src})`};
+            filter:{activeStep.id === god.name
+                ? `unset`
+                : activeStep.type === god.importance
+                ? `blur(1px)`
+                : `blur(4px)`};
+            border: {borderWidth}px solid {getMainGodColor(god.importance)};
+            "
+            />
+          {/await}
         {/each}
       </div>
     </div>

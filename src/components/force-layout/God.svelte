@@ -3,7 +3,8 @@
   export let god;
   import loadImage from "$utils/loadImage";
 
-  $: promise = loadImage(`/assets/gods/${god.name}.png`);
+  const dev = process.env.NODE_ENV === "development";
+  $: promise = loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.name}.png`);
 
   const {
     xScale,
@@ -91,7 +92,7 @@
   >
     <!-- {isMain ? name : ""} -->
   </div>
-{:catch error}
+{:catch}
   <div
     class="god"
     style="width:{rad}px; height:{rad}px; 

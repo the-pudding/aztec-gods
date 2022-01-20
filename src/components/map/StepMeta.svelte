@@ -4,7 +4,6 @@
 
   import { getLightGodColor, getMainGodColor, getGodImportanceLabel } from "$domain/getters";
   const dev = process.env.NODE_ENV === "development";
-
   $: promise = loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${activeStep.id}.png`);
 </script>
 
