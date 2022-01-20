@@ -42,7 +42,7 @@
     <figure>
       <div>
         <!-- <Geometric {activeStep} /> -->
-        <State>
+        <State activeLayout={activeStep.layout}>
           <g slot="chart-svg">
             <Links />
           </g>

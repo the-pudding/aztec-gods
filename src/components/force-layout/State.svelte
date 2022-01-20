@@ -16,6 +16,8 @@
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
 
+  export let activeLayout = "geometric";
+
   let width = writable(0);
 
   const margins = {
@@ -78,6 +80,8 @@
     };
   };
   const linkHighlight = createLinkHighlight();
+
+  $: linkHighlight.highlight(activeLayout);
 
   $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
 
