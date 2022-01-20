@@ -98,7 +98,7 @@
   });
 
   $: radiusScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
-    let base = $bounds.chartWidth * 0.025;
+    let base = $bounds.chartWidth * 0.02;
     return $linkHighlight === "geometric"
       ? scaleOrdinal()
           .domain(["secondary"])
