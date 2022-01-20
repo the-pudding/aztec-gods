@@ -35,6 +35,8 @@
       })
       .onStepEnter(handleStepEnter);
   });
+
+  $: storyMode = activeStep.id !== "exploratory-mode";
 </script>
 
 <svelte:window />
@@ -42,21 +44,19 @@
 <Section id="gods-pantheon-map" centered>
   <div id="scrolly">
     <figure>
-      <div>
-        <State {activeStep}>
-          <g slot="chart-svg">
-            <Links />
-          </g>
-          <Gods slot="chart-html" {activeStep} />
-          <g slot="chart-svg-overlay">
-            <Overlay />
-          </g>
-          <!-- <Controls slot="controls" /> -->
-        </State>
-      </div>
-      <StepMeta {activeStep} />
+      <State {activeStep}>
+        <g slot="chart-svg">
+          <Links />
+        </g>
+        <Gods slot="chart-html" {activeStep} />
+        <g slot="chart-svg-overlay">
           <Overlay noPointerEvents={storyMode} />
+        </g>
+        <!-- <Controls slot="controls" /> -->
+        <StepMeta slot="controls" {activeStep} />
+      </State>
     </figure>
+
     <div class="scroll-area">
       <div class="scroll-overlay" />
       <div class="scroll-steps">
@@ -70,18 +70,13 @@
 
 <style>
   figure {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    /* grid-template-areas: "viz-area scroll-area"; */
-    /* grid-area: viz-area; */
-
     position: -webkit-sticky;
     position: sticky;
-    /* width: 600px; */
-    height: 100vh;
+
+    height: 90vh;
     left: 0;
     top: 0;
-    /* width: 100%; */
+
     margin: 0 auto;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
