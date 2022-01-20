@@ -1,6 +1,8 @@
 <script>
   import links from "$data/gods/tidy/links.json";
   import nodes from "$data/gods/tidy/nodes.json";
+  import doc from "$data/doc.json";
+
   import {
     FADE_SCALE,
     getImportance,
@@ -16,7 +18,7 @@
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
 
-  export let activeLayout = "geometric";
+  export let activeStep = doc.pantheon[0];
 
   let width = writable(0);
 
@@ -81,7 +83,7 @@
   };
   const linkHighlight = createLinkHighlight();
 
-  $: linkHighlight.highlight(activeLayout);
+  $: linkHighlight.highlight(activeStep.layout);
 
   $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
 
@@ -108,9 +110,11 @@
   });
 
   $: _nodes = writable(nodes);
+  $: _activeStep = writable(activeStep);
 
   // Context
   $: context = {
+    activeStep: _activeStep,
     bounds,
     nodes: _nodes,
     xScale,
