@@ -41,7 +41,7 @@
   $: name = getName(god);
 
   $: rad = $radiusScale(getImportance(god));
-  $: borderWidth = !isMain ? 0 : 6;
+  $: borderWidth = !isMain ? 0 : rad * 0.07;
   $: bgColor = !isMain ? variables.category.secondary : getLightGodColor(god.importance);
   $: opacity =
     !$keyword && !$interaction && layoutIsGeom && isMain
@@ -139,7 +139,8 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     justify-content: center;
     align-items: center;
     background-size: cover;
-    transition: opacity 500ms, left 500ms, top 500ms, width 500ms, height 500ms, filter 500ms;
+    transition: opacity 500ms, border-width 500ms, left 500ms, top 500ms, width 500ms, height 500ms,
+      filter 500ms;
   }
   .name {
     font-size: 0.6em;
