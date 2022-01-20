@@ -55,13 +55,14 @@
       : ($interaction && $interaction === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
-  $: blur = !storyMode
-    ? "unset"
-    : activeStep.id === god.name
-    ? `unset`
-    : activeStep.type === god.importance
-    ? `blur(1px)`
-    : `blur(4px)`;
+  $: blur =
+    !storyMode || (storyMode && activeStep.id === "intro")
+      ? "unset"
+      : activeStep.id === god.name
+      ? `unset`
+      : activeStep.type === god.importance
+      ? `blur(1px)`
+      : `blur(4px)`;
 </script>
 
 {#await promise}
