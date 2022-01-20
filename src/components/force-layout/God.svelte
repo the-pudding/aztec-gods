@@ -61,7 +61,7 @@
   style="width:{rad}px; height:{rad}px; 
   left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   background-color: {isMain ? 'transparent' : color};
-  background-image: {isMain ? `url('/aztec-gods/img/${name}.png')` : 'unset'};
+  background-image: {isMain ? `url('/assets/gods/${name}.png')` : 'unset'};
   opacity:{opacity};
 
   "

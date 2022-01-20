@@ -19,13 +19,13 @@
 <Hero />
 
 <Intro />
-
+<!-- 
 <Tezca />
 
-<Tlalte />
+<Tlalte /> -->
 
 <Scrolly />
-
+<!-- 
 <State>
   <g slot="chart-svg">
     <Links />
@@ -35,6 +35,6 @@
     <Overlay />
   </g>
   <Controls slot="controls" />
-</State>
+</State> -->
 
 <Sources />

@@ -11,7 +11,7 @@
   </div>
   <div class="name">{activeStep.title}</div>
   <div>
-    <img src="/aztec-gods/img/{activeStep.id}.png" alt="image of {activeStep.title}" />
+    <img src="/assets/gods/{activeStep.id}.png" alt="image of {activeStep.title}" />
   </div>
 </div>
 

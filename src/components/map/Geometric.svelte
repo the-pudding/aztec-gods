@@ -63,7 +63,7 @@
             class="god"
             style="width:{side + 6}px; height:{side + 6}px; left:{god.x}px; top:{god.y}px; 
             background-color: {getLightGodColor(god.importance)};
-            background-image: {`url('/aztec-gods/img/${god.name}.png')`};
+            background-image: {`url('/assets/gods/${god.name}.png')`};
             filter:{activeStep.id === god.name
               ? `unset`
               : activeStep.type === god.importance
