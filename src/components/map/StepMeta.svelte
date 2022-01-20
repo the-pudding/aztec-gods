@@ -1,7 +1,10 @@
 <script>
   export let activeStep = {};
+  import loadImage from "$utils/loadImage";
 
   import { getLightGodColor, getMainGodColor, getGodImportanceLabel } from "$domain/getters";
+
+  $: promise = loadImage(`/assets/gods/${activeStep.id}.png`);
 </script>
 
 <div class="meta-area">
@@ -11,7 +14,11 @@
   </div>
   <div class="name">{activeStep.title}</div>
   <div>
-    <img src="/assets/gods/{activeStep.id}.png" alt="image of {activeStep.title}" />
+    {#await promise}
+      Loading...
+    {:then img}
+      <img src={img.src} alt="image of {activeStep.title}" />
+    {/await}
   </div>
 </div>
 

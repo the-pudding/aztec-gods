@@ -1,7 +1,9 @@
 <script>
   import { getContext } from "svelte";
-
   export let god;
+  import loadImage from "$utils/loadImage";
+
+  $: promise = loadImage(`/assets/gods/${god.name}.png`);
 
   const {
     xScale,
@@ -56,22 +58,56 @@
   //     : 0.1;
 </script>
 
-<div
-  class="god"
-  style="width:{rad}px; height:{rad}px; 
+{#await promise}
+  <div
+    class="god"
+    style="width:{rad}px; height:{rad}px; 
   left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   background-color: {isMain ? 'transparent' : color};
-  background-image: {isMain ? `url('./assets/gods/${name}.png')` : 'unset'};
   opacity:{opacity};
 
   "
-  on:mouseenter={() => interaction.highlight(getName(god))}
-  on:focus={() => interaction.highlight(getName(god))}
-  on:mouseout={() => interaction.highlight(undefined)}
-  on:blur={() => interaction.highlight(undefined)}
->
-  {isMain ? name : ""}
-</div>
+    on:mouseenter={() => interaction.highlight(getName(god))}
+    on:focus={() => interaction.highlight(getName(god))}
+    on:mouseout={() => interaction.highlight(undefined)}
+    on:blur={() => interaction.highlight(undefined)}
+  >
+    {isMain ? name : ""}
+  </div>
+{:then img}
+  <div
+    class="god"
+    style="width:{rad}px; height:{rad}px; 
+  left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+  background-color: {isMain ? 'transparent' : color};
+  background-image: {isMain ? `url(${img.src})` : 'unset'};
+  opacity:{opacity};
+
+  "
+    on:mouseenter={() => interaction.highlight(getName(god))}
+    on:focus={() => interaction.highlight(getName(god))}
+    on:mouseout={() => interaction.highlight(undefined)}
+    on:blur={() => interaction.highlight(undefined)}
+  >
+    <!-- {isMain ? name : ""} -->
+  </div>
+{:catch error}
+  <div
+    class="god"
+    style="width:{rad}px; height:{rad}px; 
+left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+background-color: {isMain ? 'transparent' : color};
+opacity:{opacity};
+
+"
+    on:mouseenter={() => interaction.highlight(getName(god))}
+    on:focus={() => interaction.highlight(getName(god))}
+    on:mouseout={() => interaction.highlight(undefined)}
+    on:blur={() => interaction.highlight(undefined)}
+  >
+    {isMain ? name : ""}
+  </div>
+{/await}
 <!-- border: {isMain ? 6 : 0}px solid {color}; -->
 
 <!-- $interaction &&
