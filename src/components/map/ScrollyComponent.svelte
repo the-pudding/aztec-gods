@@ -13,9 +13,11 @@
   import Overlay from "$components/force-layout/Overlay.svelte";
   import State from "$components/force-layout/State.svelte";
   let selected = 0;
-  let activeStep = "";
 
-  $: steps = doc.pantheon;
+  // Default with first step
+  let activeStep = doc.pantheon[0];
+
+  const steps = doc.pantheon;
 
   const handleStepEnter = (response) => {
     selected = response.index;
@@ -42,7 +44,7 @@
     <figure>
       <div>
         <!-- <Geometric {activeStep} /> -->
-        <State activeLayout={activeStep.layout}>
+        <State {activeStep}>
           <g slot="chart-svg">
             <Links />
           </g>
@@ -56,13 +58,12 @@
       <StepMeta {activeStep} />
     </figure>
     <div class="scroll-area">
-      {#each steps as step, i}
-        <!-- <div class="step" data-step={step.id} class:selected={selected === i}> -->
-        <!-- {#each step.text as content} -->
-        <Step {step} selected={selected === i} />
-        <!-- {/each} -->
-        <!-- </div> -->
-      {/each}
+      <div class="scroll-overlay" />
+      <div class="scroll-steps">
+        {#each steps as step, i}
+          <Step {step} selected={selected === i} />
+        {/each}
+      </div>
     </div>
   </div>
 </Section>
@@ -92,6 +93,16 @@
     position: relative;
     width: 100%;
 
-    /* grid-area: scroll-area; */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    pointer-events: none;
+  }
+
+  .scroll-overlay {
+    pointer-events: none;
+  }
+  .scroll-steps {
+    pointer-events: none;
   }
 </style>
