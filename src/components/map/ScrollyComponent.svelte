@@ -55,6 +55,7 @@
         </State>
       </div>
       <StepMeta {activeStep} />
+          <Overlay noPointerEvents={storyMode} />
     </figure>
     <div class="scroll-area">
       <div class="scroll-overlay" />

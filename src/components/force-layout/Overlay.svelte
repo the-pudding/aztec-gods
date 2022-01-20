@@ -10,12 +10,9 @@
   const { bounds, xScale, yScale, getName, nodes, interaction, linkHighlight } =
     getContext("chart-state");
 
-  $: layoutIsGeom = $linkHighlight === "geometric";
-  $: hoverableGods = !layoutIsGeom ? $nodes : $nodes.filter((d) => d.importance !== "secondary");
-
   // Overlay Logic
   $: delaunay = Delaunay.from(
-    hoverableGods,
+    $nodes,
     (d) => $xScale(d[$linkHighlight].x),
     (d) => $yScale(d[$linkHighlight].y)
   );
@@ -25,14 +22,14 @@
   const findLocation = (e) => {
     const [x, y] = pointer(e, overlay);
     const location = delaunay.find(x, y);
-    const god = hoverableGods[location];
+    const god = $nodes[location];
     interaction.highlight(getName(god));
   };
 </script>
 
 <g data-name="overlay" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>
   {#if debug}
-    {#each hoverableGods as p, i}
+    {#each $nodes as p, i}
       <path
         d={voronoi.renderCell(i)}
         fill="hotpink"
