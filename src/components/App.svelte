@@ -19,10 +19,10 @@
 <Hero />
 
 <Intro />
-
+<!-- 
 <Tezca />
 
-<Tlalte />
+<Tlalte /> -->
 
 <Scrolly />
 

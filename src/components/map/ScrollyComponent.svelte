@@ -7,7 +7,11 @@
   import Step from "$components/map/Step.svelte";
   import StepMeta from "$components/map/StepMeta.svelte";
   import Section from "$components/layout/Section.svelte";
-
+  import Controls from "$components/force-layout/Controls.svelte";
+  import Gods from "$components/force-layout/Gods.svelte";
+  import Links from "$components/force-layout/Links.svelte";
+  import Overlay from "$components/force-layout/Overlay.svelte";
+  import State from "$components/force-layout/State.svelte";
   let selected = 0;
   let activeStep = "";
 
@@ -37,7 +41,17 @@
   <div id="scrolly">
     <figure>
       <div>
-        <Geometric {activeStep} />
+        <!-- <Geometric {activeStep} /> -->
+        <State>
+          <g slot="chart-svg">
+            <Links />
+          </g>
+          <Gods slot="chart-html" />
+          <g slot="chart-svg-overlay">
+            <Overlay />
+          </g>
+          <!-- <Controls slot="controls" /> -->
+        </State>
       </div>
       <StepMeta {activeStep} />
     </figure>

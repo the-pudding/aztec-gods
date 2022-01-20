@@ -23,6 +23,9 @@ const config = {
   kit: {
     adapter: adapterStatic(),
     target: "#svelte",
+    files: {
+      assets: "static"
+    },
     vite: {
       resolve: {
         alias: {
