@@ -51,7 +51,9 @@
     opacity: 0.4;
     transition: opacity 400ms;
   }
-
+  .step:last-child {
+    margin-bottom: 120vh;
+  }
   .selected {
     opacity: 1;
   }
