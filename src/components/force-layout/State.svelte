@@ -110,11 +110,9 @@
   });
 
   $: _nodes = writable(nodes);
-  $: _activeStep = writable(activeStep);
 
   // Context
   $: context = {
-    activeStep: _activeStep,
     bounds,
     nodes: _nodes,
     xScale,

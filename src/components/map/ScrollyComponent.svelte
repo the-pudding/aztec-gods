@@ -39,16 +39,15 @@
 
 <svelte:window />
 
-<Section id="story-mode" centered>
+<Section id="gods-pantheon-map" centered>
   <div id="scrolly">
     <figure>
       <div>
-        <!-- <Geometric {activeStep} /> -->
         <State {activeStep}>
           <g slot="chart-svg">
             <Links />
           </g>
-          <Gods slot="chart-html" />
+          <Gods slot="chart-html" {activeStep} />
           <g slot="chart-svg-overlay">
             <Overlay />
           </g>
