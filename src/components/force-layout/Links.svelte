@@ -20,6 +20,6 @@
 
 <style>
   line {
-    transition: opacity 200ms;
+    transition: opacity 500ms;
   }
 </style>

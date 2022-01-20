@@ -138,7 +138,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     justify-content: center;
     align-items: center;
     background-size: cover;
-    transition: opacity 200ms, left 700ms, top 700ms, width 700ms, height 700ms, filter 200ms;
+    transition: opacity 500ms, left 500ms, top 500ms, width 500ms, height 500ms, filter 500ms;
   }
   .name {
     font-size: 0.6em;
