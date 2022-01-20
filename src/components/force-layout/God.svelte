@@ -63,6 +63,8 @@
       : activeStep.type === god.importance
       ? `blur(1px)`
       : `blur(4px)`;
+
+  $: isScaled = storyMode && activeStep.id === god.name;
 </script>
 
 {#await promise}
@@ -73,6 +75,8 @@
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
+  transform: {isScaled ? 'scale(1.5)' : 'unset'};
+  z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   "
     on:mouseenter={() => interaction.highlight(getName(god))}
@@ -89,6 +93,8 @@
   left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   background-color: {bgColor};
   filter: {blur};
+  transform: {isScaled ? 'scale(1.5)' : 'unset'};
+  z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   background-image: {isMain ? `url(${img.src})` : 'unset'};
   opacity:{opacity};
@@ -107,6 +113,8 @@ left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px;
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
+transform: {isScaled ? 'scale(1.5)' : 'unset'};
+z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
     on:mouseenter={() => interaction.highlight(getName(god))}
@@ -139,8 +147,8 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     justify-content: center;
     align-items: center;
     background-size: cover;
-    transition: opacity 500ms, border-width 500ms, left 500ms, top 500ms, width 500ms, height 500ms,
-      filter 500ms;
+    transition: opacity 500ms, transform 500ms, border-width 500ms, left 500ms, top 500ms,
+      width 500ms, height 500ms, filter 500ms;
   }
   .name {
     font-size: 0.6em;
