@@ -75,7 +75,7 @@
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
-  transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
+  transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   "
@@ -93,7 +93,7 @@
   left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   background-color: {bgColor};
   filter: {blur};
-  transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
+  transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   background-image: {isMain ? `url(${img.src})` : 'unset'};
@@ -113,7 +113,7 @@ left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px;
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
-transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
+transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
@@ -131,7 +131,7 @@ left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px;
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
-transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
+transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
@@ -159,7 +159,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     font-size: 8px;
 
     position: absolute;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     border-radius: 2px;
     display: flex;
     justify-content: center;
