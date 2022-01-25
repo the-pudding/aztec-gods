@@ -46,6 +46,6 @@ export const getGodImportanceLabel = (importance) => {
     case "secondary":
       return "secondary god";
     default:
-      return "secondary god";
+      return " ";
   }
 };
