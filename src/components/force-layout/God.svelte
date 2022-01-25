@@ -18,7 +18,6 @@
     getImportance,
     interaction,
     fadeScale,
-    godColorScale,
     linkHighlight,
     radiusScale,
     currentLinks,
