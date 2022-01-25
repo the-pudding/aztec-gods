@@ -3,11 +3,11 @@
   import scrollama from "scrollama";
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
-  import Geometric from "$components/map/Geometric.svelte";
+
   import Step from "$components/map/Step.svelte";
   import StepMeta from "$components/map/StepMeta.svelte";
   import Section from "$components/layout/Section.svelte";
-  import Controls from "$components/force-layout/Controls.svelte";
+
   import Gods from "$components/force-layout/Gods.svelte";
   import Links from "$components/force-layout/Links.svelte";
   import Overlay from "$components/force-layout/Overlay.svelte";
@@ -52,8 +52,7 @@
         <g slot="chart-svg-overlay">
           <Overlay noPointerEvents={storyMode} />
         </g>
-        <!-- <Controls slot="controls" /> -->
-        <StepMeta slot="controls" {activeStep} />
+        <StepMeta slot="meta" {activeStep} />
       </State>
     </figure>
 
@@ -77,7 +76,6 @@
     left: 0;
     top: 0;
 
-    margin: 0 auto;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -86,18 +84,10 @@
 
   .scroll-area {
     position: relative;
-    width: 100%;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
 
-    pointer-events: none;
-  }
-
-  .scroll-overlay {
-    pointer-events: none;
-  }
-  .scroll-steps {
     pointer-events: none;
   }
 </style>

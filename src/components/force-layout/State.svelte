@@ -150,7 +150,7 @@
       </svg>
     {/if}
   </div>
-  <div class="controls"><slot name="controls" /></div>
+  <div class="meta"><slot name="meta" /></div>
 </div>
 
 <style>
@@ -159,8 +159,9 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "viz-area meta-area";
 
-    margin: 1rem;
     position: relative;
+
+    width: 100%;
     height: 100vh;
   }
 
@@ -175,7 +176,8 @@
     overflow: visible;
   }
 
-  .controls {
+  .meta {
     grid-area: meta-area;
+    height: 100vh;
   }
 </style>
