@@ -1,6 +1,8 @@
 <script>
   import links from "$data/gods/tidy/links.json";
   import nodes from "$data/gods/tidy/nodes.json";
+  import doc from "$data/doc.json";
+
   import {
     FADE_SCALE,
     getImportance,
@@ -15,6 +17,8 @@
   import { max, scaleLinear, scaleOrdinal } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
+
+  export let activeStep = doc.pantheon[0];
 
   let width = writable(0);
 
@@ -79,6 +83,8 @@
   };
   const linkHighlight = createLinkHighlight();
 
+  $: linkHighlight.highlight(activeStep.layout);
+
   $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
 
   // Scales
@@ -92,7 +98,7 @@
   });
 
   $: radiusScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
-    let base = $bounds.chartWidth * 0.025;
+    let base = $bounds.chartWidth * 0.02;
     return $linkHighlight === "geometric"
       ? scaleOrdinal()
           .domain(["secondary"])
@@ -144,7 +150,7 @@
       </svg>
     {/if}
   </div>
-  <div class="controls"><slot name="controls" /></div>
+  <div class="meta"><slot name="meta" /></div>
 </div>
 
 <style>
@@ -153,8 +159,9 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "viz-area meta-area";
 
-    margin: 1rem;
     position: relative;
+
+    width: 100%;
     height: 100vh;
   }
 
@@ -169,7 +176,8 @@
     overflow: visible;
   }
 
-  .controls {
+  .meta {
     grid-area: meta-area;
+    height: 100vh;
   }
 </style>

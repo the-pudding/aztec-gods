@@ -1,14 +1,23 @@
 <script>
-  export let activeStep = {};
+  import { getContext } from "svelte";
+  import Controls from "$components/force-layout/Controls.svelte";
+  import doc from "$data/doc.json";
   import loadImage from "$utils/loadImage";
-
   import { getLightGodColor, getMainGodColor, getGodImportanceLabel } from "$domain/getters";
+
+  export let activeStep = doc.pantheon[0];
+
+  $: storyMode = activeStep.id !== "exploratory-mode";
+
   const dev = process.env.NODE_ENV === "development";
   $: promise = loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${activeStep.id}.png`);
 </script>
 
-<div class="meta-area">
-  <div />
+<div class="meta-area" data-name="meta-area">
+  {#if !storyMode}
+    <Controls />
+  {/if}
+
   <div class="type" style="color: {getMainGodColor(activeStep.type)}">
     {getGodImportanceLabel(activeStep.type)}
   </div>
@@ -25,8 +34,9 @@
 <style>
   .meta-area {
     /* grid-area: meta-area; */
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
   }
@@ -43,5 +53,18 @@
   }
   img {
     margin: 0 auto;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 0.1rem 0.2rem;
+    margin: 0 0.1rem 0.1rem 0;
+    background-color: var(--color-highlight-lighter);
+    color: var(--color-highlight);
+  }
+
+  .selected {
+    background-color: var(--color-highlight);
+    color: var(--color-highlight-lighter);
   }
 </style>

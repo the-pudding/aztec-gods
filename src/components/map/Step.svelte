@@ -12,24 +12,28 @@
       step.type
     )};"
   >
-    <div class="step-title" style="background-color: {getMainGodColor(step.type)};">
-      {step.id}
-    </div>
+    {#if step.id}
+      <div class="step-title" style="background-color: {getMainGodColor(step.type)};">
+        {step.id}
+      </div>
+    {/if}
     <div class="step-bio">{step.minibio}</div>
   </div>
-  {#each step.content as content}
-    <div
-      class="step-item"
-      style="border-color: {getMainGodColor(step.type)}; background-color: {getLightGodColor(
-        step.type
-      )};"
-    >
-      <p class="step-subtitle" style="color: {getMainGodColor(step.type)};">{content.subtitle}</p>
-      {#each content.subcontent as subcontent}
-        <p>{subcontent}</p>
-      {/each}
-    </div>
-  {/each}
+  {#if step.content}
+    {#each step.content as content}
+      <div
+        class="step-item"
+        style="border-color: {getMainGodColor(step.type)}; background-color: {getLightGodColor(
+          step.type
+        )};"
+      >
+        <p class="step-subtitle" style="color: {getMainGodColor(step.type)};">{content.subtitle}</p>
+        {#each content.subcontent as subcontent}
+          <p>{subcontent}</p>
+        {/each}
+      </div>
+    {/each}
+  {/if}
 </div>
 {#if step.illustration}
   <img src="/aztec-gods/illustrations/Simplified-{step.illustration}.png" alt="" />
@@ -47,7 +51,9 @@
     opacity: 0.4;
     transition: opacity 400ms;
   }
-
+  .step:last-child {
+    margin-bottom: 120vh;
+  }
   .selected {
     opacity: 1;
   }

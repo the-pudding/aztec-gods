@@ -3,19 +3,21 @@
   import scrollama from "scrollama";
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
-  import Geometric from "$components/map/Geometric.svelte";
+
   import Step from "$components/map/Step.svelte";
   import StepMeta from "$components/map/StepMeta.svelte";
   import Section from "$components/layout/Section.svelte";
-  import Controls from "$components/force-layout/Controls.svelte";
+
   import Gods from "$components/force-layout/Gods.svelte";
   import Links from "$components/force-layout/Links.svelte";
   import Overlay from "$components/force-layout/Overlay.svelte";
   import State from "$components/force-layout/State.svelte";
   let selected = 0;
-  let activeStep = "";
 
-  $: steps = doc.pantheon;
+  // Default with first step
+  let activeStep = doc.pantheon[0];
+
+  const steps = doc.pantheon;
 
   const handleStepEnter = (response) => {
     selected = response.index;
@@ -33,55 +35,47 @@
       })
       .onStepEnter(handleStepEnter);
   });
+
+  $: storyMode = activeStep.id !== "exploratory-mode";
 </script>
 
 <svelte:window />
 
-<Section id="story-mode" centered>
+<Section id="gods-pantheon-map" centered>
   <div id="scrolly">
     <figure>
-      <div>
-        <!-- <Geometric {activeStep} /> -->
-        <State>
-          <g slot="chart-svg">
-            <Links />
-          </g>
-          <Gods slot="chart-html" />
-          <g slot="chart-svg-overlay">
-            <Overlay />
-          </g>
-          <!-- <Controls slot="controls" /> -->
-        </State>
-      </div>
-      <StepMeta {activeStep} />
+      <State {activeStep}>
+        <g slot="chart-svg">
+          <Links />
+        </g>
+        <Gods slot="chart-html" {activeStep} />
+        <g slot="chart-svg-overlay">
+          <Overlay noPointerEvents={storyMode} />
+        </g>
+        <StepMeta slot="meta" {activeStep} />
+      </State>
     </figure>
+
     <div class="scroll-area">
-      {#each steps as step, i}
-        <!-- <div class="step" data-step={step.id} class:selected={selected === i}> -->
-        <!-- {#each step.text as content} -->
-        <Step {step} selected={selected === i} />
-        <!-- {/each} -->
-        <!-- </div> -->
-      {/each}
+      <div class="scroll-overlay" />
+      <div class="scroll-steps">
+        {#each steps as step, i}
+          <Step {step} selected={selected === i} />
+        {/each}
+      </div>
     </div>
   </div>
 </Section>
 
 <style>
   figure {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    /* grid-template-areas: "viz-area scroll-area"; */
-    /* grid-area: viz-area; */
-
     position: -webkit-sticky;
     position: sticky;
-    /* width: 600px; */
-    height: 100vh;
+
+    height: 90vh;
     left: 0;
     top: 0;
-    /* width: 100%; */
-    margin: 0 auto;
+
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -90,8 +84,10 @@
 
   .scroll-area {
     position: relative;
-    width: 100%;
 
-    /* grid-area: scroll-area; */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    pointer-events: none;
   }
 </style>
