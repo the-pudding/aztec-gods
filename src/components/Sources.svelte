@@ -1,26 +1,37 @@
 <script>
   import doc from "$data/doc.json";
+  import Section from "$components/layout/Section.svelte";
+  import SourceItem from "$components/SourceItem.svelte";
 </script>
 
-<h2>{doc.sources_title}</h2>
+<Section id="article-sources">
+  <h2>{doc.sources_title}</h2>
 
-{#each doc.sources as source}
-  <h3>
-    {source.group_title}
-  </h3>
+  {#each doc.sources as group}
+    <h3>
+      {group.group_title}
+    </h3>
 
-  {#each source.sources_group as subgroup}
-    <h4>{subgroup.subgroup_title}</h4>
     <ul>
-      {#each subgroup.sources_subgroup as subgroupItem}
-        <li>
-          <span class="title">{subgroupItem.title}</span>:
-          <span class="author">{subgroupItem.author}</span>
-        </li>
+      {#each group.sources_group as groupItem}
+        {#if groupItem.sources_subgroup}
+          <li>{groupItem.subgroup_title}</li>
+          <ul>
+            {#each groupItem.sources_subgroup as subgroupItem}
+              <SourceItem
+                author={subgroupItem.author}
+                title={subgroupItem.title}
+                url={subgroupItem.url}
+              />
+            {/each}
+          </ul>
+        {:else}
+          <SourceItem author={groupItem.author} title={groupItem.title} url={groupItem.url} />
+        {/if}
       {/each}
     </ul>
   {/each}
-{/each}
+</Section>
 
 <style>
   h3 {
