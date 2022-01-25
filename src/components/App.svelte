@@ -6,6 +6,7 @@
   import Intro from "$components/introduction/Intro.svelte";
   import Scrolly from "$components/map/Scrolly.svelte";
   import Sources from "$components/Sources.svelte";
+  import ContextualElements from "$components/ContextualElements.svelte";
 </script>
 
 <script>
@@ -18,6 +19,8 @@
 <Tezca />
 
 <Tlalte />
+
+<ContextualElements />
 
 <Scrolly />
 

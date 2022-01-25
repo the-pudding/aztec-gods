@@ -5,7 +5,7 @@
   import Paragraph from "$components/layout/Paragraph.svelte";
 </script>
 
-<Section>
+<Section id="intro">
   {#each doc.introduction as p}
     <Paragraph>{p}</Paragraph>
   {/each}
