@@ -1,11 +1,18 @@
 {
   "color": {
     "background": {
-      "value": "#FFEEA8"
+      "value": "#FFE198"
     },
-    "background-lowlight": {
+    "background-2": {
+      "value": "#FFF5CE"
+    },
+    "background-3": {
+      "value": "#FFFAE4"
+    },
+    "background-4": {
       "value": "#FFFDF3"
     },
+
     "highlight": {
       "value": "#FE0000"
     },

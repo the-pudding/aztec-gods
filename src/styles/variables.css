@@ -1,21 +1,23 @@
 /**
  * Do not edit directly
- * Generated on Wed, 19 Jan 2022 09:21:18 GMT
+ * Generated on Tue, 25 Jan 2022 17:48:24 GMT
  */
 
 :root {
-  --category-primordial: #008aa1;
-  --category-creation: #d28360;
-  --category-elemental: #5c8a73;
-  --category-human: #b08699;
-  --category-secondary: #fe0000;
-  --category-primordial-light: #eaf8fb;
-  --category-creation-light: #fff0e9;
-  --category-elemental-light: #f3f7f5;
-  --category-human-light: #f9f6f8;
-  --category-secondary-light: #ffeded;
-  --color-background: #ffeea8;
-  --color-background-lowlight: #fffdf3;
+  --category-primordial: #008AA1;
+  --category-creation: #D28360;
+  --category-elemental: #5C8A73;
+  --category-human: #B08699;
+  --category-secondary: #FE0000;
+  --category-primordial-light: #EAF8FB;
+  --category-creation-light: #FFF0E9;
+  --category-elemental-light: #F3F7F5;
+  --category-human-light: #F9F6F8;
+  --category-secondary-light: #FFEDED;
+  --color-background: #ffe198;
+  --color-background-2: #fff5ce;
+  --color-background-3: #fffae4;
+  --color-background-4: #fffdf3;
   --color-highlight: #fe0000;
   --color-highlight-lighter: #fbf2f2;
   --color-black: #000000;
