@@ -1,6 +1,7 @@
 <script context="module">
   export const prerender = true;
   import Tezca from "$components/iconography/Tezca.svelte";
+  import Iconography from "$components/iconography/Iconography.svelte";
   import Tlalte from "$components/iconography/Tlalte.svelte";
   import Hero from "$components/introduction/Hero.svelte";
   import Intro from "$components/introduction/Intro.svelte";
@@ -9,16 +10,11 @@
   import ContextualElements from "$components/ContextualElements.svelte";
 </script>
 
-<script>
-</script>
-
 <Hero />
 
 <Intro />
 
-<Tezca />
-
-<Tlalte />
+<Iconography />
 
 <ContextualElements />
 
