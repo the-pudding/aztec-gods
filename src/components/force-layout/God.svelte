@@ -10,7 +10,6 @@
   export let activeStep = doc.pantheon[0];
 
   const dev = process.env.NODE_ENV === "development";
-  $: promise = loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.name}.png`);
 
   const {
     xScale,
@@ -67,45 +66,64 @@
   $: isScaled = storyMode && activeStep.id === god.name;
 </script>
 
-{#await promise}
-  <div
-    class="god"
-    style="width:{rad}px; height:{rad}px; 
+{#if isMain}
+  {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.name}.png`)}
+    <div
+      class="god"
+      style="width:{rad}px; height:{rad}px; 
   left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
-  transform: {isScaled ? 'scale(1.5)' : 'unset'};
+  transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   "
-    on:mouseenter={() => interaction.highlight(getName(god))}
-    on:focus={() => interaction.highlight(getName(god))}
-    on:mouseout={() => interaction.highlight(undefined)}
-    on:blur={() => interaction.highlight(undefined)}
-  >
-    {isMain ? name : ""}
-  </div>
-{:then img}
-  <div
-    class="god"
-    style="width:{rad}px; height:{rad}px; 
+      on:mouseenter={() => interaction.highlight(getName(god))}
+      on:focus={() => interaction.highlight(getName(god))}
+      on:mouseout={() => interaction.highlight(undefined)}
+      on:blur={() => interaction.highlight(undefined)}
+    >
+      {isMain ? name : ""}
+    </div>
+  {:then img}
+    <div
+      class="god"
+      style="width:{rad}px; height:{rad}px; 
   left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   background-color: {bgColor};
   filter: {blur};
-  transform: {isScaled ? 'scale(1.5)' : 'unset'};
+  transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   background-image: {isMain ? `url(${img.src})` : 'unset'};
   opacity:{opacity};
 
   "
-    on:mouseenter={() => interaction.highlight(getName(god))}
-    on:focus={() => interaction.highlight(getName(god))}
-    on:mouseout={() => interaction.highlight(undefined)}
-    on:blur={() => interaction.highlight(undefined)}
-  />
-{:catch}
+      on:mouseenter={() => interaction.highlight(getName(god))}
+      on:focus={() => interaction.highlight(getName(god))}
+      on:mouseout={() => interaction.highlight(undefined)}
+      on:blur={() => interaction.highlight(undefined)}
+    />
+  {:catch}
+    <div
+      class="god"
+      style="width:{rad}px; height:{rad}px; 
+left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+opacity:{opacity};
+background-color: {bgColor};
+filter: {blur};
+transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
+z-index: {isScaled ? 200 : 20};
+border: {borderWidth}px solid {getMainGodColor(god.importance)};
+"
+      on:mouseenter={() => interaction.highlight(getName(god))}
+      on:focus={() => interaction.highlight(getName(god))}
+      on:mouseout={() => interaction.highlight(undefined)}
+      on:blur={() => interaction.highlight(undefined)}
+    />
+  {/await}
+{:else}
   <div
     class="god"
     style="width:{rad}px; height:{rad}px; 
@@ -113,7 +131,7 @@ left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px;
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
-transform: {isScaled ? 'scale(1.5)' : 'unset'};
+transform: {isScaled ? 'scale(1.5)' : 'scale(1)'};
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
@@ -122,7 +140,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     on:mouseout={() => interaction.highlight(undefined)}
     on:blur={() => interaction.highlight(undefined)}
   />
-{/await}
+{/if}
 
 {#if storyMode && activeStep.id === name}
   <div
