@@ -43,7 +43,9 @@
   $: borderWidth = !isMain ? 0 : rad * 0.07;
   $: bgColor = !isMain ? variables.category.secondary : getLightGodColor(god.importance);
   $: opacity =
-    !$keyword && !$interaction && layoutIsGeom && isMain
+    storyMode && isMain
+      ? 1
+      : !$keyword && !$interaction && layoutIsGeom && isMain
       ? 1
       : isHidden
       ? 0
