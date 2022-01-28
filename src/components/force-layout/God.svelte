@@ -3,7 +3,7 @@
 
   import { getContext } from "svelte";
   import loadImage from "$utils/loadImage";
-  import { getLightGodColor, getMainGodColor } from "$domain/getters";
+  import { getLightGodColor, getMainGodColor, getGodImportanceLabel } from "$domain/getters";
   import variables from "$data/variables.json";
 
   export let god;
@@ -155,14 +155,10 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
 {/if}
 
 {#if storyMode && activeStep.id === name}
-  <div
-    class="name"
-    style="left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(
-      god[$linkHighlight].y
-    )}px; color: {getMainGodColor(god.importance)}; transform: translate(-50%, -11px);"
-  >
-    {name}
+  <div class="type" style="color: {getMainGodColor(activeStep.type)}">
+    {getGodImportanceLabel(activeStep.type)}
   </div>
+  <div class="name">{@html activeStep.title}</div>
 {/if}
 
 <style>
@@ -181,11 +177,21 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
       width 1000ms, height 1000ms, filter 500ms;
   }
   .name {
-    font-size: 0.6em;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    position: absolute;
-    transform: translateX(-50%);
     text-transform: uppercase;
+  }
+  .type {
+    font-size: 1rem;
+    font-weight: bold;
+
+    width: 100%;
+    text-align: center;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 </style>

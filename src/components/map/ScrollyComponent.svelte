@@ -50,7 +50,7 @@
         </g>
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
-          <Overlay noPointerEvents={storyMode} />
+          <!-- <Overlay noPointerEvents={storyMode} debug /> -->
         </g>
         <StepMeta slot="meta" {activeStep} />
       </State>

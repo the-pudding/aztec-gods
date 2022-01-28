@@ -12,11 +12,11 @@
       step.type
     )};"
   >
-    {#if step.id}
+    <!-- {#if step.id}
       <div class="step-title" style="background-color: {getMainGodColor(step.type)};">
         {step.id}
       </div>
-    {/if}
+    {/if} -->
     <div class="step-bio">{step.minibio}</div>
   </div>
   {#if step.content}

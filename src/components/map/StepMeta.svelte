@@ -18,7 +18,7 @@
     <Controls />
   {/if}
 
-  <div class="type" style="color: {getMainGodColor(activeStep.type)}">
+  <!-- <div class="type" style="color: {getMainGodColor(activeStep.type)}">
     {getGodImportanceLabel(activeStep.type)}
   </div>
   <div class="name">{activeStep.title}</div>
@@ -28,7 +28,7 @@
     {:then img}
       <img src={img.src} alt="image of {activeStep.title}" />
     {/await}
-  </div>
+  </div> -->
 </div>
 
 <style>
