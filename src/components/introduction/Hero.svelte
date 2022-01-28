@@ -12,6 +12,9 @@
 </Section>
 
 <style>
+  h1 {
+    text-align: center;
+  }
   .hero {
     height: 100vh;
   }
