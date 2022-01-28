@@ -18,6 +18,6 @@
 
   .centered {
     padding: 2rem 1rem;
-    max-width: 90rem;
+    max-width: 46rem;
   }
 </style>
