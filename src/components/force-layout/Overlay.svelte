@@ -55,6 +55,7 @@
 
 <style>
   rect {
-    cursor: url("/aztec-gods/assets/design-elements/pokeball.png") 12 12, auto;
+    /* cursor: url("/aztec-gods/assets/design-elements/pokeball.png") 12 12, auto; */
+    cursor: crosshair;
   }
 </style>
