@@ -23,7 +23,7 @@
   --color-bg: var(--color-background);
   --color-fg: var(--color-off-black);
   --color-placeholder: var(--color-gray-dark);
-  --color-link: var(--color-purple);
+  --color-link: var(--color-fg);
   --color-focus: var(--color-red);
   --color-form-bg: var(--color-gray-dark);
   --color-form-fg: var(--color-off-black);

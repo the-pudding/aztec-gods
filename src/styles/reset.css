@@ -24,7 +24,16 @@ mark {
 }
 
 a {
-  color: var(--color-link);
+  color: var(--color-fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-highlight);
+  transition: border-width 100ms;
+}
+a:hover {
+  border-bottom: 3px solid var(--color-highlight);
+}
+a:visited {
+  color: var(--color-fg);
 }
 
 img,
