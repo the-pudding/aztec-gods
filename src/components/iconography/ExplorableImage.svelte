@@ -17,14 +17,19 @@
 </script>
 
 <div class="wrapper">
-  {#each steps as d}
-    <button on:click={() => (selected = d.id)}>{d.id}</button>
-  {/each}
-
-  <div class="description">
-    {text}
+  <div class="controls">
+    <div class="buttons">
+      {#each steps as d}
+        <button on:click={() => (selected = d.id)} class:selected={selected === d.id}>{d.id}</button
+        >
+      {/each}
+    </div>
+    <div class="description">
+      {@html text}
+    </div>
   </div>
-  <div class="image">
+
+  <div class="image-wrapper">
     <svg
       width="100%"
       height="100%"
@@ -40,16 +45,32 @@
         <circle cx={x} cy={y} {r} fill="white" />
       </mask>
 
-      <circle cx={x} cy={y} {r} fill="none" stroke="#C74300" stroke-width="20" />
+      <circle class="circle-overlay" cx={x} cy={y} {r} fill="none" stroke-width="50" />
     </svg>
   </div>
 </div>
 
 <style>
   .wrapper {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls {
+    /* background-color: blue; */
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .image-wrapper {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 40rem;
+    margin: 0;
   }
   .description {
     height: 60px;
@@ -58,9 +79,22 @@
   button {
     margin: 0 0.5rem 0.5rem 0;
     background: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 2px;
+    border: 1px solid var(--color-highlight);
+    color: var(--color-highlight);
+
+    text-transform: uppercase;
+  }
+
+  button.selected {
+    background-color: var(--color-highlight);
+    color: var(--color-highlight-lighter);
   }
   circle {
     transition: cx 700ms, cy 700ms, r 700ms;
+  }
+  circle.circle-overlay {
+    stroke: var(--color-highlight);
   }
 </style>

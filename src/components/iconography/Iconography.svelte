@@ -9,7 +9,8 @@
   const imageRange = [0, 10640];
 </script>
 
-<Section>
+<Section fullBleed>
+  <!-- Add a hidden heading for a11y -->
   <ExplorableImage
     name="tezca"
     steps={doc["tezca-steps"]}
