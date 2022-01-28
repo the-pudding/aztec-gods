@@ -7,17 +7,17 @@
 </script>
 
 <Section id="context">
-  <Heading>{doc.context_title}</Heading>
+  <Heading>{@html doc.context_title}</Heading>
 
-  <Paragraph>{doc.context_timeline}</Paragraph>
+  <Paragraph>{@html doc.context_timeline}</Paragraph>
   <Image
     localUrl="illustrations/Simplified-mesoamerican-timeline.png"
     alt={doc.context_timeline_alt}
   />
 
-  <Paragraph>{doc.context_empire}</Paragraph>
+  <Paragraph>{@html doc.context_empire}</Paragraph>
   <Image localUrl="illustrations/Simplified-map-of-aztec-empire.png" alt={doc.context_empire_alt} />
 
-  <Paragraph>{doc.context_suns}</Paragraph>
+  <Paragraph>{@html doc.context_suns}</Paragraph>
   <Image localUrl="illustrations/Simplified-Five-suns.png" alt={doc.context_suns_alt} />
 </Section>
