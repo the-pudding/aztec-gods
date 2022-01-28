@@ -41,7 +41,7 @@
 
 <svelte:window />
 
-<Section id="gods-pantheon-map" centered>
+<Section id="gods-pantheon-map" fullBleed>
   <div id="scrolly">
     <figure>
       <State {activeStep}>
