@@ -49,3 +49,13 @@ export const getGodImportanceLabel = (importance) => {
       return " ";
   }
 };
+
+export const getLabel = (id) => {
+  switch (id) {
+    case "face":
+      return "face";
+
+    default:
+      return " ";
+  }
+};

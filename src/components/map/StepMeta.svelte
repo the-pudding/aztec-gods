@@ -18,7 +18,7 @@
     <Controls />
   {/if}
 
-  <div class="type" style="color: {getMainGodColor(activeStep.type)}">
+  <!-- <div class="type" style="color: {getMainGodColor(activeStep.type)}">
     {getGodImportanceLabel(activeStep.type)}
   </div>
   <div class="name">{activeStep.title}</div>
@@ -28,7 +28,7 @@
     {:then img}
       <img src={img.src} alt="image of {activeStep.title}" />
     {/await}
-  </div>
+  </div> -->
 </div>
 
 <style>
@@ -53,18 +53,5 @@
   }
   img {
     margin: 0 auto;
-  }
-
-  button {
-    font-size: 0.8rem;
-    padding: 0.1rem 0.2rem;
-    margin: 0 0.1rem 0.1rem 0;
-    background-color: var(--color-highlight-lighter);
-    color: var(--color-highlight);
-  }
-
-  .selected {
-    background-color: var(--color-highlight);
-    color: var(--color-highlight-lighter);
   }
 </style>

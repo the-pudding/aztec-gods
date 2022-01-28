@@ -3,8 +3,19 @@
   import Section from "$components/layout/Section.svelte";
 </script>
 
-<Section>
-  <h1>
-    {doc.title}
-  </h1>
+<Section fullbleed>
+  <div class="hero">
+    <h1>
+      {doc.title}
+    </h1>
+  </div>
 </Section>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+  .hero {
+    height: 100vh;
+  }
+</style>

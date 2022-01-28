@@ -41,7 +41,7 @@
 
 <svelte:window />
 
-<Section id="gods-pantheon-map" centered>
+<Section id="gods-pantheon-map" fullBleed>
   <div id="scrolly">
     <figure>
       <State {activeStep}>
@@ -50,7 +50,7 @@
         </g>
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
-          <Overlay noPointerEvents={storyMode} />
+          <!-- <Overlay noPointerEvents={storyMode} debug /> -->
         </g>
         <StepMeta slot="meta" {activeStep} />
       </State>

@@ -3,7 +3,7 @@
 
   import { getContext } from "svelte";
   import loadImage from "$utils/loadImage";
-  import { getLightGodColor, getMainGodColor } from "$domain/getters";
+  import { getLightGodColor, getMainGodColor, getGodImportanceLabel } from "$domain/getters";
   import variables from "$data/variables.json";
 
   export let god;
@@ -11,7 +11,9 @@
 
   const dev = process.env.NODE_ENV === "development";
 
+  const FACTOR = 0.75;
   const {
+    bounds,
     xScale,
     yScale,
     getName,
@@ -71,12 +73,14 @@
   {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.name}.png`)}
     <div
       class="god"
-      style="width:{rad}px; height:{rad}px; 
+      style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
+        ? $bounds.chartHeight * FACTOR
+        : rad}px; 
   left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
-  transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
+  transform: translate(-50%, -50%);
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   "
@@ -90,16 +94,19 @@
   {:then img}
     <div
       class="god"
-      style="width:{rad}px; height:{rad}px; 
-  left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+      style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
+        ? $bounds.chartHeight * FACTOR
+        : rad}px; 
+  left:{isScaled ? $bounds.chartWidth / 2 : $xScale(god[$linkHighlight].x)}px; top:{isScaled
+        ? $bounds.chartHeight / 2
+        : $yScale(god[$linkHighlight].y)}px; 
   background-color: {bgColor};
   filter: {blur};
-  transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
+  transform: translate(-50%, -50%);
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   background-image: {isMain ? `url(${img.src})` : 'unset'};
   opacity:{opacity};
-
   "
       on:mouseenter={() => interaction.highlight(getName(god))}
       on:focus={() => interaction.highlight(getName(god))}
@@ -109,12 +116,14 @@
   {:catch}
     <div
       class="god"
-      style="width:{rad}px; height:{rad}px; 
+      style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
+        ? $bounds.chartHeight * FACTOR
+        : rad}px; 
 left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
-transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
+transform: translate(-50%, -50%);
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
@@ -127,7 +136,9 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
 {:else}
   <div
     class="god"
-    style="width:{rad}px; height:{rad}px; 
+    style="width:{isScaled ? $bounds.chartWidth : rad}px; height:{isScaled
+      ? $bounds.chartHeight
+      : rad}px; 
 left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
 opacity:{opacity};
 background-color: {bgColor};
@@ -144,14 +155,10 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
 {/if}
 
 {#if storyMode && activeStep.id === name}
-  <div
-    class="name"
-    style="left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(
-      god[$linkHighlight].y
-    )}px; color: {getMainGodColor(god.importance)}; transform: translate(-50%, -11px);"
-  >
-    {name}
+  <div class="type" style="color: {getMainGodColor(activeStep.type)}">
+    {getGodImportanceLabel(activeStep.type)}
   </div>
+  <div class="name">{@html activeStep.title}</div>
 {/if}
 
 <style>
@@ -166,15 +173,25 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     justify-content: center;
     align-items: center;
     background-size: cover;
-    transition: opacity 500ms, transform 500ms, border-width 500ms, left 500ms, top 500ms,
-      width 500ms, height 500ms, filter 500ms;
+    transition: opacity 500ms, transform 500ms, border-width 500ms, left 1000ms, top 1000ms,
+      width 1000ms, height 1000ms, filter 500ms;
   }
   .name {
-    font-size: 0.6em;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    position: absolute;
-    transform: translateX(-50%);
     text-transform: uppercase;
+  }
+  .type {
+    font-size: 1rem;
+    font-weight: bold;
+
+    width: 100%;
+    text-align: center;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 </style>
