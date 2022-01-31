@@ -31,7 +31,7 @@
       .setup({
         step: "div .step",
         // debug: true,
-        offset: 0.5
+        offset: 0.7
       })
       .onStepEnter(handleStepEnter);
   });
