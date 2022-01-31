@@ -4,14 +4,15 @@
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
 
-  import Step from "$components/pantheon/Step.svelte";
-  import StepMeta from "$components/pantheon/StepMeta.svelte";
+  import StepHorizontal from "$components/pantheon/StepHorizontal3.svelte";
+  import GodMeta from "$components/pantheon/GodMeta.svelte";
   import Section from "$components/layout/Section.svelte";
 
   import Gods from "$components/pantheon/Gods.svelte";
   import Links from "$components/pantheon/Links.svelte";
   import Overlay from "$components/pantheon/Overlay.svelte";
   import State from "$components/pantheon/State.svelte";
+
   let selected = 0;
 
   // Default with first step
@@ -52,15 +53,15 @@
         <g slot="chart-svg-overlay">
           <Overlay noPointerEvents={storyMode} />
         </g>
-        <StepMeta slot="meta" {activeStep} />
+        <GodMeta slot="meta" {activeStep} />
       </State>
     </figure>
 
     <div class="scroll-wrapper">
-      <div />
+      <div class="on-top-of-viz" />
       <div class="scroll-area">
         {#each steps as step, i}
-          <Step {step} selected={selected === i} />
+          <StepHorizontal {step} selected={selected === i} />
         {/each}
       </div>
     </div>
@@ -98,6 +99,10 @@
     grid-template-columns: 1fr;
 
     pointer-events: none;
+  }
+
+  .scroll-area {
+    /* background: orange; */
   }
   @media only screen and (min-width: 50em) {
     .scroll-wrapper {
