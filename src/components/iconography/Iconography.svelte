@@ -22,7 +22,7 @@
   <ExplorableImage
     name="tlatle"
     steps={doc["tlalte-steps"]}
-    selected="crouch"
+    selected="claws"
     imgPath={tlalte}
     positions={tlatlePosition}
     {imageRange}
