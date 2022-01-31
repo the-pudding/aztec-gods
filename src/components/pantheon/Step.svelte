@@ -48,7 +48,7 @@
     transition: opacity 400ms;
   }
   .step:last-child {
-    margin-bottom: 120vh;
+    margin-bottom: 140vh;
   }
   .selected {
     opacity: 1;
