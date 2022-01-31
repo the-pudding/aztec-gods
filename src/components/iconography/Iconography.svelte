@@ -10,11 +10,11 @@
 </script>
 
 <Section fullBleed>
-  <!-- Add a hidden heading for a11y -->
+  <!-- FIXME: Add a hidden heading for a11y -->
   <ExplorableImage
     name="tezca"
     steps={doc["tezca-steps"]}
-    selected="face"
+    selected="colors"
     imgPath={tezca}
     positions={tezcaPositions}
     {imageRange}
@@ -22,7 +22,7 @@
   <ExplorableImage
     name="tlatle"
     steps={doc["tlalte-steps"]}
-    selected="claws"
+    selected="crouch"
     imgPath={tlalte}
     positions={tlatlePosition}
     {imageRange}
