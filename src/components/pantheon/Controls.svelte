@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   import { getContext } from "svelte";
   import doc from "$data/doc.json";
 
@@ -8,31 +9,35 @@
   $: interactionBio = $interaction ? $nodes.filter((d) => d.name === $interaction)[0].bio : "";
 </script>
 
-<div class="wrapper">
+<div class="wrapper" transition:fade>
   <div>
-    <h3>{@html doc.pantheon_control_map}</h3>
-    {#each linkTypes as linkType}
-      <button
-        on:click={() => linkHighlight.highlight(linkType)}
-        class:selected={linkType === $linkHighlight}
-      >
-        {linkType}
-      </button>
-    {/each}
+    <h3 class="god-name">{$interaction ?? ""}</h3>
+    <div class="god-bio">{interactionBio ?? ""}</div>
+    <fieldset>
+      <legend>{@html doc.pantheon_control_map}</legend>
+      {#each linkTypes as linkType}
+        <button
+          on:click={() => linkHighlight.highlight(linkType)}
+          class:selected={linkType === $linkHighlight}
+        >
+          {linkType}
+        </button>
+      {/each}
+    </fieldset>
 
-    <h3>
-      {@html doc.pantheon_control_fade}
-      <small
-        style="text-decoration: underline; cursor: pointer;"
-        on:click={() => keyword.lowlight()}>unset</small
+    <fieldset>
+      <legend
+        >{@html doc.pantheon_control_fade}
+        <small
+          style="text-decoration: underline; cursor: pointer;"
+          on:click={() => keyword.lowlight()}>unset</small
+        ></legend
       >
-    </h3>
-    {#each keywords as k}
-      <button on:click={() => keyword.highlight(k)} class:selected={k === $keyword}>{k}</button>
-    {/each}
+      {#each keywords as k}
+        <button on:click={() => keyword.highlight(k)} class:selected={k === $keyword}>{k}</button>
+      {/each}
+    </fieldset>
 
-    <h3>{$interaction ?? ""}</h3>
-    <div>{interactionBio ?? ""}</div>
     <!-- <h3>Find a God <small>{$interaction}</small></h3>
     {#each grouped as group}
       <div>
@@ -50,18 +55,35 @@
 <style>
   .wrapper {
     /* padding: 0.5rem; */
-    max-height: 100vh;
+    /* height: 100vh; */
     /* overflow: scroll; */
-
+    /* border: 3px solid floralwhite; */
     display: flex;
-
+    height: 100%;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
   }
-  button {
+  legend {
     font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .god-name {
+    font-size: 1rem;
+  }
+
+  .god-bio {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.7rem;
     padding: 0.1rem 0.2rem;
     margin: 0 0.1rem 0.1rem 0;
+  }
+  @media only screen and (min-width: 50em) {
+    .wrapper {
+      height: 100vh;
+    }
   }
 </style>

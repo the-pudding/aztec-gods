@@ -75,8 +75,6 @@
     margin: 0 auto;
 
     padding: 0 0.5rem;
-
-    /* pointer-events: none; */
   }
   figure {
     position: -webkit-sticky;
@@ -84,7 +82,6 @@
 
     width: 100%;
 
-    /* height: 90vh; */
     left: 0;
     top: 0;
 
@@ -99,6 +96,8 @@
 
     display: grid;
     grid-template-columns: 1fr;
+
+    pointer-events: none;
   }
   @media only screen and (min-width: 50em) {
     .scroll-wrapper {

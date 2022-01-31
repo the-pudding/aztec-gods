@@ -147,6 +147,12 @@ tfoot {
   background-color: var(--color-selection);
 }
 
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .skip-to-main {
   border: none;
   width: 1px;

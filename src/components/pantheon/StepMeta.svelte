@@ -13,8 +13,6 @@
   $: promise = loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${activeStep.id}.png`);
 </script>
 
-<div class="meta-area" data-name="meta-area">
-  {#if !storyMode}
-    <Controls />
-  {/if}
-</div>
+{#if !storyMode}
+  <Controls />
+{/if}
