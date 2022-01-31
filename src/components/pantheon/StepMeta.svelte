@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import Controls from "$components/force-layout/Controls.svelte";
+  import Controls from "$components/pantheon/Controls.svelte";
   import doc from "$data/doc.json";
   import loadImage from "$utils/loadImage";
   import { getLightGodColor, getMainGodColor, getGodImportanceLabel } from "$domain/getters";

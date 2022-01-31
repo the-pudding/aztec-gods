@@ -4,14 +4,14 @@
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
 
-  import Step from "$components/map/Step.svelte";
-  import StepMeta from "$components/map/StepMeta.svelte";
+  import Step from "$components/pantheon/Step.svelte";
+  import StepMeta from "$components/pantheon/StepMeta.svelte";
   import Section from "$components/layout/Section.svelte";
 
-  import Gods from "$components/force-layout/Gods.svelte";
-  import Links from "$components/force-layout/Links.svelte";
-  import Overlay from "$components/force-layout/Overlay.svelte";
-  import State from "$components/force-layout/State.svelte";
+  import Gods from "$components/pantheon/Gods.svelte";
+  import Links from "$components/pantheon/Links.svelte";
+  import Overlay from "$components/pantheon/Overlay.svelte";
+  import State from "$components/pantheon/State.svelte";
   let selected = 0;
 
   // Default with first step
