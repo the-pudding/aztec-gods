@@ -89,6 +89,8 @@
   }
   .description {
     height: 60px;
+    margin: 1rem 0;
+    text-align: center;
   }
 
   button {
