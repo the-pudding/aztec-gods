@@ -57,12 +57,9 @@
     </figure>
 
     <div class="scroll-area">
-      <div class="scroll-overlay" />
-      <div class="scroll-steps">
-        {#each steps as step, i}
-          <Step {step} selected={selected === i} />
-        {/each}
-      </div>
+      {#each steps as step, i}
+        <Step {step} selected={selected === i} />
+      {/each}
     </div>
   </div>
 </Section>
