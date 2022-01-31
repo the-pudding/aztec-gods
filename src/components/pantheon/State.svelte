@@ -165,7 +165,7 @@
 
     position: relative;
 
-    border: 3px solid green;
+    /* border: 3px solid green; */
     height: 100vh;
 
     padding-bottom: 1rem;
