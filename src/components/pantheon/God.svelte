@@ -67,6 +67,9 @@
       : `blur(4px)`;
 
   $: isScaled = storyMode && activeStep.id === god.name;
+
+  $: x = $xScale(god[$linkHighlight].x) + $bounds.margins.left;
+  $: y = $yScale(god[$linkHighlight].y) + $bounds.margins.top;
 </script>
 
 {#if isMain}
@@ -76,7 +79,7 @@
       style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
         ? $bounds.chartHeight * FACTOR
         : rad}px; 
-  left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+  left:{x}px; top:{y}px; 
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
@@ -97,9 +100,9 @@
       style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
         ? $bounds.chartHeight * FACTOR
         : rad}px; 
-  left:{isScaled ? $bounds.chartWidth / 2 : $xScale(god[$linkHighlight].x)}px; top:{isScaled
-        ? $bounds.chartHeight / 2
-        : $yScale(god[$linkHighlight].y)}px; 
+  left:{isScaled ? $bounds.chartWidth / 2 + $bounds.margins.left : x}px; top:{isScaled
+        ? $bounds.chartHeight / 2 + $bounds.margins.top
+        : y}px; 
   background-color: {bgColor};
   filter: {blur};
   transform: translate(-50%, -50%);
@@ -119,7 +122,7 @@
       style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
         ? $bounds.chartHeight * FACTOR
         : rad}px; 
-left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+left:{x}px; top:{y}px; 
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
@@ -139,7 +142,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     style="width:{isScaled ? $bounds.chartWidth : rad}px; height:{isScaled
       ? $bounds.chartHeight
       : rad}px; 
-left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+left:{x}px; top:{y}px; 
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
@@ -177,9 +180,8 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
       width 1000ms, height 1000ms, filter 500ms;
   }
   .name {
-    width: 100%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -188,7 +190,6 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     font-size: 1rem;
     font-weight: bold;
 
-    width: 100%;
     text-align: center;
 
     text-transform: uppercase;

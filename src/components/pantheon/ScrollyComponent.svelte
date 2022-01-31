@@ -50,7 +50,7 @@
         </g>
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
-          <!-- <Overlay noPointerEvents={storyMode} debug /> -->
+          <Overlay noPointerEvents={storyMode} debug />
         </g>
         <StepMeta slot="meta" {activeStep} />
       </State>
@@ -83,8 +83,15 @@
     position: relative;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
+
+    padding: 0 0.5rem;
 
     pointer-events: none;
+  }
+  @media only screen and (min-width: 30em) {
+    .scroll-area {
+      grid-template-columns: 2fr 1fr;
+    }
   }
 </style>

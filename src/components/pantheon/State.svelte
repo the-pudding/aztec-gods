@@ -150,18 +150,21 @@
       </svg>
     {/if}
   </div>
-  <div class="meta"><slot name="meta" /></div>
+
+  <!-- <div class="meta"><slot name="meta" /></div> -->
 </div>
 
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "viz-area meta-area";
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "viz-area"
+      "meta-area";
 
     position: relative;
 
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
   }
 
@@ -179,5 +182,11 @@
   .meta {
     grid-area: meta-area;
     height: 100vh;
+  }
+  @media only screen and (min-width: 30em) {
+    .wrapper {
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: "viz-area meta-area";
+    }
   }
 </style>
