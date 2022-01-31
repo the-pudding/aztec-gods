@@ -93,7 +93,7 @@
     text-align: center;
   }
 
-  button {
+  /* button {
     margin: 0 0.5rem 0.5rem 0;
     background: #fff;
     padding: 0.3rem 0.6rem;
@@ -107,7 +107,7 @@
   button.selected {
     background-color: var(--color-highlight);
     color: var(--color-highlight-lighter);
-  }
+  } */
 
   ellipse {
     transition: cx 700ms, cy 700ms, rx 700ms, ry 700ms;

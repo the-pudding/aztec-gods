@@ -1,5 +1,6 @@
 <script>
   import { getContext } from "svelte";
+  import doc from "$data/doc.json";
 
   const { bounds, nodes, interaction, keyword, linkHighlight, keywords, linkTypes } =
     getContext("chart-state");
@@ -7,9 +8,9 @@
   $: interactionBio = $interaction ? $nodes.filter((d) => d.name === $interaction)[0].bio : "";
 </script>
 
-<div class="wrapper" style="height:{bounds.height}px;">
+<div class="wrapper">
   <div>
-    <h3>Organize Gods by relations of</h3>
+    <h3>{@html doc.pantheon_control_map}</h3>
     {#each linkTypes as linkType}
       <button
         on:click={() => linkHighlight.highlight(linkType)}
@@ -20,7 +21,8 @@
     {/each}
 
     <h3>
-      Fade by Domain <small
+      {@html doc.pantheon_control_fade}
+      <small
         style="text-decoration: underline; cursor: pointer;"
         on:click={() => keyword.lowlight()}>unset</small
       >
@@ -47,20 +49,19 @@
 
 <style>
   .wrapper {
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     max-height: 100vh;
-    overflow: scroll;
+    /* overflow: scroll; */
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
   }
   button {
     font-size: 0.8rem;
     padding: 0.1rem 0.2rem;
     margin: 0 0.1rem 0.1rem 0;
-    background-color: var(--color-highlight-lighter);
-    color: var(--color-highlight);
-  }
-
-  .selected {
-    background-color: var(--color-highlight);
-    color: var(--color-highlight-lighter);
   }
 </style>

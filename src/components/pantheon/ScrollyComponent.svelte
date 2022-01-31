@@ -50,26 +50,41 @@
         </g>
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
-          <Overlay noPointerEvents={storyMode} debug />
+          <Overlay noPointerEvents={storyMode} />
         </g>
         <StepMeta slot="meta" {activeStep} />
       </State>
     </figure>
 
-    <div class="scroll-area">
-      {#each steps as step, i}
-        <Step {step} selected={selected === i} />
-      {/each}
+    <div class="scroll-wrapper">
+      <div />
+      <div class="scroll-area">
+        {#each steps as step, i}
+          <Step {step} selected={selected === i} />
+        {/each}
+      </div>
     </div>
   </div>
 </Section>
 
 <style>
+  #scrolly {
+    position: relative;
+
+    max-width: 64em;
+    margin: 0 auto;
+
+    padding: 0 0.5rem;
+
+    /* pointer-events: none; */
+  }
   figure {
     position: -webkit-sticky;
     position: sticky;
 
-    height: 90vh;
+    width: 100%;
+
+    /* height: 90vh; */
     left: 0;
     top: 0;
 
@@ -79,19 +94,16 @@
     z-index: 0;
   }
 
-  .scroll-area {
+  .scroll-wrapper {
     position: relative;
 
     display: grid;
     grid-template-columns: 1fr;
-
-    padding: 0 0.5rem;
-
-    pointer-events: none;
   }
-  @media only screen and (min-width: 30em) {
-    .scroll-area {
+  @media only screen and (min-width: 50em) {
+    .scroll-wrapper {
       grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr;
     }
   }
 </style>

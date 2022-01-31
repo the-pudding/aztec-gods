@@ -17,41 +17,4 @@
   {#if !storyMode}
     <Controls />
   {/if}
-
-  <!-- <div class="type" style="color: {getMainGodColor(activeStep.type)}">
-    {getGodImportanceLabel(activeStep.type)}
-  </div>
-  <div class="name">{activeStep.title}</div>
-  <div>
-    {#await promise}
-      Loading...
-    {:then img}
-      <img src={img.src} alt="image of {activeStep.title}" />
-    {/await}
-  </div> -->
 </div>
-
-<style>
-  .meta-area {
-    /* grid-area: meta-area; */
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .type {
-    font-size: 1rem;
-    font-weight: bold;
-
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .name {
-    font-size: 2rem;
-  }
-  img {
-    margin: 0 auto;
-  }
-</style>

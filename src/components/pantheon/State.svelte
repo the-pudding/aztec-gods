@@ -151,21 +151,19 @@
     {/if}
   </div>
 
-  <!-- <div class="meta"><slot name="meta" /></div> -->
+  <div class="meta"><slot name="meta" /></div>
 </div>
 
 <style>
   .wrapper {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
     grid-template-areas:
       "viz-area"
       "meta-area";
 
     position: relative;
-
-    /* width: 100%; */
-    height: 100vh;
   }
 
   .chart-wrapper {
@@ -179,13 +177,10 @@
     overflow: visible;
   }
 
-  .meta {
-    grid-area: meta-area;
-    height: 100vh;
-  }
-  @media only screen and (min-width: 30em) {
+  @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr;
       grid-template-areas: "viz-area meta-area";
     }
   }
