@@ -6,18 +6,17 @@
   export let positions = [];
   export let imageRange = [0, 1];
 
+  import { fade } from "svelte/transition";
   import { scaleLinear } from "d3";
 
   $: text = steps.filter((d) => d.id === selected)[0].text ?? "Pick something";
 
   $: scale = scaleLinear().domain([0, 1]).range(imageRange);
-  $: x = scale(positions[selected] ? positions[selected].cx : 0.5);
-  $: y = scale(positions[selected] ? positions[selected].cy : 0.5);
-  $: r = positions[selected] ? positions[selected].r : 0;
 </script>
 
 <div class="wrapper">
   <div class="controls">
+    <!-- FIXME: for a11y, use tab/panel semantics -->
     <div class="buttons">
       {#each steps as d}
         <button on:click={() => (selected = d.id)} class:selected={selected === d.id}>{d.id}</button
@@ -36,16 +35,36 @@
       viewBox="0 0 10640 10640"
       xmlns="http://www.w3.org/2000/svg"
       xml:space="preserve"
-      style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round"
+      style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;overflow:visible"
     >
       <g mask={`url(#mask-${name})`}>{@html imgPath}</g>
 
-      <mask id={`mask-${name}`}>
+      <mask transition:fade id={`mask-${name}`}>
         <rect x="0" y="0" width="10640" height="10640" fill="white" fill-opacity={0.1} />
-        <circle cx={x} cy={y} {r} fill="white" />
+        {#each positions[selected] as m}
+          <ellipse
+            cx={scale(m.cx)}
+            cy={scale(m.cy)}
+            rx={scale(m.rx)}
+            ry={scale(m.ry)}
+            fill="white"
+            transition:fade
+          />
+        {/each}
       </mask>
 
-      <circle class="circle-overlay" cx={x} cy={y} {r} fill="none" stroke-width="50" />
+      {#each positions[selected] as m}
+        <ellipse
+          class="circle-overlay"
+          transition:fade
+          cx={scale(m.cx)}
+          cy={scale(m.cy)}
+          rx={scale(m.rx)}
+          ry={scale(m.ry)}
+          fill="none"
+          stroke-width="50"
+        />
+      {/each}
     </svg>
   </div>
 </div>
@@ -56,10 +75,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .controls {
-    /* background-color: blue; */
   }
 
   .buttons {
@@ -91,10 +106,11 @@
     background-color: var(--color-highlight);
     color: var(--color-highlight-lighter);
   }
-  circle {
-    transition: cx 700ms, cy 700ms, r 700ms;
+
+  ellipse {
+    transition: cx 700ms, cy 700ms, rx 700ms, ry 700ms;
   }
-  circle.circle-overlay {
+  ellipse.circle-overlay {
     stroke: var(--color-highlight);
   }
 </style>
