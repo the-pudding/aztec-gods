@@ -12,13 +12,9 @@
       step.type
     )};"
   >
-    <!-- {#if step.id}
-      <div class="step-title" style="background-color: {getMainGodColor(step.type)};">
-        {step.id}
-      </div>
-    {/if} -->
     <div class="step-bio">{step.minibio}</div>
   </div>
+
   {#if step.content}
     {#each step.content as content}
       <div
@@ -52,7 +48,7 @@
     transition: opacity 400ms;
   }
   .step:last-child {
-    margin-bottom: 120vh;
+    margin-bottom: 140vh;
   }
   .selected {
     opacity: 1;

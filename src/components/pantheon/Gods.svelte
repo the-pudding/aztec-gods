@@ -8,7 +8,8 @@
   const { bounds, nodes } = getContext("chart-state");
 </script>
 
-<div style="transform: translate({$bounds.margins.left}px, {$bounds.margins.top}px)">
+<!-- style="transform: translate({$bounds.margins.left}px, {$bounds.margins.top}px)" -->
+<div data-name="gods">
   {#each $nodes as god}
     <God {god} {activeStep} />
   {/each}

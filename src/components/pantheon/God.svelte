@@ -67,6 +67,9 @@
       : `blur(4px)`;
 
   $: isScaled = storyMode && activeStep.id === god.name;
+
+  $: x = $xScale(god[$linkHighlight].x) + $bounds.margins.left;
+  $: y = $yScale(god[$linkHighlight].y) + $bounds.margins.top;
 </script>
 
 {#if isMain}
@@ -76,7 +79,7 @@
       style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
         ? $bounds.chartHeight * FACTOR
         : rad}px; 
-  left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+  left:{x}px; top:{y}px; 
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
@@ -97,9 +100,9 @@
       style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
         ? $bounds.chartHeight * FACTOR
         : rad}px; 
-  left:{isScaled ? $bounds.chartWidth / 2 : $xScale(god[$linkHighlight].x)}px; top:{isScaled
-        ? $bounds.chartHeight / 2
-        : $yScale(god[$linkHighlight].y)}px; 
+  left:{isScaled ? $bounds.chartWidth / 2 + $bounds.margins.left : x}px; top:{isScaled
+        ? $bounds.chartHeight / 2 + $bounds.margins.top
+        : y}px; 
   background-color: {bgColor};
   filter: {blur};
   transform: translate(-50%, -50%);
@@ -119,7 +122,7 @@
       style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
         ? $bounds.chartHeight * FACTOR
         : rad}px; 
-left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+left:{x}px; top:{y}px; 
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
@@ -139,7 +142,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     style="width:{isScaled ? $bounds.chartWidth : rad}px; height:{isScaled
       ? $bounds.chartHeight
       : rad}px; 
-left:{$xScale(god[$linkHighlight].x)}px; top:{$yScale(god[$linkHighlight].y)}px; 
+left:{x}px; top:{y}px; 
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
@@ -155,20 +158,23 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
 {/if}
 
 {#if storyMode && activeStep.id === name}
-  <div class="type" style="color: {getMainGodColor(activeStep.type)}">
-    {getGodImportanceLabel(activeStep.type)}
+  <div class="type-and-name">
+    <!-- <div class="type" style="color: {getMainGodColor(activeStep.type)}">
+      {getGodImportanceLabel(activeStep.type)}
+    </div> -->
+    <div class="name" style="color: {getMainGodColor(activeStep.type)}">
+      {@html activeStep.name}
+    </div>
+    <div class="title">{@html activeStep.title}</div>
   </div>
-  <div class="name">{@html activeStep.title}</div>
 {/if}
 
 <style>
   .god {
-    background: #fff;
-    font-size: 8px;
-
     position: absolute;
-    /* transform: translate(-50%, -50%); */
+
     border-radius: 2px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,22 +182,47 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     transition: opacity 500ms, transform 500ms, border-width 500ms, left 1000ms, top 1000ms,
       width 1000ms, height 1000ms, filter 500ms;
   }
-  .name {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+  .type-and-name {
+    margin: 0.1rem;
   }
   .type {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: bold;
 
-    width: 100%;
     text-align: center;
 
     text-transform: uppercase;
     letter-spacing: 0.06em;
+  }
+  .name {
+    text-align: center;
+    font-size: 1rem;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .title {
+    text-align: center;
+    font-size: 0.8rem;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  @media only screen and (min-width: 35em) {
+    .name {
+      font-size: 1.4rem;
+    }
+    .title {
+      font-size: 1rem;
+    }
+  }
+  @media only screen and (min-width: 50em) {
+    .name {
+      font-size: 2rem;
+    }
+    .title {
+      font-size: 1.6rem;
+    }
   }
 </style>

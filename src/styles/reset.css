@@ -147,6 +147,12 @@ tfoot {
   background-color: var(--color-selection);
 }
 
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .skip-to-main {
   border: none;
   width: 1px;
@@ -172,4 +178,24 @@ tfoot {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+button {
+  margin: 0 0.5rem 0.5rem 0;
+  background: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  border: 1px solid var(--color-highlight);
+  color: var(--color-highlight);
+
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: var(--color-highlight-lighter);
+}
+
+button.selected {
+  background-color: var(--color-highlight);
+  color: var(--color-highlight-lighter);
 }

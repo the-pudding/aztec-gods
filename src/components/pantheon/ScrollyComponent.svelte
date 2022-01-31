@@ -4,14 +4,14 @@
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
 
-  import Step from "$components/map/Step.svelte";
-  import StepMeta from "$components/map/StepMeta.svelte";
+  import Step from "$components/pantheon/Step.svelte";
+  import StepMeta from "$components/pantheon/StepMeta.svelte";
   import Section from "$components/layout/Section.svelte";
 
-  import Gods from "$components/force-layout/Gods.svelte";
-  import Links from "$components/force-layout/Links.svelte";
-  import Overlay from "$components/force-layout/Overlay.svelte";
-  import State from "$components/force-layout/State.svelte";
+  import Gods from "$components/pantheon/Gods.svelte";
+  import Links from "$components/pantheon/Links.svelte";
+  import Overlay from "$components/pantheon/Overlay.svelte";
+  import State from "$components/pantheon/State.svelte";
   let selected = 0;
 
   // Default with first step
@@ -31,7 +31,7 @@
       .setup({
         step: "div .step",
         // debug: true,
-        offset: 0.5
+        offset: 0.7
       })
       .onStepEnter(handleStepEnter);
   });
@@ -50,15 +50,15 @@
         </g>
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
-          <!-- <Overlay noPointerEvents={storyMode} debug /> -->
+          <Overlay noPointerEvents={storyMode} />
         </g>
         <StepMeta slot="meta" {activeStep} />
       </State>
     </figure>
 
-    <div class="scroll-area">
-      <div class="scroll-overlay" />
-      <div class="scroll-steps">
+    <div class="scroll-wrapper">
+      <div />
+      <div class="scroll-area">
         {#each steps as step, i}
           <Step {step} selected={selected === i} />
         {/each}
@@ -68,11 +68,20 @@
 </Section>
 
 <style>
+  #scrolly {
+    position: relative;
+
+    max-width: 64em;
+    margin: 0 auto;
+
+    padding: 0 0.5rem;
+  }
   figure {
     position: -webkit-sticky;
     position: sticky;
 
-    height: 90vh;
+    width: 100%;
+
     left: 0;
     top: 0;
 
@@ -82,12 +91,18 @@
     z-index: 0;
   }
 
-  .scroll-area {
+  .scroll-wrapper {
     position: relative;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
 
     pointer-events: none;
+  }
+  @media only screen and (min-width: 50em) {
+    .scroll-wrapper {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr;
+    }
   }
 </style>

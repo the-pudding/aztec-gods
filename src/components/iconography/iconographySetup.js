@@ -77,10 +77,10 @@ export const tezcaPositions = {
   ],
   ezpitzal: [
     {
-      cx: 0.3,
-      cy: 0.2,
-      rx: 0.066,
-      ry: 0.066
+      cx: 0.5,
+      cy: 0.5,
+      rx: 0.0,
+      ry: 0.0
     }
   ]
 };

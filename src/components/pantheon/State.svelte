@@ -134,7 +134,7 @@
   $: setContext("chart-state", context);
 </script>
 
-<div class="wrapper">
+<div class="wrapper" data-name="wrapper-in-state">
   <div class="chart-wrapper" bind:clientWidth={$width}>
     {#if $width > 0}
       <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
@@ -150,19 +150,25 @@
       </svg>
     {/if}
   </div>
-  <div class="meta"><slot name="meta" /></div>
+
+  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
 </div>
 
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "viz-area meta-area";
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+      "viz-area"
+      "meta-area";
 
     position: relative;
 
-    width: 100%;
+    /* border: 3px solid green; */
     height: 100vh;
+
+    padding-bottom: 1rem;
   }
 
   .chart-wrapper {
@@ -177,7 +183,14 @@
   }
 
   .meta {
-    grid-area: meta-area;
-    height: 100vh;
+    /* border: 3px solid Orchid; */
+    height: 100%;
+  }
+  @media only screen and (min-width: 50em) {
+    .wrapper {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "viz-area meta-area";
+    }
   }
 </style>

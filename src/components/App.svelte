@@ -3,7 +3,7 @@
   import Iconography from "$components/iconography/Iconography.svelte";
   import Hero from "$components/introduction/Hero.svelte";
   import Intro from "$components/introduction/Intro.svelte";
-  import Scrolly from "$components/map/Scrolly.svelte";
+  import Scrolly from "$components/pantheon/Scrolly.svelte";
   import Sources from "$components/colophon/Sources.svelte";
 
   import ContextualElements from "$components/ContextualElements.svelte";
