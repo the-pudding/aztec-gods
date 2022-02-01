@@ -33,7 +33,9 @@
     <div class="name">{@html getName($selection)}</div>
     <p class="minibio">{@html $selection.bio}</p>
 
-    <!-- illstration source -->
+    <div class="illu-source">{@html $selection.source}</div>
+    <div class="other-spellings">{@html $selection.spellings}</div>
+
     <!-- otherspellings -->
   </div>
 {/if}
