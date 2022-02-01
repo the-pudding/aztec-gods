@@ -152,8 +152,7 @@
 <div class="wrapper" data-name="wrapper-in-state">
   <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
   <div class="info" data-name="info-in-state">
-    <!-- <slot name="info" /> -->
-    cards go here
+    <slot name="info" />
   </div>
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
