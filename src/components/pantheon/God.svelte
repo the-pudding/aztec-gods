@@ -19,6 +19,7 @@
     getName,
     getImportance,
     interaction,
+    selection,
     fadeScale,
     linkHighlight,
     radiusScale,
@@ -87,10 +88,6 @@
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   "
-      on:mouseenter={() => interaction.highlight(getName(god))}
-      on:focus={() => interaction.highlight(getName(god))}
-      on:mouseout={() => interaction.highlight(undefined)}
-      on:blur={() => interaction.highlight(undefined)}
     >
       {isMain ? name : ""}
     </div>
@@ -111,10 +108,6 @@
   background-image: {isMain ? `url(${img.src})` : 'unset'};
   opacity:{opacity};
   "
-      on:mouseenter={() => interaction.highlight(getName(god))}
-      on:focus={() => interaction.highlight(getName(god))}
-      on:mouseout={() => interaction.highlight(undefined)}
-      on:blur={() => interaction.highlight(undefined)}
     />
   {:catch}
     <div
@@ -130,10 +123,6 @@ transform: translate(-50%, -50%);
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
-      on:mouseenter={() => interaction.highlight(getName(god))}
-      on:focus={() => interaction.highlight(getName(god))}
-      on:mouseout={() => interaction.highlight(undefined)}
-      on:blur={() => interaction.highlight(undefined)}
     />
   {/await}
 {:else}
@@ -150,10 +139,6 @@ transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
-    on:mouseenter={() => interaction.highlight(getName(god))}
-    on:focus={() => interaction.highlight(getName(god))}
-    on:mouseout={() => interaction.highlight(undefined)}
-    on:blur={() => interaction.highlight(undefined)}
   />
 {/if}
 
@@ -169,5 +154,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     background-size: cover;
     transition: opacity 500ms, transform 500ms, border-width 500ms, left 1000ms, top 1000ms,
       width 1000ms, height 1000ms, filter 500ms;
+
+    pointer-events: none;
   }
 </style>
