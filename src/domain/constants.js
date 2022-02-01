@@ -1,3 +1,4 @@
+import variables from "$data/variables.json";
 import { scaleLinear, scaleOrdinal } from "d3";
 
 // Layout
@@ -24,7 +25,13 @@ export const LINK_TYPES = ["geometric", "allLinks", "cooperation", "authority", 
 // Scales
 export const GOD_COLORS = scaleOrdinal()
   .domain(TYPE_SCALE)
-  .range(["#008AA1", "#D28360", "#5C8A73", "#B08699", "#FE0000"]);
+  .range([
+    variables.category.primordial,
+    variables.category.creation,
+    variables.category.elemental,
+    variables.category.human,
+    variables.category.secondary
+  ]);
 export const FADE_SCALE = scaleLinear().range([0.1, 1]).domain([0, 5]);
 
 // Accessors
