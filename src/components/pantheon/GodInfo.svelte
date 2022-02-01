@@ -14,6 +14,7 @@
 </script>
 
 <div class="wrapper">
+  <!-- <button> Close</button> -->
   {#if exploratoryMode && $selection}
     <!-- < show all Gods -->
     <div class="illustration" transition:fade>
@@ -47,9 +48,10 @@
 
 <style>
   .wrapper {
-    max-width: 400px;
-    max-height: 52em;
+    width: 100vw;
+    height: 100vh;
 
+    display: none;
     /* background: mediumpurple; */
   }
   .illustration {
@@ -84,9 +86,11 @@
   .illu-source {
     font-size: 0.65rem;
   }
-  @media only screen and (min-width: 35em) {
+  @media only screen and (min-width: 50em) {
     .wrapper {
-      grid-template-columns: 2fr 1fr;
+      display: block;
+      max-width: 400px;
+      max-height: 52em;
     }
     .type {
       font-size: 1.4rem;

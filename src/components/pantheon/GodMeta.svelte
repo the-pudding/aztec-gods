@@ -102,7 +102,7 @@
     text-transform: uppercase;
   }
 
-  @media only screen and (min-width: 35em) {
+  @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
     }

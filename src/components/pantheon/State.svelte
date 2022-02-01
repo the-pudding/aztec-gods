@@ -195,6 +195,7 @@
     /* padding-bottom: 1rem; */
   }
   .info {
+    position: relative;
     /* background: hotpink; */
     /* border: 2px solid hotpink; */
 
