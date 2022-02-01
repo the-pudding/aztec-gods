@@ -11,6 +11,7 @@
 
 <Section fullBleed>
   <h2 class="hidden">Explorable Images of Tezcatlipoca and Tlaltecuhtli.</h2>
+  <h3>Tezcatlipoca</h3>
   <ExplorableImage
     name="tezca"
     steps={doc["tezca-steps"]}
@@ -19,6 +20,7 @@
     positions={tezcaPositions}
     {imageRange}
   />
+  <h3>Tlaltecuhtli</h3>
   <ExplorableImage
     name="tlatle"
     steps={doc["tlalte-steps"]}
@@ -28,3 +30,14 @@
     {imageRange}
   />
 </Section>
+
+<style>
+  h3 {
+    text-align: center;
+    margin: 10rem 1rem 1rem 1rem;
+    font-size: 4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+</style>
