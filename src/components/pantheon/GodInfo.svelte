@@ -3,7 +3,9 @@
   import doc from "$data/doc.json";
   import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
   import { getContext } from "svelte";
+
   import loadImage from "$utils/loadImage";
+
   const dev = process.env.NODE_ENV === "development";
 
   export let activeStep = doc.pantheon[0];
@@ -11,14 +13,15 @@
   const { getName, getImportance, selection, linkTypes } = getContext("chart-state");
 
   $: exploratoryMode = activeStep.id === "exploratory-mode";
+
+  $: console.log($selection);
 </script>
 
 <div class="wrapper">
-  <!-- <button> Close</button> -->
   {#if exploratoryMode && $selection}
     <!-- < show all Gods -->
     <div class="illustration" transition:fade>
-      {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${getName($selection)}.png`)}
+      {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
         <span>Loading...</span>
       {:then img}
         <img src={img.src} alt="Image of {getName($selection)}." />
@@ -43,6 +46,7 @@
         {@html $selection.spellings}
       {/if}
     </div>
+    <button on:click={() => selection.lowlight()}>All Gods</button>
   {/if}
 </div>
 

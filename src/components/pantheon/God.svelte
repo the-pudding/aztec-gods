@@ -76,7 +76,7 @@
 </script>
 
 {#if isMain}
-  {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.name}.png`)}
+  {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id}.svg`)}
     <div
       class="god"
       style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
