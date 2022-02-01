@@ -88,31 +88,23 @@
     margin: 0;
   }
   .description {
-    height: 60px;
-    margin: 1rem 0;
+    height: 90px;
+    margin: 1rem 0 0 0;
     text-align: center;
+    font-size: 1rem;
   }
-
-  /* button {
-    margin: 0 0.5rem 0.5rem 0;
-    background: #fff;
-    padding: 0.3rem 0.6rem;
-    border-radius: 2px;
-    border: 1px solid var(--color-highlight);
-    color: var(--color-highlight);
-
-    text-transform: uppercase;
-  }
-
-  button.selected {
-    background-color: var(--color-highlight);
-    color: var(--color-highlight-lighter);
-  } */
 
   ellipse {
     transition: cx 700ms, cy 700ms, rx 700ms, ry 700ms;
   }
   ellipse.circle-overlay {
     stroke: var(--color-highlight);
+  }
+
+  @media only screen and (min-width: 30em) {
+    .description {
+      height: 56px;
+      font-size: 1.25rem;
+    }
   }
 </style>
