@@ -57,14 +57,14 @@
       : ($interaction && $interaction === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
-  $: blur =
-    !storyMode || (storyMode && activeStep.id === "intro")
-      ? "unset"
-      : activeStep.id === god.name
-      ? `unset`
-      : activeStep.type === god.importance
-      ? `blur(1px)`
-      : `blur(4px)`;
+  $: blur = `unset`;
+  // !storyMode || (storyMode && activeStep.id === "intro")
+  //   ? "unset"
+  //   : activeStep.id === god.name
+  //   ? `unset`
+  //   : activeStep.type === god.importance
+  //   ? `blur(1px)`
+  //   : `blur(4px)`;
 
   $: isScaled = storyMode && activeStep.id === god.name;
 
@@ -157,18 +157,6 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
   />
 {/if}
 
-{#if storyMode && activeStep.id === name}
-  <div class="type-and-name">
-    <!-- <div class="type" style="color: {getMainGodColor(activeStep.type)}">
-      {getGodImportanceLabel(activeStep.type)}
-    </div> -->
-    <div class="name" style="color: {getMainGodColor(activeStep.type)}">
-      {@html activeStep.name}
-    </div>
-    <div class="title">{@html activeStep.title}</div>
-  </div>
-{/if}
-
 <style>
   .god {
     position: absolute;
@@ -181,48 +169,5 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     background-size: cover;
     transition: opacity 500ms, transform 500ms, border-width 500ms, left 1000ms, top 1000ms,
       width 1000ms, height 1000ms, filter 500ms;
-  }
-  .type-and-name {
-    margin: 0.1rem;
-  }
-  .type {
-    font-size: 0.7rem;
-    font-weight: bold;
-
-    text-align: center;
-
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .name {
-    text-align: center;
-    font-size: 1rem;
-
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .title {
-    text-align: center;
-    font-size: 0.8rem;
-
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  @media only screen and (min-width: 35em) {
-    .name {
-      font-size: 1.4rem;
-    }
-    .title {
-      font-size: 1rem;
-    }
-  }
-  @media only screen and (min-width: 50em) {
-    .name {
-      font-size: 2rem;
-    }
-    .title {
-      font-size: 1.6rem;
-    }
   }
 </style>

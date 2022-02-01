@@ -135,6 +135,12 @@
 </script>
 
 <div class="wrapper" data-name="wrapper-in-state">
+  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
+  <div class="info" data-name="info-in-state">
+    <!-- <slot name="info" /> -->
+    cards go here
+  </div>
+
   <div class="chart-wrapper" bind:clientWidth={$width}>
     {#if $width > 0}
       <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
@@ -150,18 +156,17 @@
       </svg>
     {/if}
   </div>
-
-  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
 </div>
 
 <style>
   .wrapper {
+    /* background-color: forestgreen; */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 64px 1fr;
     grid-template-areas:
-      "viz-area"
-      "meta-area";
+      "meta-area"
+      "viz-area";
 
     position: relative;
 
@@ -170,7 +175,10 @@
 
     padding-bottom: 1rem;
   }
-
+  .info {
+    /* background: hotpink; */
+    /* border: 2px solid hotpink; */
+  }
   .chart-wrapper {
     grid-area: viz-area;
   }
@@ -183,14 +191,18 @@
   }
 
   .meta {
+    grid-area: meta-area;
     /* border: 3px solid Orchid; */
-    height: 100%;
+    /* height: 100%; */
+    background-color: var(--color-background-4);
   }
   @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "viz-area meta-area";
+      grid-template-rows: 64px 1fr;
+      grid-template-areas:
+        "meta-area meta-area"
+        "viz-area info-area";
     }
   }
 </style>

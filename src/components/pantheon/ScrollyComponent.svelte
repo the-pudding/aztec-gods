@@ -46,6 +46,7 @@
   <div id="scrolly">
     <figure>
       <State {activeStep}>
+        <GodMeta slot="meta" {activeStep} />
         <g slot="chart-svg">
           <Links />
         </g>
@@ -53,7 +54,6 @@
         <g slot="chart-svg-overlay">
           <Overlay noPointerEvents={storyMode} />
         </g>
-        <GodMeta slot="meta" {activeStep} />
       </State>
     </figure>
 
@@ -72,10 +72,10 @@
   #scrolly {
     position: relative;
 
-    max-width: 64em;
+    /* max-width: 64em; */
     margin: 0 auto;
 
-    padding: 0 0.5rem;
+    /* padding: 0 0.5rem; */
   }
   figure {
     position: -webkit-sticky;
