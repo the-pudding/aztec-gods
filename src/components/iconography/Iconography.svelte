@@ -34,10 +34,21 @@
 <style>
   h3 {
     text-align: center;
-    margin: 10rem 1rem 1rem 1rem;
-    font-size: 4rem;
-    line-height: 1.2;
+    margin: 10rem 1rem 0 1rem;
+    font-size: 2rem;
+    line-height: 1;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+  }
+
+  @media only screen and (min-width: 30em) {
+    h3 {
+      font-size: 3rem;
+    }
+  }
+  @media only screen and (min-width: 50em) {
+    h3 {
+      font-size: 4rem;
+    }
   }
 </style>
