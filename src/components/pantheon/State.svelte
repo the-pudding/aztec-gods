@@ -2,6 +2,7 @@
   import links from "$data/gods/tidy/links.json";
   import nodes from "$data/gods/tidy/nodes.json";
   import doc from "$data/doc.json";
+  import viewport from "$stores/viewport";
 
   import {
     FADE_SCALE,
@@ -28,13 +29,16 @@
     bottom: 10,
     left: 10
   };
+  const controlledWidth = derived([width, viewport], ([$width, $viewport]) =>
+    Math.min($width, $viewport.height - 64 - margins.top - margins.bottom)
+  );
 
-  const bounds = derived([width], ([$width]) => ({
-    width: $width,
-    height: $width,
+  const bounds = derived([controlledWidth], ([$controlledWidth]) => ({
+    width: $controlledWidth,
+    height: $controlledWidth,
     margins,
-    chartWidth: $width - margins.left - margins.right,
-    chartHeight: $width - margins.top - margins.bottom
+    chartWidth: $controlledWidth - margins.left - margins.right,
+    chartHeight: $controlledWidth - margins.top - margins.bottom
   }));
 
   // Maximum domain extent of the force layout
@@ -60,6 +64,16 @@
     };
   };
   const interaction = createInteraction();
+
+  const createSelection = () => {
+    const { subscribe, set } = writable(undefined);
+    return {
+      subscribe,
+      highlight: (d) => set(d),
+      lowlight: () => set(undefined)
+    };
+  };
+  const selection = createSelection();
 
   // Keywords
   const createKeywordHighlight = () => {
@@ -128,6 +142,7 @@
     fadeScale: FADE_SCALE,
     currentLinks,
     interaction,
+    selection,
     keyword,
     linkHighlight
   };
@@ -135,44 +150,65 @@
 </script>
 
 <div class="wrapper" data-name="wrapper-in-state">
-  <div class="chart-wrapper" bind:clientWidth={$width}>
-    {#if $width > 0}
-      <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
-        <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
-        <slot name="chart-svg" />
-      </svg>
-      <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
-        <slot name="chart-html" />
-      </div>
-      <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
-        <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
-        <slot name="chart-svg-overlay" />
-      </svg>
-    {/if}
+  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
+  <div class="info" data-name="info-in-state">
+    <slot name="info" />
   </div>
 
-  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
+  <div class="chart-wrapper" bind:clientWidth={$width}>
+    <div
+      class="chart-centered-container"
+      style="width:{$bounds.width}px; height:{$bounds.height}px;"
+    >
+      {#if $width > 0}
+        <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+          <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
+          <slot name="chart-svg" />
+        </svg>
+        <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
+          <slot name="chart-html" />
+        </div>
+        <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+          <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
+          <slot name="chart-svg-overlay" />
+        </svg>
+      {/if}
+    </div>
+  </div>
 </div>
 
 <style>
   .wrapper {
+    /* background-color: forestgreen; */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 64px 1fr;
     grid-template-areas:
-      "viz-area"
-      "meta-area";
+      "meta-area"
+      "viz-area";
 
     position: relative;
 
     /* border: 3px solid green; */
     height: 100vh;
 
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
   }
+  .info {
+    position: relative;
+    /* background: hotpink; */
+    /* border: 2px solid hotpink; */
 
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  }
   .chart-wrapper {
     grid-area: viz-area;
+  }
+  .chart-centered-container {
+    margin: auto;
+    position: relative;
   }
   .chart-html,
   .chart-svg {
@@ -183,14 +219,17 @@
   }
 
   .meta {
+    grid-area: meta-area;
     /* border: 3px solid Orchid; */
-    height: 100%;
+    background-color: var(--color-background-4);
   }
   @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "viz-area meta-area";
+      grid-template-rows: 64px 1fr;
+      grid-template-areas:
+        "meta-area meta-area"
+        "viz-area info-area";
     }
   }
 </style>

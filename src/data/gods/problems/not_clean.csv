@@ -1,138 +1,43 @@
 "","source","target","relation","is_unique"
-"1","Centzon Totochtin","Techalotl","cooperation",FALSE
-"2","Centzon Totochtin","Yauhtecatl","cooperation",FALSE
-"3","Centzon Totochtin","Tlaltecayoa","cooperation",FALSE
-"4","Centzon Totochtin","Ixquitecatl","cooperation",FALSE
-"5","Centzon Totochtin","Papaztec","cooperation",FALSE
-"6","Centzon Totochtin","Tezcatzoncatl","cooperation",FALSE
-"7","Chalchiuhtlicue","Yohualticitl","cooperation",FALSE
-"8","Chalchiutotolin","Ahuiateteo","cooperation",FALSE
-"9","Chalmecacihuatl","Coyotlinaual","cooperation",FALSE
-"10","Cihuateteo","Cihuatecayotl","cooperation",FALSE
-"11","Cihuateteo","Tzitzimime","cooperation",FALSE
-"12","Coatlicue","Tzitzimime","cooperation",FALSE
-"13","Ixtlilton","Techalotl","cooperation",FALSE
-"14","Ixtlilton","Yauhtecatl","cooperation",FALSE
-"15","Ixtlilton","Tlaltecayoa","cooperation",FALSE
-"16","Ixtlilton","Ixquitecatl","cooperation",FALSE
-"17","Ixtlilton","Papaztec","cooperation",FALSE
-"18","Ixtlilton","Tezcatzoncatl","cooperation",FALSE
-"19","Macuil Cozcacuahtli","Macuil Malinalli","cooperation",FALSE
-"20","Macuil Cuetzpalin","Macuil Malinalli","cooperation",FALSE
-"21","Macuil Tochtli","Techalotl","cooperation",FALSE
-"22","Macuil Tochtli","Yauhtecatl","cooperation",FALSE
-"23","Macuil Tochtli","Tlaltecayoa","cooperation",FALSE
-"24","Macuil Tochtli","Ixquitecatl","cooperation",FALSE
-"25","Macuil Tochtli","Papaztec","cooperation",FALSE
-"26","Macuil Tochtli","Tezcatzoncatl","cooperation",FALSE
-"27","Macuil Tochtli","Macuil Malinalli","cooperation",FALSE
-"28","Macuil Xochitl","Macuil Malinalli","cooperation",FALSE
-"29","Macuil Xochitl","Techalotl","cooperation",FALSE
-"30","Macuil Xochitl","Yauhtecatl","cooperation",FALSE
-"31","Macuil Xochitl","Tlaltecayoa","cooperation",FALSE
-"32","Macuil Xochitl","Ixquitecatl","cooperation",FALSE
-"33","Macuil Xochitl","Papaztec","cooperation",FALSE
-"34","Macuil Xochitl","Tezcatzoncatl","cooperation",FALSE
-"35","Nanahuatzin","Ahuiateteo","cooperation",FALSE
-"36","Ome Tochtli","Techalotl","cooperation",FALSE
-"37","Ome Tochtli","Yauhtecatl","cooperation",FALSE
-"38","Ome Tochtli","Tlaltecayoa","cooperation",FALSE
-"39","Ome Tochtli","Ixquitecatl","cooperation",FALSE
-"40","Ome Tochtli","Papaztec","cooperation",FALSE
-"41","Ome Tochtli","Tezcatzoncatl","cooperation",FALSE
-"42","Piltzintecuhtli","Ahuiateteo","cooperation",FALSE
-"43","Quetzalcoatl","Tzontemoc","cooperation",FALSE
-"44","Quetzalcoatl","Coyotlinaual","cooperation",FALSE
-"45","Tepoztecatl","Tezcatzoncatl","cooperation",FALSE
-"46","Tepoztecatl","Papaztec","cooperation",FALSE
-"47","Tepoztecatl","Yauhtecatl","cooperation",FALSE
-"48","Tepoztecatl","Ixquitecatl","cooperation",FALSE
-"49","Tepoztecatl","Tlaltecayoa","cooperation",FALSE
-"50","Tepoztecatl","Techalotl","cooperation",FALSE
-"51","Tlacotzontli","Zacazontli","cooperation",FALSE
-"52","Tlazolteotl","Tzitzimime","cooperation",FALSE
-"53","Tomiyauhtecuhtli","Techalotl","cooperation",FALSE
-"54","Tomiyauhtecuhtli","Yauhtecatl","cooperation",FALSE
-"55","Tomiyauhtecuhtli","Tlaltecayoa","cooperation",FALSE
-"56","Tomiyauhtecuhtli","Ixquitecatl","cooperation",FALSE
-"57","Tomiyauhtecuhtli","Papaztec","cooperation",FALSE
-"58","Tomiyauhtecuhtli","Tezcatzoncatl","cooperation",FALSE
-"59","Yacatecuhtli","Cochimetl","cooperation",FALSE
-"60","Yacatecuhtli","Yacapitzahuac","cooperation",FALSE
-"61","Chalchiuhtlicue","Yauhqueme","authority",FALSE
-"62","Chalchiuhtlicue","Nappatecutli","authority",FALSE
-"63","Mayahuel","Techalotl","authority",FALSE
-"64","Mayahuel","Yauhtecatl","authority",FALSE
-"65","Mayahuel","Tlaltecayoa","authority",FALSE
-"66","Mayahuel","Ixquitecatl","authority",FALSE
-"67","Mayahuel","Papaztec","authority",FALSE
-"68","Mayahuel","Tezcatzoncatl","authority",FALSE
-"69","Mictlantecuhtli","Yohualtecuhtli","authority",FALSE
-"70","Mictlantecuhtli","Nextepeua","authority",FALSE
-"71","Mictlantecuhtli","Acolnahuacatl","authority",FALSE
-"72","Mictlantecuhtli","Tzontemoc","authority",FALSE
-"73","Mictlantecuhtli","Micapetlacalli","authority",FALSE
-"74","Mixcoatl","Ce Acati","authority",FALSE
-"75","Patecatl","Techalotl","authority",FALSE
-"76","Patecatl","Yauhtecatl","authority",FALSE
-"77","Patecatl","Tlaltecayoa","authority",FALSE
-"78","Patecatl","Ixquitecatl","authority",FALSE
-"79","Patecatl","Papaztec","authority",FALSE
-"80","Patecatl","Tezcatzoncatl","authority",FALSE
-"81","Tlaloc","Yauhqueme","authority",FALSE
-"82","Tzitzimitl","Tzitzimime","authority",FALSE
-"83","Xochipilli","Macuil Malinalli","authority",FALSE
-"84","Xochiquetzal","Macuil Malinalli","authority",FALSE
-"85","Chalchiuhtlicue","Chalchiuhcihuatl","aspect",FALSE
-"86","Chalchiuhtlicue","Ayopechcatl","aspect",FALSE
-"87","Chalchiuhtlicue","Matlalcueitl","aspect",FALSE
-"88","Chalchiuhtlicue","Acuecucyoticihuati","aspect",FALSE
-"89","Chalchiuhtlicue","Yohualticitl","aspect",FALSE
-"90","Chamecatecuhtli","Mictlantecuhtli,","aspect",FALSE
-"91","Coatlicue","Chalchiuhcihuatl","aspect",FALSE
-"92","Huitzilopochtli","Tetzahauteotl","aspect",FALSE
-"93","Huitzilopochtli","Chiconahui Ehecatl","aspect",FALSE
-"94","Mayahuel","Cochimetl","aspect",FALSE
-"95","Metztli","Yohualtecuhtli","aspect",FALSE
-"96","Mictlancihuatl","Micapetlacalli","aspect",FALSE
-"97","Mictlantecuhtli","Tzontemoc","aspect",FALSE
-"98","Mictlantecuhtli","Nextepeua","aspect",FALSE
-"99","Mictlantecuhtli","Acolnahuacatl","aspect",FALSE
-"100","Mixcoatl","Yohualtecuhtli","aspect",FALSE
-"101","Omecihuatl","Ayopechcatl","aspect",FALSE
-"102","Ometeotl","Ayopechcatl","aspect",FALSE
-"103","Quetzalcoatl","Yohualtecuhtli","aspect",FALSE
-"104","Quetzalcoatl","Chiconahui Ehecatl","aspect",FALSE
-"105","Quetzalcoatl","Ce Acati","aspect",FALSE
-"106","Tezcatlipoca","Yohual Tonatiuh","aspect",FALSE
-"107","Tezcatlipoca","Yohualtecuhtli","aspect",FALSE
-"108","Tezcatlipoca","Yayauhqui Tezcatlipoca","aspect",FALSE
-"109","Tezcatlipoca","Yaotl","aspect",FALSE
-"110","Tezcatlipoca","Tlatlauhqui Tezcatlipoca","aspect",FALSE
-"111","Tezcatlipoca","Tezcatzoncatl","aspect",FALSE
-"112","Tezcatlipoca","Omacatl","aspect",FALSE
-"113","Tezcatlipoca","Ixquitecatl","aspect",FALSE
-"114","Tezcatlipoca","Chiconahui Ehecatl","aspect",FALSE
-"115","Tlaloc","Yauhqueme","aspect",FALSE
-"116","Tlaloc","Tzapatlan Tenen","aspect",FALSE
-"117","Tonatiuh","Yohual Tonatiuh","aspect",FALSE
-"118","Tonatiuh","Ixcozauhqui","aspect",FALSE
-"119","Tonatiuh","Tzontemoc","aspect",FALSE
-"120","Xipe Totec","Tlatlauhqui Tezcatlipoca","aspect",FALSE
-"121","Xipe Totec","Chiconahui Ehecatl","aspect",FALSE
-"122","Xiuhtecuhtli","Yohualtecuhtli","aspect",FALSE
-"123","Xiuhtecuhtli","Ixcozauhqui","aspect",FALSE
-"124","Xiuhtecuhtli","Inta","aspect",FALSE
-"125","Xiuhtecuhtli","Ilhuicamina","aspect",FALSE
-"126","Xiuhtecuhtli","Coyotlinaual","aspect",FALSE
-"127","Xiuhtecuhtli","Ahkinshok","aspect",FALSE
-"128","Xiuhtecuhtli","Otontecuhtli","aspect",FALSE
-"129","Yacatecuhtli","Macuil Ocelotl","aspect",FALSE
-"130","Yacatecuhtli","Coyotlinaual","aspect",FALSE
-"131","Yacatecuhtli","Tzapatlan Tenen","aspect",FALSE
-"132","Yacatecuhtli","Otontecuhtli","aspect",FALSE
-"133","Yacatecuhtli","Xiuhtlati","aspect",FALSE
-"134","Yacatecuhtli","Xaman Ek","aspect",FALSE
-"135","Yacatecuhtli","Ixcozauhqui","aspect",FALSE
-"136","Yacatecuhtli","Coyotlinaual","aspect",FALSE
-"137","Yacatecuhtli","Cochimetl","aspect",FALSE
+"1","Cihuateteo (group of divinity. I'll switch it with the 5 goddess)","Ahuiateteo","cooperation",FALSE
+"2","Otontecuhtli","Xochiquétzal","cooperation",FALSE
+"3","Cihuateteo (group of divinity. I'll switch it with the 5 goddess)","Cihuatecayotl","cooperation",FALSE
+"4","Citlatepetl","Iztaccihuatl","cooperation",FALSE
+"5","Coyolxauhqui","Centzon Totochtin","cooperation",FALSE
+"6","Huitzilopochtli","Centzon Totochtin","cooperation",FALSE
+"7","Itzaccihuatl","Tlaloque","cooperation",FALSE
+"8","Ixquitecatl","Ome Totchtli","cooperation",FALSE
+"9","Ixquitecatl","Centzon Totochtin","cooperation",FALSE
+"10","Ixtlilton","Centzon Totochtin","cooperation",FALSE
+"11","Macuil Tochtli","Centzon Totochtin","cooperation",FALSE
+"12","Matlalcueitl","Tlaloque","cooperation",FALSE
+"13","Nappatecuhtli","Tlaloque","cooperation",FALSE
+"14","Ome Tochtli","Centzon Totochtin","cooperation",FALSE
+"15","Opochtli","Tlaloque","cooperation",FALSE
+"16","Patecatl","Centzon Totochtin","cooperation",FALSE
+"17","Techalotl","Ome Totchtli","cooperation",FALSE
+"18","Techalotl","Centzon Totochtin","cooperation",FALSE
+"19","Tepoztecatl","Centzon Totochtin","cooperation",FALSE
+"20","Tezcatzoncatl","Ome Totchtli","cooperation",FALSE
+"21","Tezcatzoncatl","Centzon Totochtin","cooperation",FALSE
+"22","Tlacotzontli","Zacazontli","cooperation",FALSE
+"23","Tlaltecayoa","Ome Totchtli","cooperation",FALSE
+"24","Tlaltecayoa","Centzon Totochtin","cooperation",FALSE
+"25","Tomiyauhtecuhtli","Tlaloque","cooperation",FALSE
+"26","Tomiyauhtecuhtli","Centzon Totochtin","cooperation",FALSE
+"27","Yohualticitl","Tlaloque","cooperation",FALSE
+"28","Chalchiuhtlicue","Tlaloque","authority",FALSE
+"29","Coatlicue","Centzon Totochtin","authority",FALSE
+"30","Mayahuel","Centzon Totochtin","authority",FALSE
+"31","Ome Tochtli","Centzon Totochtin","authority",FALSE
+"32","Patecatl","Centzon Totochtin","authority",FALSE
+"33","Tepoztecatl","Centzon Totochtin","authority",FALSE
+"34","Tlaloc","Tlaloque","authority",FALSE
+"35","Yacatecuhtli","Xiuhtlati","authority",FALSE
+"36","Chalchiuhtlicue","Ayauhteotl","aspect",FALSE
+"37","Chalmecatecuhtli","Mictlantecuhtli,","aspect",FALSE
+"38","Mayahuel","Centzon Totochtin","aspect",FALSE
+"39","Otontecuhtli","Xocotl","aspect",FALSE
+"40","Tezcatlipoca","Tloque Nahuaque","aspect",FALSE
+"41","Tlaloc","Tlaloque","aspect",FALSE
+"42","Toci","Xochitlicue","aspect",FALSE

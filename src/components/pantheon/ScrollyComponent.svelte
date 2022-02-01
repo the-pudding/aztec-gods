@@ -6,6 +6,7 @@
 
   import StepHorizontal from "$components/pantheon/StepHorizontal3.svelte";
   import GodMeta from "$components/pantheon/GodMeta.svelte";
+  import GodInfo from "$components/pantheon/GodInfo.svelte";
   import Section from "$components/layout/Section.svelte";
 
   import Gods from "$components/pantheon/Gods.svelte";
@@ -46,6 +47,8 @@
   <div id="scrolly">
     <figure>
       <State {activeStep}>
+        <GodInfo slot="info" {activeStep} />
+        <GodMeta slot="meta" {activeStep} />
         <g slot="chart-svg">
           <Links />
         </g>
@@ -53,7 +56,6 @@
         <g slot="chart-svg-overlay">
           <Overlay noPointerEvents={storyMode} />
         </g>
-        <GodMeta slot="meta" {activeStep} />
       </State>
     </figure>
 
@@ -72,10 +74,10 @@
   #scrolly {
     position: relative;
 
-    max-width: 64em;
+    /* max-width: 64em; */
     margin: 0 auto;
 
-    padding: 0 0.5rem;
+    /* padding: 0 0.5rem; */
   }
   figure {
     position: -webkit-sticky;

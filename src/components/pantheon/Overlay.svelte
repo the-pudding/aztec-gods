@@ -7,7 +7,7 @@
 
   let overlay; // ref
 
-  const { bounds, xScale, yScale, getName, nodes, interaction, linkHighlight } =
+  const { bounds, xScale, yScale, getName, nodes, interaction, selection, linkHighlight } =
     getContext("chart-state");
 
   // Overlay Logic
@@ -24,6 +24,12 @@
     const location = delaunay.find(x, y);
     const god = $nodes[location];
     interaction.highlight(getName(god));
+  };
+  const select = (e) => {
+    const [x, y] = pointer(e, overlay);
+    const location = delaunay.find(x, y);
+    const god = $nodes[location];
+    selection.highlight(god);
   };
 </script>
 
@@ -45,6 +51,7 @@
     fill-opacity={0}
     width={$bounds.chartWidth}
     height={$bounds.chartHeight}
+    on:click={select}
     on:mousemove={findLocation}
     on:mouseenter={findLocation}
     on:focus={findLocation}
@@ -56,6 +63,6 @@
 <style>
   rect {
     /* cursor: url("/aztec-gods/assets/design-elements/pokeball.png") 12 12, auto; */
-    cursor: crosshair;
+    cursor: pointer;
   }
 </style>

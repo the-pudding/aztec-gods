@@ -6,7 +6,9 @@ gods_basic <- gods_raw %>%
   select("name" = "Name", 
          "importance" = "type",
          "keyword" = "Keywords",
-         bio = Text) %>%
+         bio = Text,
+         spellings = "Other.names.or.spelling",
+         source = "Illustration.source") %>%
   mutate(name = str_squish(name))
 gods_main <- gods_basic %>% filter(importance != "secondary")
 
@@ -46,10 +48,12 @@ gods_with_domains <- gods_basic %>%
 
 
 gods <- gods_with_domains %>% 
-  select(1, 2, 4:15) %>%
+  select(1, 2, 4, 5, 6, 7:17) %>%
   group_by(name) %>%
   summarize(importance = first(importance),
             bio = first(bio),
+            spellings = first(spellings),
+            source = first(source),
             animals = sum(animals),
             celestial = sum(celestial),
             "trade" = sum(trade),
@@ -69,7 +73,7 @@ write(toJSON(gods, pretty = T), "./tidy/gods.json")
 
 # Individual relationships
 all_rel <- gods_raw %>%
-  select(2, 9:13) %>%
+  select(2, 12:16) %>%
   rename("submission" = "Submission.relationship..son.daughter.of.OR.killed.by.",
          "cooperation" = "Equal.relationship..sister.brother.OR.cooperation.help.from.",
          "union" = "Equal.relationship...Union..Married.to..sexual.relation.with.",

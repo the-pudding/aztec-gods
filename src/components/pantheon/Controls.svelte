@@ -11,10 +11,10 @@
 
 <div class="wrapper" transition:fade>
   <div>
-    <h3 class="god-name">{$interaction ?? ""}</h3>
-    <div class="god-bio">{interactionBio ?? ""}</div>
+    <!-- <h3 class="god-name">{$interaction ?? ""}</h3>
+    <div class="god-bio">{interactionBio ?? ""}</div> -->
     <fieldset>
-      <legend>{@html doc.pantheon_control_map}</legend>
+      <legend class="hidden">{@html doc.pantheon_control_map}</legend>
       {#each linkTypes as linkType}
         <button
           on:click={() => linkHighlight.highlight(linkType)}
@@ -25,7 +25,7 @@
       {/each}
     </fieldset>
 
-    <fieldset>
+    <!-- <fieldset>
       <legend
         >{@html doc.pantheon_control_fade}
         <small
@@ -36,7 +36,7 @@
       {#each keywords as k}
         <button on:click={() => keyword.highlight(k)} class:selected={k === $keyword}>{k}</button>
       {/each}
-    </fieldset>
+    </fieldset> -->
 
     <!-- <h3>Find a God <small>{$interaction}</small></h3>
     {#each grouped as group}
@@ -58,6 +58,7 @@
     /* height: 100vh; */
     /* overflow: scroll; */
     /* border: 3px solid floralwhite; */
+    padding: 0.5rem;
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -69,13 +70,13 @@
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
-  .god-name {
+  /* .god-name {
     font-size: 1rem;
   }
 
   .god-bio {
     font-size: 0.8rem;
-  }
+  } */
   button {
     font-size: 0.7rem;
     padding: 0.1rem 0.2rem;
@@ -83,7 +84,7 @@
   }
   @media only screen and (min-width: 50em) {
     .wrapper {
-      height: 100vh;
+      /* height: 100vh; */
     }
   }
 </style>

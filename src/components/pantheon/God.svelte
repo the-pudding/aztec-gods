@@ -19,6 +19,7 @@
     getName,
     getImportance,
     interaction,
+    selection,
     fadeScale,
     linkHighlight,
     radiusScale,
@@ -29,7 +30,7 @@
   $: relatedGods = [
     ...new Set(
       $currentLinks
-        .filter((link) => getName(link.source) === $interaction)
+        .filter((link) => $selection && getName(link.source) === getName($selection))
         .map((d) => d.target.name)
     )
   ];
@@ -46,27 +47,29 @@
   $: opacity =
     storyMode && isMain
       ? 1
-      : !$keyword && !$interaction && layoutIsGeom && isMain
+      : !$keyword && !$selection && layoutIsGeom && isMain
       ? 1
       : isHidden
       ? 0
-      : !$keyword && !$interaction
+      : !$keyword && !$selection
       ? 1
-      : $keyword && !$interaction
+      : $keyword && !$selection
       ? fadeScale(god[$keyword])
-      : ($interaction && $interaction === name) || relatedGods.includes(name)
+      : ($selection && getName($selection) === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
-  $: blur =
-    !storyMode || (storyMode && activeStep.id === "intro")
-      ? "unset"
-      : activeStep.id === god.name
-      ? `unset`
-      : activeStep.type === god.importance
-      ? `blur(1px)`
-      : `blur(4px)`;
+  $: blur = `unset`;
+  // !storyMode || (storyMode && activeStep.id === "intro")
+  //   ? "unset"
+  //   : activeStep.id === god.name
+  //   ? `unset`
+  //   : activeStep.type === god.importance
+  //   ? `blur(1px)`
+  //   : `blur(4px)`;
 
   $: isScaled = storyMode && activeStep.id === god.name;
+
+  $: isHighlighted = $interaction === god.name;
 
   $: x = $xScale(god[$linkHighlight].x) + $bounds.margins.left;
   $: y = $yScale(god[$linkHighlight].y) + $bounds.margins.top;
@@ -83,14 +86,10 @@
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   "
-      on:mouseenter={() => interaction.highlight(getName(god))}
-      on:focus={() => interaction.highlight(getName(god))}
-      on:mouseout={() => interaction.highlight(undefined)}
-      on:blur={() => interaction.highlight(undefined)}
     >
       {isMain ? name : ""}
     </div>
@@ -105,16 +104,12 @@
         : y}px; 
   background-color: {bgColor};
   filter: {blur};
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   background-image: {isMain ? `url(${img.src})` : 'unset'};
   opacity:{opacity};
   "
-      on:mouseenter={() => interaction.highlight(getName(god))}
-      on:focus={() => interaction.highlight(getName(god))}
-      on:mouseout={() => interaction.highlight(undefined)}
-      on:blur={() => interaction.highlight(undefined)}
     />
   {:catch}
     <div
@@ -126,14 +121,10 @@ left:{x}px; top:{y}px;
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
-      on:mouseenter={() => interaction.highlight(getName(god))}
-      on:focus={() => interaction.highlight(getName(god))}
-      on:mouseout={() => interaction.highlight(undefined)}
-      on:blur={() => interaction.highlight(undefined)}
     />
   {/await}
 {:else}
@@ -150,23 +141,7 @@ transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "
-    on:mouseenter={() => interaction.highlight(getName(god))}
-    on:focus={() => interaction.highlight(getName(god))}
-    on:mouseout={() => interaction.highlight(undefined)}
-    on:blur={() => interaction.highlight(undefined)}
   />
-{/if}
-
-{#if storyMode && activeStep.id === name}
-  <div class="type-and-name">
-    <!-- <div class="type" style="color: {getMainGodColor(activeStep.type)}">
-      {getGodImportanceLabel(activeStep.type)}
-    </div> -->
-    <div class="name" style="color: {getMainGodColor(activeStep.type)}">
-      {@html activeStep.name}
-    </div>
-    <div class="title">{@html activeStep.title}</div>
-  </div>
 {/if}
 
 <style>
@@ -181,48 +156,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     background-size: cover;
     transition: opacity 500ms, transform 500ms, border-width 500ms, left 1000ms, top 1000ms,
       width 1000ms, height 1000ms, filter 500ms;
-  }
-  .type-and-name {
-    margin: 0.1rem;
-  }
-  .type {
-    font-size: 0.7rem;
-    font-weight: bold;
 
-    text-align: center;
-
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .name {
-    text-align: center;
-    font-size: 1rem;
-
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .title {
-    text-align: center;
-    font-size: 0.8rem;
-
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  @media only screen and (min-width: 35em) {
-    .name {
-      font-size: 1.4rem;
-    }
-    .title {
-      font-size: 1rem;
-    }
-  }
-  @media only screen and (min-width: 50em) {
-    .name {
-      font-size: 2rem;
-    }
-    .title {
-      font-size: 1.6rem;
-    }
+    pointer-events: none;
   }
 </style>

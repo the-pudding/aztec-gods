@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
 
-  const { bounds, xScale, yScale, interaction, getName, currentLinks } = getContext("chart-state");
+  const { bounds, xScale, yScale, selection, getName, currentLinks } = getContext("chart-state");
 </script>
 
 <g data-name="links" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>
@@ -12,8 +12,8 @@
       x2={$xScale(link.target.x)}
       y2={$yScale(link.target.y)}
       stroke="#FE0000"
-      stroke-opacity={$interaction && $interaction === getName(link.source) ? 0.3 : 0}
-      stroke-width={$interaction && $interaction === getName(link.source) ? 3 : 1}
+      stroke-opacity={$selection && getName($selection) === getName(link.source) ? 0.3 : 0}
+      stroke-width={$selection && getName($selection) === getName(link.source) ? 3 : 1}
     />
   {/each}
 </g>

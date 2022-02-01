@@ -3,7 +3,14 @@ import fs from "fs";
 import { readFile } from "fs/promises";
 
 import { forceLink, forceSimulation, forceCenter, quadtree, scaleOrdinal } from "d3";
-import { PADDING, TYPE_SCALE, GR } from "../src/domain/constants.js";
+// import { PADDING, TYPE_SCALE, GR } from "../src/domain/constants.js";
+
+// Layout
+const PADDING = 5;
+const GR = 1.62;
+
+// Domains
+const TYPE_SCALE = ["primordial", "creation", "elemental", "human", "secondary"];
 
 let BASE = 20;
 const radiusScale = scaleOrdinal()
