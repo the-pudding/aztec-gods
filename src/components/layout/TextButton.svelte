@@ -37,6 +37,7 @@
     padding: 0;
   }
   button:hover {
+    text-decoration-thickness: 2px;
   }
   button:disabled {
     cursor: unset;
