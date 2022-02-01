@@ -30,7 +30,7 @@
   $: relatedGods = [
     ...new Set(
       $currentLinks
-        .filter((link) => getName(link.source) === $interaction)
+        .filter((link) => $selection && getName(link.source) === getName($selection))
         .map((d) => d.target.name)
     )
   ];
@@ -47,15 +47,15 @@
   $: opacity =
     storyMode && isMain
       ? 1
-      : !$keyword && !$interaction && layoutIsGeom && isMain
+      : !$keyword && !$selection && layoutIsGeom && isMain
       ? 1
       : isHidden
       ? 0
-      : !$keyword && !$interaction
+      : !$keyword && !$selection
       ? 1
-      : $keyword && !$interaction
+      : $keyword && !$selection
       ? fadeScale(god[$keyword])
-      : ($interaction && $interaction === name) || relatedGods.includes(name)
+      : ($selection && getName($selection) === name) || relatedGods.includes(name)
       ? 1
       : 0.1;
   $: blur = `unset`;
@@ -68,6 +68,8 @@
   //   : `blur(4px)`;
 
   $: isScaled = storyMode && activeStep.id === god.name;
+
+  $: isHighlighted = $interaction === god.name;
 
   $: x = $xScale(god[$linkHighlight].x) + $bounds.margins.left;
   $: y = $yScale(god[$linkHighlight].y) + $bounds.margins.top;
@@ -84,7 +86,7 @@
   opacity:{opacity};
   background-color: {bgColor};
   filter: {blur};
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   "
@@ -102,7 +104,7 @@
         : y}px; 
   background-color: {bgColor};
   filter: {blur};
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
   z-index: {isScaled ? 200 : 20};
   border: {borderWidth}px solid {getMainGodColor(god.importance)};
   background-image: {isMain ? `url(${img.src})` : 'unset'};
@@ -119,7 +121,7 @@ left:{x}px; top:{y}px;
 opacity:{opacity};
 background-color: {bgColor};
 filter: {blur};
-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
 z-index: {isScaled ? 200 : 20};
 border: {borderWidth}px solid {getMainGodColor(god.importance)};
 "

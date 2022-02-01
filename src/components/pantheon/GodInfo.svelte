@@ -11,8 +11,6 @@
   const { getName, getImportance, selection, linkTypes } = getContext("chart-state");
 
   $: exploratoryMode = activeStep.id === "exploratory-mode";
-
-  $: console.log($selection);
 </script>
 
 <div class="wrapper">
