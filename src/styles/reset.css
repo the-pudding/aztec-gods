@@ -199,3 +199,8 @@ button.selected {
   background-color: var(--color-highlight);
   color: var(--color-highlight-lighter);
 }
+.hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}

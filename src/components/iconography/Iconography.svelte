@@ -10,7 +10,7 @@
 </script>
 
 <Section fullBleed>
-  <!-- FIXME: Add a hidden heading for a11y -->
+  <h2 class="hidden">Explorable Images of Tezcatlipoca and Tlaltecuhtli.</h2>
   <ExplorableImage
     name="tezca"
     steps={doc["tezca-steps"]}
