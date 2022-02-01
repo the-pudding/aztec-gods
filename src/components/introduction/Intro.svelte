@@ -10,11 +10,6 @@
     <Paragraph>{@html p}</Paragraph>
   {/each}
 
-  <Heading>{@html doc.codices_title}</Heading>
-  {#each doc.codices as p}
-    <Paragraph>{@html p.text}</Paragraph>
-  {/each}
-
   <Heading>{@html doc.iconography_title}</Heading>
   {#each doc.iconography as p}
     <Paragraph>{@html p.text}</Paragraph>
