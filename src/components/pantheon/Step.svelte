@@ -15,7 +15,7 @@
       })
     : [];
 
-  $: texts = [{ subtitle: "bio", text: step.minibio }, ...content];
+  $: texts = [{ subtitle: step.id, text: step.minibio }, ...content];
   $: items = texts.map((c, i) => {
     const previous = i > 0 ? texts[i - 1].subtitle : false;
     const next = i < texts.length - 1 ? texts[i + 1].subtitle : false;
@@ -40,11 +40,10 @@
           )};"
         >
           <div class="step-text" style="font-size: {i === 0 ? `1.2rem` : `1rem`}">
-            {#if item.subtitle !== "bio"}
-              <div class="step-subtitle" style="color: {getMainGodColor(step.type)};">
-                {@html item.subtitle}
-              </div>
-            {/if}
+            <div class="step-subtitle" style="color: {getMainGodColor(step.type)};">
+              {@html item.subtitle}
+            </div>
+
             {@html item.text}
           </div>
 
