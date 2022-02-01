@@ -192,11 +192,15 @@
     /* border: 3px solid green; */
     height: 100vh;
 
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
   }
   .info {
     /* background: hotpink; */
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
   }
   .chart-wrapper {
     grid-area: viz-area;

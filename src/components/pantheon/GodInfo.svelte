@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   import doc from "$data/doc.json";
   import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
   import { getContext } from "svelte";
@@ -14,16 +15,16 @@
   $: console.log($selection);
 </script>
 
-{#if exploratoryMode && $selection}
-  <div class="wrapper">
+<div class="wrapper">
+  {#if exploratoryMode && $selection}
     <!-- < show all Gods -->
-    <div class="illustration">
+    <div class="illustration" transition:fade>
       {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${getName($selection)}.png`)}
-        <div>Loading...</div>
+        <span>Loading...</span>
       {:then img}
         <img src={img.src} alt="Image of {getName($selection)}." />
       {:catch}
-        <div>Sorry no image for {getName($selection)}</div>
+        <span>Sorry no image for {getName($selection)}</span>
       {/await}
     </div>
 
@@ -33,19 +34,35 @@
     <div class="name">{@html getName($selection)}</div>
     <p class="minibio">{@html $selection.bio}</p>
 
-    <div class="illu-source">{@html $selection.source}</div>
-    <div class="other-spellings">{@html $selection.spellings}</div>
-
-    <!-- otherspellings -->
-  </div>
-{/if}
+    <div class="illu-source">
+      <strong>Source of illustration:</strong>
+      {@html $selection.source}
+    </div>
+    <div class="other-spellings">
+      {#if $selection.spellings}
+        <strong>Other spellings:</strong>
+        {@html $selection.spellings}
+      {/if}
+    </div>
+  {/if}
+</div>
 
 <style>
+  .wrapper {
+    max-width: 400px;
+    max-height: 52em;
+
+    /* background: mediumpurple; */
+  }
   .illustration {
-    height: 200px;
+    width: 400px;
+    height: 400px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* border: 2px solid aliceblue; */
   }
   .type {
     font-size: 0.7rem;
@@ -61,11 +78,14 @@
     text-align: center;
     text-transform: uppercase;
   }
-  /* .minibio {
-    font-size: 1rem;
-    text-align: left;
-  } */
-
+  .minibio {
+    height: 250px;
+    /* border: 1px solid greenyellow; */
+  }
+  .other-spellings,
+  .illu-source {
+    font-size: 0.65rem;
+  }
   @media only screen and (min-width: 35em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
