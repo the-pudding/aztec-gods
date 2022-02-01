@@ -1,6 +1,7 @@
 [
   {
     "name": "Acuecucyoticihuati",
+    "id": "acuecucyoticihuati",
     "importance": "secondary",
     "bio": "Aquatic nagual of Chalchiuhtlicue. Goddess of the running water in rivers, streams and waves on the beach. Women in childbirth cry out to her for relief from their pains. ",
     "spellings": "Ahuic, Acuecueyotl, Acuecueyotlcihuatl",
@@ -19,6 +20,7 @@
   },
   {
     "name": "Acxomocuil",
+    "id": "acxomocuil",
     "importance": "secondary",
     "bio": "God of merchants, pulque and sex. Like Tezcatlipoca, he's represented with a snake in place of his foot.",
     "spellings": "Xomocuil",
@@ -37,6 +39,7 @@
   },
   {
     "name": "Ahkinshok",
+    "id": "ahkinshok",
     "importance": "secondary",
     "bio": "Guardian of the Bees, Owner of the days or Spirit of the new fire. Linked to the mayan god Xmulzencab.",
     "spellings": "Xmulzencab, Ah-Muzen-Cab",
@@ -55,6 +58,7 @@
   },
   {
     "name": "Ahuitzotl",
+    "id": "ahuitzotl",
     "importance": "secondary",
     "bio": "Mix between an otter, a monkey and a dog. He was feared due to his liking of human flesh, especially nails, eyes and teeth. He used the hand on his tail to drown fishermen.",
     "spellings": "",
@@ -73,6 +77,7 @@
   },
   {
     "name": "Amapan",
+    "id": "amapan",
     "importance": "secondary",
     "bio": "Patron deity of tlachtli, an aztec game where the ball represented the sun. Servant of Huitzilopochtli, is also associated with warfare.",
     "spellings": "",
@@ -91,6 +96,7 @@
   },
   {
     "name": "Amimitl",
+    "id": "amimitl",
     "importance": "secondary",
     "bio": "Patron deity of the Otomi's city of Cuitlahuac, he's a minor god of lakes and fish hunters and aspect of Mixcoatl.",
     "spellings": "Amhimitl, Opochtli",
@@ -109,6 +115,7 @@
   },
   {
     "name": "Atlacoya",
+    "id": "atlacoya",
     "importance": "secondary",
     "bio": "Goddess of drought and barren land, associated with the worship of pulque. She represents austerity and despair.",
     "spellings": "Atlcahualo",
@@ -127,6 +134,7 @@
   },
   {
     "name": "Atlaua",
+    "id": "atlaua",
     "importance": "secondary",
     "bio": "Minor god of the domesticated aquatic flow who protects fishermen and archers. His nahual is the quetzal bird.",
     "spellings": "Atlahua, Ahtlahuah",
@@ -145,6 +153,7 @@
   },
   {
     "name": "Azcatl",
+    "id": "azcatl",
     "importance": "secondary",
     "bio": "Red ant which helped Quetzalcoatl to give maize, hidden inside a mountain, to feed the gods and humankind.",
     "spellings": "",
@@ -163,6 +172,7 @@
   },
   {
     "name": "Camaxtli",
+    "id": "camaxtli",
     "importance": "secondary",
     "bio": "Tlaxcaltec creator god of hunting, war, fire, fate and hope. His cult merged with Huitzilopochtli",
     "spellings": "Yemaxtli, Tlaclau-queteztzatlipuca, Camaxtle, Tlatlauhca",
@@ -181,6 +191,7 @@
   },
   {
     "name": "Ce Calli",
+    "id": "ce_calli",
     "importance": "secondary",
     "bio": "One of the Cihuateteo, the warriors spirits of women who died in childbirth. They accompanied the sun from noon till sundown. Feared, they are also associated with lust and filth.",
     "spellings": "",
@@ -199,6 +210,7 @@
   },
   {
     "name": "Ce Cuauhtli",
+    "id": "ce_cuauhtli",
     "importance": "secondary",
     "bio": "One of the Cihuateteo, the warriors spirits of women who died in childbirth. They accompanied the sun from noon till sundown. Feared, they are also associated with lust and filth.",
     "spellings": "",
@@ -217,6 +229,7 @@
   },
   {
     "name": "Ce Mazatl",
+    "id": "ce_mazatl",
     "importance": "secondary",
     "bio": "One of the Cihuateteo, the warriors spirits of women who died in childbirth. They accompanied the sun from noon till sundown. Feared, they are also associated with lust and filth.",
     "spellings": "",
@@ -235,6 +248,7 @@
   },
   {
     "name": "Ce Ozomatli",
+    "id": "ce_ozomatli",
     "importance": "secondary",
     "bio": "One of the Cihuateteo, the warriors spirits of women who died in childbirth. They accompanied the sun from noon till sundown. Feared, they are also associated with lust and filth.",
     "spellings": "",
@@ -253,6 +267,7 @@
   },
   {
     "name": "Ce Quiahuitl",
+    "id": "ce_quiahuitl",
     "importance": "secondary",
     "bio": "One of the Cihuateteo, the warriors spirits of women who died in childbirth. They accompanied the sun from noon till sundown. Feared, they are also associated with lust and filth.",
     "spellings": "",
@@ -271,6 +286,7 @@
   },
   {
     "name": "Centeotl",
+    "id": "centeotl",
     "importance": "secondary",
     "bio": "Olmec, Totonac and mayan god of fertility. Gender-fluid entity revered by maize farmers but also midwives.",
     "spellings": "Cinteotl, Centeocihuatl, Centeal, Centeotltecutli, Cexochitl, Icnopiltzin, Tlatlauhquicenteotl, Tonacajoha, Tonacayohua, Tzinteotl, Xoxouhquicenteotl, Civeles, Temazcalteci. ToNantzin, Cinteotle, Centeocihuati, Cinteotlcihuatl, Cintéotltecuhtli, Cinteohuatl, Cintecutli, Iztaccenteotl",
@@ -289,6 +305,7 @@
   },
   {
     "name": "Centzon Huitznahua",
+    "id": "centzon_huitznahua",
     "importance": "secondary",
     "bio": "Southern star gods. With Coyolxauhqui, their sister, they tried to kill their mother, Coatlicue. Huitzilipochtli massacred them, symbolising the sunrise and the disappearance of the stars.",
     "spellings": "Centzon Huitznauhtin, Centzonuitznaua, Centzon Huitznahuac, Centzonhuitznahua, Cuahuitlicac, Quauitlicac",
@@ -307,6 +324,7 @@
   },
   {
     "name": "Chalchiuhtecolotl",
+    "id": "chalchiuhtecolotl",
     "importance": "secondary",
     "bio": "Night owl god with fire eyes. Associated with magic and sorcery, he's an aspect or nahual of Tezcatlipoca.",
     "spellings": "Tlacatecolotl, Techlotl ",
@@ -325,6 +343,7 @@
   },
   {
     "name": "Chalchiuhtlatonac",
+    "id": "chalchiuhtlatonac",
     "importance": "secondary",
     "bio": "Aspect of the water goddess Chalchiuitlicue, which means She who shines like jade. She's also a protectof for midwives.",
     "spellings": "",
@@ -343,6 +362,7 @@
   },
   {
     "name": "Chalchiuhtlicue",
+    "id": "chalchiuhtlicue",
     "importance": "secondary",
     "bio": "Goddess of water, especially running streams, lakes and ocean. Married to Tlaloc (who control the rain from the sky), she's also a patron of birth",
     "spellings": "Chalciuhtlicue, Chalchihuitlicue, Chalchiuhcueyeh, Chalchihcueye, Xalxitlikue, Xoxouhqui Ihuipil, Xoxouhqui Icue, Chalchiuh Tlatonac, Chicomecóatl, Chalchiuhicueye, Chalchiuhtlicue, Atl, Matlalcueye, Xixiquipilihui, Matlolcueitl, Chalchiuhtlatonac ",
@@ -361,6 +381,7 @@
   },
   {
     "name": "Chalchiutotolin",
+    "id": "chalchiutotolin",
     "importance": "secondary",
     "bio": "God of pestilence, disease, disorder, chaos and mystery. This aspect of Tezcatlipoca, depicted as a turkey, cleanse the humans of contamination, absolve them of guilt, and help them to overcome their fate.",
     "spellings": "Chalchihuihtotolin",
@@ -379,6 +400,7 @@
   },
   {
     "name": "Chalmecacihuatl",
+    "id": "chalmecacihuatl",
     "importance": "secondary",
     "bio": "Minor goddess of the underworld and sacrifices and wife of Tzontemoc or Chalmecatecuhtli. She can be depicted as a massive snake guarding the Mictlan.",
     "spellings": "Chalmecacihuilt, Chalmeccacihuatl, Chalmecatl, Chalmecatecuchtli, Chachalmecacihuatl, Chalmeca ciuatl",
@@ -397,6 +419,7 @@
   },
   {
     "name": "Chalmecatecuhtli",
+    "id": "chalmecatecuhtli",
     "importance": "secondary",
     "bio": "God of sacrifice, ruler of one of the nine levels of the underworld. He is closely related to Mictlantecuhtli ",
     "spellings": "",
@@ -415,6 +438,7 @@
   },
   {
     "name": "Chantico",
+    "id": "chantico",
     "importance": "secondary",
     "bio": "Goddess of hearth, volcanic fires and personal treasure, she's also a patron of goldsmiths. She was transformed into a dog by Tonacatecuhtli fo breaking fast during a religious celebration.",
     "spellings": "Chicomexochitl, Chalchiuhcihuatl, Xantico",
@@ -433,6 +457,7 @@
   },
   {
     "name": "Chicome Xochitl",
+    "id": "chicome_xochitl",
     "importance": "secondary",
     "bio": "Nagual of Xochipilli and god of writing, painting and song, as well as of hallucinogenic plants.",
     "spellings": "chicomexochitl",
@@ -451,6 +476,7 @@
   },
   {
     "name": "Chicomecoatl",
+    "id": "chicomecoatl",
     "importance": "secondary",
     "bio": "Depicted as a young girl, she's a goddess of nourishment and agriculture, especially maize and peas.",
     "spellings": "Chiutcoatl, Chicomeccatl, Chicomexochitl, or Chalchiuhcihuatl, Xilonen, Chicomolotzin, Chicomecohuati, Chicome Coatl",
@@ -469,6 +495,7 @@
   },
   {
     "name": "Chiconahui Ehecatl",
+    "id": "chiconahui_ehecatl",
     "importance": "secondary",
     "bio": "Creator god of minor importance, similar to the four Tezcatlipocas. Second sun in the aztec cosmology, nagual of Ehecatl. ",
     "spellings": "Chiucnahui Eecatl, Chiconahuiehecatl, Nahui Ehecatl",
@@ -487,6 +514,7 @@
   },
   {
     "name": "Chiconahui Itzcuintli",
+    "id": "chiconahui_itzcuintli",
     "importance": "secondary",
     "bio": "Goddess of gem makers, associated with Chantico and Xiuhtecuhtli.",
     "spellings": "Tloxipeuhca, Chicoahui Itzcuintli-Chantico, Chiucnahui itzcuintli, Tlappapalo, Papaloxahual",
@@ -505,6 +533,7 @@
   },
   {
     "name": "Chimalma",
+    "id": "chimalma",
     "importance": "secondary",
     "bio": "Fertility goddess, patron of life and death. She's one of the mother of Quetzalcoatl and wife of Mixcoatl who accompanied the Azteca from Aztlan.",
     "spellings": "Chimalman, Chimamatl",
@@ -523,6 +552,7 @@
   },
   {
     "name": "Cihuapipiltzin",
+    "id": "cihuapipiltzin",
     "importance": "secondary",
     "bio": "Goddess who watches over crossroads and attacks men. Embodiment of women who die in childbirth. ",
     "spellings": "Cihuapipiltin, Cihuapilli",
@@ -541,6 +571,7 @@
   },
   {
     "name": "Cihuateteo (group of divinity. I'll switch it with the 5 goddess)",
+    "id": "cihuateteo",
     "importance": "secondary",
     "bio": "Spirits of high-ranking women who've died during childbirth. They accompanied the sun from noon till sundown. Feared, they are also associated with lust and filth.",
     "spellings": "Cituateteo, Civatateo, Chiuateteto, Cihuapipiltin, Cihuateteoh",
@@ -559,6 +590,7 @@
   },
   {
     "name": "Cipactli",
+    "id": "cipactli",
     "importance": "secondary",
     "bio": "Primordial earth, symbolised by a monstruous caiman. Tezcatlipoca and Quetzalcoatl dismembered it to create the earth and sky. It's also a guardian of one of the levels of Mictlan.",
     "spellings": "Xochitonal",
@@ -577,6 +609,7 @@
   },
   {
     "name": "Cipactonal",
+    "id": "cipactonal",
     "importance": "secondary",
     "bio": "First man of the fifth sun created by Quetzalcoatl. Inventor of astrology and calendars, he also represents the sun.",
     "spellings": "Icozauqui, Cipactli",
@@ -595,6 +628,7 @@
   },
   {
     "name": "Citlalatonac",
+    "id": "citlalatonac",
     "importance": "secondary",
     "bio": "Creator of the stars who lives in the second level of Aztec heaven with his consort, Citlaticue. ",
     "spellings": "",
@@ -613,6 +647,7 @@
   },
   {
     "name": "Citlalicue",
+    "id": "citlalicue",
     "importance": "secondary",
     "bio": "Creator goddess of the Milky Way, stars, death, darkness and Earth. Lives in the second level of Aztec heaven with Citlalatonac.",
     "spellings": "Citlalinicue, Citlalmina",
@@ -631,6 +666,7 @@
   },
   {
     "name": "Citlatepetl",
+    "id": "citlatepetl",
     "importance": "secondary",
     "bio": "Jealous lover of Iztaccihuatl, who told her that Popocatepetl, her true love, had died in battle. He became a volcano, known as Pico de Orizaba, to witness their love for eternity.  .",
     "spellings": "",
@@ -649,6 +685,7 @@
   },
   {
     "name": "Coatlicue",
+    "id": "coatlicue",
     "importance": "secondary",
     "bio": "Creator goddess of earth, fire, stars of the southern sky and birth. Depicted as a woman wearing a skirt of snakes, with sharp claws, as she was thirsty for sacrifices. Mother of Huitzilopochtli, she's also the inspiration of the weeping woman in mexican folklore.",
     "spellings": "Llamateuctli, Coatlantonan, Koatlikueitl, Tēteoh īnnān, Teteto Inan, Toci, Cihuacoatl, Tonantzin, Yohuatlicue, Chihucoatl, Ciucoatl, Chiuacoatl, Quilaztli, Huitzilincuatec, Tititl, Yaocihuatl, Tonantzin, Toci, Teteto Innan, Coatlicue, Quilaztli, Coacihuatl, Coatlan Tenan, Cuauhcihuatl, Tzitzimicihuatl, Cihuacohuatl, Cuaucihuatl, Teoyaominqui, Teoyaotlatohua, Teoyaomqui, Chicomexochitl ou Chalchiuhcihuatl",
@@ -667,6 +704,7 @@
   },
   {
     "name": "Coyolxauhqui",
+    "id": "coyolxauhqui",
     "importance": "secondary",
     "bio": "Earth goddess who tried to kill Coatlicue. Her head was tossed in the sky by his brother, Huitzilopochtli, and became the moon, which represent cowardice for Aztecs..",
     "spellings": "Coyolxanuhqui ",
@@ -685,6 +723,7 @@
   },
   {
     "name": "Coyotlinaual",
+    "id": "coyotlinaual",
     "importance": "secondary",
     "bio": "God of featherworkds, also called amantecas. He's linked with Huehuecoyotl, another trickster god",
     "spellings": "Coyotlinahual, Coyotl Inahual",
@@ -703,6 +742,7 @@
   },
   {
     "name": "Cuaxolotl",
+    "id": "cuaxolotl",
     "importance": "secondary",
     "bio": "Goddess of the hearth who gave birth to twins, as she wears a mask on the back of her head. She's the female counterpart of Xolotl and an aspect of Chantico.",
     "spellings": "",
@@ -721,6 +761,7 @@
   },
   {
     "name": "Ehecatl",
+    "id": "ehecatl",
     "importance": "secondary",
     "bio": "Nagual of Quetzalcoatl which represents the west winds that bring rain. His breath helped to move the sun.",
     "spellings": "Ehcatl",
@@ -739,6 +780,7 @@
   },
   {
     "name": "Huehuecihuatl",
+    "id": "huehuecihuatl",
     "importance": "secondary",
     "bio": "Old woman, nagual of Omecihuatl, symbolizing time.",
     "spellings": "",
@@ -757,6 +799,7 @@
   },
   {
     "name": "Huehuecoyotl",
+    "id": "huehuecoyotl",
     "importance": "secondary",
     "bio": "Trickster and shapeshifter god, associated both with wildness and wisdom, lust and arts, especially dance and music. He was also a guide in Mictlan.",
     "spellings": "Ueuecoyotl, huehuehcoyotl",
@@ -775,6 +818,7 @@
   },
   {
     "name": "Huehueteotl",
+    "id": "huehueteotl",
     "importance": "secondary",
     "bio": "Other aspect or name of Xiuthecuhtli, he's a fatherly figure and ancien god of hearth, the fire of life, and time.",
     "spellings": "Ueueteotl, Hiuhtecuctli, Ixcozauhqui, Cuezaltzin, Huehueteotl, Tata, Huehuetzin, Huehuetecutli, Huehuehteotl",
@@ -793,6 +837,7 @@
   },
   {
     "name": "Huitzilopochtli",
+    "id": "huitzilopochtli",
     "importance": "creation",
     "bio": "God of war, thunderstorms, fire and sun. He's the original deity of the nomadic tribe of Mexica, also known as Aztecs. He was a warrior who need blood to win his battle against darkness.",
     "spellings": "Uitzilopochtli, Mextli, Mexitl, Inaquizcaotl, Mezitl, Omiteotl-Inaquizcaotl, Tetzauhteotl, Tetzahuitl, Yaotecuhtli, Yaotzin, Vitzilopuchtl, Mexih",
@@ -811,6 +856,7 @@
   },
   {
     "name": "Huixtocihuatl",
+    "id": "huixtocihuatl",
     "importance": "secondary",
     "bio": "Fertility goddess of ocean who discovered salt. Could be a daughter or an aspect of Chalchiuhtlicue",
     "spellings": "Uixtocihuatl, huixtohcihuatl",
@@ -829,6 +875,7 @@
   },
   {
     "name": "Ilamacihuatl",
+    "id": "ilamacihuatl",
     "importance": "secondary",
     "bio": "Lady of Creation. Goddess of weavers, her roar signalled war. She's the elderly version of Chicomecoatl and associated with earth, death, and the milky way",
     "spellings": "",
@@ -847,6 +894,7 @@
   },
   {
     "name": "Ilamatecuhtli",
+    "id": "ilamatecuhtli",
     "importance": "secondary",
     "bio": "Lord of Creation. Another nagual of Ometecuhtli",
     "spellings": "Ilamatecutli",
@@ -865,6 +913,7 @@
   },
   {
     "name": "Ilancueye",
+    "id": "ilancueye",
     "importance": "secondary",
     "bio": "One the several minor divinities of maize. She represented the withering corn husk surrounding a dried out maize cob",
     "spellings": "Ilancueitl",
@@ -883,6 +932,7 @@
   },
   {
     "name": "Ilhuicamina",
+    "id": "ilhuicamina",
     "importance": "secondary",
     "bio": "He Who Shoots Arrows at the Heavens. Symbolizes the sun as one who destroys the stars.",
     "spellings": "",
@@ -901,6 +951,7 @@
   },
   {
     "name": "Itzaccihuatl",
+    "id": "itzaccihuatl",
     "importance": "secondary",
     "bio": "Representation of the great white mountain Iztactepetl, she's a mountain goddess, guardian of animals needed for food. Mexica affected by blindness would worship her. ",
     "spellings": "Iztaccihuatl, Iztac tepetl, Iztactepetl",
@@ -919,6 +970,7 @@
   },
   {
     "name": "Itzcuintli",
+    "id": "itzcuintli",
     "importance": "secondary",
     "bio": "Sacred dog which guided the dead through Mictlan and guardian of home. This breed of hairless dog still actually exists.",
     "spellings": "Itzcutintli",
@@ -937,6 +989,7 @@
   },
   {
     "name": "Itzpapalotl",
+    "id": "itzpapalotl",
     "importance": "secondary",
     "bio": "Aztec goddess of sacrifice, associated with earth and fertility, who rules Tomoanchan, and leader of Cihuateteo and Tzitzimime. Her nahual is the butterfly, a manifestation of the dead souls",
     "spellings": "Itzpapalotlcíhuatl, Itzcueye",
@@ -955,6 +1008,7 @@
   },
   {
     "name": "Itztapaltotec",
+    "id": "iztapaltotec",
     "importance": "secondary",
     "bio": "Minor god of Agriculture and fertility, nagual of Xipe Totec, but also a patron of precious metallurgists. He's probably related to Itztli, who is also depicted as a personified knife. ",
     "spellings": "Itztapal Totec, Iztapaltotec",
@@ -973,6 +1027,7 @@
   },
   {
     "name": "Itztlacoliuhqui",
+    "id": "itztlacoliuhqui",
     "importance": "secondary",
     "bio": "Blind god of justice and punishment, associated with stone, cold and obsidian. Associated with night and north, he's a variant of Tezcatllipoca.",
     "spellings": "Itztlacoliuhqui-Ixquimilli,  Itzlacohuihqui, Itzlacoliuhqui, Itzlacoliuhque, Ixquimilli, Iztacoliuhqui",
@@ -991,6 +1046,7 @@
   },
   {
     "name": "Itztli",
+    "id": "itztli",
     "importance": "secondary",
     "bio": "God of sacrifice and the sacred obsidian stone knives used for ritual slaying. Servant of Tezcatlipoca",
     "spellings": "Itzli",
@@ -1009,6 +1065,7 @@
   },
   {
     "name": "Ixcozauhqui",
+    "id": "ixcozauhqui",
     "importance": "secondary",
     "bio": "Yellow-face, gods of merchants and nagual of Xiuhtecuhtli",
     "spellings": "",
@@ -1027,6 +1084,7 @@
   },
   {
     "name": "Ixcuina",
+    "id": "ixcuina",
     "importance": "secondary",
     "bio": "Goddess of coton, associated, like her sisters, Tiacapan, Teicu, Tlaco and Xocotzin, to sex and filth. Nagual of Tlazolteotl.",
     "spellings": "Ixcuiname, Ixcuinan,Tlaelcuani, Tlazolteteoh, Ixcuina",
@@ -1045,6 +1103,7 @@
   },
   {
     "name": "Ixnextli",
+    "id": "ixnextli",
     "importance": "secondary",
     "bio": "Goddess of weavers and aspect of Xochiquetzal when she was expelled from paradise.",
     "spellings": "",
@@ -1063,6 +1122,7 @@
   },
   {
     "name": "Ixquimilli",
+    "id": "ixquimilli",
     "importance": "secondary",
     "bio": "God of darkness, justice and punishment. Protectors of the sorcereres., he was linked to both Itztlacoliuhqui and Tezcatlipoca.",
     "spellings": "",
@@ -1081,6 +1141,7 @@
   },
   {
     "name": "Ixquitecatl",
+    "id": "ixquitecatl",
     "importance": "secondary",
     "bio": "God of sorcerers, healings arts, and pulque. Worshipped by members of the healing arts class as sorcerers were often brought in after more herb traditional healing methods failed.  ",
     "spellings": "Izquitecatl",
@@ -1099,6 +1160,7 @@
   },
   {
     "name": "Ixtlilton",
+    "id": "ixtlilton",
     "importance": "secondary",
     "bio": "God of healing, dancing, festival and games. He played a role similar to the Sandman. Worshipped both as a agricultural and sexual god.",
     "spellings": "Ixtlilxochitl, Tlaltetecuin, Ixtliltzin, Ixtliton, Chicahualiztéotl ",
@@ -1117,6 +1179,7 @@
   },
   {
     "name": "Macuil Cozcacuahtli",
+    "id": "macuil_cozcacuahtli",
     "importance": "secondary",
     "bio": "One of the five gods of excess and pleasure, called Macuiltonaleque or Ahuiateteo, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "spellings": "Macuilcozcacuauhtli, Macuil-Cozcacuahtli ",
@@ -1135,6 +1198,7 @@
   },
   {
     "name": "Macuil Cuetzpalin",
+    "id": "macuil_cuetzpalin",
     "importance": "secondary",
     "bio": "One of the five gods of excess and pleasure, called Macuiltonaleque or Ahuiateteo, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "spellings": "Macuilcuetzpalin, Macuil-Cuetzpalin",
@@ -1153,6 +1217,7 @@
   },
   {
     "name": "Macuil Malinalli",
+    "id": "macuil_malinalli",
     "importance": "secondary",
     "bio": "One of the five gods of excess and pleasure, called Macuiltonaleque or Ahuiateteo, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "spellings": "Macuilmalinalli, Macuil-Malinalli",
@@ -1171,6 +1236,7 @@
   },
   {
     "name": "Macuil Ocelotl",
+    "id": "macuil_ocelotl",
     "importance": "secondary",
     "bio": "One of the five gods of excess and pleasure, called Macuiltonaleque or Ahuiateteo, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "spellings": "Macuilocelotl, Macuil-Ocelotl ",
@@ -1189,6 +1255,7 @@
   },
   {
     "name": "Macuil Tochtli",
+    "id": "macuil_tochtli",
     "importance": "secondary",
     "bio": "One of the five gods of excess and pleasure, called Macuiltonaleque or Ahuiateteo, like drinking, gambling or sex. They represents the danger or overindulgence.",
     "spellings": "Macuiltochtli, Macuil-Tochtli ",
@@ -1207,6 +1274,7 @@
   },
   {
     "name": "Macuil Xochitl",
+    "id": "macuil_xochitl",
     "importance": "secondary",
     "bio": "One of the five gods of excess and pleasure, called Macuiltonaleque or Ahuiateteo, like drinking, gambling or sex. They represents the danger or overindulgence. Nagual of Xochipilli.",
     "spellings": "Macuilxochitl, Macuil-Xochitl",
@@ -1225,6 +1293,7 @@
   },
   {
     "name": "Malinalxochi",
+    "id": "malinalxochi",
     "importance": "secondary",
     "bio": "Underworld sorceress or goddess of snakes, scorpions and insects of the desert. Trying to slow down the journey of his half brother, Huiztilopochtli, and his people, she's abandonned and founded the city of Malinalco.",
     "spellings": "Matlalcueje, Masaya, Malinalxochi, Malinalxochitl",
@@ -1243,6 +1312,7 @@
   },
   {
     "name": "Matlalcueitl",
+    "id": "matlalcueitl",
     "importance": "secondary",
     "bio": "Tlaxcaltec goddess of running water, lakes, rivers, singing and divination. Nagual of Chalchiuhtlicue. ",
     "spellings": "Matlalcueyeh, Matlalcueje, Matlalcueye",
@@ -1261,6 +1331,7 @@
   },
   {
     "name": "Mayahuel",
+    "id": "mayahuel",
     "importance": "human",
     "bio": "Goddess of the maguay plant and all his by-products, especially pulque. Said to have 400 breasts to nurture her children, she gave love to manking with her romance with Quetzalcoatl.",
     "spellings": "Mayahual, Mayouel, Tezcacoac",
@@ -1279,6 +1350,7 @@
   },
   {
     "name": "Metztli",
+    "id": "metztli",
     "importance": "secondary",
     "bio": "Lowly god of darkness and worms who failed to sacrifice himslef to become the sun and, instead, became the moon.",
     "spellings": "Meztli",
@@ -1297,6 +1369,7 @@
   },
   {
     "name": "Mictlancihuatl",
+    "id": "mictlancihuatl",
     "importance": "secondary",
     "bio": "Mistress to Mictlantecuhtli and ruler of the deepest level of Mictlan. She was sacrified as a baby and magically grew to addulthood in the underworld.",
     "spellings": "Mictecacihuatl, Mictecacioatl",
@@ -1315,6 +1388,7 @@
   },
   {
     "name": "Mictlantecuhtli",
+    "id": "mictlantecuhtli",
     "importance": "elemental",
     "bio": "God of death and lord of Mictlan, the main Aztec underworld. Living in complete darkness, he guard the bones of dead people but also babies before their birth.",
     "spellings": "Mictlantecuhtzi Tzontemoc, Mictlantli, Mictlantecahtli, Cuezallin, Ah Puch (mayan), Hunhau (mayan), Mictecacíhuatl, Mictlān Teuctli, Cuezal, Tocuilehua, Tlalchi Tonatiuh",
@@ -1333,6 +1407,7 @@
   },
   {
     "name": "Miquiztlitecuhtli",
+    "id": "miquiztlitecuhtli",
     "importance": "secondary",
     "bio": "God of violent death, such as suicide, accident, disease or homicide.",
     "spellings": "",
@@ -1351,6 +1426,7 @@
   },
   {
     "name": "Mixcoatl",
+    "id": "mixcoatl",
     "importance": "human",
     "bio": "Chichimec and Otomi god of hunting, war, fire, sky and the Milky Way. Depending on the sources, he can be the father of Huitzilopochtli and Quetzalcoatl or a new form of Tezcatlipoca.",
     "spellings": "Iztacmixcoatl, Icnopilli, Tlatlauhqui Tezcatl-Ihpoca, Opocheh, Ce Tecpatl Mixcoatl",
@@ -1369,6 +1445,7 @@
   },
   {
     "name": "Nahui Ehecatl",
+    "id": "nahui_ehecatl",
     "importance": "secondary",
     "bio": "Second sun in the aztec cosmology, nagual of Ehecatl. ",
     "spellings": "Nahuiehecatl",
@@ -1387,6 +1464,7 @@
   },
   {
     "name": "Nanahuatzin",
+    "id": "nanahuatzin",
     "importance": "secondary",
     "bio": "Lowly goddess who sacrified herself, by jumping into a fire, to become the sun god Tonatiuh. She represented self-sacrifice and courage.",
     "spellings": "Nana, Nanautzin, Nanauatzin, Nanahuatl,  Nanatzin ",
@@ -1405,6 +1483,7 @@
   },
   {
     "name": "Nappatecuhtli",
+    "id": "nappatecuhtli",
     "importance": "secondary",
     "bio": "One of the Tlaloques (water gods), who invented the art of making mats, seats and cane screens with reed, sedge and canes.",
     "spellings": "Tlanempopoloa, Napatecutli, Teaaltiani, Nappatecutli",
@@ -1423,6 +1502,7 @@
   },
   {
     "name": "Ocelotl",
+    "id": "ocelotl",
     "importance": "secondary",
     "bio": "God of all animals of land, sea and air, including humans. Protector of scouts and warriors, he's a nagual of Tezcatlipoca.",
     "spellings": "",
@@ -1441,6 +1521,7 @@
   },
   {
     "name": "Omacatl",
+    "id": "omacatl",
     "importance": "secondary",
     "bio": "God of feast and revelry, who could make men choke on food if he wasn't pleased by gifts.",
     "spellings": "Omacahtl",
@@ -1459,6 +1540,7 @@
   },
   {
     "name": "Ome Tochtli",
+    "id": "ome_tochtli",
     "importance": "secondary",
     "bio": "God of pulque and drunkeness, depicted as a rabbit. He's the leader of the Centzon Totochtin",
     "spellings": "Ometotchtli, Ometochtli, Ome-Tochtli",
@@ -1477,6 +1559,7 @@
   },
   {
     "name": "Omecihuatl",
+    "id": "omecihuatl",
     "importance": "secondary",
     "bio": "Female representation of the creator god Ometeotl. God of the near and the distant, of substance and duality, she was mainly revered by the high classes, especially in poetry.",
     "spellings": "Mihuatl,  Ilhuicacihuatl, Ometeotl,  Acalhuah",
@@ -1495,6 +1578,7 @@
   },
   {
     "name": "Ometecuhtli",
+    "id": "ometecuhtli",
     "importance": "secondary",
     "bio": "Male representation of the creator god Ometeotl. God of the near and the distant, of substance and duality, he was mainly revered by the high classes, especially poetry.",
     "spellings": "Ometeotl, Omeyotl, Ometeoltloque, Yohualli. Ometeoltloque, Ometecutli, Tloque Nahuaque, Citlatonac, Ometecuhtl, Ome Tochtli, Acalhuah, Ilhuicacihuatl, Ilhuicahuah, Ilhuicateotl",
@@ -1513,6 +1597,7 @@
   },
   {
     "name": "Ometeotl",
+    "id": "ometeotl",
     "importance": "primordial",
     "bio": "Androgynous entity, responsible for the creation of the world, on the back of Cipactli, and the gods, but not mankind.",
     "spellings": "Ometecuhtli, Omecihuatl, Ipalnemohuani, Moyocan, Omeyotl",
@@ -1531,6 +1616,7 @@
   },
   {
     "name": "Opochtli",
+    "id": "opochtli",
     "importance": "secondary",
     "bio": "One of the Tlaloques (water gods), inventor of the, fishnet, fishing rod, harpoon, oar to row and snare to kill birds.",
     "spellings": "",
@@ -1549,6 +1635,7 @@
   },
   {
     "name": "Otontecuhtli",
+    "id": "otontecuhtli",
     "importance": "secondary",
     "bio": "Mazahuah god of the fire-pit and protector of goldsmith. Associated with Xiuhtecuhtli. ",
     "spellings": "Otonteuctli, Xocotl",
@@ -1567,6 +1654,7 @@
   },
   {
     "name": "Oxomoco",
+    "id": "oxomoco",
     "importance": "secondary",
     "bio": "First woman of the fifth sun created by Quetzalcoatl. Inventor of magic, she represents also the nightime and earth.",
     "spellings": "Icozauqui, Cipactli (for Cipactonal), Oxomo (for Oxomoco)",
@@ -1585,6 +1673,7 @@
   },
   {
     "name": "Painal",
+    "id": "painal",
     "importance": "secondary",
     "bio": "Swift messenger of Huitzilopochtli, who call men to god to war. Captured prisoners were regularly offered to him.",
     "spellings": "Paynal, Painalton, Paynalton, payinal, payinalton, payinaltzin",
@@ -1603,6 +1692,7 @@
   },
   {
     "name": "Patecatl",
+    "id": "patecatl",
     "importance": "secondary",
     "bio": "God of medecine and fertility who discovered, with his wife Mayahuel, pulque and especially its narcotic effect.",
     "spellings": "Pantecatl, Pahtecatl",
@@ -1621,6 +1711,7 @@
   },
   {
     "name": "Piltzintecuhtli",
+    "id": "piltzintecuhtli",
     "importance": "secondary",
     "bio": "God of youth, symbolized by Mercury, and father of Centeotl. He was a manifestation of Tonatiuh or Xochipilli.",
     "spellings": "Piltzintecuhtli",
@@ -1639,6 +1730,7 @@
   },
   {
     "name": "Piquete Zina",
+    "id": "piquete_zina",
     "importance": "secondary",
     "bio": "Zapotec bat god who represented maize and fertility.",
     "spellings": "Camazotz, Tlacatzinacantli, Kamasotz",
@@ -1657,6 +1749,7 @@
   },
   {
     "name": "Popocatepetl",
+    "id": "popocatepetl",
     "importance": "secondary",
     "bio": "Sacred volcano whose cult worshiped the earth, rain, water, and vegetation. Once a man, he was called away to war but his lover, Iztaccihuatl, died of grief. They ended up transformed into mourning mountains by the Gods.",
     "spellings": "",
@@ -1675,6 +1768,7 @@
   },
   {
     "name": "Quetzalcoatl",
+    "id": "quetzalcoatl",
     "importance": "creation",
     "bio": "One of the main divinity worshipped in Mesoamerica. He's  the god of agriculture, arts, love science and wind. Exiled by his brother Tezcatlipoca, his expected return has been seen, at first, as the arrival of Hernan Cortez in 1519.",
     "spellings": "Tlilpotonqui, Matl, Tlahuizcalpantecuhtli, Tlamacazqui, Topiltzin, Iztauhqui-Tezcatlipoca",
@@ -1693,6 +1787,7 @@
   },
   {
     "name": "Quiahuitl",
+    "id": "quiahuitl",
     "importance": "secondary",
     "bio": "One of the Tlaloque, which was worshipped in caves of hilltop temples by farmers for fertility. Nagual of Tlaloc.",
     "spellings": "Ce Quiahuitl",
@@ -1711,6 +1806,7 @@
   },
   {
     "name": "Quilaztli",
+    "id": "quilaztli",
     "importance": "secondary",
     "bio": "Aspect of Coatlicue, associated with pregnancy, child birth and comestible plants.",
     "spellings": "Cihuacoatl, Quauhciuatl, Yoaciuatl, Tzitziminciuatl",
@@ -1729,6 +1825,7 @@
   },
   {
     "name": "Tecciztecatl",
+    "id": "tecciztecatl",
     "importance": "secondary",
     "bio": "Other name for Metztli. As the god of snails and worms, he failed to sacrifice himself to become the sun and was trasnformed into the moon. Symbol of cowardice.",
     "spellings": "Teucciztecatl, Tecuhciztecatl, Tecuciztecal ",
@@ -1747,6 +1844,7 @@
   },
   {
     "name": "Techalotl",
+    "id": "techalotl",
     "importance": "secondary",
     "bio": "God of dance which was one of the Centzon Totochtin, deities associated with pulque. Could change himself into a fox-squirrel creature which lived in caves.",
     "spellings": "Tecuhalotl",
@@ -1765,6 +1863,7 @@
   },
   {
     "name": "Tepeyollotl",
+    "id": "tepeyollotl",
     "importance": "secondary",
     "bio": "God of the heart of the mountain. Associated with jaguars, echoes, and earthquakes, he's an aspect of Tezcatlipoca.",
     "spellings": "Tepeyollohtli",
@@ -1783,6 +1882,7 @@
   },
   {
     "name": "Tepoztecatl",
+    "id": "tepoztecatl",
     "importance": "secondary",
     "bio": "One of the 400 Centzon Totochtin, the aztec gods of pulque. He was, at first, a local fertility deity from the town of Tepoztlan.",
     "spellings": "Tezcatzontecatl, Ehecacone, Tezctzoncatl, Acan, Tezcatonatl",
@@ -1801,6 +1901,7 @@
   },
   {
     "name": "Teteo Innan",
+    "id": "teteo_innan",
     "importance": "secondary",
     "bio": "Major group of female fertility deities, which combines terror and beauty, life and destruction. Seen as the mother of gods, they are associated with war and birth.",
     "spellings": "Tetevinan, Teteo Innan, Teteoh Innan, Toci, Tonantzin, Citlalcueyeh, Nantli,  Tlalli iyolloh, Tocih, Temazcaltecih, Tlalli, Tocitzin, Tocicuahuill, Temazcalteci, Tlalli Iyollo, Teteo-Innan-Toci, Chicomexochitl, Chalchiuhcihuatl, Teteoinnan ",
@@ -1819,6 +1920,7 @@
   },
   {
     "name": "Tezcatlipoca",
+    "id": "tezcatlipoca",
     "importance": "creation",
     "bio": "Omnipotent god of rulers, sorcerers or warriors, he rules night, death, discord, conflict, temptation, change and destruction. Symbolised by the jaguar, he's a rival of Quetzalcoatl and one of the most complex aztec god.",
     "spellings": "Omacatl, Titlacauan/titlacahuan, Tezcatlanextia, Yaotl, Necoc Yaotl, Moyocoya, Necaualpilli, Miquizyaotl, Techimaltini, Teoxonecuilli, Tlacanexquimilli, Tlacatecolotl, Tliltecuhtli, Yayauhqui-Tezcatlipoca, Yoaltecuhtli, Yoalehecatl, Tlamatzincatl, Telpochtli, Moyocoyatzin, Monenegui, Teyocoyani, Teimatini, Yaotzin, Yaotl necoc, Moquequeloa, Nezaualpilli, Tlamatzincatl, Yoalli ehecatl, Chicoyaotl, Moquehqueloa, Moyocoya, Necocyaotzin, Nezahualpilli , Teonexquimilli, Teotlale, Tlanempopolo",
@@ -1837,6 +1939,7 @@
   },
   {
     "name": "Tezcatzoncatl",
+    "id": "tezcatzoncatl",
     "importance": "secondary",
     "bio": "Pulque god and one of the Centzon Totochtin, protectors of the intoxicated. ",
     "spellings": "Tezcatzontecatl ",
@@ -1855,6 +1958,7 @@
   },
   {
     "name": "Titlacahuan",
+    "id": "titlacahuan",
     "importance": "secondary",
     "bio": "Omnipotent god of destiny with malevolent power. One of the many aspects of Tezcatlipoca.",
     "spellings": "Titlacauan",
@@ -1873,6 +1977,7 @@
   },
   {
     "name": "Tlacotzontli",
+    "id": "tlacotzontli",
     "importance": "secondary",
     "bio": "God of roads and protector for merchants depicted with a huge coat. To please him, they would cut themselves among roads and give him paper banners cover in blood. ",
     "spellings": "Tlacotontli, Cacatzontli",
@@ -1891,6 +1996,7 @@
   },
   {
     "name": "Tlahuizcalpantecuhtli",
+    "id": "tlahuizcalpantecuhtli",
     "importance": "secondary",
     "bio": "Destructive god of the Morning Star, dawn and east. An aspect of Quetzalcoatl which lives in Mictlan. By way of anecdote, he has the longest name in aztec pantheon.",
     "spellings": "Tlahuizcalpantecutli, Tlahuiazecalpatcuatli, Tlahuizcalpan",
@@ -1909,6 +2015,7 @@
   },
   {
     "name": "Tlalchi Tonatiuh",
+    "id": "tlalchi_tonatiuh",
     "importance": "secondary",
     "bio": "Chtonic underworld god. One of the aspect of Tonatiuh, when he makes it's daily journey from night to day.",
     "spellings": "Tlachitonatiuh",
@@ -1927,6 +2034,7 @@
   },
   {
     "name": "Tlaloc",
+    "id": "tlaloc",
     "importance": "elemental",
     "bio": "Main aztec god, with Huitzilopochtli, who controls rain, hurricanes, fertility and lightning. He's also associated with springs, mountains and caves. Babies were drown to give him power. ",
     "spellings": "Nuhualpilli, Oztoteot, Nonoalco, Nonohualco, Tlaloccantecutli, Tlaloctlamacazqui, Tlaloc Tlamacazqui, Epcoa, Epcoatl, Tlalocan Teuctli",
@@ -1945,6 +2053,7 @@
   },
   {
     "name": "Tlaltecayoa",
+    "id": "tlaltecayoa",
     "importance": "secondary",
     "bio": "One of the numerous god of pulque, also associated with the roundness of earth.",
     "spellings": "",
@@ -1963,6 +2072,7 @@
   },
   {
     "name": "Tlaltecuhtli",
+    "id": "Tlaltecuhtli",
     "importance": "elemental",
     "bio": "Sea monster creature, considered as the source of all living things. She's has to be kept benevolent by blood sacrifices, as she swallows the sun each night.",
     "spellings": "Tlatecuhtli, Tlalteuctli, Tlalcihuatl",
@@ -1981,6 +2091,7 @@
   },
   {
     "name": "Tlatlauhqui Tezcatlipoca",
+    "id": "tlatlauhqui_tezcatlipoca",
     "importance": "secondary",
     "bio": "Red Smoking Mirror, nagual of Tezcatlipoca, also identified with Xipe Totec.",
     "spellings": "",
@@ -1999,6 +2110,7 @@
   },
   {
     "name": "Tlazolteotl",
+    "id": "tlazolteotl",
     "importance": "secondary",
     "bio": "Goddess of purification from filth, disease or excess, of sin, love, sex, regret and lamentation. She can turn into four aspects, a young moon, cruel and delightful, a sensual young woman, a priestess who bless married couples and a monster who destroy lovers and steal fortune.",
     "spellings": "Tlaelquani, Tlazolteotli, Ixcuina, Tlacolteutl, Teicu, Tiacapan, Tlaco, Tlahco, Tlazolcuani, Tlaculteotl, Xocotzin, Xucotzin, Caxxoch, Tlahui, Tlanzolteot, Ceolitzin, Ixcuinan, Tlahelcuani, Tlazolteocihuatl, Ixcuina, Ixcuiname",
@@ -2017,6 +2129,7 @@
   },
   {
     "name": "Tlazopilli",
+    "id": "tlazopilli",
     "importance": "secondary",
     "bio": "Fertility god, and nagual of Xochipilli, worshipped during the seventh month of the Mexica calendar system.",
     "spellings": "",
@@ -2035,6 +2148,7 @@
   },
   {
     "name": "Toci",
+    "id": "toci",
     "importance": "secondary",
     "bio": "Nagual of Coatlicue and Xochitlicue associated with healing and venerated by curers of ailments and midwives",
     "spellings": "",
@@ -2053,6 +2167,7 @@
   },
   {
     "name": "Tomiyauhtecuhtli",
+    "id": "tomiyauhtecuhtli",
     "importance": "secondary",
     "bio": "Minor rain and fertility god associated with a mountain, probably close to Lake Chalco and Xochimilco. ",
     "spellings": "Tomiyauhteuctli, Tomiyauh, Tomiyauhtecuhtli",
@@ -2071,6 +2186,7 @@
   },
   {
     "name": "Tonacacihuatl",
+    "id": "tonacacihuatl",
     "importance": "secondary",
     "bio": "Creator goddess which seems to be a terrestrial representation of Omecihuatl. ",
     "spellings": "",
@@ -2089,6 +2205,7 @@
   },
   {
     "name": "Tonacatecuhtli",
+    "id": "tonacatecuhtli",
     "importance": "secondary",
     "bio": "Possibly a aspect of Ometecuhtli, associated with agriculture and fate. Depicted as a wrinkled man, he was the god of sustenance.",
     "spellings": "Tonacateuctli",
@@ -2107,6 +2224,7 @@
   },
   {
     "name": "Tonantzin",
+    "id": "tonantzin",
     "importance": "secondary",
     "bio": "Honorific title for earth goddess like Toci, Coatlicue or Tlaltecuhtli. Her temple on the hill of Tepeyac seems to be the first place for the apparition of the Virgin of Guadalupe.",
     "spellings": "",
@@ -2125,6 +2243,7 @@
   },
   {
     "name": "Tonatiuh",
+    "id": "tonatiuh",
     "importance": "secondary",
     "bio": "Sun god, protector of the warriors and symbolized by the eagle, he presides the fifth (and actual) world age. The gods sacrificed themselves to create him and men has to give him enough energy, through blood, to battle against darkness.",
     "spellings": "",
@@ -2143,6 +2262,7 @@
   },
   {
     "name": "Tzapatlan Tenen",
+    "id": "tzapatlantenen",
     "importance": "secondary",
     "bio": "Goddess of nature, especially resin and turpentine which is used for healing ointments.",
     "spellings": "Tzapotla Tena, Tzapotlatena, Zapotlantenan, Zapotlan Tenan",
@@ -2161,6 +2281,7 @@
   },
   {
     "name": "Tzitzimime",
+    "id": "tzitzimime",
     "importance": "secondary",
     "bio": "Monstruous form of the Cihuateteto, the spirits of women who had died while giving birth, especially dangerous during solar eclipses. Their ruler is Tzitzimitl or Itzpapalotl.",
     "spellings": "Tzitzimimeh, Tetzauhcíhuatl, Tezauhcihuame",
@@ -2179,6 +2300,7 @@
   },
   {
     "name": "Tzitzimitl",
+    "id": "tzitzimitl",
     "importance": "secondary",
     "bio": "Aged goddess of inertia and alcohol which ruled the Tzitzimime, who lived in the night sky.",
     "spellings": "Tetzauhcihuatl,  Tezauhcihuame",
@@ -2197,6 +2319,7 @@
   },
   {
     "name": "Uappatzin",
+    "id": "uappatzin",
     "importance": "secondary",
     "bio": "Patron deity of tlachtli, an aztec game where the ball represented the sun. Servant of Huitzilopochtli, is also associated with warfare.",
     "spellings": "Huappatzin",
@@ -2215,6 +2338,7 @@
   },
   {
     "name": "Xilonen",
+    "id": "xilonen",
     "importance": "secondary",
     "bio": "Local vegetation goddess, associated with corn. She's an aspect of the maize goddess Chicomecoatl, personifying the weet and young maize plant.",
     "spellings": "Xilonemin, Chicomecoatl, Chalchiuhcihuatl",
@@ -2233,6 +2357,7 @@
   },
   {
     "name": "Xipe Totec",
+    "id": "xipe_totec",
     "importance": "creation",
     "bio": "Fierce god of agriculture, fertility, seasons and renewal, he was also a protector of gold workers, jewelers and warriors. He flayed himself to give humanity food, and was shown as wearing a flayed human skin",
     "spellings": "Tlatlauhqui Tezcatlipoca, Yopi,  Xipe-Totec-Tllatlauhquitezcatl, Tlatlauhqui Texcatl, Yohuallahuantzin, Oxipe, Teteucxipe, Tlacaxipehualiztli, Yohuallahuan, Yopih, Itzpapalotltotec, Tlatlauhqui-Tezcatlipoca, Tlatlauhcatezcatlipoca",
@@ -2251,6 +2376,7 @@
   },
   {
     "name": "Xiuhcoatl",
+    "id": "xiuhcoatl",
     "importance": "secondary",
     "bio": "Snake's embodiment of the sun's rays an emblem of the god Xiuhtecuhtli. Huitzilopochtli used hit to kill Coyolxauhqui and the Centzon Huitznahua.",
     "spellings": "",
@@ -2269,6 +2395,7 @@
   },
   {
     "name": "Xiuhtecuhtli",
+    "id": "xiuhtecuhtli",
     "importance": "elemental",
     "bio": "God of fire and time, protector of kings, warriors and pochtecas. One of the oldest cult in aztec mythology. He's also deeply conected with birth.",
     "spellings": "Xiuhteuctli, Tlalxictentica, Milintoc, Xiuhtototl, Ybebeyoban, Nauhyoteuctli, Nauhyoueye, Huehueteotl, Otonteuctli, Xocotl, Nauhyohuehue, Tlalxictenticah, Xippilli, Xippil, Cuecaltzin, Huehuetiliztli, Viveteutl, Nauhyoteuctli",
@@ -2287,6 +2414,7 @@
   },
   {
     "name": "Xoaltecuhtli",
+    "id": "xoaltecuhtli",
     "importance": "secondary",
     "bio": "God of night, sleep and dreams and messenger of Mictlantecuhtli.",
     "spellings": "",
@@ -2305,6 +2433,7 @@
   },
   {
     "name": "Xochipilli",
+    "id": "xochipilli",
     "importance": "secondary",
     "bio": "Young god of feasting, painting, dancing, games, and writing. He represents the masculine aspect of eroticism, with its pleasures, dangers and responsabilities.",
     "spellings": "Xochipili, Chicomexochitl, Macuil Xochitl, Piltzintecuhtli-Tonatiuh, Papaloxahual-Xochipilli, Xochipilli-Centeotl, Xochiquetzal",
@@ -2323,6 +2452,7 @@
   },
   {
     "name": "Xochiquetzal",
+    "id": "xochiquetzal",
     "importance": "human",
     "bio": "Goddess of female sexuality, prostitutes, homosexuals, young mothers, flowers, pleasure and craft (embroiders, weavers, silversmiths and sculptors)",
     "spellings": "Xochiquetzalli",
@@ -2341,6 +2471,7 @@
   },
   {
     "name": "Xolotl",
+    "id": "xolotl",
     "importance": "secondary",
     "bio": "Canine companion and/or twin brother of Quetzalcoatl. God of twins, fire, sickness, deformity and bad luck, he accompanied the dead to Mictlan and nourrished the first men of the fifth sun.",
     "spellings": "Xolotol",
@@ -2359,6 +2490,7 @@
   },
   {
     "name": "Yacapitzahuac",
+    "id": "yacapitzahuac",
     "importance": "secondary",
     "bio": "Minor god of commerce and merchants.",
     "spellings": "Yacapitzaoc",
@@ -2377,6 +2509,7 @@
   },
   {
     "name": "Yacatecuhtli",
+    "id": "yacatecuhtli",
     "importance": "human",
     "bio": "God of merchants and travelers, especially pochtecas. Depicted as a man with a long nose and a stick, he opens the way for gods to travel to the mortal world and also clears a path for the imperial armies. ",
     "spellings": "Yactecuhtli, Yiacatecutli, Yacacoliuhqui, Ollohqueh, Iyahcateuctli, Yacapitzahuac, Tacatecutli, Ek Chuah, Ekchuah",
@@ -2395,6 +2528,7 @@
   },
   {
     "name": "Yauhqueme",
+    "id": "yauhqueme",
     "importance": "secondary",
     "bio": "God of milkweed, asteraceae, rosaceae, gutiferous and hypericaceae, identified as one of the four Tlaloque.",
     "spellings": "",
@@ -2413,6 +2547,7 @@
   },
   {
     "name": "Yohual Tonatiuh",
+    "id": "yohual_tonatiuh",
     "importance": "secondary",
     "bio": "Form of Tonatiuh, the sun god, when he makes its way from day to night.",
     "spellings": "",
@@ -2431,6 +2566,7 @@
   },
   {
     "name": "Yohualticitl",
+    "id": "yohualticitl",
     "importance": "secondary",
     "bio": "Goddess of steam baths, which were strongly related to pregnant women with the symbolic of the womb.",
     "spellings": "",
@@ -2449,6 +2585,7 @@
   },
   {
     "name": "Youaltepuztli",
+    "id": "youaltepuztli",
     "importance": "secondary",
     "bio": "Nocturnal collecting-soul monster, depicted as a beheaded cadaver with an hole in his torso, opening and closing rapidly  with a terrific sound. The bravest could try pick his black heart and crush it to make him disappear.  ",
     "spellings": "",
@@ -2467,6 +2604,7 @@
   },
   {
     "name": "Zacatzontli",
+    "id": "zacatzontli",
     "importance": "secondary",
     "bio": "God of roads and protector for merchants.",
     "spellings": "",

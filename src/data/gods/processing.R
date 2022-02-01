@@ -3,13 +3,14 @@ library(jsonlite)
 
 gods_raw <- read.csv("./raw/light-db.tsv", sep="\t")
 gods_basic <- gods_raw %>% 
-  select("name" = "Name", 
+  select(id = "ID",
+         "name" = "Name", 
          "importance" = "type",
          "keyword" = "Keywords",
          bio = Text,
          spellings = "Other.names.or.spelling",
          source = "Illustration.source") %>%
-  mutate(name = str_squish(name))
+  mutate(name = str_squish(name), id = str_squish(id))
 gods_main <- gods_basic %>% filter(importance != "secondary")
 
 # Keywords ("Domains")
@@ -48,9 +49,10 @@ gods_with_domains <- gods_basic %>%
 
 
 gods <- gods_with_domains %>% 
-  select(1, 2, 4, 5, 6, 7:17) %>%
+  select(1, 2, 3, 5, 6, 7, 8:18) %>%
   group_by(name) %>%
-  summarize(importance = first(importance),
+  summarize(id = first(id),
+            importance = first(importance),
             bio = first(bio),
             spellings = first(spellings),
             source = first(source),
