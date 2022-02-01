@@ -97,7 +97,7 @@
   } */
   .step-item {
     max-width: 24rem;
-    height: 300px;
+    height: 250px;
     padding: 0.825rem;
 
     display: flex;
@@ -131,4 +131,10 @@
     max-width: 35rem;
     margin: 0 auto;
   } */
+
+  @media only screen and (min-width: 50em) {
+    .step-item {
+      height: 350px;
+    }
+  }
 </style>
