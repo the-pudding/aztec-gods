@@ -7,7 +7,7 @@
 </script>
 
 <Section id="context">
-  <Heading>{@html doc.context_title}</Heading>
+  <!-- <Heading>{@html doc.context_title}</Heading> -->
 
   <Paragraph>{@html doc.context_timeline}</Paragraph>
   <Image
@@ -15,8 +15,8 @@
     alt={doc.context_timeline_alt}
   />
 
-  <Paragraph>{@html doc.context_empire}</Paragraph>
-  <Image localUrl="illustrations/Simplified-map-of-aztec-empire.png" alt={doc.context_empire_alt} />
+  <!-- <Paragraph>{@html doc.context_empire}</Paragraph>
+  <Image localUrl="illustrations/Simplified-map-of-aztec-empire.png" alt={doc.context_empire_alt} /> -->
 
   <Paragraph>{@html doc.context_suns}</Paragraph>
   <Image localUrl="illustrations/Simplified-Five-suns.png" alt={doc.context_suns_alt} />
