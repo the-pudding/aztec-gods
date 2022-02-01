@@ -6,7 +6,7 @@
   import Section from "$components/layout/Section.svelte";
   import doc from "$data/doc.json";
 
-  const imageRange = [0, 10640];
+  const imageRange = [0, 5320];
 </script>
 
 <Section fullBleed>
@@ -34,7 +34,7 @@
 <style>
   h3 {
     text-align: center;
-    margin: 10rem 1rem 0 1rem;
+    margin: 5rem 1rem 0 1rem;
     font-size: 2rem;
     line-height: 1;
     text-transform: uppercase;

@@ -32,7 +32,7 @@
     <svg
       width="100%"
       height="100%"
-      viewBox="0 0 10640 10640"
+      viewBox="0 0 {imageRange[1]} {imageRange[1]}"
       xmlns="http://www.w3.org/2000/svg"
       xml:space="preserve"
       style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;overflow:visible"
@@ -40,7 +40,14 @@
       <g mask={`url(#mask-${name})`}>{@html imgPath}</g>
 
       <mask transition:fade id={`mask-${name}`}>
-        <rect x="0" y="0" width="10640" height="10640" fill="white" fill-opacity={0.1} />
+        <rect
+          x="0"
+          y="0"
+          width={imageRange[1]}
+          height={imageRange[1]}
+          fill="white"
+          fill-opacity={0.1}
+        />
         {#each positions[selected] as m}
           <ellipse
             cx={scale(m.cx)}
@@ -62,7 +69,7 @@
           rx={scale(m.rx)}
           ry={scale(m.ry)}
           fill="none"
-          stroke-width="50"
+          stroke-width="40"
         />
       {/each}
     </svg>
