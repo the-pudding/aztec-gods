@@ -4,7 +4,7 @@
   import { onMount } from "svelte";
   import doc from "$data/doc.json";
 
-  import StepHorizontal from "$components/pantheon/StepHorizontal3.svelte";
+  import Step from "$components/pantheon/Step.svelte";
   import GodMeta from "$components/pantheon/GodMeta.svelte";
   import GodInfo from "$components/pantheon/GodInfo.svelte";
   import Section from "$components/layout/Section.svelte";
@@ -63,7 +63,7 @@
       <div class="on-top-of-viz" />
       <div class="scroll-area">
         {#each steps as step, i}
-          <StepHorizontal {step} selected={selected === i} />
+          <Step {step} selected={selected === i} />
         {/each}
       </div>
     </div>
