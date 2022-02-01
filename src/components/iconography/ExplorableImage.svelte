@@ -32,7 +32,7 @@
     <svg
       width="100%"
       height="100%"
-      viewBox="0 0 10640 10640"
+      viewBox="0 0 {imageRange[1]} {imageRange[1]}"
       xmlns="http://www.w3.org/2000/svg"
       xml:space="preserve"
       style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;overflow:visible"
@@ -40,7 +40,14 @@
       <g mask={`url(#mask-${name})`}>{@html imgPath}</g>
 
       <mask transition:fade id={`mask-${name}`}>
-        <rect x="0" y="0" width="10640" height="10640" fill="white" fill-opacity={0.1} />
+        <rect
+          x="0"
+          y="0"
+          width={imageRange[1]}
+          height={imageRange[1]}
+          fill="white"
+          fill-opacity={0.1}
+        />
         {#each positions[selected] as m}
           <ellipse
             cx={scale(m.cx)}
@@ -62,7 +69,7 @@
           rx={scale(m.rx)}
           ry={scale(m.ry)}
           fill="none"
-          stroke-width="50"
+          stroke-width="40"
         />
       {/each}
     </svg>
@@ -88,31 +95,23 @@
     margin: 0;
   }
   .description {
-    height: 60px;
-    margin: 1rem 0;
+    height: 90px;
+    margin: 1rem 0 0 0;
     text-align: center;
+    font-size: 1rem;
   }
-
-  /* button {
-    margin: 0 0.5rem 0.5rem 0;
-    background: #fff;
-    padding: 0.3rem 0.6rem;
-    border-radius: 2px;
-    border: 1px solid var(--color-highlight);
-    color: var(--color-highlight);
-
-    text-transform: uppercase;
-  }
-
-  button.selected {
-    background-color: var(--color-highlight);
-    color: var(--color-highlight-lighter);
-  } */
 
   ellipse {
     transition: cx 700ms, cy 700ms, rx 700ms, ry 700ms;
   }
   ellipse.circle-overlay {
     stroke: var(--color-highlight);
+  }
+
+  @media only screen and (min-width: 30em) {
+    .description {
+      height: 56px;
+      font-size: 1.25rem;
+    }
   }
 </style>

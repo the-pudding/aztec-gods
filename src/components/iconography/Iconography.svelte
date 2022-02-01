@@ -6,11 +6,12 @@
   import Section from "$components/layout/Section.svelte";
   import doc from "$data/doc.json";
 
-  const imageRange = [0, 10640];
+  const imageRange = [0, 5320];
 </script>
 
 <Section fullBleed>
-  <!-- FIXME: Add a hidden heading for a11y -->
+  <h2 class="hidden">Explorable Images of Tezcatlipoca and Tlaltecuhtli.</h2>
+  <h3>{@html doc.iconography_tezca}</h3>
   <ExplorableImage
     name="tezca"
     steps={doc["tezca-steps"]}
@@ -19,6 +20,7 @@
     positions={tezcaPositions}
     {imageRange}
   />
+  <h3>{@html doc.iconography_tlalte}</h3>
   <ExplorableImage
     name="tlatle"
     steps={doc["tlalte-steps"]}
@@ -28,3 +30,25 @@
     {imageRange}
   />
 </Section>
+
+<style>
+  h3 {
+    text-align: center;
+    margin: 5rem 1rem 0 1rem;
+    font-size: 2rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  @media only screen and (min-width: 30em) {
+    h3 {
+      font-size: 3rem;
+    }
+  }
+  @media only screen and (min-width: 50em) {
+    h3 {
+      font-size: 4rem;
+    }
+  }
+</style>
