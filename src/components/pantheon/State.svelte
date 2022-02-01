@@ -2,6 +2,7 @@
   import links from "$data/gods/tidy/links.json";
   import nodes from "$data/gods/tidy/nodes.json";
   import doc from "$data/doc.json";
+  import viewport from "$stores/viewport";
 
   import {
     FADE_SCALE,
@@ -145,19 +146,24 @@
   </div>
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
-    {#if $width > 0}
-      <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
-        <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
-        <slot name="chart-svg" />
-      </svg>
-      <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
-        <slot name="chart-html" />
-      </div>
-      <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
-        <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
-        <slot name="chart-svg-overlay" />
-      </svg>
-    {/if}
+    <div
+      class="chart-centered-container"
+      style="width:{$bounds.width}px; height:{$bounds.height}px;"
+    >
+      {#if $width > 0}
+        <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+          <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
+          <slot name="chart-svg" />
+        </svg>
+        <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
+          <slot name="chart-html" />
+        </div>
+        <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+          <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
+          <slot name="chart-svg-overlay" />
+        </svg>
+      {/if}
+    </div>
   </div>
 </div>
 
@@ -180,10 +186,14 @@
   }
   .info {
     /* background: hotpink; */
-    /* border: 2px solid hotpink; */
+    border: 2px solid hotpink;
   }
   .chart-wrapper {
     grid-area: viz-area;
+  }
+  .chart-centered-container {
+    margin: auto;
+    position: relative;
   }
   .chart-html,
   .chart-svg {
@@ -196,7 +206,6 @@
   .meta {
     grid-area: meta-area;
     /* border: 3px solid Orchid; */
-    /* height: 100%; */
     background-color: var(--color-background-4);
   }
   @media only screen and (min-width: 50em) {
