@@ -28,13 +28,16 @@
     bottom: 10,
     left: 10
   };
+  const controlledWidth = derived([width, viewport], ([$width, $viewport]) =>
+    Math.min($width, $viewport.height - 64 - margins.top - margins.bottom)
+  );
 
-  const bounds = derived([width], ([$width]) => ({
-    width: $width,
-    height: $width,
+  const bounds = derived([controlledWidth], ([$controlledWidth]) => ({
+    width: $controlledWidth,
+    height: $controlledWidth,
     margins,
-    chartWidth: $width - margins.left - margins.right,
-    chartHeight: $width - margins.top - margins.bottom
+    chartWidth: $controlledWidth - margins.left - margins.right,
+    chartHeight: $controlledWidth - margins.top - margins.bottom
   }));
 
   // Maximum domain extent of the force layout
