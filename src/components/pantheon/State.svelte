@@ -65,6 +65,16 @@
   };
   const interaction = createInteraction();
 
+  const createSelection = () => {
+    const { subscribe, set } = writable(undefined);
+    return {
+      subscribe,
+      highlight: (d) => set(d),
+      lowlight: () => set(undefined)
+    };
+  };
+  const selection = createSelection();
+
   // Keywords
   const createKeywordHighlight = () => {
     const { subscribe, set } = writable(undefined);
@@ -132,6 +142,7 @@
     fadeScale: FADE_SCALE,
     currentLinks,
     interaction,
+    selection,
     keyword,
     linkHighlight
   };
