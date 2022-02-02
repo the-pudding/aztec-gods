@@ -49,30 +49,33 @@
 
   // Interaction Parameters
   $: isHidden = storyMode && !isMain;
-  $: isHighlighted = $interaction === god.name;
+  $: highlightExists = $interaction !== undefined;
+  $: isHighlighted = highlightExists && $interaction === god.name;
+
   $: selectionExists = $selection !== undefined;
   $: isSelected = selectionExists && getName($selection) === god.name;
+
   $: isRelated = selectionExists && relatedGods.includes(god.name);
 
   // $: console.log("isRelated", isRelated);
   const getOpacity = (
     storyMode,
     isMain,
-    selection,
+    selectionExists,
     isSelected,
-    isRelated
-    // highlight,
-    // isHighlighted,
+    isRelated,
+    highlightExists,
+    isHighlighted
   ) => {
     // console.log(selection);
     if (storyMode && isMain) {
       return 1;
-    } else if (!storyMode && !selectionExists) {
+    } else if (!storyMode && !selectionExists && !highlightExists) {
       // No interaction
       return 1;
-    } else if (!storyMode && selection && (isSelected || isRelated)) {
+    } else if (!storyMode && (isSelected || isRelated || isHighlighted)) {
       return 1;
-    } else if (!storyMode && selection && !isSelected) {
+    } else if (!storyMode && !isSelected) {
       return 0.1;
     } else {
       return 0;
@@ -83,9 +86,9 @@
     isMain,
     selectionExists,
     isSelected,
-    isRelated
-    // $interaction,
-    // isHighlighted,
+    isRelated,
+    highlightExists,
+    isHighlighted
   );
   // storyMode && isMain
   //   ? 1
