@@ -116,13 +116,22 @@
   left:{isFullWidth ? $bounds.chartWidth / 2 + $bounds.margins.left : x}px; top:{isFullWidth
     ? $bounds.chartHeight / 2 + $bounds.margins.top
     : y}px; 
-  background-color: {color};
+  background-color: {!isMain ? color : variables.color.white};
   transform: translate(-50%, -50%);
   z-index: {isFullWidth ? 200 : 20};
   border: {borderWidth}px solid {color};
   opacity:{opacity};
   "
-/>
+>
+  {#if isMain}
+    {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id}.svg`)}
+      <span>Loading...</span>
+    {:then img}
+      <img src={img.src} alt={god.id} />
+    {/await}
+  {/if}
+</div>
+
 <!-- {isHighlighted ? `scale(1.3)` : `scale(1)`} -->
 
 <!-- background-image: {isMain ? `url(${img.src})` : 'unset'}; -->
