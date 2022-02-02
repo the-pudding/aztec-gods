@@ -1,11 +1,23 @@
 <script>
   export let step = "";
   export let selected = false;
+  export let activeStep = false;
 
   import TextButton from "$components/layout/TextButton.svelte";
   import { fade, fly } from "svelte/transition";
   import { getLightGodColor, getMainGodColor } from "$domain/getters";
 
+  // FIXME: should step be in in the State context
+  // to avoid finding selected God in the full list?
+  import nodes from "$data/gods/tidy/nodes.json";
+  // Highlighted God
+  $: god = nodes.find((n) => n.name === activeStep.id) ?? undefined;
+
+  $: mainContent = { subtitle: step.name, text: step.minibio };
+  $: godSource = god ? { subtitle: "source", text: god.source } : undefined;
+  $: godSpellings = god ? { subtitle: "other spellings", text: god.spellings } : undefined;
+
+  // Step content
   $: content = step.content
     ? step.content.flatMap((content, i) => {
         return content.subcontent.map((subcontent) => ({
@@ -15,16 +27,15 @@
       })
     : [];
 
-  $: texts = [{ subtitle: step.id, text: step.minibio }, ...content];
+  $: texts = god ? [mainContent, ...content, godSource, godSpellings] : [mainContent, ...content];
   $: items = texts.map((c, i) => {
     const previous = i > 0 ? texts[i - 1].subtitle : false;
     const next = i < texts.length - 1 ? texts[i + 1].subtitle : false;
     return { previous, next, ...c };
   });
 
+  // For horizontal navigation
   let visible = 0;
-
-  $: console.log(items);
 </script>
 
 <div class="step" data-step={step.id} class:selected>
@@ -40,16 +51,16 @@
           )};"
         >
           <div class="step-text" style="font-size: {i === 0 ? `1.2rem` : `1rem`}">
-            <div class="step-subtitle" style="color: {getMainGodColor(step.type)};">
-              {@html item.subtitle}
-            </div>
+            {#if item.subtitle}
+              <div class="step-subtitle" style="color: {getMainGodColor(step.type)};">
+                {@html item.subtitle}
+              </div>
+            {/if}
 
             {@html item.text}
           </div>
 
-          <div class="buttons" style="color: {getMainGodColor(step.type)};">
-            <!-- <div>
-              {#if item.previous} -->
+          <nav class="buttons" style="color: {getMainGodColor(step.type)};">
             <TextButton
               disabled={!item.previous}
               position="start"
@@ -59,10 +70,6 @@
                 visible = i - 1;
               }}
             />
-            <!-- {/if}
-            </div>
-            <div>
-              {#if item.next} -->
             <TextButton
               disabled={!item.next}
               position="end"
@@ -72,9 +79,7 @@
                 visible = i + 1;
               }}
             />
-            <!-- {/if} -->
-            <!-- </div> -->
-          </div>
+          </nav>
         </div>
       {/if}
     {/each}
