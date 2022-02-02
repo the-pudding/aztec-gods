@@ -36,8 +36,10 @@
     margin: 0;
     padding: 0;
   }
-  button:hover {
+  button:hover,
+  button:focus {
     text-decoration-thickness: 2px;
+    box-shadow: none;
   }
   button:disabled {
     cursor: unset;
