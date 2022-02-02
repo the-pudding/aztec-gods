@@ -4,7 +4,6 @@
   export let activeStep = false;
 
   import TextButton from "$components/layout/TextButton.svelte";
-  import StepResourceList from "$components/pantheon/StepResourceList.svelte";
 
   import { fade, fly } from "svelte/transition";
   import { getLightGodColor, getMainGodColor } from "$domain/getters";
