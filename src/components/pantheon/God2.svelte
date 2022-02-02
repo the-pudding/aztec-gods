@@ -27,10 +27,17 @@
     keyword
   } = getContext("chart-state");
 
-  $: relatedGods = [
+  $: selectionRelatedGods = [
     ...new Set(
       $currentLinks
         .filter((link) => $selection && getName(link.source) === getName($selection))
+        .map((d) => d.target.name)
+    )
+  ];
+  $: highlightRelatedGods = [
+    ...new Set(
+      $currentLinks
+        .filter((link) => $interaction && getName(link.source) === $interaction)
         .map((d) => d.target.name)
     )
   ];
@@ -40,24 +47,22 @@
   $: exploratoryMode = activeStep.type === "exploratory-mode";
   $: storyMode = explanatoryMode == exploratoryMode;
 
-  // $: console.log(storyMode, explanatoryMode, exploratoryMode);
-
   // God parameters
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
   $: isFullWidth = storyMode && activeStep.id === god.name;
-  $: name = getName(god);
 
   // Interaction Parameters
-  $: isHidden = storyMode && !isMain;
+
   $: highlightExists = $interaction !== undefined;
   $: isHighlighted = highlightExists && $interaction === god.name;
 
   $: selectionExists = $selection !== undefined;
   $: isSelected = selectionExists && getName($selection) === god.name;
 
-  $: isRelated = selectionExists && relatedGods.includes(god.name);
+  $: isRelated =
+    (selectionExists && selectionRelatedGods.includes(god.name)) ||
+    (highlightExists && highlightRelatedGods.includes(god.name));
 
-  // $: console.log("isRelated", isRelated);
   const getOpacity = (
     storyMode,
     isMain,
@@ -90,19 +95,7 @@
     highlightExists,
     isHighlighted
   );
-  // storyMode && isMain
-  //   ? 1
-  //   : !$keyword && !$selection && isMain
-  //   ? 1
-  //   : isHidden
-  //   ? 0
-  //   : !$keyword && !$selection
-  //   ? 1
-  //   : $keyword && !$selection
-  //   ? fadeScale(god[$keyword])
-  //   : ($selection && getName($selection) === name) || relatedGods.includes(name)
-  //   ? 1
-  //   : 0.1;
+
   // Geometric parameters
   $: rad = $radiusScale(getImportance(god));
   $: borderWidth = !isMain ? 0 : rad * 0.07;
