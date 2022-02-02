@@ -21,7 +21,7 @@
 
 <style>
   button {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     align-items: center;
 
@@ -43,5 +43,7 @@
   }
   button:disabled {
     cursor: unset;
+    pointer-events: none;
+    text-decoration-thickness: 1px;
   }
 </style>

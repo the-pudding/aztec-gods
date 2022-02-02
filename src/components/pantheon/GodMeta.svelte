@@ -2,17 +2,15 @@
   import doc from "$data/doc.json";
   import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
   import { getContext } from "svelte";
+  import TextButton from "$components/layout/TextButton.svelte";
 
   export let activeStep = doc.pantheon[0];
 
-  const { getName, linkHighlight, linkTypes } = getContext("chart-state");
+  const { linkHighlight, linkTypes, selection } = getContext("chart-state");
 
-  $: storyMode = activeStep.type !== "exploratory-mode";
-
-  // const dev = process.env.NODE_ENV === "development";
-  // $: promise = loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${activeStep.id}.png`);
-
-  // $: name = getName(god);
+  $: explanatoryMode = activeStep.type === "explanatory-mode";
+  $: exploratoryMode = activeStep.type === "exploratory-mode";
+  $: storyMode = explanatoryMode == exploratoryMode;
 </script>
 
 <div class="wrapper">
@@ -27,6 +25,12 @@
           {linkType}
         </button>
       {/each}
+
+      <TextButton
+        disabled={!$selection}
+        buttonLabel="Show all gods"
+        handleClick={() => selection.lowlight()}
+      />
     </fieldset>
 
     <div class="type-and-name" style="opacity: {!storyMode ? 0 : 1}">

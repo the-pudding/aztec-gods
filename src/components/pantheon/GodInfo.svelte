@@ -5,6 +5,7 @@
   import { getContext } from "svelte";
 
   import loadImage from "$utils/loadImage";
+  import TextButton from "$components/layout/TextButton.svelte";
 
   const dev = process.env.NODE_ENV === "development";
 
@@ -13,6 +14,8 @@
   const { getName, getImportance, selection, linkTypes } = getContext("chart-state");
 
   $: exploratoryMode = activeStep.id === "exploratory-mode";
+
+  let visible = "main-info";
 </script>
 
 <div class="wrapper">
@@ -28,43 +31,81 @@
       {/await}
     </div>
 
-    <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
-      {getGodImportanceLabel(getImportance($selection))}
-    </div>
-    <div class="name">{@html getName($selection)}</div>
-    <p class="minibio">{@html $selection.bio}</p>
-
-    <div class="illu-source">
-      <strong>Source of illustration:</strong>
-      {@html $selection.source}
-    </div>
-    <div class="other-spellings">
-      {#if $selection.spellings}
-        <strong>Other spellings:</strong>
-        {@html $selection.spellings}
+    <div class="god-info-details">
+      {#if visible === "main-info"}
+        <div>
+          <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
+            {getGodImportanceLabel(getImportance($selection))}
+          </div>
+          <div class="name">{@html getName($selection)}</div>
+          <p class="minibio">{@html $selection.bio}</p>
+        </div>
+        <TextButton
+          iconName="chevron-right"
+          position="end"
+          buttonLabel="details"
+          handleClick={() => (visible = "details")}
+        />
+      {:else}
+        <div>
+          <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
+            {getGodImportanceLabel(getImportance($selection))}
+          </div>
+          <div class="name">{@html getName($selection)}</div>
+          <div class="illu-source">
+            <span>Source of illustration:</span>
+            {@html $selection.source}
+          </div>
+          <div class="other-spellings">
+            {#if $selection.spellings}
+              <span>Other spellings:</span>
+              {@html $selection.spellings}
+            {/if}
+          </div>
+        </div>
+        <TextButton
+          iconName="chevron-left"
+          position="start"
+          buttonLabel="back"
+          handleClick={() => (visible = "main-info")}
+        />
       {/if}
     </div>
-    <button on:click={() => selection.lowlight()}>All Gods</button>
   {/if}
 </div>
 
 <style>
   .wrapper {
-    width: 100vw;
-    height: 100vh;
-
+    /* width: 100vw; */
+    height: calc(100vh - 64px);
+    padding: 2rem;
     display: none;
-    /* background: mediumpurple; */
+    background: var(--color-background-4);
   }
   .illustration {
-    width: 400px;
-    height: 400px;
+    height: 50%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     /* border: 2px solid aliceblue; */
+  }
+  .illustration img {
+    height: 100%;
+  }
+  .god-info-details {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* border: 1px solid greenyellow; */
+  }
+
+  .minibio,
+  .illu-source {
+    padding-top: 1rem;
   }
   .type {
     font-size: 0.7rem;
@@ -80,22 +121,24 @@
     text-align: center;
     text-transform: uppercase;
   }
-  .minibio {
-    height: 250px;
-    /* border: 1px solid greenyellow; */
-  }
   .other-spellings,
   .illu-source {
-    font-size: 0.65rem;
+    margin-bottom: 0.5rem;
+  }
+  .other-spellings span,
+  .illu-source span {
+    display: block;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.825rem;
+    color: var(--color-gray-dark);
   }
   @media only screen and (min-width: 50em) {
     .wrapper {
       display: block;
-      max-width: 400px;
-      max-height: 52em;
     }
     .type {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
     .name {
       font-size: 2.2rem;
