@@ -4,6 +4,8 @@
   export let activeStep = false;
 
   import TextButton from "$components/layout/TextButton.svelte";
+  import StepResourceList from "$components/pantheon/StepResourceList.svelte";
+
   import { fade, fly } from "svelte/transition";
   import { getLightGodColor, getMainGodColor } from "$domain/getters";
 
@@ -17,6 +19,19 @@
   $: godSource = god ? { subtitle: "source", text: god.source } : undefined;
   $: godSpellings = god ? { subtitle: "other spellings", text: god.spellings } : undefined;
 
+  const makeLinkList = (url, title, author) =>
+    `<li style="margin-bottom: .4rem;"><a href=${url}>${title}</a>, ${author}</li>`;
+
+  $: resources =
+    god && step.sources_group
+      ? {
+          subtitle: "resources",
+          text: `<ul>${step.sources_group
+            .map((s) => makeLinkList(s.url, s.title, s.author))
+            .join("")}</ul>`
+        }
+      : {};
+  // $: console.log(step.sources_group);
   // Step content
   $: content = step.content
     ? step.content.flatMap((content, i) => {
@@ -27,7 +42,9 @@
       })
     : [];
 
-  $: texts = god ? [mainContent, ...content, godSource, godSpellings] : [mainContent, ...content];
+  $: texts = god
+    ? [mainContent, ...content, godSource, godSpellings, resources]
+    : [mainContent, ...content];
   $: items = texts.map((c, i) => {
     const previous = i > 0 ? texts[i - 1].subtitle : false;
     const next = i < texts.length - 1 ? texts[i + 1].subtitle : false;
