@@ -55,51 +55,49 @@
 </script>
 
 <div class="step" data-step={step.id} class:selected>
-  <div class="step-inner">
-    {#each items as item, i}
-      {#if visible === i}
-        <!-- in:fly={{ x: 400, duration: 1000 }}
+  {#each items as item, i}
+    {#if visible === i}
+      <!-- in:fly={{ x: 400, duration: 1000 }}
       out:fly={{ x: -400, duration: 1000 }} -->
-        <div
-          class="step-item"
-          style="border-color: {getMainGodColor(step.type)}; background-color: {getLightGodColor(
-            step.type
-          )};"
-        >
-          <div class="step-text" style="font-size: {i === 0 ? `1.2rem` : `1rem`}">
-            {#if item.subtitle}
-              <div class="step-subtitle" style="color: {getMainGodColor(step.type)};">
-                {@html item.subtitle}
-              </div>
-            {/if}
+      <div
+        class="step-item"
+        style="border-color: {getMainGodColor(step.type)}; background-color: {getLightGodColor(
+          step.type
+        )};"
+      >
+        <div class="step-text" style="font-size: {i === 0 ? `1.2rem` : `1rem`}">
+          {#if item.subtitle}
+            <div class="step-subtitle" style="color: {getMainGodColor(step.type)};">
+              {@html item.subtitle}
+            </div>
+          {/if}
 
-            {@html item.text}
-          </div>
-
-          <nav class="buttons" style="color: {getMainGodColor(step.type)};">
-            <TextButton
-              disabled={!item.previous}
-              position="start"
-              iconName="chevron-left"
-              buttonLabel={item.previous}
-              handleClick={() => {
-                visible = i - 1;
-              }}
-            />
-            <TextButton
-              disabled={!item.next}
-              position="end"
-              iconName="chevron-right"
-              buttonLabel={item.next}
-              handleClick={() => {
-                visible = i + 1;
-              }}
-            />
-          </nav>
+          {@html item.text}
         </div>
-      {/if}
-    {/each}
-  </div>
+
+        <nav class="buttons" style="color: {getMainGodColor(step.type)};">
+          <TextButton
+            disabled={!item.previous}
+            position="start"
+            iconName="chevron-left"
+            buttonLabel={item.previous}
+            handleClick={() => {
+              visible = i - 1;
+            }}
+          />
+          <TextButton
+            disabled={!item.next}
+            position="end"
+            iconName="chevron-right"
+            buttonLabel={item.next}
+            handleClick={() => {
+              visible = i + 1;
+            }}
+          />
+        </nav>
+      </div>
+    {/if}
+  {/each}
 </div>
 
 <style>
@@ -107,6 +105,7 @@
     width: 100%;
     max-width: 24rem;
     margin: 40rem auto 2rem auto;
+    padding: 1rem;
 
     opacity: 0.4;
     transition: opacity 400ms;

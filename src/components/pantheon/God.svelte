@@ -3,7 +3,7 @@
 
   import { getContext } from "svelte";
   import loadImage from "$utils/loadImage";
-  import { getLightGodColor, getMainGodColor, getGodImportanceLabel } from "$domain/getters";
+  import { getMainGodColor } from "$domain/getters";
   import variables from "$data/variables.json";
 
   export let god;
@@ -20,129 +20,115 @@
     getImportance,
     interaction,
     selection,
-    fadeScale,
     linkHighlight,
     radiusScale,
-    currentLinks,
-    keyword
+    currentLinks
   } = getContext("chart-state");
 
-  $: relatedGods = [
+  $: selectionRelatedGods = [
     ...new Set(
       $currentLinks
         .filter((link) => $selection && getName(link.source) === getName($selection))
         .map((d) => d.target.name)
     )
   ];
+  $: highlightRelatedGods = [
+    ...new Set(
+      $currentLinks
+        .filter((link) => $interaction && getName(link.source) === $interaction)
+        .map((d) => d.target.name)
+    )
+  ];
 
-  $: storyMode = activeStep.id !== "exploratory-mode";
+  // Steps
+  $: explanatoryMode = activeStep.type === "explanatory-mode";
+  $: exploratoryMode = activeStep.type === "exploratory-mode";
+  $: storyMode = explanatoryMode == exploratoryMode;
+
+  // God parameters
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
-  $: layoutIsGeom = $linkHighlight === "geometric";
-  $: isHidden = layoutIsGeom && !isMain;
-  $: name = getName(god);
+  $: isFullWidth = storyMode && activeStep.id === god.name;
 
+  // Interaction Parameters
+  // Highlight = hover
+  // Selection = selected
+  $: highlightExists = $interaction !== undefined;
+  $: isHighlighted = highlightExists && $interaction === god.name;
+  $: isHighlightRelated = highlightExists && highlightRelatedGods.includes(god.name);
+
+  $: selectionExists = $selection !== undefined;
+  $: isSelected = selectionExists && getName($selection) === god.name;
+  $: isSelectionRelated = selectionExists && selectionRelatedGods.includes(god.name);
+  $: isRelated = isHighlightRelated || isSelectionRelated;
+  const getOpacity = (
+    storyMode,
+    isMain,
+    selectionExists,
+    isSelected,
+    isRelated,
+    highlightExists,
+    isHighlighted
+  ) => {
+    if (storyMode && isMain) {
+      return 1;
+    } else if (!storyMode && !selectionExists && !highlightExists) {
+      // No interaction
+      return 1;
+    } else if (!storyMode && (isSelected || isRelated || isHighlighted)) {
+      return 1;
+    } else if (!storyMode && !isSelected) {
+      return 0.1;
+    } else {
+      return 0;
+    }
+  };
+  $: opacity = getOpacity(
+    storyMode,
+    isMain,
+    selectionExists,
+    isSelected,
+    isRelated,
+    highlightExists,
+    isHighlighted
+  );
+
+  // Geometric parameters
   $: rad = $radiusScale(getImportance(god));
   $: borderWidth = !isMain ? 0 : rad * 0.07;
-  $: bgColor = !isMain ? variables.category.secondary : getLightGodColor(god.importance);
-  $: opacity =
-    storyMode && isMain
-      ? 1
-      : !$keyword && !$selection && layoutIsGeom && isMain
-      ? 1
-      : isHidden
-      ? 0
-      : !$keyword && !$selection
-      ? 1
-      : $keyword && !$selection
-      ? fadeScale(god[$keyword])
-      : ($selection && getName($selection) === name) || relatedGods.includes(name)
-      ? 1
-      : 0.1;
-  $: blur = `unset`;
-  // !storyMode || (storyMode && activeStep.id === "intro")
-  //   ? "unset"
-  //   : activeStep.id === god.name
-  //   ? `unset`
-  //   : activeStep.type === god.importance
-  //   ? `blur(1px)`
-  //   : `blur(4px)`;
-
-  $: isScaled = storyMode && activeStep.id === god.name;
-
-  $: isHighlighted = $interaction === god.name;
+  $: color =
+    selectionExists && (isSelected || isSelectionRelated)
+      ? variables.color.secondary
+      : !isMain
+      ? variables.category.secondary
+      : getMainGodColor(god.importance);
 
   $: x = $xScale(god[$linkHighlight].x) + $bounds.margins.left;
   $: y = $yScale(god[$linkHighlight].y) + $bounds.margins.top;
 </script>
 
-{#if isMain}
-  {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id}.svg`)}
-    <div
-      class="god"
-      style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
-        ? $bounds.chartHeight * FACTOR
-        : rad}px; 
-  left:{x}px; top:{y}px; 
-  opacity:{opacity};
-  background-color: {bgColor};
-  filter: {blur};
-  transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
-  z-index: {isScaled ? 200 : 20};
-  border: {borderWidth}px solid {getMainGodColor(god.importance)};
-  "
-    >
-      {isMain ? name : ""}
-    </div>
-  {:then img}
-    <div
-      class="god"
-      style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
-        ? $bounds.chartHeight * FACTOR
-        : rad}px; 
-  left:{isScaled ? $bounds.chartWidth / 2 + $bounds.margins.left : x}px; top:{isScaled
-        ? $bounds.chartHeight / 2 + $bounds.margins.top
-        : y}px; 
-  background-color: {bgColor};
-  filter: {blur};
-  transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
-  z-index: {isScaled ? 200 : 20};
-  border: {borderWidth}px solid {getMainGodColor(god.importance)};
-  background-image: {isMain ? `url(${img.src})` : 'unset'};
+<div
+  class="god"
+  style="width:{isFullWidth ? $bounds.chartWidth * FACTOR : rad}px; height:{isFullWidth
+    ? $bounds.chartHeight * FACTOR
+    : rad}px; 
+  left:{isFullWidth ? $bounds.chartWidth / 2 + $bounds.margins.left : x}px; top:{isFullWidth
+    ? $bounds.chartHeight / 2 + $bounds.margins.top
+    : y}px; 
+  background-color: {!isMain ? color : variables.color.white};
+  transform: translate(-50%, -50%);
+  z-index: {isFullWidth ? 200 : 20};
+  border: {borderWidth}px solid {color};
   opacity:{opacity};
   "
-    />
-  {:catch}
-    <div
-      class="god"
-      style="width:{isScaled ? $bounds.chartWidth * FACTOR : rad}px; height:{isScaled
-        ? $bounds.chartHeight * FACTOR
-        : rad}px; 
-left:{x}px; top:{y}px; 
-opacity:{opacity};
-background-color: {bgColor};
-filter: {blur};
-transform: translate(-50%, -50%) {isHighlighted ? `scale(1.3)` : `scale(1)`};
-z-index: {isScaled ? 200 : 20};
-border: {borderWidth}px solid {getMainGodColor(god.importance)};
-"
-    />
-  {/await}
-{:else}
-  <div
-    class="god"
-    style="width:{isScaled ? $bounds.chartWidth : rad}px; height:{isScaled
-      ? $bounds.chartHeight
-      : rad}px; 
-left:{x}px; top:{y}px; 
-opacity:{opacity};
-background-color: {bgColor};
-filter: {blur};
-transform: translate(-50%, -50%) {isScaled ? 'scale(1.5)' : 'scale(1)'};
-z-index: {isScaled ? 200 : 20};
-border: {borderWidth}px solid {getMainGodColor(god.importance)};
-"
-  />
-{/if}
+>
+  {#if isMain}
+    {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id}.svg`)}
+      <span>Loading...</span>
+    {:then img}
+      <img src={img.src} alt={god.id} />
+    {/await}
+  {/if}
+</div>
 
 <style>
   .god {
@@ -155,7 +141,7 @@ border: {borderWidth}px solid {getMainGodColor(god.importance)};
     align-items: center;
     background-size: cover;
     transition: opacity 500ms, transform 500ms, border-width 500ms, left 1000ms, top 1000ms,
-      width 1000ms, height 1000ms, filter 500ms;
+      width 1000ms, height 1000ms;
 
     pointer-events: none;
   }
