@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import God from "./God.svelte";
+  import God from "./God2.svelte";
   import doc from "$data/doc.json";
 
   export let activeStep = doc.pantheon[0];
