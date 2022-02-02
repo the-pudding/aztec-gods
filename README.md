@@ -1,3 +1,11 @@
+# Data
+
+**3 steps**
+
+- Download the source file `src/data/gods/raw/light-db.tsv` from [https://docs.google.com/spreadsheets/d/19BskUgohmPi5cZPRRct9RLiSl3fSDXhwQAQcXtCoSNk/edit#gid=0](this Google Spreadsheet) (owned by Gwendal Uguen),
+- Run the script `src/data/gods/processing.R` to shape the data file and write the files `gods.json` and `relations.json` in `src/data/gods/tidy`.
+- `npm run make-layout` will finally create the data files actually used in the app. `nodes.json` and `links.json` contain all information about Gods and their relationships, plus layout coordinates, some calculated using d3-force.
+
 # Svelte Starter
 
 This [starter template](https://github.com/the-pudding/svelte-starter) aims for fast and easy web development speficially for data-driven and visual stories. It is an opinionated template built on top of [SvelteKit](https://kit.svelte.dev/).
@@ -41,6 +49,7 @@ Modify content in `src` and `static/assets`.
 ## Deploy
 
 If you are hosting the project on a subdirectory, set it in `package.json` under the `pudding.subdirectory` property. Example: `https://pudding.cool/2021/01/test` then put `"subdirectory": "/2021/01/test"`.
+
 ```bash
 npm run build
 ```
