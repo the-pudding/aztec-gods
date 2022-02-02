@@ -107,6 +107,7 @@
     width: 100%;
     max-width: 24rem;
     margin: 40rem auto 2rem auto;
+    padding: 1rem;
 
     opacity: 0.4;
     transition: opacity 400ms;
