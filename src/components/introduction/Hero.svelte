@@ -17,10 +17,4 @@
   h1 {
     text-align: center;
   }
-  .hero {
-    /* height: 100vh; */
-  }
-  .hero img {
-    width: 100%;
-  }
 </style>

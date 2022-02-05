@@ -8,9 +8,16 @@
 </script>
 
 {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/${localUrl}`)}
-  <span>Loading {alt}</span>
+  <div>Loading {alt}</div>
 {:then img}
   <img src={img.src} {alt} />
 {:catch error}
   {console.warn(error)}
 {/await}
+
+<style>
+  div,
+  img {
+    margin: 0 auto;
+  }
+</style>
