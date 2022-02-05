@@ -10,7 +10,7 @@
 <Section id="article-sources">
   <h2>{doc.sources_title}</h2>
   {#each doc.codices as p}
-    <p>{@html p.text}</p>
+    <p>{@html p}</p>
   {/each}
 
   <!-- {#each doc.sources as group}
