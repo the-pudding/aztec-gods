@@ -1,13 +1,15 @@
 <script context="module">
   import doc from "$data/doc.json";
   import Section from "$components/layout/Section.svelte";
+  import Image from "$components/layout/Image.svelte";
 </script>
 
-<Section fullbleed>
+<Section fullBleed>
   <div class="hero">
-    <h1>
+    <Image localUrl="img/hero.png" alt="hero" />
+    <!-- <h1>
       {doc.title}
-    </h1>
+    </h1> -->
   </div>
 </Section>
 
@@ -16,6 +18,9 @@
     text-align: center;
   }
   .hero {
-    height: 100vh;
+    /* height: 100vh; */
+  }
+  .hero img {
+    width: 100%;
   }
 </style>
