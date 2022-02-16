@@ -21,8 +21,12 @@
       {getLinkTypeLabel(linkType)}
     </button>
   {/each}
+  <TextButton
+    disabled={!$selection}
+    buttonLabel="Show all gods"
+    handleClick={() => selection.lowlight()}
+  />
 </fieldset>
-
 <!-- <TextButton
         disabled={!$selection}
         buttonLabel="Show all gods"
@@ -46,7 +50,7 @@
 
 <!-- <div /> -->
 <style>
-  .wrapper {
+  fieldset.wrapper {
     position: relative;
     padding: 1rem;
     margin: 0;

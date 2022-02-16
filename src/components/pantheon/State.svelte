@@ -3,6 +3,7 @@
   import nodes from "$data/gods/tidy/nodes.json";
   import doc from "$data/doc.json";
   import viewport from "$stores/viewport";
+  import TextButton from "$components/layout/TextButton.svelte";
 
   import {
     FADE_SCALE,
@@ -156,7 +157,6 @@
   </div>
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
-    <!-- FIXME: Add "Show all god" button here -->
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
