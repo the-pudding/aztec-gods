@@ -5,9 +5,11 @@
 </script>
 
 <div class="step step-pantheon" class:selected>
-  <div class="step-title">
-    {@html step.id}
-  </div>
+  {#if step.title}
+    <div class="step-title">
+      {@html step.title}
+    </div>
+  {/if}
   <div class="step-text">{@html step.text}</div>
 </div>
 
