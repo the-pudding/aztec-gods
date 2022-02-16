@@ -1,6 +1,7 @@
 <script context="module">
   export const prerender = true;
-  import Iconography from "$components/iconography/Iconography.svelte";
+  import ScrollyImage from "$components/iconography/ScrollyImage.svelte";
+  // import ScrollableTlatle from "$components/iconography/ScrollableTlatle.svelte";
   import Hero from "$components/introduction/Hero.svelte";
   import Intro from "$components/introduction/Intro.svelte";
   import Scrolly from "$components/pantheon/Scrolly.svelte";
@@ -13,10 +14,12 @@
 
 <Intro />
 
-<Iconography />
+<ScrollyImage moduleName="Tezca" />
 
-<ContextualElements />
+<ScrollyImage moduleName="Tlalte" />
 
-<Scrolly />
+<!-- <ContextualElements /> -->
+
+<!-- <Scrolly /> -->
 
 <Sources />
