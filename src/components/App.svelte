@@ -1,22 +1,32 @@
 <script context="module">
   export const prerender = true;
+  import Sources from "$components/colophon/Sources.svelte";
   import ScrollyImage from "$components/iconography/ScrollyImage.svelte";
   import Hero from "$components/introduction/Hero.svelte";
-  import Intro from "$components/introduction/Intro.svelte";
-  import Scrolly from "$components/pantheon/Scrolly.svelte";
-  import Sources from "$components/colophon/Sources.svelte";
-
-  import ContextualElements from "$components/ContextualElements.svelte";
+  import Heading from "$components/layout/Heading.svelte";
+  import Paragraph from "$components/layout/Paragraph.svelte";
+  import Section from "$components/layout/Section.svelte";
+  import Pantheon from "$components/pantheon/Scrolly.svelte";
+  import doc from "$data/doc.json";
 </script>
 
 <Hero />
 
-<Intro />
+<Section id="intro">
+  {#each doc.introduction as p}
+    <Paragraph>{@html p}</Paragraph>
+  {/each}
+
+  <Heading>{@html doc.iconography_title}</Heading>
+  {#each doc.iconography as p}
+    <Paragraph>{@html p.text}</Paragraph>
+  {/each}
+</Section>
 
 <ScrollyImage moduleName="Tezca" />
 
 <ScrollyImage moduleName="Tlalte" />
 
-<Scrolly />
+<Pantheon />
 
 <Sources />
