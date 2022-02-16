@@ -38,7 +38,7 @@
       .onStepEnter(handleStepEnter);
   });
 
-  $: storyMode = activeStep.id !== "exploratory-mode";
+  // $: storyMode = activeStep.id !== "exploratory-mode";
 </script>
 
 <svelte:window />

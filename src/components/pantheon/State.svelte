@@ -190,7 +190,7 @@
     position: relative;
     /* height: 100vh; */
 
-    border-bottom: 3px solid var(--color-highlight);
+    /* border-bottom: 3px solid var(--color-highlight); */
   }
   .info {
     position: relative;

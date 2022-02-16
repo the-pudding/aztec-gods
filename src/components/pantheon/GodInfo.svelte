@@ -80,9 +80,9 @@
     height: calc(100vh - 64px);
     padding: 2rem;
     display: none;
-    background: var(--color-background-4);
 
-    border-left: 3px solid var(--color-highlight);
+    /* background: var(--color-background-4);
+    border-left: 3px solid var(--color-highlight); */
   }
   .illustration {
     height: 50%;

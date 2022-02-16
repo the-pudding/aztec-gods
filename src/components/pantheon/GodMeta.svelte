@@ -56,9 +56,9 @@
     justify-content: center;
     align-items: center;
 
-    border-bottom: 3px solid var(--color-highlight);
+    /* border-bottom: 3px solid var(--color-highlight);
 
-    background-color: var(--color-background-4);
+    background-color: var(--color-background-4); */
   }
 
   button {
