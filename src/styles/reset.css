@@ -186,10 +186,9 @@ button {
   border: 1px solid var(--color-highlight);
   color: var(--color-highlight);
   text-transform: uppercase;
-
   font-size: 0.7rem;
   padding: 0.1rem 0.2rem;
-  margin: 0 0.1rem 0.1rem 0;
+  margin: 0;
 }
 
 button:hover {
@@ -209,14 +208,12 @@ button.selected {
 @media only screen and (min-width: 30em) {
   button {
     font-size: 0.825rem;
-    margin: 0 0.3rem 0.3rem 0;
     padding: 0.3rem 0.6rem;
   }
 }
 @media only screen and (min-width: 50em) {
   button {
     font-size: 1rem;
-    margin: 0 0.5rem 0.5rem 0;
     padding: 0.3rem 0.6rem;
   }
 }

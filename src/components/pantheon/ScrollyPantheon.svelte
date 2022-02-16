@@ -31,9 +31,9 @@
 
     scroller
       .setup({
-        step: "div .step",
+        step: "div .step-pantheon",
         // debug: true,
-        offset: 0.7
+        offset: 0.5
       })
       .onStepEnter(handleStepEnter);
   });
@@ -54,7 +54,7 @@
         </g>
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
-          <Overlay noPointerEvents={storyMode} />
+          <Overlay noPointerEvents={false} />
         </g>
       </State>
     </figure>
@@ -80,6 +80,7 @@
     /* padding: 0 0.5rem; */
   }
   figure {
+    /* background: orange; */
     position: -webkit-sticky;
     position: sticky;
 
