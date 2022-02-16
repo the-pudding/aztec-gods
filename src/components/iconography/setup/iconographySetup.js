@@ -85,7 +85,7 @@ export const tezcaPositions = {
   ]
 };
 
-export const tlatlePosition = {
+export const tlaltePositions = {
   claws: [
     {
       cx: 0.89,

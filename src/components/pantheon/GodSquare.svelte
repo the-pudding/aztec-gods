@@ -16,7 +16,6 @@
   export let color;
   export let borderWidth;
 
-  $: console.log(god.id, duration);
   $: tweenParameters = {
     delay: 0,
     duration: duration,
