@@ -55,7 +55,7 @@ export const getLinkTypeLabel = (linkType) => {
     case "allLinks":
       return "All relations";
     case "cooperation":
-      return "Cooperation";
+      return "Equality";
     case "authority":
       return "Authority";
     case "aspect":

@@ -152,14 +152,14 @@ const calculateForceLayout = async (relation) => {
 const getLayoutCoordinates = async () => {
   const geometric = [...gods].map((god) => getGeometricPositions(god.name));
   const allLinks = await calculateForceLayout(undefined);
-  const cooperation = await calculateForceLayout("cooperation");
+  const equality = await calculateForceLayout("cooperation");
   const authority = await calculateForceLayout("authority");
   const aspect = await calculateForceLayout("aspect");
 
   const nodes = gods.map((god, i) => ({
     geometric: geometric[i],
     allLinks: allLinks.coord[i],
-    cooperation: cooperation.coord[i],
+    equality: equality.coord[i],
     authority: authority.coord[i],
     aspect: aspect.coord[i],
     ...god
@@ -167,7 +167,7 @@ const getLayoutCoordinates = async () => {
   const linksCoord = {
     geometric: [], // No links for geometric layout
     allLinks: allLinks.links,
-    cooperation: cooperation.links,
+    equality: equality.links,
     authority: authority.links,
     aspect: aspect.links
   };
