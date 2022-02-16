@@ -1,7 +1,8 @@
 <script context="module">
   export const prerender = true;
   import Sources from "$components/colophon/Sources.svelte";
-  import ScrollyImage from "$components/iconography/ScrollyImage.svelte";
+  import ScrollyTezca from "$components/iconography/ScrollyTezca.svelte";
+  import ScrollyTlalte from "$components/iconography/ScrollyTlalte.svelte";
   import Hero from "$components/introduction/Hero.svelte";
   import Heading from "$components/layout/Heading.svelte";
   import Paragraph from "$components/layout/Paragraph.svelte";
@@ -23,9 +24,9 @@
   {/each}
 </Section>
 
-<ScrollyImage moduleName="Tezca" />
+<ScrollyTezca />
 
-<ScrollyImage moduleName="Tlalte" />
+<ScrollyTlalte />
 
 <Section id="transition-to-pantheon">
   {#each doc.iconography_transition as p}

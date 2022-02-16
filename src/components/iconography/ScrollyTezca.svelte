@@ -1,11 +1,9 @@
 <script>
   import { onMount } from "svelte";
 
-  export let moduleName = "Tezca";
-
   let Scrolly;
   onMount(async () => {
-    const module = await import(`./${moduleName}.svelte`);
+    const module = await import(`./Tezca.svelte`);
     Scrolly = module.default;
   });
 </script>
