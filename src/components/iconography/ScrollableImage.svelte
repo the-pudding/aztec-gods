@@ -48,9 +48,11 @@
       <div class="scroll-area">
         {#each steps as step, i}
           <div class="step step-{title}" class:selected={selected === i}>
-            <div class="step-title">
-              {@html step.id}
-            </div>
+            {#if step.title}
+              <div class="step-title">
+                {@html step.title}
+              </div>
+            {/if}
             <div class="step-text">{@html step.text}</div>
           </div>
         {/each}
@@ -90,11 +92,11 @@
   }
   h3 {
     text-align: center;
-
     font-size: 2rem;
     line-height: 1.4;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.1em;
+    font-weight: 500;
   }
   .scroll-wrapper {
     position: relative;
