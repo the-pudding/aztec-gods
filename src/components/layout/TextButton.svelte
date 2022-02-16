@@ -45,5 +45,6 @@
     cursor: unset;
     pointer-events: none;
     text-decoration-thickness: 1px;
+    opacity: 0.2;
   }
 </style>

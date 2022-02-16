@@ -3,8 +3,9 @@
   import doc from "$data/doc.json";
   import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
   import { getContext } from "svelte";
-
   import loadImage from "$utils/loadImage";
+  import DomainChart from "$components/pantheon/DomainChart.svelte";
+  import DomainHeatmap from "$components/pantheon/DomainHeatmap.svelte";
   import TextButton from "$components/layout/TextButton.svelte";
 
   const dev = process.env.NODE_ENV === "development";
@@ -16,6 +17,8 @@
   $: exploratoryMode = activeStep.id === "exploratory-mode";
 
   let visible = "main-info";
+
+  $: console.log($selection);
 </script>
 
 <div class="wrapper">
@@ -38,6 +41,8 @@
             {getGodImportanceLabel(getImportance($selection))}
           </div>
           <div class="name">{@html getName($selection)}</div>
+          <!-- <DomainChart god={$selection} /> -->
+          <DomainHeatmap god={$selection} />
           <p class="minibio">{@html $selection.bio}</p>
         </div>
         <TextButton
@@ -80,9 +85,9 @@
     height: calc(100vh - 64px);
     padding: 2rem;
     display: none;
-    background: var(--color-background-4);
 
-    border-left: 3px solid var(--color-highlight);
+    /* background: var(--color-background-4);
+    border-left: 3px solid var(--color-highlight); */
   }
   .illustration {
     height: 50%;
@@ -107,7 +112,7 @@
 
   .minibio,
   .illu-source {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
   }
   .type {
     font-size: 0.7rem;
@@ -119,9 +124,10 @@
   .name {
     font-size: 1rem;
     line-height: 1.2;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-align: center;
     text-transform: uppercase;
+    word-break: break-all;
   }
   .other-spellings,
   .illu-source {
