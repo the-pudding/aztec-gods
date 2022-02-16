@@ -13,8 +13,6 @@
     "nature",
     "pleasure"
   ];
-
-  const RATIO = 10;
 </script>
 
 <div>
