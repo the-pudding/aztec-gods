@@ -50,6 +50,21 @@ export const getGodImportanceLabel = (importance) => {
   }
 };
 
+export const getLinkTypeLabel = (linkType) => {
+  switch (linkType) {
+    case "allLinks":
+      return "All relations";
+    case "cooperation":
+      return "Cooperation";
+    case "authority":
+      return "Authority";
+    case "aspect":
+      return "Aspect";
+    default:
+      return linkType;
+  }
+};
+
 export const getLabel = (id) => {
   switch (id) {
     case "face":

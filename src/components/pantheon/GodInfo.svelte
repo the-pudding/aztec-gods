@@ -19,7 +19,7 @@
 </script>
 
 <div class="wrapper">
-  {#if exploratoryMode && $selection}
+  {#if $selection}
     <!-- < show all Gods -->
     <div class="illustration" transition:fade>
       {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
@@ -81,6 +81,8 @@
     padding: 2rem;
     display: none;
     background: var(--color-background-4);
+
+    border-left: 3px solid var(--color-highlight);
   }
   .illustration {
     height: 50%;

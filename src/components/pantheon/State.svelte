@@ -156,6 +156,7 @@
   </div>
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
+    <!-- FIXME: Add "Show all god" button here -->
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
@@ -182,20 +183,19 @@
     /* background-color: forestgreen; */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 64px 1fr;
     grid-template-areas:
       "meta-area"
       "viz-area";
 
     position: relative;
+    /* height: 100vh; */
 
-    /* border: 3px solid green; */
-    height: 100vh;
-
-    /* padding-bottom: 1rem; */
+    border-bottom: 3px solid var(--color-highlight);
   }
   .info {
     position: relative;
+    z-index: 50;
+    width: 100%;
     /* background: hotpink; */
     /* border: 2px solid hotpink; */
 
@@ -220,13 +220,12 @@
 
   .meta {
     grid-area: meta-area;
-    /* border: 3px solid Orchid; */
-    background-color: var(--color-background-4);
+    position: relative;
+    z-index: 300;
   }
   @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: 64px 1fr;
       grid-template-areas:
         "meta-area meta-area"
         "viz-area info-area";

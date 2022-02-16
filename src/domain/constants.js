@@ -20,7 +20,7 @@ export const KEYWORDS = [
   "nature",
   "pleasure"
 ];
-export const LINK_TYPES = ["geometric", "allLinks", "cooperation", "authority", "aspect"];
+export const LINK_TYPES = ["allLinks", "cooperation", "authority", "aspect"];
 
 // Scales
 export const GOD_COLORS = scaleOrdinal()
