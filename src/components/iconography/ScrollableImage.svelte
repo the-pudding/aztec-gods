@@ -48,7 +48,10 @@
       <div class="scroll-area">
         {#each steps as step, i}
           <div class="step step-{title}" class:selected={selected === i}>
-            {step.id}
+            <div class="step-title">
+              {@html step.id}
+            </div>
+            <div class="step-text">{@html step.text}</div>
           </div>
         {/each}
       </div>
@@ -99,10 +102,10 @@
   .step {
     width: 100%;
     max-width: 24rem;
-    margin: 40rem auto 2rem auto;
+    margin: 30rem auto 2rem auto;
     padding: 1rem;
 
-    opacity: 0.4;
+    opacity: 0.3;
     transition: opacity 400ms;
 
     pointer-events: all;
@@ -114,11 +117,26 @@
   .selected {
     opacity: 1;
   }
+  .step-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 1.5rem;
+    border-bottom: 3px solid var(--color-highlight);
+    padding: 1rem 0;
+  }
+  .step-text {
+    font-size: 1.3rem;
+
+    padding: 1rem 0;
+  }
   @media only screen and (min-width: 30em) {
     h3 {
       font-size: 3rem;
     }
   }
   @media only screen and (min-width: 50em) {
+    .step {
+      margin: 50rem auto 2rem auto;
+    }
   }
 </style>
