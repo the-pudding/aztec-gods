@@ -30,6 +30,7 @@
 
 <ScrollyTezca />
 
+<Heading>{@html doc.library_title}</Heading>
 <Section id="transition-to-pantheon">
   {#each doc.iconography_transition as p, i}
     <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
@@ -38,7 +39,7 @@
 
 <!-- PANTHEON -->
 <Section id="pantheon">
-  <h2>{@html doc.pantheon_title}</h2>
+  <Heading>{@html doc.pantheon_title}</Heading>
 </Section>
 
 <Pantheon />
