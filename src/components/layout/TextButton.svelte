@@ -29,6 +29,7 @@
     border: none;
 
     text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
     font-size: 0.825rem;
 
     color: currentColor;

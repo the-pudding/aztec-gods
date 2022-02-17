@@ -73,11 +73,14 @@
 
 <style>
   .wrapper {
-    /* width: 100vw; */
-    height: calc(100vh - 64px);
-    padding: 2rem;
+    /* background-color: orange; */
+    height: calc(100vh - 80px);
+    padding: 1rem 2rem;
     display: none;
 
+    overflow: scroll;
+
+    margin-bottom: 1rem;
     /* background: var(--color-background-4);
     border-left: 3px solid var(--color-highlight); */
   }
