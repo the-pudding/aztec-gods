@@ -55,6 +55,7 @@
   $: highlightExists = $interaction !== undefined;
   $: isHighlighted = highlightExists && $interaction === god.name;
   $: isHighlightRelated = highlightExists && highlightRelatedGods.includes(god.name);
+  $: isBigger = $selection && isHighlighted;
 
   $: selectionExists = $selection !== undefined;
   $: isSelected = selectionExists && getName($selection) === god.name;
@@ -104,24 +105,22 @@
 
   $: x = $xScale(god[$linkHighlight].x) + $bounds.margins.left;
   $: y = $yScale(god[$linkHighlight].y) + $bounds.margins.top;
+
+  const biggerSize = 70;
 </script>
 
 <div
   class="god"
-  style="width:{isFullWidth ? $bounds.chartWidth * FACTOR : rad}px; height:{isFullWidth
-    ? $bounds.chartHeight * FACTOR
-    : rad}px; 
-  left:{isFullWidth ? $bounds.chartWidth / 2 + $bounds.margins.left : x}px; top:{isFullWidth
-    ? $bounds.chartHeight / 2 + $bounds.margins.top
-    : y}px; 
-  background-color: {!isMain ? color : variables.color.white};
+  style="width:{isBigger ? biggerSize : rad}px; height:{isBigger ? biggerSize : rad}px; 
+  left:{x}px; top:{y}px; 
+  background-color: {!isMain && !isBigger && !isSelected ? color : variables.color.white};
   transform: translate(-50%, -50%);
-  z-index: {isFullWidth ? 200 : 20};
+  z-index: {isBigger ? 200 : 20};
   border: {borderWidth}px solid {color};
   opacity:{opacity};
   "
 >
-  {#if isMain}
+  {#if isMain || isBigger || isSelected}
     {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id}.svg`)}
       <span>Loading...</span>
     {:then img}
@@ -140,8 +139,8 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
-    transition: opacity 500ms, transform 500ms, border-width 500ms, left 1000ms, top 1000ms,
-      width 1000ms, height 1000ms;
+    transition: opacity 500ms, transform 500ms, border-width 500ms, left 500ms, top 500ms,
+      width 500ms, height 500ms;
 
     pointer-events: none;
   }
