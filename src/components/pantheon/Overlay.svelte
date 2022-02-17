@@ -41,6 +41,8 @@
   //   selection.highlight(god);
   // };
 
+  // Manage interaction on overlay paths
+
   $: selectionRelatedGods = [
     ...new Set(
       $currentLinks

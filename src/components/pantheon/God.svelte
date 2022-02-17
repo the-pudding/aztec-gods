@@ -47,7 +47,6 @@
 
   // God parameters
   $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
-  $: isFullWidth = storyMode && activeStep.id === god.name;
 
   // Interaction Parameters
   // Highlight = hover
