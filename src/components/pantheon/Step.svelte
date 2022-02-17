@@ -28,6 +28,9 @@
     position: relative;
     z-index: 50;
   }
+  .step:first-child {
+    margin-top: 0;
+  }
   .step:last-child {
     margin-bottom: 140vh;
   }
