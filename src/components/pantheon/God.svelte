@@ -121,9 +121,11 @@
 >
   {#if isMain || isBigger || isSelected}
     {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id}.svg`)}
-      <span>Loading...</span>
+      <span />
     {:then img}
       <img src={img.src} alt={god.id} />
+    {:catch}
+      <span>No image</span>
     {/await}
   {/if}
 </div>
