@@ -24,3 +24,9 @@
     ? 1
     : 0}
 />
+
+<style>
+  line {
+    transition: stroke-opacity 200ms;
+  }
+</style>
