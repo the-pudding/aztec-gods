@@ -26,9 +26,9 @@
   {/each}
 </Section>
 
-<ScrollyTezca />
-
 <ScrollyTlalte />
+
+<ScrollyTezca />
 
 <Section id="transition-to-pantheon">
   {#each doc.iconography_transition as p, i}
