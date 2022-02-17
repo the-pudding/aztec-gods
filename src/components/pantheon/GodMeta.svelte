@@ -23,7 +23,7 @@
   {/each}
   <TextButton
     disabled={!$selection}
-    buttonLabel="Show all gods"
+    buttonLabel="Reset selection"
     handleClick={() => selection.lowlight()}
   />
 </fieldset>
