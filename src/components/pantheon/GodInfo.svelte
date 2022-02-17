@@ -1,24 +1,16 @@
 <script>
-  import { fade } from "svelte/transition";
-  import doc from "$data/doc.json";
-  import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
-  import { getContext } from "svelte";
-  import loadImage from "$utils/loadImage";
-  import DomainChart from "$components/pantheon/DomainChart.svelte";
-  import DomainHeatmap from "$components/pantheon/DomainHeatmap.svelte";
   import TextButton from "$components/layout/TextButton.svelte";
+  import DomainHeatmap from "$components/pantheon/DomainHeatmap.svelte";
+  import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
+  import loadImage from "$utils/loadImage";
+  import { getContext } from "svelte";
+  import { fade } from "svelte/transition";
 
   const dev = process.env.NODE_ENV === "development";
 
-  export let activeStep = doc.pantheon[0];
-
-  const { getName, getImportance, selection, linkTypes } = getContext("chart-state");
-
-  $: exploratoryMode = activeStep.id === "exploratory-mode";
+  const { getName, getImportance, selection } = getContext("chart-state");
 
   let visible = "main-info";
-
-  $: console.log($selection);
 </script>
 
 <div class="wrapper">
@@ -81,11 +73,14 @@
 
 <style>
   .wrapper {
-    /* width: 100vw; */
-    height: calc(100vh - 64px);
-    padding: 2rem;
+    /* background-color: orange; */
+    height: calc(100vh - 80px);
+    padding: 1rem 2rem;
     display: none;
 
+    overflow: scroll;
+
+    margin-bottom: 1rem;
     /* background: var(--color-background-4);
     border-left: 3px solid var(--color-highlight); */
   }

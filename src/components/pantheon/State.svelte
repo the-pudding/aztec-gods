@@ -195,13 +195,6 @@
   .info {
     position: relative;
     z-index: 50;
-    width: 100%;
-    /* background: hotpink; */
-    /* border: 2px solid hotpink; */
-
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
   }
   .chart-wrapper {
     grid-area: viz-area;

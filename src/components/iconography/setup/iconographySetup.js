@@ -1,8 +1,16 @@
 // Positions of masks on the explorable images
-// as percentage of width for cx and r,
-// as percentage of height for cy
+// as percentage of width for cx and rx,
+// as percentage of height for cy and ry
 
 export const tezcaPositions = {
+  intro: [
+    {
+      cx: 0.5,
+      cy: 0.5,
+      rx: 0.49,
+      ry: 0.49
+    }
+  ],
   colors: [
     {
       cx: 0.5,
@@ -79,13 +87,21 @@ export const tezcaPositions = {
     {
       cx: 0.5,
       cy: 0.5,
-      rx: 0.0,
-      ry: 0.0
+      rx: 0.49,
+      ry: 0.49
     }
   ]
 };
 
 export const tlaltePositions = {
+  intro: [
+    {
+      cx: 0.5,
+      cy: 0.5,
+      rx: 0.49,
+      ry: 0.49
+    }
+  ],
   claws: [
     {
       cx: 0.89,

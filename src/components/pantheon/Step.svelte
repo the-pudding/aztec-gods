@@ -15,9 +15,9 @@
 
 <style>
   .step {
-    width: 100%;
-    max-width: 24rem;
-    margin: 30rem auto 2rem auto;
+    /* width: 100%; */
+
+    margin: 30rem 1rem 2rem 1rem;
     padding: 1rem;
 
     background-color: var(--color-background-4);
@@ -27,6 +27,9 @@
     pointer-events: all;
     position: relative;
     z-index: 50;
+  }
+  .step:first-child {
+    margin-top: 0;
   }
   .step:last-child {
     margin-bottom: 140vh;
@@ -49,7 +52,7 @@
 
   @media only screen and (min-width: 50em) {
     .step {
-      margin: 50rem auto 2rem auto;
+      margin: 50rem 1rem 2rem 1rem;
     }
   }
 </style>

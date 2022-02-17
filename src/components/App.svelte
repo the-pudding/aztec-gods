@@ -14,29 +14,32 @@
 <Hero />
 
 <Section id="intro">
-  {#each doc.introduction as p}
-    <Paragraph>{@html p}</Paragraph>
-  {/each}
-
-  <Heading>{@html doc.iconography_title}</Heading>
-  {#each doc.iconography as p}
-    <Paragraph>{@html p.text}</Paragraph>
+  {#each doc.introduction as p, i}
+    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
   {/each}
 </Section>
 
-<ScrollyTezca />
+<Section id="iconography">
+  <Heading>{@html doc.iconography_title}</Heading>
+  {#each doc.iconography as p, i}
+    <Paragraph hasCap={i === 0}>{@html p.text}</Paragraph>
+  {/each}
+</Section>
 
 <ScrollyTlalte />
 
+<ScrollyTezca />
+
+<Heading>{@html doc.library_title}</Heading>
 <Section id="transition-to-pantheon">
-  {#each doc.iconography_transition as p}
-    <Paragraph>{@html p}</Paragraph>
+  {#each doc.iconography_transition as p, i}
+    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
   {/each}
 </Section>
 
 <!-- PANTHEON -->
 <Section id="pantheon">
-  <h2>{@html doc.pantheon_title}</h2>
+  <Heading>{@html doc.pantheon_title}</Heading>
 </Section>
 
 <Pantheon />

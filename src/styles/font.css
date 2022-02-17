@@ -12,6 +12,21 @@
 
 /*
 ********************
+	Aztec
+********************
+*/
+
+@font-face {
+  font-family: "Aztec 2 Web";
+  src: url("./assets/fonts/aztec/CCAztechClunk W00 Regular.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+/*
+********************
 	National
 ********************
 */

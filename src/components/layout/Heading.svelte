@@ -2,10 +2,21 @@
 
 <style>
   h2 {
-    margin: 2rem 0 0.5rem 0;
-    font-size: 2rem;
+    margin: 2rem 0 2rem 0;
+    font-size: 3rem;
     line-height: 1.2;
     text-transform: uppercase;
+    text-align: center;
+  }
+
+  h2::after {
+    display: block;
+    content: "";
+    background: var(--color-highlight);
+    height: 3px;
+    width: 200px;
+    margin: 1.5rem auto 2rem;
+    border-radius: 2px;
   }
 
   /* @media only screen and (min-width: 30em) {
