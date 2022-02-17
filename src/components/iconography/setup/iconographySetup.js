@@ -3,6 +3,14 @@
 // as percentage of height for cy
 
 export const tezcaPositions = {
+  intro: [
+    {
+      cx: 0.5,
+      cy: 0.5,
+      rx: 0.49,
+      ry: 0.49
+    }
+  ],
   colors: [
     {
       cx: 0.5,
@@ -86,6 +94,14 @@ export const tezcaPositions = {
 };
 
 export const tlaltePositions = {
+  intro: [
+    {
+      cx: 0.5,
+      cy: 0.5,
+      rx: 0.51,
+      ry: 0.51
+    }
+  ],
   claws: [
     {
       cx: 0.89,
