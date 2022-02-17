@@ -9,7 +9,7 @@
 </script>
 
 <line
-  in:fade={{ delay: 500, duration: 500 }}
+  in:fade={{ delay: 700, duration: 300 }}
   out:fade={{ duration: 100 }}
   x1={$xScale(link.source.x)}
   y1={$yScale(link.source.y)}
@@ -24,10 +24,3 @@
     ? 1
     : 0}
 />
-
-<style>
-  line,
-  g {
-    /* transition: stroke-opacity 500ms, x1 500ms, x2 500ms, y1 500ms, y2 500ms; */
-  }
-</style>
