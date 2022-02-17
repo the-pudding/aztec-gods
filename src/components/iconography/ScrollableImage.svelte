@@ -113,6 +113,9 @@
     pointer-events: all;
     position: relative;
   }
+  .step:first-child {
+    margin-top: 15rem;
+  }
   .step:last-child {
     margin-bottom: 140vh;
   }
