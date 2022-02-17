@@ -20,7 +20,7 @@
     margin: 30rem 1rem 2rem 1rem;
     padding: 1rem;
 
-    background-color: var(--color-background-4);
+    background-color: var(--color-background);
     opacity: 0.3;
     transition: opacity 400ms;
 

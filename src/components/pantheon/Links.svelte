@@ -2,8 +2,6 @@
   import Link from "$components/pantheon/Link.svelte";
   import { getContext } from "svelte";
   const { bounds, currentLinks, linkHighlight } = getContext("chart-state");
-
-  // $: console.log($currentLinks);
 </script>
 
 <g data-name="links" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>

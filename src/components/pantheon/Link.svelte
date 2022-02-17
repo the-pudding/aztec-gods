@@ -6,6 +6,8 @@
     getContext("chart-state");
 
   export let link;
+
+  $: isSelected = $selection && getName($selection) === getName(link.source);
 </script>
 
 <line
@@ -15,18 +17,14 @@
   y1={$yScale(link.source.y)}
   x2={$xScale(link.target.x)}
   y2={$yScale(link.target.y)}
-  stroke={$selection && getName($selection) === getName(link.source)
-    ? variables.color.secondary
-    : variables.color.highlight}
-  stroke-width={$selection && getName($selection) === getName(link.source) ? 2 : 2}
-  stroke-opacity={($selection && getName($selection) === getName(link.source)) ||
-  ($interaction && $interaction === getName(link.source))
-    ? 1
-    : 0}
+  stroke={isSelected ? variables.color.secondary : variables.color.highlight}
+  stroke-width={isSelected ? 2 : 2}
+  stroke-opacity={isSelected || ($interaction && $interaction === getName(link.source)) ? 1 : 0}
 />
 
 <style>
   line {
     transition: stroke-opacity 200ms;
+    mix-blend-mode: multiply;
   }
 </style>
