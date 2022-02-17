@@ -14,13 +14,15 @@
 <Hero />
 
 <Section id="intro">
-  {#each doc.introduction as p}
-    <Paragraph>{@html p}</Paragraph>
+  {#each doc.introduction as p, i}
+    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
   {/each}
+</Section>
 
+<Section id="iconography">
   <Heading>{@html doc.iconography_title}</Heading>
-  {#each doc.iconography as p}
-    <Paragraph>{@html p.text}</Paragraph>
+  {#each doc.iconography as p, i}
+    <Paragraph hasCap={i === 0}>{@html p.text}</Paragraph>
   {/each}
 </Section>
 
@@ -29,8 +31,8 @@
 <ScrollyTlalte />
 
 <Section id="transition-to-pantheon">
-  {#each doc.iconography_transition as p}
-    <Paragraph>{@html p}</Paragraph>
+  {#each doc.iconography_transition as p, i}
+    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
   {/each}
 </Section>
 
