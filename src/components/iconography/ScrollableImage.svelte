@@ -8,6 +8,8 @@
 
   export let title = "Tezcatlipoca";
   export let name = "mask-name";
+  export let source = "illustration source";
+  export let sourceUrl = undefined;
   export let imgPath = "";
   export let selected = "";
   export let steps = [];
@@ -39,13 +41,22 @@
 <Section id="gods-iconography-{title}" fullBleed>
   <div id="scrolly">
     <figure>
-      <h3>{@html title}</h3>
       <MaskedImage {name} selected={activeStep.id} {imgPath} {positions} {imageRange} />
+      <div class="illustration-source">
+        {#if sourceUrl}
+          <a href={sourceUrl}>{@html source}</a>
+        {:else}
+          {@html source}
+        {/if}
+      </div>
     </figure>
 
     <div class="scroll-wrapper">
       <div class="on-top-of-viz" />
       <div class="scroll-area">
+        <div class="god-name">
+          <h3>{@html title}</h3>
+        </div>
         {#each steps as step, i}
           <div class="step step-{title}" class:selected={selected === i}>
             {#if step.title}
@@ -90,22 +101,57 @@
     transform: translate3d(0, 0, 0);
     z-index: 0;
   }
-  h3 {
+  .scroll-wrapper {
+    position: relative;
+  }
+
+  .scroll-area {
+    position: relative;
+  }
+  .god-name {
+    background-color: var(--color-background);
+    position: sticky;
+    left: 0;
+    top: 0;
+
+    padding: 1rem;
+
+    z-index: 2;
+
     text-align: center;
+  }
+  /* .god-name span {
+    font-style: italic;
+  } */
+  .illustration-source {
+    width: 100%;
+    font-size: 0.8rem;
+    line-height: 1;
+    font-style: italic;
+  }
+  h3 {
     font-size: 2rem;
     line-height: 1.4;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 500;
   }
-  .scroll-wrapper {
-    position: relative;
-  }
+
+  /* h3::after {
+    display: block;
+    content: "";
+    background: var(--color-highlight);
+    height: 3px;
+    width: 200px;
+    margin: 1.5rem auto 2rem;
+    border-radius: 2px;
+  } */
+
   .step {
     width: 100%;
-    max-width: 24rem;
+    /* max-width: 24rem; */
     margin: 30rem auto 2rem auto;
-    padding: 1rem;
+    padding: 1rem 1rem;
 
     opacity: 0.3;
     transition: opacity 400ms;
@@ -117,7 +163,7 @@
     margin-top: 15rem;
   }
   .step:last-child {
-    margin-bottom: 140vh;
+    margin-bottom: 100vh;
   }
   .selected {
     opacity: 1;

@@ -10,6 +10,8 @@
 
 <ScrollableImage
   title="Tezcatlipoca"
+  source={doc.source_tezca_label}
+  sourceUrl={doc.source_tezca_url}
   name="tezca"
   imgPath={tezca}
   selected={0}
