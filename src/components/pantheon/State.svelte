@@ -164,6 +164,13 @@
   </div>
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
+    <div class="reset-button">
+      <TextButton
+        disabled={!$selection}
+        buttonLabel="Reset selection"
+        handleClick={() => selection.lowlight()}
+      />
+    </div>
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
@@ -222,6 +229,13 @@
     grid-area: meta-area;
     position: relative;
     z-index: 300;
+  }
+
+  .reset-button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
   }
   @media only screen and (min-width: 50em) {
     .wrapper {

@@ -17,11 +17,11 @@
       {getLinkTypeLabel(linkType)}
     </button>
   {/each}
-  <TextButton
+  <!-- <TextButton
     disabled={!$selection}
     buttonLabel="Reset selection"
     handleClick={() => selection.lowlight()}
-  />
+  /> -->
 </fieldset>
 
 <style>
