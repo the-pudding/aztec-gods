@@ -98,10 +98,6 @@
   };
   const linkHighlight = createLinkHighlight();
 
-  $: linkHighlight.highlight(activeStep.layout);
-
-  $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
-
   // Scales
   $: xScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
     let domain = $linkHighlight === "geometric" ? [0, 1] : [-mapOuterDomain, mapOuterDomain];
@@ -125,6 +121,17 @@
   });
 
   $: _nodes = writable(nodes);
+
+  // state updates on scroll
+  $: linkHighlight.highlight(activeStep.layout);
+  $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
+  $: if (activeStep.selected !== "") {
+    let god = $_nodes.find((node) => node.name === activeStep.selected);
+    selection.highlight(god);
+  } else {
+    selection.highlight(undefined);
+  }
+  $: console.log($_nodes.find((node) => node.name === activeStep.selected));
 
   // Context
   $: context = {
