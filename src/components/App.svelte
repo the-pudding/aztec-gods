@@ -8,6 +8,7 @@
   import Paragraph from "$components/layout/Paragraph.svelte";
   import Section from "$components/layout/Section.svelte";
   import Pantheon from "$components/pantheon/Pantheon.svelte";
+  import VisualLibrary from "$components/visual-library/VisualLibrary.svelte";
   import doc from "$data/doc.json";
 </script>
 
@@ -30,12 +31,15 @@
 
 <ScrollyTezca />
 
+<!-- LIBRARY -->
 <Heading>{@html doc.library_title}</Heading>
 <Section id="transition-to-pantheon">
-  {#each doc.iconography_transition as p, i}
+  {#each doc.library as p, i}
     <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
   {/each}
 </Section>
+
+<VisualLibrary />
 
 <!-- PANTHEON -->
 <Section id="pantheon">
