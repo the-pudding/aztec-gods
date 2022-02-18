@@ -50,6 +50,37 @@
     padding: 1rem 0;
   }
 
+  :global(.primordial) {
+    padding: 0 0.3rem;
+    border-radius: 2px;
+    color: var(--color-white);
+    background-color: var(--category-primordial);
+  }
+  :global(.creation) {
+    padding: 0 0.3rem;
+    border-radius: 2px;
+    color: var(--color-white);
+    background-color: var(--category-creation);
+  }
+  :global(.elemental) {
+    padding: 0 0.3rem;
+    border-radius: 2px;
+    color: var(--color-white);
+    background-color: var(--category-elemental);
+  }
+  :global(.human) {
+    padding: 0 0.3rem;
+    border-radius: 2px;
+    color: var(--color-white);
+    background-color: var(--category-human);
+  }
+  :global(.secondary) {
+    padding: 0 0.3rem;
+    border-radius: 2px;
+    color: var(--color-white);
+    background-color: var(--category-secondary);
+  }
+
   @media only screen and (min-width: 50em) {
     .step {
       margin: 50rem 1rem 2rem 1rem;
