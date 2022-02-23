@@ -122,7 +122,7 @@
   "
 >
   {#if isMain || isBigger || isSelected}
-    {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id}.svg`)}
+    {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id.toLowerCase()}.svg`)}
       <span />
     {:then img}
       <img src={img.src} alt={god.id} />
