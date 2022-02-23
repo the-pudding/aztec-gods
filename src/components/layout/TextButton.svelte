@@ -30,7 +30,7 @@
 
     text-decoration: underline;
     text-decoration-color: var(--color-highlight);
-    font-size: 0.825rem;
+    font-size: 1rem;
 
     color: currentColor;
 
