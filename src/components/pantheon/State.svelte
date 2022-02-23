@@ -131,7 +131,6 @@
   } else {
     selection.highlight(undefined);
   }
-  $: console.log($_nodes.find((node) => node.name === activeStep.selected));
 
   // Context
   $: context = {
