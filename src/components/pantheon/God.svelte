@@ -112,7 +112,9 @@
   class="god"
   style="width:{isBigger ? biggerSize : rad}px; height:{isBigger ? biggerSize : rad}px; 
   left:{x}px; top:{y}px; 
-  background-color: {!isMain && !isBigger && !isSelected ? color : variables.color.white};
+  background-color: {isBigger || isSelected || (isMain && isSelectionRelated)
+    ? variables.color.white
+    : color};
   transform: translate(-50%, -50%);
   z-index: {isBigger ? 200 : 20};
   border: {borderWidth}px solid {color};
@@ -130,6 +132,7 @@
   {/if}
 </div>
 
+<!-- background-color: {!isMain && !isBigger && !isSelected ? color : variables.color.white}; -->
 <style>
   .god {
     position: absolute;
