@@ -125,7 +125,7 @@
   } */
   .illustration-source {
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1;
     font-style: italic;
   }
