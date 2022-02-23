@@ -38,7 +38,7 @@
       .onStepEnter(handleStepEnter);
   });
 
-  // $: storyMode = activeStep.id !== "exploratory-mode";
+  $: allowInteraction = activeStep.type === "exploratory-mode";
 </script>
 
 <svelte:window />
@@ -54,7 +54,7 @@
         </g>
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
-          <Overlay noPointerEvents={false} />
+          <Overlay noPointerEvents={!allowInteraction} />
         </g>
       </State>
     </figure>
