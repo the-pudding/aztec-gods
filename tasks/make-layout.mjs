@@ -95,7 +95,7 @@ const calculateForceLayout = async () => {
       "Illustration source": "source",
       "Aspects (other gods that can change into or him/her or share similar domains)": "aspect"
     })
-    .derive({ name: (d) => op.trim(d.name) })
+    .derive({ name: (d) => op.trim(d.name), id: (d) => op.trim(d.id) })
     .filter((d) => d.id !== "cihuateteo")
     .derive({
       fertility: (d) => (op.match(d.field, "fertility") ? 1 : 0),
