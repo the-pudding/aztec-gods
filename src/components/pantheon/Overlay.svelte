@@ -22,8 +22,8 @@
   // Overlay Logic
   $: delaunay = Delaunay.from(
     $nodes,
-    (d) => $xScale(d[$linkHighlight].x),
-    (d) => $yScale(d[$linkHighlight].y)
+    (d) => $xScale(d.x),
+    (d) => $yScale(d.y)
   );
   $: voronoi = delaunay.voronoi([0, 0, $bounds.chartWidth, $bounds.chartHeight]);
 
@@ -45,7 +45,7 @@
 
   $: selectionRelatedGods = [
     ...new Set(
-      $currentLinks
+      currentLinks
         .filter((link) => $selection && getName(link.source) === getName($selection))
         .map((d) => d.target.name)
     )

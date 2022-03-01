@@ -10,10 +10,7 @@
 <fieldset class="wrapper">
   <legend class="hidden">{@html doc.pantheon_control_map}</legend>
   {#each linkTypes as linkType}
-    <button
-      on:click={() => linkHighlight.highlight(linkType)}
-      class:selected={linkType === $linkHighlight}
-    >
+    <button on:click={() => linkHighlight.highlight(linkType)} class:selected={true}>
       {getLinkTypeLabel(linkType)}
     </button>
   {/each}

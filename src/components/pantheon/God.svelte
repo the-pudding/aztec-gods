@@ -27,14 +27,14 @@
 
   $: selectionRelatedGods = [
     ...new Set(
-      $currentLinks
+      currentLinks
         .filter((link) => $selection && getName(link.source) === getName($selection))
         .map((d) => d.target.name)
     )
   ];
   $: highlightRelatedGods = [
     ...new Set(
-      $currentLinks
+      currentLinks
         .filter((link) => $interaction && getName(link.source) === $interaction)
         .map((d) => d.target.name)
     )
@@ -102,8 +102,8 @@
       ? variables.category.secondary
       : getMainGodColor(god.importance);
 
-  $: x = $xScale(god[$linkHighlight].x) + $bounds.margins.left;
-  $: y = $yScale(god[$linkHighlight].y) + $bounds.margins.top;
+  $: x = $xScale(god.x) + $bounds.margins.left;
+  $: y = $yScale(god.y) + $bounds.margins.top;
 
   const biggerSize = 70;
 </script>
