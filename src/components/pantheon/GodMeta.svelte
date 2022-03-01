@@ -1,17 +1,18 @@
 <script>
   import TextButton from "$components/layout/TextButton.svelte";
   import doc from "$data/doc.json";
-  import { getLinkTypeLabel } from "$domain/getters";
+  import { getFieldLabel } from "$domain/getters";
   import { getContext } from "svelte";
-
-  const { linkHighlight, linkTypes, selection } = getContext("chart-state");
+  import Search from "$components/pantheon/Search.svelte";
+  const { keyword } = getContext("chart-state");
+  import { FIELDS } from "$domain/constants";
 </script>
 
 <fieldset class="wrapper">
   <legend class="hidden">{@html doc.pantheon_control_map}</legend>
-  {#each linkTypes as linkType}
-    <button on:click={() => linkHighlight.highlight(linkType)} class:selected={true}>
-      {getLinkTypeLabel(linkType)}
+  {#each FIELDS as field}
+    <button class:selected={$keyword === field} on:click={() => keyword.highlight(field)}>
+      {getFieldLabel(field)}
     </button>
   {/each}
   <!-- <TextButton
@@ -19,6 +20,7 @@
     buttonLabel="Reset selection"
     handleClick={() => selection.lowlight()}
   /> -->
+  <Search />
 </fieldset>
 
 <style>
