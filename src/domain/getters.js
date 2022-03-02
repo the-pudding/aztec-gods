@@ -64,6 +64,28 @@ export const getLinkTypeLabel = (linkType) => {
       return linkType;
   }
 };
+export const getFieldLabel = (field) => {
+  switch (field) {
+    case "fertility":
+      return "fertility";
+    case "subsistence":
+      return "subsistence";
+    case "trade":
+      return "trade";
+    case "pleasure":
+      return "pleasure";
+    case "destruction":
+      return "destruction";
+    case "death":
+      return "death";
+    case "war":
+      return "war";
+    case "magic":
+      return "magic";
+    default:
+      return field;
+  }
+};
 
 export const getLabel = (id) => {
   switch (id) {

@@ -20,7 +20,18 @@ export const KEYWORDS = [
   "nature",
   "pleasure"
 ];
-export const LINK_TYPES = ["allLinks", "equality", "authority", "aspect"];
+
+export const FIELDS = [
+  "fertility",
+  "subsistence",
+  "trade",
+  "pleasure",
+  "destruction",
+  "death",
+  "war",
+  "magic"
+];
+export const LINK_TYPES = ["aspect"];
 
 // Scales
 export const GOD_COLORS = scaleOrdinal()

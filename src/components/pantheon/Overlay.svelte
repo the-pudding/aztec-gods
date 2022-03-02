@@ -53,11 +53,12 @@
 </script>
 
 <g data-name="overlay" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>
+  <!-- class:no-event={noPointerEvents ||
+        ($selection && !selectionRelatedGods.includes(getName(node)))} -->
   {#each $nodes as node, i}
     <path
-      class:no-event={noPointerEvents ||
-        ($selection && !selectionRelatedGods.includes(getName(node)))}
       d={voronoi.renderCell(i)}
+      class:no-event={noPointerEvents}
       fill="hotpink"
       fill-opacity={debug ? 0.2 : 0}
       stroke={debug ? "white" : "none"}

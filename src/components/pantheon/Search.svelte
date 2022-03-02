@@ -25,6 +25,7 @@
   :global(.autocomplete-input) {
     border: 0px solid var(--color-highlight);
     background-color: var(--color-background-2);
+    color: var(--color-gray-dark);
     border-radius: 2px;
     font-size: 1rem;
     padding: 0.3rem 0.6rem;

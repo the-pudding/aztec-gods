@@ -3,7 +3,6 @@
   import doc from "$data/doc.json";
   import { getFieldLabel } from "$domain/getters";
   import { getContext } from "svelte";
-  import Search from "$components/pantheon/Search.svelte";
   const { keyword } = getContext("chart-state");
   import { FIELDS } from "$domain/constants";
 </script>
@@ -15,12 +14,8 @@
       {getFieldLabel(field)}
     </button>
   {/each}
-  <!-- <TextButton
-    disabled={!$selection}
-    buttonLabel="Reset selection"
-    handleClick={() => selection.lowlight()}
-  /> -->
-  <Search />
+
+  <TextButton disabled={!$keyword} buttonLabel="Reset" handleClick={() => keyword.lowlight()} />
 </fieldset>
 
 <style>

@@ -22,7 +22,8 @@
     selection,
     linkHighlight,
     radiusScale,
-    currentLinks
+    currentLinks,
+    keyword
   } = getContext("chart-state");
 
   $: selectionRelatedGods = [
@@ -60,38 +61,42 @@
   $: isSelected = selectionExists && getName($selection) === god.name;
   $: isSelectionRelated = selectionExists && selectionRelatedGods.includes(god.name);
   $: isRelated = isHighlightRelated || isSelectionRelated;
-  const getOpacity = (
-    storyMode,
-    isMain,
-    selectionExists,
-    isSelected,
-    isRelated,
-    highlightExists,
-    isHighlighted
-  ) => {
-    if (storyMode && isMain) {
-      return 1;
-    } else if (!storyMode && !selectionExists && !highlightExists) {
-      // No interaction
-      return 1;
-    } else if (!storyMode && (isSelected || isRelated || isHighlighted)) {
-      return 1;
-    } else if (!storyMode && !isSelected) {
-      return 0.1;
-    } else {
-      return 0;
-    }
-  };
-  $: opacity = getOpacity(
-    storyMode,
-    isMain,
-    selectionExists,
-    isSelected,
-    isRelated,
-    highlightExists,
-    isHighlighted
-  );
 
+  $: fieldIsSelected = god[$keyword] === 1;
+
+  // const getOpacity = (
+  //   storyMode,
+  //   isMain,
+  //   selectionExists,
+  //   isSelected,
+  //   isRelated,
+  //   highlightExists,
+  //   isHighlighted
+  // ) => {
+  //   if (storyMode && isMain) {
+  //     return 1;
+  //   } else if (!storyMode && !selectionExists && !highlightExists) {
+  //     // No interaction
+  //     return 1;
+  //   } else if (!storyMode && (isSelected || isRelated || isHighlighted)) {
+  //     return 1;
+  //   } else if (!storyMode && !isSelected) {
+  //     return 0.1;
+  //   } else {
+  //     return 0;
+  //   }
+  // };
+  // $: opacity = getOpacity(
+  //   storyMode,
+  //   isMain,
+  //   selectionExists,
+  //   isSelected,
+  //   isRelated,
+  //   highlightExists,
+  //   isHighlighted
+  // );
+
+  $: opacity = $keyword && !fieldIsSelected && !isHighlighted ? 0.1 : 1;
   // Geometric parameters
   $: rad = $radiusScale(getImportance(god));
   $: borderWidth = !isMain ? 0 : rad * 0.07;
@@ -105,23 +110,23 @@
   $: x = $xScale(god.x) + $bounds.margins.left;
   $: y = $yScale(god.y) + $bounds.margins.top;
 
-  const biggerSize = 70;
+  // const biggerSize = 70;
 </script>
 
 <div
   class="god"
-  style="width:{isBigger ? biggerSize : rad}px; height:{isBigger ? biggerSize : rad}px; 
+  style="width:{rad}px; height:{rad}px; 
   left:{x}px; top:{y}px; 
-  background-color: {isBigger || isSelected || (isMain && isSelectionRelated)
+  background-color: {isHighlighted || isSelected || (isMain && isSelectionRelated)
     ? variables.color.white
     : color};
   transform: translate(-50%, -50%);
-  z-index: {isBigger ? 200 : 20};
+  z-index: {isHighlighted ? 200 : 20};
   border: {borderWidth}px solid {color};
   opacity:{opacity};
   "
 >
-  {#if isMain || isBigger || isSelected}
+  {#if isMain || isHighlighted || isSelected}
     {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id.toLowerCase()}.svg`)}
       <span />
     {:then img}

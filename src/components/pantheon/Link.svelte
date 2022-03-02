@@ -18,14 +18,14 @@ out:fade={{ duration: 100 }} -->
   x2={$xScale(link.target.x)}
   y2={$yScale(link.target.y)}
   stroke={isSelected ? variables.color.secondary : variables.color.highlight}
-  stroke-width={isSelected ? 2 : 2}
-  stroke-opacity={isSelected ? 1 : 0.1}
+  stroke-width={2}
+  stroke-opacity={isSelected ? 1 : 0}
 />
 
 <!-- stroke-opacity={isSelected || ($interaction && $interaction === getName(link.source)) ? 1 : 0} -->
 <style>
   line {
-    transition: stroke-opacity 200ms;
+    /* transition: stroke-opacity 200ms; */
     mix-blend-mode: multiply;
   }
 </style>

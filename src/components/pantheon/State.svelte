@@ -83,7 +83,7 @@
     };
   };
   const keyword = createKeywordHighlight();
-  $: console.log("keyword: ", $keyword);
+  $: console.log("keyword:", $keyword);
 
   // Scales
   $: xScale = derived([bounds], ([$bounds]) => {
@@ -137,19 +137,15 @@
 </script>
 
 <div class="wrapper" data-name="wrapper-in-state">
-  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
   <div class="info" data-name="info-in-state">
     <slot name="info" />
   </div>
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
-    <div class="reset-button">
-      <TextButton
-        disabled={!$selection}
-        buttonLabel="Reset selection"
-        handleClick={() => selection.lowlight()}
-      />
-    </div>
+    <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
+    <!-- <div class="reset-button">
+      
+    </div> -->
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
@@ -220,8 +216,7 @@
     .wrapper {
       grid-template-columns: 2fr 1fr;
       grid-template-areas:
-        "meta-area meta-area"
-        "viz-area info-area";
+        /* "viz-area info-area" */ "viz-area info-area";
     }
   }
 </style>
