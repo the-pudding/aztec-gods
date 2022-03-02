@@ -20,16 +20,16 @@
   {/each}
 </Section>
 
-<!-- <Section id="iconography">
+<Section id="iconography">
   <Heading>{@html doc.iconography_title}</Heading>
   {#each doc.iconography as p, i}
     <Paragraph hasCap={i === 0}>{@html p.text}</Paragraph>
   {/each}
-</Section> -->
+</Section>
 
-<!-- <ScrollyTlalte /> -->
+<ScrollyTlalte />
 
-<!-- <ScrollyTezca /> -->
+<ScrollyTezca />
 
 <!-- LIBRARY -->
 <Heading>{@html doc.library_title}</Heading>
@@ -39,7 +39,7 @@
   {/each}
 </Section>
 
-<!-- <VisualLibrary /> -->
+<VisualLibrary />
 
 <!-- PANTHEON -->
 <Section id="pantheon">
