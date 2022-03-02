@@ -43,13 +43,10 @@
   }));
 
   // Maximum domain extent of the force layout
-  $: allX = LINK_TYPES.filter((t) => t !== "geometric").flatMap((type) =>
-    nodes.map((d) => d[type].x)
-  );
+  $: allX = nodes.map((d) => d.x);
+
   $: xMax = max(allX, (d) => Math.abs(d));
-  $: allY = LINK_TYPES.filter((t) => t !== "geometric").flatMap((type) =>
-    nodes.map((d) => d[type].y)
-  );
+  $: allY = nodes.map((d) => d.y);
   $: yMax = max(allY, (d) => Math.abs(d));
   $: mapOuterDomain = Math.max(xMax, yMax);
 
@@ -86,45 +83,28 @@
     };
   };
   const keyword = createKeywordHighlight();
-
-  // Links
-  const createLinkHighlight = () => {
-    const { subscribe, set } = writable("geometric");
-    return {
-      subscribe,
-      highlight: (d) => set(d),
-      lowlight: () => set(undefined)
-    };
-  };
-  const linkHighlight = createLinkHighlight();
+  $: console.log("keyword:", $keyword);
 
   // Scales
-  $: xScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
-    let domain = $linkHighlight === "geometric" ? [0, 1] : [-mapOuterDomain, mapOuterDomain];
+  $: xScale = derived([bounds], ([$bounds]) => {
+    let domain = [-mapOuterDomain, mapOuterDomain];
     return scaleLinear().domain(domain).range([0, $bounds.chartWidth]);
   });
-  $: yScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
-    let domain = $linkHighlight === "geometric" ? [0, 1] : [-mapOuterDomain, mapOuterDomain];
+  $: yScale = derived([bounds], ([$bounds]) => {
+    let domain = [-mapOuterDomain, mapOuterDomain];
     return scaleLinear().domain(domain).range([$bounds.chartHeight, 0]);
   });
 
-  $: radiusScale = derived([bounds, linkHighlight], ([$bounds, $linkHighlight]) => {
+  $: radiusScale = derived([bounds], ([$bounds]) => {
     let base = $bounds.chartWidth * 0.02;
-    return $linkHighlight === "geometric"
-      ? scaleOrdinal()
-          .domain(["secondary"])
-          .range([base])
-          .unknown(base * (GR * 4))
-      : scaleOrdinal()
-          .domain(TYPE_SCALE)
-          .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
+    return scaleOrdinal()
+      .domain(TYPE_SCALE)
+      .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
   });
 
   $: _nodes = writable(nodes);
 
   // state updates on scroll
-  $: linkHighlight.highlight(activeStep.layout);
-  $: currentLinks = derived([linkHighlight], ([$linkHighlight]) => links[$linkHighlight]);
   $: if (activeStep.selected !== "") {
     let god = $_nodes.find((node) => node.name === activeStep.selected);
     selection.highlight(god);
@@ -147,29 +127,25 @@
     godDomain,
     radiusScale,
     fadeScale: FADE_SCALE,
-    currentLinks,
+    currentLinks: links,
     interaction,
     selection,
-    keyword,
-    linkHighlight
+    keyword
+    // linkHighlight
   };
   $: setContext("chart-state", context);
 </script>
 
 <div class="wrapper" data-name="wrapper-in-state">
-  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
   <div class="info" data-name="info-in-state">
     <slot name="info" />
   </div>
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
-    <div class="reset-button">
-      <TextButton
-        disabled={!$selection}
-        buttonLabel="Reset selection"
-        handleClick={() => selection.lowlight()}
-      />
-    </div>
+    <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
+    <!-- <div class="reset-button">
+      
+    </div> -->
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
@@ -240,8 +216,7 @@
     .wrapper {
       grid-template-columns: 2fr 1fr;
       grid-template-areas:
-        "meta-area meta-area"
-        "viz-area info-area";
+        /* "viz-area info-area" */ "viz-area info-area";
     }
   }
 </style>

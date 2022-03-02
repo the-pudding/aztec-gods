@@ -2,6 +2,8 @@
   import TextButton from "$components/layout/TextButton.svelte";
   import DomainHeatmap from "$components/pantheon/DomainHeatmap.svelte";
   import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
+  import Search from "$components/pantheon/Search.svelte";
+
   import loadImage from "$utils/loadImage";
   import { getContext } from "svelte";
   import { fade } from "svelte/transition";
@@ -14,9 +16,18 @@
 </script>
 
 <div class="wrapper">
+  <div class="search">
+    <Search />
+    <TextButton
+      disabled={!$selection}
+      buttonLabel="Reset selection"
+      handleClick={() => selection.lowlight()}
+    />
+  </div>
   {#if $selection}
     <!-- < show all Gods -->
-    <div class="illustration" transition:fade>
+    <!-- transition:fade -->
+    <div class="illustration">
       {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
         <span>Loading...</span>
       {:then img}
@@ -84,8 +95,15 @@
     /* background: var(--color-background-4);
     border-left: 3px solid var(--color-highlight); */
   }
+  .search {
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+  }
   .illustration {
-    height: 50%;
+    height: 40%;
 
     display: flex;
     justify-content: center;

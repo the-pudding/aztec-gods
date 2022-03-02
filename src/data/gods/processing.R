@@ -6,47 +6,58 @@ gods_basic <- gods_raw %>%
   select(id = "ID",
          "name" = "Name", 
          "importance" = "type",
-         "keyword" = "Keywords",
+         "field" = "Field",
          bio = Text,
          spellings = "Other.names.or.spelling",
          source = "Illustration.source") %>%
-  mutate(name = str_squish(name), id = str_squish(id))
-gods_main <- gods_basic %>% filter(importance != "secondary")
+  mutate(name = str_squish(name), id = str_squish(id)) %>%
+  filter(id != "cihuateteo")
 
-# Keywords ("Domains")
-keywords_raw <- read.csv("./raw/keywords.tsv", sep="\t", header=F) %>%
-  rename("domain" = V1, "keyword" = V2)
-keywords <- keywords_raw %>% 
-  separate_rows(keyword, sep = ",") %>%
-  mutate(keyword = str_squish(keyword))
+# gods_main <- gods_basic %>% filter(importance != "secondary")
 
-kw_animals <- keywords %>% filter(domain == "Animals")
-kw_celestial <- keywords %>% filter(domain == "Celestial")
-kw_trade <- keywords %>% filter(domain == "Craft and trade")
-kw_death <- keywords %>% filter(domain == "Death")
-kw_violence <- keywords %>% filter(domain == "Evil and violence")
-kw_food <- keywords %>% filter(domain == "Food")
-kw_knowledge <- keywords %>% filter(domain == "Knowledge")
-kw_fertility <- keywords %>% filter(domain == "Life and fertility")
-kw_excess <- keywords %>% filter(domain == "Moral values and excess")
-kw_nature <- keywords %>% filter(domain == "Nature")
-kw_pleasure <- keywords %>% filter(domain == "Pleasure")
+gods_with_fields <- gods_basic %>% 
+  separate_rows(field, sep = ",") %>%
+  mutate(field = str_squish(field))
 
-gods_with_domains <- gods_basic %>%
-  separate_rows(keyword, sep = ",") %>%
-  mutate(keyword = str_squish(keyword)) %>%
-  mutate("animals" = ifelse(keyword %in% kw_animals$keyword, 1, 0),
-         "celestial" = ifelse(keyword %in% kw_celestial$keyword, 1, 0),
-         "trade" = ifelse(keyword %in% kw_trade$keyword, 1, 0),
-         "death" = ifelse(keyword %in% kw_death$keyword, 1, 0),
-         "violence" = ifelse(keyword %in% kw_violence$keyword, 1, 0),
-         "food" = ifelse(keyword %in% kw_food$keyword, 1, 0),
-         "knowledge" = ifelse(keyword %in% kw_knowledge$keyword, 1, 0),
-         "fertility" = ifelse(keyword %in% kw_fertility$keyword, 1, 0),
-         "excess" = ifelse(keyword %in% kw_excess$keyword, 1, 0),
-         "nature" = ifelse(keyword %in% kw_nature$keyword, 1, 0),
-         "pleasure" = ifelse(keyword %in% kw_pleasure$keyword, 1, 0))
+gods <- gods_with_fields %>% 
+  pivot_wider(names_from=field, values_from=id) %>%
+  
 
+
+# Keywords ("Domains") ########################################
+# keywords_raw <- read.csv("./raw/keywords.tsv", sep="\t", header=F) %>%
+#   rename("domain" = V1, "keyword" = V2)
+# keywords <- keywords_raw %>% 
+#   separate_rows(keyword, sep = ",") %>%
+#   mutate(keyword = str_squish(keyword))
+# 
+# kw_animals <- keywords %>% filter(domain == "Animals")
+# kw_celestial <- keywords %>% filter(domain == "Celestial")
+# kw_trade <- keywords %>% filter(domain == "Craft and trade")
+# kw_death <- keywords %>% filter(domain == "Death")
+# kw_violence <- keywords %>% filter(domain == "Evil and violence")
+# kw_food <- keywords %>% filter(domain == "Food")
+# kw_knowledge <- keywords %>% filter(domain == "Knowledge")
+# kw_fertility <- keywords %>% filter(domain == "Life and fertility")
+# kw_excess <- keywords %>% filter(domain == "Moral values and excess")
+# kw_nature <- keywords %>% filter(domain == "Nature")
+# kw_pleasure <- keywords %>% filter(domain == "Pleasure")
+# 
+# gods_with_domains <- gods_basic %>%
+#   separate_rows(keyword, sep = ",") %>%
+#   mutate(keyword = str_squish(keyword)) %>%
+#   mutate("animals" = ifelse(keyword %in% kw_animals$keyword, 1, 0),
+#          "celestial" = ifelse(keyword %in% kw_celestial$keyword, 1, 0),
+#          "trade" = ifelse(keyword %in% kw_trade$keyword, 1, 0),
+#          "death" = ifelse(keyword %in% kw_death$keyword, 1, 0),
+#          "violence" = ifelse(keyword %in% kw_violence$keyword, 1, 0),
+#          "food" = ifelse(keyword %in% kw_food$keyword, 1, 0),
+#          "knowledge" = ifelse(keyword %in% kw_knowledge$keyword, 1, 0),
+#          "fertility" = ifelse(keyword %in% kw_fertility$keyword, 1, 0),
+#          "excess" = ifelse(keyword %in% kw_excess$keyword, 1, 0),
+#          "nature" = ifelse(keyword %in% kw_nature$keyword, 1, 0),
+#          "pleasure" = ifelse(keyword %in% kw_pleasure$keyword, 1, 0))
+################################################################################
 
 gods <- gods_with_domains %>% 
   select(1, 2, 3, 5, 6, 7, 8:18) %>%
@@ -75,12 +86,8 @@ write(toJSON(gods, pretty = T), "./tidy/gods.json")
 
 # Individual relationships
 all_rel <- gods_raw %>%
-  select(2, 12:16) %>%
-  rename("submission" = "Submission.relationship..son.daughter.of.OR.killed.by.",
-         "cooperation" = "Equal.relationship..sister.brother.OR.cooperation.help.from.",
-         "union" = "Equal.relationship...Union..Married.to..sexual.relation.with.",
-         "authority" = "Authority.on..father.mother.of.OR.killed.",
-         "aspect" = "Aspects..other.gods.that.can.change.into.or.him.her.or.share.similar.domains.")
+  select(2, "Aspects..other.gods.that.can.change.into.or.him.her.or.share.similar.domains.") %>%
+  rename("aspect" = "Aspects..other.gods.that.can.change.into.or.him.her.or.share.similar.domains.")
 
 # submission <- all_rel %>%
 #   select(1, 2) %>% 
@@ -107,14 +114,14 @@ authority <- all_rel %>%
   mutate(relation = "authority") %>%
   rename("source" = "Name", "target" = "authority")
 aspect <- all_rel %>%
-  select(1, 6) %>% 
+  # select(1, 6) %>% 
   separate_rows(aspect, sep = ", ") %>%
   filter(aspect != "") %>%
   mutate(relation = "aspect") %>%
   rename("source" = "Name", "target" = "aspect")
 
 # All relationships
-rel <- bind_rows(union, cooperation, authority, aspect) %>%
+rel <- bind_rows(aspect) %>%
   distinct(source, target, relation)
 not_sure <- rel %>% filter(grepl("([?$])", target))
 details <-  rel %>% filter(grepl("([.(.)])", target))
