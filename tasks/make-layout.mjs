@@ -3,7 +3,7 @@ import fs from "fs";
 import { readFile } from "fs/promises";
 import aq, { op } from "arquero";
 
-import { forceLink, forceSimulation, forceCenter, quadtree, scaleOrdinal } from "d3";
+import { forceManyBody, forceLink, forceSimulation, forceCenter, quadtree, scaleOrdinal } from "d3";
 
 // Layout
 const PADDING = 5;
@@ -81,7 +81,11 @@ const rectCollide = (padding) => {
 // );
 
 const calculateForceLayout = async () => {
-  const raw = await aq.loadCSV(`${CWD}/src/data/gods/raw/light-db.tsv`, { delimiter: "\t" });
+  const raw = await aq.loadCSV(`${CWD}/src/data/gods/raw/light-db.csv`, {
+    // delimiter: "\t",
+    autoType: false,
+    parse: { Text: String }
+  });
 
   // Gods (nodes)
   const gods = raw
@@ -113,11 +117,11 @@ const calculateForceLayout = async () => {
 
   // relations (links)
   const relations = gods
-    .select({ name: "source" }, "aspect")
+    .select({ name: "source" }, "aspect", "importance")
     .derive({ aspect: (d) => op.trim(d.aspect) })
     .derive({ target: (d) => op.split(d.aspect, ", ") })
     .unroll("target")
-    .select("source", "target");
+    .select("source", "target", "importance");
   // .derive({ is_unique: (d) => op.includes(godNames, d.target) })
 
   const unique_relations = [...relations.objects()].filter((d) => godNames.includes(d.target));
@@ -133,6 +137,10 @@ const calculateForceLayout = async () => {
 
   simulation
     .force("collide", rectCollide(PADDING))
+    // .force(
+    //   "many-body",
+    //   forceManyBody().strength((d) => (d.importance !== "secondary" ? 100 : -10))
+    // )
     .force(
       "link",
       forceLink(links).id((d) => getName(d))
@@ -140,7 +148,7 @@ const calculateForceLayout = async () => {
     .force("center", forceCenter())
     .alpha(1);
 
-  for (let i = 0; i < 300; i++) simulation.tick();
+  for (let i = 0; i < 500; i++) simulation.tick();
 
   const coord = [
     ...nodes.map((n) => ({
