@@ -45,7 +45,7 @@
           </div>
           <div class="name">{@html getName($selection)}</div>
           <!-- <DomainChart god={$selection} /> -->
-          <DomainHeatmap god={$selection} />
+          <!-- <DomainHeatmap god={$selection} /> -->
           <p class="minibio">{@html $selection.bio}</p>
         </div>
         <TextButton
@@ -74,7 +74,7 @@
         <TextButton
           iconName="chevron-left"
           position="start"
-          buttonLabel="back"
+          buttonLabel="bio"
           handleClick={() => (visible = "main-info")}
         />
       {/if}
@@ -103,7 +103,7 @@
     /* background-color: red; */
   }
   .illustration {
-    height: 40%;
+    height: 45%;
 
     display: flex;
     justify-content: center;
