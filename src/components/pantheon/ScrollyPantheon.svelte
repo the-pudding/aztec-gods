@@ -62,9 +62,9 @@
     <div class="scroll-wrapper">
       <div class="on-top-of-viz" />
       <div class="scroll-area">
-        <!-- {#each steps as step, i}
+        {#each steps as step, i}
           <Step {step} selected={selected === i} {activeStep} />
-        {/each} -->
+        {/each}
       </div>
     </div>
   </div>
