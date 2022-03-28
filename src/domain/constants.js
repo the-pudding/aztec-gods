@@ -21,16 +21,7 @@ export const KEYWORDS = [
   "pleasure"
 ];
 
-export const FIELDS = [
-  "fertility",
-  "subsistence",
-  "trade",
-  "pleasure",
-  "destruction",
-  "death",
-  "war",
-  "magic"
-];
+export const FIELDS = ["life", "death", "spiritual", "material"];
 export const LINK_TYPES = ["aspect"];
 
 // Scales

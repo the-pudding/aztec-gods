@@ -76,12 +76,18 @@ export const getFieldLabel = (field) => {
       return "pleasure";
     case "destruction":
       return "destruction";
-    case "death":
-      return "death";
     case "war":
       return "war";
+    case "death":
+      return "death";
     case "magic":
       return "magic";
+    case "life":
+      return "life";
+    case "material":
+      return "material";
+    case "spiritual":
+      return "spiritual";
     default:
       return field;
   }
