@@ -7,13 +7,6 @@
   import Paragraph from "$components/layout/Paragraph.svelte";
 </script>
 
-<Section id="transition-to-pantheon">
-  <!-- {#each doc.library as p, i} -->
-  <Paragraph hasCap={true}>{@html doc.library[0]}</Paragraph>
-  <!-- {/each} -->
-  <Paragraph hasCap={false}>{@html doc.library[1]}</Paragraph>
-</Section>
-
 <Section fullBleed>
   <div class="two-gods">
     <div class="gods">
