@@ -66,6 +66,7 @@
   .hero-image {
     width: 100%;
     padding: 0 1rem;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
