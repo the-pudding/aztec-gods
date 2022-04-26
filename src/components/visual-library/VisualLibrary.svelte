@@ -3,43 +3,82 @@
   import WindHead from "$svg/optimized/wind-god-annotated.svg";
   import Section from "$components/layout/Section.svelte";
   import ScrollableImage from "$components/visual-library/ScrollableImage.svelte";
+  import ImaginaryGodDeath from "$svg/optimized/imaginary-god-death.svg";
+  import Paragraph from "$components/layout/Paragraph.svelte";
 </script>
 
+<Section id="transition-to-pantheon">
+  <!-- {#each doc.library as p, i} -->
+  <Paragraph hasCap={true}>{@html doc.library[0]}</Paragraph>
+  <!-- {/each} -->
+  <Paragraph hasCap={false}>{@html doc.library[1]}</Paragraph>
+</Section>
+
 <Section fullBleed>
-  <div class="horizontal-scroll">
-    <!-- <div style="width: 450px;">{@html WindHead}</div> -->
-    <ScrollableImage
-      title="Imaginary God of Death"
-      alt=""
-      localUrl="illustrations/Random-death-god-description.jpg"
-    />
-    <ScrollableImage
-      title="Imaginary Goddess of Fertility"
-      alt=""
-      localUrl="illustrations/Random-fertility-goddess-description.jpg"
-    />
-    <ScrollableImage
-      title="Imaginary Old God"
-      alt=""
-      localUrl="illustrations/Random-old-god-description.jpg"
-    />
-    <ScrollableImage
-      title="Imaginary God of War"
-      alt=""
-      localUrl="illustrations/Random-war-god-description.jpg"
-    />
+  <div class="two-gods">
+    <div class="gods">
+      <p class="intertitle">{@html doc.library_death_subtitle}</p>
+      <img src={"./assets/illustrations/imaginary-god-death.png"} alt={"imaginary god of death."} />
+      <img
+        src={"./assets/illustrations/imaginary-paper-doll-death.png"}
+        alt="imaginary god of death, decomposed."
+      />
+    </div>
+    <div class="gods">
+      <p class="intertitle">{@html doc.library_fertility_subtitle}</p>
+      <img
+        src={"./assets/illustrations/imaginary-god-fertility.png"}
+        alt={"imaginary god of fertility."}
+      />
+      <img
+        src={"./assets/illustrations/imaginary-paper-doll-fertility.png"}
+        alt="imaginary god of death, decomposed."
+      />
+    </div>
   </div>
 </Section>
 
 <style>
-  .horizontal-scroll {
-    overflow-x: auto;
-    white-space: nowrap;
-    margin: 0;
-    padding: 1rem 3rem;
-    width: 100%;
+  .two-gods {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 100em;
+    margin: 0 auto;
   }
-  div {
-    display: inline-block;
+  .gods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  .gods > img:first-of-type {
+    width: clamp(150px, 50vw, 300px);
+    border: 3px solid var(--color-highlight);
+    margin: 1rem 0;
+  }
+  .gods > img:last-of-type {
+    /* width: clamp(150px, 50%, 700px); */
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem 1rem;
+  }
+  .intertitle {
+    /* text-transform: uppercase; */
+    text-align: center;
+    margin: 3rem 0 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 50em) {
+    .two-gods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .gods > img:last-of-type {
+      padding: 2rem 3rem;
+    }
+    .intertitle {
+      font-size: 2rem;
+    }
   }
 </style>
