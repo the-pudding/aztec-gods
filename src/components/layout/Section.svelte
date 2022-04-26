@@ -13,11 +13,11 @@
 <style>
   section {
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   .centered {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     max-width: 46rem;
   }
 </style>
