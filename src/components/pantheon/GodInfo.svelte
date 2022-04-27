@@ -46,8 +46,8 @@
 
     <div class="god-info-details">
       {#if visible === "main-info"}
-        <div>
-          <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
+        <div class="scrollable">
+          <div class="type">
             {getGodImportanceLabel(getImportance($selection))}
           </div>
           <h3 class="name">{@html getName($selection)}</h3>
@@ -61,6 +61,7 @@
             {/each}
           {/if}
         </div>
+        <div class="scrollable-fade" />
         <TextButton
           iconName="chevron-right"
           position="end"
@@ -102,8 +103,6 @@
     padding: 1rem 2rem;
     display: none;
 
-    overflow: scroll;
-
     margin-bottom: 1rem;
   }
   .search {
@@ -133,7 +132,20 @@
 
     /* border: 1px solid greenyellow; */
   }
+  .scrollable {
+    overflow: scroll;
+    position: relative;
+    height: 100%;
+    padding-bottom: 40px;
+  }
 
+  .scrollable-fade {
+    content: "";
+    margin-top: -50px;
+    height: 60px;
+    background: linear-gradient(to top, rgba(255, 225, 152, 1) 0%, rgba(255, 225, 152, 0) 100%);
+    position: relative;
+  }
   .minibio {
     padding-top: 0.5rem;
   }
@@ -143,6 +155,7 @@
     /* letter-spacing: 0.06em; */
     text-align: center;
     text-transform: uppercase;
+    color: var(--color-gray-dark);
   }
   .name {
     font-size: 1rem;
@@ -159,7 +172,6 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--color-highlight);
-    /* border-bottom: 1px solid var(--color-highlight); */
   }
   @media only screen and (min-width: 50em) {
     .wrapper {
