@@ -16,6 +16,11 @@
     $selection && doc.main_gods.find((d) => d.id === $selection.name)
       ? doc.main_gods.find((d) => d.id === $selection.name).content
       : [];
+
+  $: {
+    // reset to main info when selected God changes
+    if ($selection) visible = "main-info";
+  }
 </script>
 
 <div class="wrapper">
