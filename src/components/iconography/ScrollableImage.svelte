@@ -78,13 +78,14 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    max-width: 100em;
   }
   figure {
     position: -webkit-sticky;
     position: sticky;
 
     width: 100%;
-    height: 100vh;
+    height: clamp(0em, 100vh, 80em);
 
     padding: 1rem;
 
