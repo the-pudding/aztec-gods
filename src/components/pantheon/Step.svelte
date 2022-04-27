@@ -50,6 +50,12 @@
     padding: 1rem 0;
   }
 
+  :global(.major-god) {
+    padding: 0 0.3rem;
+    border-radius: 2px;
+    color: var(--color-white);
+    background-color: var(--category-secondary);
+  }
   :global(.primordial) {
     padding: 0 0.3rem;
     border-radius: 2px;
