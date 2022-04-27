@@ -1,10 +1,6 @@
 <script>
-  import doc from "$data/doc.json";
-  import WindHead from "$svg/optimized/wind-god-annotated.svg";
   import Section from "$components/layout/Section.svelte";
-  import ScrollableImage from "$components/visual-library/ScrollableImage.svelte";
-  import ImaginaryGodDeath from "$svg/optimized/imaginary-god-death.svg";
-  import Paragraph from "$components/layout/Paragraph.svelte";
+  import doc from "$data/doc.json";
 </script>
 
 <Section fullBleed>
