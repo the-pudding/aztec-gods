@@ -107,6 +107,12 @@
     selection.highlight(undefined);
   }
 
+  $: if (activeStep.keyword !== "") {
+    keyword.highlight(activeStep.keyword);
+  } else {
+    keyword.highlight(undefined);
+  }
+
   // Context
   $: context = {
     bounds,
