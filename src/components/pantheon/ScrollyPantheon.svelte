@@ -47,7 +47,8 @@
   <div id="scrolly">
     <figure>
       <State {activeStep}>
-        <GodInfo slot="info" {activeStep} />
+        <GodInfo slot="info" {activeStep} {allowInteraction} />
+
         <GodMeta slot="meta" {activeStep} />
         <!-- <g slot="chart-svg">
           <Links />

@@ -10,6 +10,7 @@
 
   const { getName, getImportance, selection } = getContext("chart-state");
 
+  export let allowInteraction;
   let visible = "main-info";
 
   $: content =
@@ -43,56 +44,57 @@
         <span>Sorry no image for {getName($selection)}</span>
       {/await}
     </div>
-
-    <div class="god-info-details">
-      {#if visible === "main-info"}
-        <div class="scrollable">
-          <div class="type">
-            {getGodImportanceLabel(getImportance($selection))}
-          </div>
-          <h3 class="name">{@html getName($selection)}</h3>
-          <p class="minibio">{@html $selection.bio}</p>
-          {#if content}
-            {#each content as c}
-              <h4>{@html c.subtitle}</h4>
-              {#each c.subcontent as p}
-                <p>{@html p}</p>
+    {#if allowInteraction}
+      <div class="god-info-details">
+        {#if visible === "main-info"}
+          <div class="scrollable">
+            <div class="type">
+              {getGodImportanceLabel(getImportance($selection))}
+            </div>
+            <h3 class="name">{@html getName($selection)}</h3>
+            <p class="minibio">{@html $selection.bio}</p>
+            {#if content}
+              {#each content as c}
+                <h4>{@html c.subtitle}</h4>
+                {#each c.subcontent as p}
+                  <p>{@html p}</p>
+                {/each}
               {/each}
-            {/each}
-          {/if}
-        </div>
-        <div class="scrollable-fade" />
-        <TextButton
-          iconName="chevron-right"
-          position="end"
-          buttonLabel="sources"
-          handleClick={() => (visible = "details")}
-        />
-      {:else}
-        <div>
-          <div class="type">
-            {getGodImportanceLabel(getImportance($selection))}
-          </div>
-          <h3 class="name">{@html getName($selection)}</h3>
-          <div>
-            <h4>Source of illustration</h4>
-            <p>{@html $selection.source}</p>
-          </div>
-          <div>
-            {#if $selection.spellings}
-              <h4>Other spellings</h4>
-              <p>{@html $selection.spellings}</p>
             {/if}
           </div>
-        </div>
-        <TextButton
-          iconName="chevron-left"
-          position="start"
-          buttonLabel="bio"
-          handleClick={() => (visible = "main-info")}
-        />
-      {/if}
-    </div>
+          <div class="scrollable-fade" />
+          <TextButton
+            iconName="chevron-right"
+            position="end"
+            buttonLabel="sources"
+            handleClick={() => (visible = "details")}
+          />
+        {:else}
+          <div>
+            <div class="type">
+              {getGodImportanceLabel(getImportance($selection))}
+            </div>
+            <h3 class="name">{@html getName($selection)}</h3>
+            <div>
+              <h4>Source of illustration</h4>
+              <p>{@html $selection.source}</p>
+            </div>
+            <div>
+              {#if $selection.spellings}
+                <h4>Other spellings</h4>
+                <p>{@html $selection.spellings}</p>
+              {/if}
+            </div>
+          </div>
+          <TextButton
+            iconName="chevron-left"
+            position="start"
+            buttonLabel="bio"
+            handleClick={() => (visible = "main-info")}
+          />
+        {/if}
+      </div>
+    {/if}
   {/if}
 </div>
 
