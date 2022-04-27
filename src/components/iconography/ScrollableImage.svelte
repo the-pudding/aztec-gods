@@ -41,9 +41,9 @@
 <Section id="gods-iconography-{title}" fullBleed>
   <div id="scrolly">
     <figure>
-      <div class="god-name">
-        <h3>{@html title}</h3>
-      </div>
+      <!-- <div class="god-name"> -->
+      <h3>{@html title}</h3>
+      <!-- </div> -->
       <MaskedImage {name} selected={activeStep.id} {imgPath} {positions} {imageRange} />
       <div class="illustration-source">
         {#if sourceUrl}
@@ -54,20 +54,17 @@
       </div>
     </figure>
 
-    <div class="scroll-wrapper">
-      <div class="on-top-of-viz" />
-      <div class="scroll-area">
-        {#each steps as step, i}
-          <div class="step step-{title}" class:selected={selected === i}>
-            {#if step.title}
-              <div class="step-title">
-                {@html step.title}
-              </div>
-            {/if}
-            <div class="step-text">{@html step.text}</div>
-          </div>
-        {/each}
-      </div>
+    <div class="scroll-area">
+      {#each steps as step, i}
+        <div class="step step-{title}" class:selected={selected === i}>
+          {#if step.title}
+            <div class="step-title">
+              {@html step.title}
+            </div>
+          {/if}
+          <div class="step-text">{@html step.text}</div>
+        </div>
+      {/each}
     </div>
   </div>
 </Section>
@@ -85,7 +82,7 @@
     position: sticky;
 
     width: 100%;
-    height: clamp(0em, 100vh, 80em);
+    height: clamp(20em, 100vh, 80em);
 
     padding: 1rem;
 
@@ -102,32 +99,11 @@
     transform: translate3d(0, 0, 0);
     z-index: 0;
   }
-  .scroll-wrapper {
-    position: relative;
-  }
 
   .scroll-area {
     position: relative;
   }
-  .god-name {
-    background-color: rgba(255, 225, 152, 0.5);
-    border-radius: 2px;
 
-    padding: 1rem;
-
-    z-index: 2;
-
-    text-align: center;
-  }
-  /* .god-name::after {
-    display: block;
-    content: "";
-    background: var(--color-highlight);
-    height: 3px;
-    width: 200px;
-    margin: 1.5rem auto 2rem;
-    border-radius: 2px;
-  } */
   .illustration-source {
     width: 100%;
     font-size: 1rem;
@@ -140,6 +116,11 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 500;
+    background-color: rgba(255, 225, 152, 0.5);
+    border-radius: 2px;
+    padding: 1rem;
+    z-index: 2;
+    text-align: center;
   }
 
   .step {
@@ -172,7 +153,6 @@
   }
   .step-text {
     font-size: 1.3rem;
-
     padding: 1rem 0;
   }
   @media only screen and (min-width: 30em) {
