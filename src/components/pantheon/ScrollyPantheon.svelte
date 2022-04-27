@@ -38,7 +38,7 @@
       .onStepEnter(handleStepEnter);
   });
 
-  $: allowInteraction = true; //activeStep.type === "exploratory-mode";
+  $: allowInteraction = activeStep.type === "exploratory-mode";
 </script>
 
 <svelte:window />
