@@ -70,7 +70,7 @@
         />
       {:else}
         <div>
-          <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
+          <div class="type">
             {getGodImportanceLabel(getImportance($selection))}
           </div>
           <h3 class="name">{@html getName($selection)}</h3>
