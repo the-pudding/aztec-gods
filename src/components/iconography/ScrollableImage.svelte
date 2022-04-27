@@ -73,9 +73,10 @@
   #scrolly {
     position: relative;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
     max-width: 100em;
+
+    display: grid;
+    grid-template-columns: 1fr;
   }
   figure {
     position: -webkit-sticky;
@@ -133,7 +134,9 @@
     transition: opacity 400ms;
 
     pointer-events: all;
-    position: relative;
+
+    background-color: rgba(255, 225, 152, 0.8);
+    border-radius: 2px;
   }
   .step:first-child {
     margin-top: 15rem;
@@ -156,6 +159,9 @@
     padding: 1rem 0;
   }
   @media only screen and (min-width: 30em) {
+    #scrolly {
+      grid-template-columns: 2fr 1fr;
+    }
     h3 {
       font-size: 3rem;
     }
