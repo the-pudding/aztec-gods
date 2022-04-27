@@ -18,14 +18,13 @@ import {
 const PADDING = 1;
 const GR = 1.62;
 
-let BASE = 32;
+let BASE = 62;
 
 // Domains
 const TYPE_SCALE = ["primordial", "creation", "elemental", "human", "secondary"];
 
-const radiusScale = scaleOrdinal()
-  .domain(TYPE_SCALE)
-  .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * 1, BASE]);
+const radiusScale = scaleOrdinal().domain(TYPE_SCALE).range([BASE]);
+// .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * 1, BASE]);
 
 const getName = (d) => d.name;
 
@@ -45,8 +44,8 @@ const rectCollide = (padding) => {
         if (q.data && q.data !== d) {
           let x = d.x - q.data.x,
             y = d.y - q.data.y,
-            xSpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
-            ySpacing = padding + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
+            xSpacing = padding, // + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
+            ySpacing = padding, // + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
             absX = Math.abs(x),
             absY = Math.abs(y),
             l,
@@ -151,26 +150,26 @@ const calculateForceLayout = async () => {
   const simulation = forceSimulation(nodes);
 
   simulation
-    .force(
-      "collide",
-      forceCollide()
-        .radius((d) => radiusScale(d.importance))
-        .strength(0.00015)
-        .iterations(2)
-    )
-    // .force("collide", rectCollide(PADDING))
+    // .force(
+    //   "collide",
+    //   forceCollide()
+    //     .radius((d) => radiusScale(d.importance))
+    //     .strength(0.00015)
+    //     .iterations(2)
+    // )
     .force(
       "x",
       forceX()
         .x((d) => d.life_death)
-        .strength(1)
+        .strength(0.7)
     )
     .force(
       "y",
       forceY()
         .y((d) => d.expansion)
-        .strength(1)
-    );
+        .strength(0.7)
+    )
+    .force("collide", rectCollide(PADDING));
   // .force("center", forceCenter().strength(1.992));
   // .force(
   //   "many-body",
@@ -182,7 +181,7 @@ const calculateForceLayout = async () => {
   // );
   // .alpha(1);
 
-  for (let i = 0; i < 500; i++) simulation.tick();
+  for (let i = 0; i < 1000; i++) simulation.tick();
 
   const coord = [
     ...nodes.map((n) => ({
