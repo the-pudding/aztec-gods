@@ -41,17 +41,16 @@
 <Section id="gods-iconography-{title}" fullBleed>
   <div id="scrolly">
     <figure>
-      <!-- <div class="god-name"> -->
       <h3>{@html title}</h3>
-      <!-- </div> -->
-      <MaskedImage {name} selected={activeStep.id} {imgPath} {positions} {imageRange} />
       <div class="illustration-source">
         {#if sourceUrl}
-          <a href={sourceUrl}>{@html source}</a>
+          (<a href={sourceUrl}>{@html source}</a>)
         {:else}
-          {@html source}
+          ({@html source})
         {/if}
       </div>
+
+      <MaskedImage {name} selected={activeStep.id} {imgPath} {positions} {imageRange} />
     </figure>
 
     <div class="scroll-area">
@@ -106,7 +105,8 @@
   }
 
   .illustration-source {
-    width: 100%;
+    width: 90%;
+    text-align: center;
     font-size: 1rem;
     line-height: 1;
     font-style: italic;
