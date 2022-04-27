@@ -10,6 +10,7 @@
 
   const { getName, getImportance, selection } = getContext("chart-state");
 
+  export let allowInteraction;
   let visible = "main-info";
 
   $: content =
@@ -43,55 +44,57 @@
         <span>Sorry no image for {getName($selection)}</span>
       {/await}
     </div>
-
-    <div class="god-info-details">
-      {#if visible === "main-info"}
-        <div>
-          <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
-            {getGodImportanceLabel(getImportance($selection))}
-          </div>
-          <h3 class="name">{@html getName($selection)}</h3>
-          <p class="minibio">{@html $selection.bio}</p>
-          {#if content}
-            {#each content as c}
-              <h4>{@html c.subtitle}</h4>
-              {#each c.subcontent as p}
-                <p>{@html p}</p>
+    {#if allowInteraction}
+      <div class="god-info-details">
+        {#if visible === "main-info"}
+          <div class="scrollable">
+            <div class="type">
+              {getGodImportanceLabel(getImportance($selection))}
+            </div>
+            <h3 class="name">{@html getName($selection)}</h3>
+            <p class="minibio">{@html $selection.bio}</p>
+            {#if content}
+              {#each content as c}
+                <h4>{@html c.subtitle}</h4>
+                {#each c.subcontent as p}
+                  <p>{@html p}</p>
+                {/each}
               {/each}
-            {/each}
-          {/if}
-        </div>
-        <TextButton
-          iconName="chevron-right"
-          position="end"
-          buttonLabel="sources"
-          handleClick={() => (visible = "details")}
-        />
-      {:else}
-        <div>
-          <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
-            {getGodImportanceLabel(getImportance($selection))}
-          </div>
-          <h3 class="name">{@html getName($selection)}</h3>
-          <div>
-            <h4>Source of illustration</h4>
-            <p>{@html $selection.source}</p>
-          </div>
-          <div>
-            {#if $selection.spellings}
-              <h4>Other spellings</h4>
-              <p>{@html $selection.spellings}</p>
             {/if}
           </div>
-        </div>
-        <TextButton
-          iconName="chevron-left"
-          position="start"
-          buttonLabel="bio"
-          handleClick={() => (visible = "main-info")}
-        />
-      {/if}
-    </div>
+          <div class="scrollable-fade" />
+          <TextButton
+            iconName="chevron-right"
+            position="end"
+            buttonLabel="sources"
+            handleClick={() => (visible = "details")}
+          />
+        {:else}
+          <div>
+            <div class="type">
+              {getGodImportanceLabel(getImportance($selection))}
+            </div>
+            <h3 class="name">{@html getName($selection)}</h3>
+            <div>
+              <h4>Source of illustration</h4>
+              <p>{@html $selection.source}</p>
+            </div>
+            <div>
+              {#if $selection.spellings}
+                <h4>Other spellings</h4>
+                <p>{@html $selection.spellings}</p>
+              {/if}
+            </div>
+          </div>
+          <TextButton
+            iconName="chevron-left"
+            position="start"
+            buttonLabel="bio"
+            handleClick={() => (visible = "main-info")}
+          />
+        {/if}
+      </div>
+    {/if}
   {/if}
 </div>
 
@@ -101,8 +104,6 @@
     height: calc(100vh - 80px);
     padding: 1rem 2rem;
     display: none;
-
-    overflow: scroll;
 
     margin-bottom: 1rem;
   }
@@ -133,7 +134,20 @@
 
     /* border: 1px solid greenyellow; */
   }
+  .scrollable {
+    overflow: scroll;
+    position: relative;
+    height: 100%;
+    padding-bottom: 40px;
+  }
 
+  .scrollable-fade {
+    content: "";
+    margin-top: -50px;
+    height: 60px;
+    background: linear-gradient(to top, rgba(255, 225, 152, 1) 0%, rgba(255, 225, 152, 0) 100%);
+    position: relative;
+  }
   .minibio {
     padding-top: 0.5rem;
   }
@@ -143,6 +157,7 @@
     /* letter-spacing: 0.06em; */
     text-align: center;
     text-transform: uppercase;
+    color: var(--color-gray-dark);
   }
   .name {
     font-size: 1rem;
@@ -159,7 +174,6 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--color-highlight);
-    /* border-bottom: 1px solid var(--color-highlight); */
   }
   @media only screen and (min-width: 50em) {
     .wrapper {

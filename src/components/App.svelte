@@ -44,6 +44,9 @@
 <!-- PANTHEON -->
 <Section id="pantheon">
   <Heading>{@html doc.pantheon_title}</Heading>
+  {#each doc.pantheon_intro as p, i}
+    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
+  {/each}
 </Section>
 
 <Pantheon />
