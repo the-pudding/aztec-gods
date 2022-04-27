@@ -41,6 +41,9 @@
 <Section id="gods-iconography-{title}" fullBleed>
   <div id="scrolly">
     <figure>
+      <div class="god-name">
+        <h3>{@html title}</h3>
+      </div>
       <MaskedImage {name} selected={activeStep.id} {imgPath} {positions} {imageRange} />
       <div class="illustration-source">
         {#if sourceUrl}
@@ -54,9 +57,6 @@
     <div class="scroll-wrapper">
       <div class="on-top-of-viz" />
       <div class="scroll-area">
-        <div class="god-name">
-          <h3>{@html title}</h3>
-        </div>
         {#each steps as step, i}
           <div class="step step-{title}" class:selected={selected === i}>
             {#if step.title}
@@ -110,10 +110,8 @@
     position: relative;
   }
   .god-name {
-    background-color: var(--color-background);
-    position: sticky;
-    left: 0;
-    top: 0;
+    background-color: rgba(255, 225, 152, 0.5);
+    border-radius: 2px;
 
     padding: 1rem;
 
@@ -121,8 +119,14 @@
 
     text-align: center;
   }
-  /* .god-name span {
-    font-style: italic;
+  /* .god-name::after {
+    display: block;
+    content: "";
+    background: var(--color-highlight);
+    height: 3px;
+    width: 200px;
+    margin: 1.5rem auto 2rem;
+    border-radius: 2px;
   } */
   .illustration-source {
     width: 100%;
@@ -137,16 +141,6 @@
     letter-spacing: 0.1em;
     font-weight: 500;
   }
-
-  /* h3::after {
-    display: block;
-    content: "";
-    background: var(--color-highlight);
-    height: 3px;
-    width: 200px;
-    margin: 1.5rem auto 2rem;
-    border-radius: 2px;
-  } */
 
   .step {
     width: 100%;
