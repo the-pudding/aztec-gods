@@ -22,19 +22,19 @@ export const KEYWORDS = [
 ];
 
 export const FIELDS = ["life", "death", "spiritual", "material"];
-export const LINK_TYPES = ["aspect"];
+// export const LINK_TYPES = ["aspect"];
 
 // Scales
-export const GOD_COLORS = scaleOrdinal()
-  .domain(TYPE_SCALE)
-  .range([
-    variables.category.primordial,
-    variables.category.creation,
-    variables.category.elemental,
-    variables.category.human,
-    variables.category.secondary
-  ]);
-export const FADE_SCALE = scaleLinear().range([0.1, 1]).domain([0, 5]);
+// export const GOD_COLORS = scaleOrdinal()
+//   .domain(TYPE_SCALE)
+//   .range([
+//     variables.category.secondary,
+//     variables.category.primordial,
+//     variables.category.creation,
+//     variables.category.elemental,
+//     "white"
+//   ]);
+// export const FADE_SCALE = scaleLinear().range([0.1, 1]).domain([0, 5]);
 
 // Accessors
 export const getRelationType = (d) => d.relation;

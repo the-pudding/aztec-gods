@@ -6,14 +6,11 @@
   import TextButton from "$components/layout/TextButton.svelte";
 
   import {
-    FADE_SCALE,
     getImportance,
     getName,
     getRelationType,
-    GOD_COLORS,
     GR,
     KEYWORDS,
-    LINK_TYPES,
     TYPE_SCALE
   } from "$domain/constants.js";
   import { max, scaleLinear, scaleOrdinal } from "d3";
@@ -83,7 +80,6 @@
     };
   };
   const keyword = createKeywordHighlight();
-  $: console.log("keyword:", $keyword);
 
   // Scales
   $: xScale = derived([bounds], ([$bounds]) => {
@@ -121,11 +117,10 @@
     getRelationType,
     getImportance,
     keywords: KEYWORDS,
-    linkTypes: LINK_TYPES,
-    godColorScale: GOD_COLORS,
+
     godDomain,
     radiusScale,
-    fadeScale: FADE_SCALE,
+
     currentLinks: links,
     interaction,
     selection,

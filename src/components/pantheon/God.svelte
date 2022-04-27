@@ -96,16 +96,26 @@
   //   isHighlighted
   // );
 
-  $: opacity = $keyword && !fieldIsSelected && !isHighlighted ? 0.1 : 1;
+  $: opacity = $keyword && !fieldIsSelected && !isHighlighted && !isSelected ? 0.1 : 1;
   // Geometric parameters
   $: rad = $radiusScale(getImportance(god));
-  $: borderWidth = !isMain ? 0 : rad * 0.07;
-  $: color =
-    selectionExists && (isSelected || isSelectionRelated)
-      ? variables.color.secondary
-      : !isMain
-      ? variables.category.secondary
-      : getMainGodColor(god.importance);
+  $: borderWidth = rad * 0.01; // isSelected ? rad * 0.1 : rad * 0.07;
+  // $: borderWidth = !isMain ? 0 : rad * 0.07;
+  $: borderColor = isSelected || isHighlighted ? "black" : variables.category.secondary;
+  $: color = getMainGodColor(god.importance);
+  $: backgroundColor = isSelected
+    ? "black"
+    : isHighlighted
+    ? variables.color["gray-light"]
+    : // ? variables.category.secondaryLight
+      color; // selectionExists && (isSelected || isSelectionRelated)
+  // background-color: {isHighlighted || isSelected || (isMain && isSelectionRelated)
+  //   ? variables.color.white
+  //   : color};
+  //   ? variables.color.secondary
+  //   : !isMain
+  //   ? variables.category.secondary
+  //   : getMainGodColor(god.importance);
 
   $: x = $xScale(god.x) + $bounds.margins.left;
   $: y = $yScale(god.y) + $bounds.margins.top;
@@ -117,24 +127,22 @@
   class="god"
   style="width:{rad}px; height:{rad}px; 
   left:{x}px; top:{y}px; 
-  background-color: {isHighlighted || isSelected || (isMain && isSelectionRelated)
-    ? variables.color.white
-    : color};
+  background-color: {backgroundColor};
   transform: translate(-50%, -50%);
   z-index: {isHighlighted ? 200 : 20};
-  border: {borderWidth}px solid {color};
+  border: {borderWidth}px solid {borderColor};
   opacity:{opacity};
   "
 >
-  {#if isMain || isHighlighted || isSelected}
-    {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id.toLowerCase()}.svg`)}
-      <span />
-    {:then img}
-      <img src={img.src} alt={god.id} />
-    {:catch}
-      <span>No image</span>
-    {/await}
-  {/if}
+  <!-- {#if isMain || isHighlighted || isSelected} -->
+  {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id.toLowerCase()}.svg`)}
+    <span />
+  {:then img}
+    <img src={img.src} alt={god.id} />
+  {:catch}
+    <span>No image</span>
+  {/await}
+  <!-- {/if} -->
 </div>
 
 <!-- background-color: {!isMain && !isBigger && !isSelected ? color : variables.color.white}; -->
@@ -147,9 +155,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: cover;
-    transition: opacity 500ms, transform 500ms, border-width 500ms, left 500ms, top 500ms,
-      width 500ms, height 500ms;
+    /* transition: opacity 500ms, transform 500ms, border-width 500ms, left 500ms, top 500ms,
+      width 500ms, height 500ms; */
 
     pointer-events: none;
   }

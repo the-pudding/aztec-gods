@@ -3,15 +3,15 @@ import variables from "$data/variables.json";
 export const getMainGodColor = (importance) => {
   switch (importance) {
     case "primordial":
-      return variables.category.primordial;
+      return variables.category.secondary; // variables.category.primordial;
     case "creation":
-      return variables.category.creation;
+      return variables.category.secondary; //variables.category.creation;
     case "elemental":
-      return variables.category.elemental;
+      return variables.category.secondary; //variables.category.elemental;
     case "human":
-      return variables.category.human;
+      return variables.category.secondary; //variables.category.human;
     case "secondary":
-      return variables.category.secondary;
+      return "white"; //variables.category.secondary;
     default:
       return variables.category.secondary;
   }
