@@ -1,18 +1,21 @@
 <script>
   import TextButton from "$components/layout/TextButton.svelte";
-  import DomainHeatmap from "$components/pantheon/DomainHeatmap.svelte";
-  import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
   import Search from "$components/pantheon/Search.svelte";
-
+  import { getGodImportanceLabel, getMainGodColor } from "$domain/getters";
   import loadImage from "$utils/loadImage";
   import { getContext } from "svelte";
-  import { fade } from "svelte/transition";
+  import doc from "$data/doc.json";
 
   const dev = process.env.NODE_ENV === "development";
 
   const { getName, getImportance, selection } = getContext("chart-state");
 
   let visible = "main-info";
+
+  $: content =
+    $selection && doc.main_gods.find((d) => d.id === $selection.name)
+      ? doc.main_gods.find((d) => d.id === $selection.name).content
+      : [];
 </script>
 
 <div class="wrapper">
@@ -24,9 +27,8 @@
       handleClick={() => selection.lowlight()}
     />
   </div>
+
   {#if $selection}
-    <!-- < show all Gods -->
-    <!-- transition:fade -->
     <div class="illustration">
       {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
         <span>Loading...</span>
@@ -43,15 +45,21 @@
           <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
             {getGodImportanceLabel(getImportance($selection))}
           </div>
-          <div class="name">{@html getName($selection)}</div>
-          <!-- <DomainChart god={$selection} /> -->
-          <!-- <DomainHeatmap god={$selection} /> -->
+          <h3 class="name">{@html getName($selection)}</h3>
           <p class="minibio">{@html $selection.bio}</p>
+          {#if content}
+            {#each content as c}
+              <h4>{@html c.subtitle}</h4>
+              {#each c.subcontent as p}
+                <p>{@html p}</p>
+              {/each}
+            {/each}
+          {/if}
         </div>
         <TextButton
           iconName="chevron-right"
           position="end"
-          buttonLabel="details"
+          buttonLabel="sources"
           handleClick={() => (visible = "details")}
         />
       {:else}
@@ -59,15 +67,15 @@
           <div class="type" style="color: {getMainGodColor(getImportance($selection))}">
             {getGodImportanceLabel(getImportance($selection))}
           </div>
-          <div class="name">{@html getName($selection)}</div>
-          <div class="illu-source">
-            <span>Source of illustration:</span>
-            {@html $selection.source}
+          <h3 class="name">{@html getName($selection)}</h3>
+          <div>
+            <h4>Source of illustration</h4>
+            <p>{@html $selection.source}</p>
           </div>
-          <div class="other-spellings">
+          <div>
             {#if $selection.spellings}
-              <span>Other spellings:</span>
-              {@html $selection.spellings}
+              <h4>Other spellings</h4>
+              <p>{@html $selection.spellings}</p>
             {/if}
           </div>
         </div>
@@ -92,8 +100,6 @@
     overflow: scroll;
 
     margin-bottom: 1rem;
-    /* background: var(--color-background-4);
-    border-left: 3px solid var(--color-highlight); */
   }
   .search {
     height: 5%;
@@ -123,8 +129,7 @@
     /* border: 1px solid greenyellow; */
   }
 
-  .minibio,
-  .illu-source {
+  .minibio {
     padding-top: 0.5rem;
   }
   .type {
@@ -142,17 +147,14 @@
     text-transform: uppercase;
     word-break: break-all;
   }
-  .other-spellings,
-  .illu-source {
-    margin-bottom: 0.5rem;
-  }
-  .other-spellings span,
-  .illu-source span {
-    display: block;
-    letter-spacing: 0.02em;
+
+  h4 {
+    margin-top: 0.7rem;
+    margin-bottom: 0.2rem;
     text-transform: uppercase;
-    font-size: 0.825rem;
-    color: var(--color-gray-dark);
+    letter-spacing: 0.06em;
+    color: var(--color-highlight);
+    /* border-bottom: 1px solid var(--color-highlight); */
   }
   @media only screen and (min-width: 50em) {
     .wrapper {
