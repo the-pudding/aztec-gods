@@ -10,7 +10,7 @@
   import Section from "$components/layout/Section.svelte";
 
   import Gods from "$components/pantheon/Gods.svelte";
-  import Links from "$components/pantheon/Links.svelte";
+  // import Links from "$components/pantheon/Links.svelte";
   import Overlay from "$components/pantheon/Overlay.svelte";
   import State from "$components/pantheon/State.svelte";
 
@@ -49,9 +49,9 @@
       <State {activeStep}>
         <GodInfo slot="info" {activeStep} />
         <GodMeta slot="meta" {activeStep} />
-        <g slot="chart-svg">
+        <!-- <g slot="chart-svg">
           <Links />
-        </g>
+        </g> -->
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
           <Overlay noPointerEvents={!allowInteraction} />
