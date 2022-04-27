@@ -96,10 +96,9 @@
   });
 
   $: radiusScale = derived([bounds], ([$bounds]) => {
-    let base = $bounds.chartWidth * 0.02;
-    return scaleOrdinal()
-      .domain(TYPE_SCALE)
-      .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
+    let base = $bounds.chartWidth * 0.06;
+    return scaleOrdinal().domain(TYPE_SCALE).range([base]);
+    // .range([base * (GR * 4), base * (GR * 3), base * (GR * 2), base * GR, base]);
   });
 
   $: _nodes = writable(nodes);
