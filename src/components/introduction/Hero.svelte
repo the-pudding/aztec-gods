@@ -5,23 +5,42 @@
   import Image from "$components/layout/Image.svelte";
   import loadImage from "$utils/loadImage";
 
-  // const icons = [
-  //   "ahuitzotl",
-  //   "tonacacihuatl",
-  //   "chantico",
-  //   "azcatl",
-  //   "ce_ozomatli",
-  //   "ahkinshok",
-  //   "tlatlauhqui_tezcatlipoca",
-  //   "mixcoatl",
-  //   "ometeotl",
-  //   "toci",
-  //   "xochiquetzal"
-  // ];
+  const icons = [
+    "tonacacihuatl",
+    "chantico",
+    "tlatlauhqui_tezcatlipoca",
+    "mixcoatl",
+    "xochiquetzal",
+    "toci",
+    "ahuitzotl",
+    "azcatl",
+    "ce_ozomatli",
+    "ahkinshok",
+    "ometeotl"
+  ];
+  const icons_simpler = ["ahuitzotl", "azcatl", "ce_ozomatli", "ahkinshok", "ometeotl"];
   const dev = process.env.NODE_ENV === "development";
 </script>
 
 <Section fullBleed>
+  <div style="padding: 1rem;">
+    <div class="grid">
+      {#each icons as icon, i}
+        <div style="grid-area: i{i}">
+          {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${icon}.svg`)}
+            <span />
+          {:then img}
+            <img src={img.src} alt={"icon"} />
+          {:catch}
+            <span />
+          {/await}
+        </div>
+      {/each}
+    </div>
+  </div>
+
+  <h1 class="title">A Visual Guide to the Aztec Pantheon</h1>
+
   <div class="hero-image">
     {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/ometeotl.svg`)}
       <span />
@@ -31,7 +50,6 @@
       <span />
     {/await}
   </div>
-  <h1 class="title">A Visual Guide to the Aztec Pantheon</h1>
   <div class="credits">
     <div class="credits-role">
       <div>Story & Illustrations</div>
@@ -45,11 +63,24 @@
   </div>
 </Section>
 
+<!-- <Section>
+  <div class="grid">
+    {#each icons_simpler as icon}
+      {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${icon}.svg`)}
+        <span />
+      {:then img}
+        <img src={img.src} alt={"icon"} />
+      {:catch}
+        <span />
+      {/await}
+    {/each}
+  </div>
+</Section> -->
 <style>
   .title {
     max-width: 10em;
     padding: 0 2rem;
-    margin: 0 auto;
+    margin: 2rem auto;
     font-family: var(--serif);
     text-align: center;
     font-size: 3rem;
@@ -78,11 +109,11 @@
     content: "";
     background: var(--color-highlight);
     height: 3px;
-    width: 120px;
+    width: 100%;
     margin: 2.5rem auto;
     border-radius: 2px;
-  }
-  .title::after {
+  } */
+  /* .title::after {
     display: block;
     content: "";
     background: var(--color-highlight);
@@ -90,27 +121,64 @@
     width: 120px;
     margin: 2.5rem auto;
     border-radius: 2px;
-  }
+  } */
   .hero-image {
     width: 100%;
     padding: 0 1rem;
-    height: 120px;
+    height: 170px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .hero-image > img {
-    max-width: 100px;
+    max-width: 170px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "i0 i1 i2 i3 i4";
+    /* border-top: 3px solid var(--color-highlight); */
+    border-bottom: 3px solid var(--color-highlight);
+
+    /* min-height: calc(1 / 6 * 100vw); */
+    max-width: 85em;
+    margin: auto;
+
+    padding: 0.2rem;
   }
 
   @media only screen and (min-width: 30em) {
     .title {
       font-size: 4rem;
+      margin: 4rem auto;
+    }
+    .title::after {
+      width: 250px;
     }
   }
+
   @media only screen and (min-width: 50em) {
     .title {
       font-size: 5rem;
+      margin: 7rem auto;
+    }
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "i0 i1 i2 i3 i4 i5 i6";
+    }
+    .hero-image {
+      height: 220px;
+    }
+    .hero-image > img {
+      max-width: 220px;
+    }
+  }
+  @media only screen and (min-width: 70em) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "i0 i1 i2 i3 i4 i5 i6 i7 i8 i9";
     }
   }
 </style>
