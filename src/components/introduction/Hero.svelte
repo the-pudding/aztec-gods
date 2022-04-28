@@ -32,6 +32,17 @@
     {/await}
   </div>
   <h1 class="title">A Visual Guide to the Aztec Pantheon</h1>
+  <div class="credits">
+    <div class="credits-role">
+      <div>Story & Illustrations</div>
+      <div>Code</div>
+    </div>
+
+    <div class="credits-name">
+      <div><a href="https://pudding.cool/author/gwendal-uguen/">Gwendal Uguen</a></div>
+      <div><a href="https://pudding.cool/author/gwendal-uguen/">Luc Guillemot</a></div>
+    </div>
+  </div>
 </Section>
 
 <style>
@@ -44,8 +55,25 @@
     font-size: 3rem;
     line-height: 1;
   }
-
-  .title::before {
+  .credits {
+    font-size: 1rem;
+    padding: 1rem;
+    display: flex;
+  }
+  .credits-role {
+    flex: 1;
+    text-align: right;
+    margin-right: 0.2rem;
+  }
+  .credits-name {
+    flex: 1;
+    text-align: left;
+    margin-left: 0.2rem;
+  }
+  .credits-name > a {
+    display: block;
+  }
+  /* .title::before {
     display: block;
     content: "";
     background: var(--color-highlight);
