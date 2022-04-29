@@ -1,10 +1,10 @@
 {
   "color": {
     "background": {
-      "value": "#FFE198"
+      "value": "#FDEDC6"
     },
     "background-2": {
-      "value": "#FFF5CE"
+      "value": "#FDF4DD"
     },
     "background-3": {
       "value": "#FFFAE4"
@@ -14,7 +14,7 @@
     },
 
     "highlight": {
-      "value": "#FE0000"
+      "value": "#B70000"
     },
     "highlight-lighter": {
       "value": "#FBF2F2"

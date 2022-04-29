@@ -142,7 +142,7 @@
     content: "";
     margin-top: -50px;
     height: 60px;
-    background: linear-gradient(to top, rgba(255, 225, 152, 1) 0%, rgba(255, 225, 152, 0) 100%);
+    background: linear-gradient(to top, rgba(253, 237, 198, 1) 0%, rgba(253, 237, 198, 0) 100%);
     position: relative;
   }
   .minibio {

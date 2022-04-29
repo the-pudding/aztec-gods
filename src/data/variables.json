@@ -4,7 +4,7 @@
     "creation": "#D28360",
     "elemental": "#5C8A73",
     "human": "#B08699",
-    "secondary": "#FE0000",
+    "secondary": "#B70000",
     "primordialLight": "#EAF8FB",
     "creationLight": "#FFF0E9",
     "elementalLight": "#F3F7F5",
@@ -12,11 +12,11 @@
     "secondaryLight": "#FFEDED"
   },
   "color": {
-    "background": "#FFE198",
-    "background-2": "#FFF5CE",
+    "background": "#FDEDC6",
+    "background-2": "#FDF4DD",
     "background-3": "#FFFAE4",
     "background-4": "#FFFDF3",
-    "highlight": "#FE0000",
+    "highlight": "#B70000",
     "highlight-lighter": "#FBF2F2",
     "secondary": "#000000",
     "black": "#000000",
