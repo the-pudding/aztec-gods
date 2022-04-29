@@ -10,7 +10,6 @@
   import Section from "$components/layout/Section.svelte";
 
   import Gods from "$components/pantheon/Gods.svelte";
-  // import Links from "$components/pantheon/Links.svelte";
   import Overlay from "$components/pantheon/Overlay.svelte";
   import State from "$components/pantheon/State.svelte";
 
@@ -50,9 +49,7 @@
         <GodInfo slot="info" {activeStep} {allowInteraction} />
 
         <GodMeta slot="meta" {activeStep} />
-        <!-- <g slot="chart-svg">
-          <Links />
-        </g> -->
+
         <Gods slot="chart-html" {activeStep} />
         <g slot="chart-svg-overlay">
           <Overlay noPointerEvents={!allowInteraction} />
@@ -61,7 +58,6 @@
     </figure>
 
     <div class="scroll-wrapper">
-      <div class="on-top-of-viz" />
       <div class="scroll-area">
         {#each steps as step, i}
           <Step {step} selected={selected === i} {activeStep} />
@@ -74,14 +70,8 @@
 <style>
   #scrolly {
     position: relative;
-
-    /* max-width: 64em; */
-    margin: 0 auto;
-
-    /* padding: 0 0.5rem; */
   }
   figure {
-    /* background: orange; */
     position: -webkit-sticky;
     position: sticky;
 
@@ -106,7 +96,8 @@
   }
 
   .scroll-area {
-    /* background: orange; */
+    max-width: 24rem;
+    margin: 0 auto;
   }
   @media only screen and (min-width: 50em) {
     .scroll-wrapper {

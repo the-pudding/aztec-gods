@@ -15,12 +15,12 @@
 
 <style>
   .step {
-    /* width: 100%; */
-
     margin: 30rem 1rem 2rem 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
 
     background-color: var(--color-background);
+
+    border: 1px solid var(--color-highlight);
     opacity: 0.3;
     transition: opacity 400ms;
 
@@ -29,10 +29,10 @@
     z-index: 50;
   }
   .step:first-child {
-    margin-top: 0;
+    margin-top: -100%;
   }
   .step:last-child {
-    margin-bottom: 140vh;
+    margin-bottom: 120vh;
   }
   .selected {
     opacity: 1;
@@ -46,41 +46,9 @@
   }
   .step-text {
     font-size: 1.3rem;
-
-    padding: 1rem 0;
   }
 
   :global(.major-god) {
-    padding: 0 0.3rem;
-    border-radius: 2px;
-    color: var(--color-white);
-    background-color: var(--category-secondary);
-  }
-  :global(.primordial) {
-    padding: 0 0.3rem;
-    border-radius: 2px;
-    color: var(--color-white);
-    background-color: var(--category-primordial);
-  }
-  :global(.creation) {
-    padding: 0 0.3rem;
-    border-radius: 2px;
-    color: var(--color-white);
-    background-color: var(--category-creation);
-  }
-  :global(.elemental) {
-    padding: 0 0.3rem;
-    border-radius: 2px;
-    color: var(--color-white);
-    background-color: var(--category-elemental);
-  }
-  :global(.human) {
-    padding: 0 0.3rem;
-    border-radius: 2px;
-    color: var(--color-white);
-    background-color: var(--category-human);
-  }
-  :global(.secondary) {
     padding: 0 0.3rem;
     border-radius: 2px;
     color: var(--color-white);
