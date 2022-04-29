@@ -151,8 +151,17 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 1.5rem;
-    border-bottom: 3px solid var(--color-highlight);
-    padding: 1rem 0;
+    /* border-bottom: 3px solid var(--color-highlight); */
+    padding-top: 1rem;
+  }
+  .step-title::after {
+    display: block;
+    content: "";
+    background: var(--color-highlight);
+    height: 3px;
+    width: 220px;
+    margin: 1rem 0 0 0;
+    border-radius: 2px;
   }
   .step-text {
     font-size: 1.3rem;
