@@ -28,5 +28,5 @@
   --color-form-bg: var(--color-gray-dark);
   --color-form-fg: var(--color-off-black);
   --color-border: var(--color-gray-light);
-  --color-selection: var(--color-gray-light);
+  --color-selection: var(--color-highlight);
 }

@@ -16,18 +16,40 @@
     labelFieldName="name"
     placeholder="Search a God..."
     hideArrow
+    showClear
     onChange={() => selection.highlight(selectedItem)}
     debug={false}
   />
 </div>
 
 <style>
-  :global(.autocomplete-input) {
+  .search :global(.autocomplete-input) {
     border: 0px solid var(--color-highlight);
-    background-color: var(--color-background-2);
+    border-bottom: 1px solid var(--color-highlight);
+    background-color: var(--color-background);
     color: var(--color-gray-dark);
     border-radius: 2px;
     font-size: 1rem;
     padding: 0.3rem 0.6rem;
+  }
+
+  .search :global(.autocomplete-list) {
+    border: 0px solid var(--color-highlight);
+    background-color: var(--color-background-2);
+  }
+  .search :global(.autocomplete-list-item) {
+    background-color: var(--color-background-2);
+    color: var(--color-gray-dark);
+  }
+  .search :global(.autocomplete-list-item.confirmed) {
+    background-color: var(--color-background-2);
+    color: var(--color-gray-dark);
+  }
+  .search :global(.autocomplete-list-item.selected) {
+    background-color: var(--color-highlight);
+    color: var(--color-background-2);
+  }
+  .search :global(.autocomplete-clear-button) {
+    color: var(--color-highlight);
   }
 </style>
