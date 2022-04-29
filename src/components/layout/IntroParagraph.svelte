@@ -9,7 +9,7 @@
     margin-bottom: 1rem;
     font-family: var(--serif);
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.825rem;
     line-height: 1.65;
     /* font-style: italic; */
   }
@@ -19,7 +19,7 @@
   }
   @media only screen and (min-width: 30em) {
     p {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
   }
 </style>
