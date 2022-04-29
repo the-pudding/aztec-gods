@@ -58,7 +58,7 @@
 
     <div class="credits-name">
       <div><a href="https://pudding.cool/author/gwendal-uguen/">Gwendal Uguen</a></div>
-      <div><a href="https://pudding.cool/author/gwendal-uguen/">Luc Guillemot</a></div>
+      <div><a href="https://pudding.cool/author/luc-guillemot/">Luc Guillemot</a></div>
     </div>
   </div>
 </Section>
