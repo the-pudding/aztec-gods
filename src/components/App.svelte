@@ -35,7 +35,6 @@
   <Paragraph hasCap={true}>{@html doc.pantheon_intro}</Paragraph>
 
   <Paragraph>{@html doc.pantheon_duality}</Paragraph>
-  <Paragraph>{@html doc.pantheon_tlalte_intro}</Paragraph>
 </Section>
 
 <ScrollyTlalte />
