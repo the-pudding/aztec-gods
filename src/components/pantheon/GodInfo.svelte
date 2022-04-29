@@ -5,6 +5,7 @@
   import loadImage from "$utils/loadImage";
   import { getContext } from "svelte";
   import doc from "$data/doc.json";
+  import SourceItem from "$components/colophon/SourceItem.svelte";
 
   const dev = process.env.NODE_ENV === "development";
 
@@ -15,8 +16,13 @@
   $: content =
     $selection && doc.main_gods.find((d) => d.id === $selection.name)
       ? doc.main_gods.find((d) => d.id === $selection.name).content
-      : [];
+      : undefined;
 
+  $: sources =
+    $selection && doc.main_gods.find((d) => d.id === $selection.name)
+      ? doc.main_gods.find((d) => d.id === $selection.name).sources_group
+      : undefined;
+  $: $selection && console.log(doc.main_gods.find((d) => d.id === $selection.name));
   $: {
     // reset to main info when selected God changes
     if ($selection) visible = "main-info";
@@ -68,7 +74,8 @@
           handleClick={() => (visible = "details")}
         />
       {:else}
-        <div>
+        <!-- SOURCES -->
+        <div class="scrollable">
           <div class="type">
             {getGodImportanceLabel(getImportance($selection))}
           </div>
@@ -77,6 +84,13 @@
             <h4>Source of illustration</h4>
             <p>{@html $selection.source}</p>
           </div>
+
+          {#if sources}
+            <h4>Sources</h4>
+            {#each sources as s}
+              <SourceItem author={s.author} title={s.title} url={s.url} />
+            {/each}
+          {/if}
           <div>
             {#if $selection.spellings}
               <h4>Other spellings</h4>
@@ -84,6 +98,8 @@
             {/if}
           </div>
         </div>
+        <div class="scrollable-fade" />
+
         <TextButton
           iconName="chevron-left"
           position="start"
@@ -98,7 +114,7 @@
 <style>
   .wrapper {
     /* background-color: orange; */
-    height: calc(100vh - 80px);
+    height: calc(100vh);
     padding: 1rem 2rem;
     display: none;
 
