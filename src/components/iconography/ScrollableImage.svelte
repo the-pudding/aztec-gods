@@ -167,15 +167,14 @@
     font-size: 1.3rem;
     padding: 1rem 0;
   }
-  @media only screen and (min-width: 30em) {
+
+  @media only screen and (min-width: 50em) {
     #scrolly {
       grid-template-columns: 2fr 1fr;
     }
     h3 {
       font-size: 3rem;
     }
-  }
-  @media only screen and (min-width: 50em) {
     .step {
       margin: 50rem auto 2rem auto;
     }
