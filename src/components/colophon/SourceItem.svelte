@@ -6,7 +6,7 @@
 
 <li>
   {#if url || url !== ""}
-    <span class="title"><a href={url}>{title}, </a></span>
+    <span class="title"><a href={url}>{title}</a>, </span>
   {:else}
     <span class="title">{title}, </span>
   {/if}
@@ -18,15 +18,16 @@
   }
   li {
     list-style: none;
+    margin-bottom: 0.5rem;
   }
-  li::before {
+  /* li::before {
     content: "";
     background: var(--color-highlight);
     display: inline-block;
     width: 0.5rem;
     height: 0.5rem;
     margin: 0 0.5rem 0.125rem -1rem;
-  }
+  } */
 
   a {
     text-decoration: none;

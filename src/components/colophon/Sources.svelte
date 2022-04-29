@@ -13,7 +13,7 @@
     <p>{@html p}</p>
   {/each}
 
-  <!-- {#each doc.sources as group}
+  {#each doc.sources as group}
     <h3>
       {group.group_title}
     </h3>
@@ -36,7 +36,7 @@
         {/if}
       {/each}
     </ul>
-  {/each} -->
+  {/each}
   <!-- </Section>
 
 <Section id="article-mentions"> -->
