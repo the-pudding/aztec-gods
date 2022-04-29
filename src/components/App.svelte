@@ -6,6 +6,7 @@
   import Hero from "$components/introduction/Hero.svelte";
   import Heading from "$components/layout/Heading.svelte";
   import Paragraph from "$components/layout/Paragraph.svelte";
+  import IntroParagraph from "$components/layout/IntroParagraph.svelte";
   import Section from "$components/layout/Section.svelte";
   import Pantheon from "$components/pantheon/Pantheon.svelte";
   import VisualLibrary from "$components/visual-library/VisualLibrary.svelte";
@@ -15,9 +16,11 @@
 <Hero />
 
 <Section id="intro">
-  {#each doc.introduction as p, i}
-    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
-  {/each}
+  <div class="intro">
+    {#each doc.introduction as p, i}
+      <IntroParagraph hasCap={i === 0}>{@html p}</IntroParagraph>
+    {/each}
+  </div>
 </Section>
 
 <Section id="iconography">
@@ -44,3 +47,13 @@
 <Pantheon />
 
 <Sources />
+
+<style>
+  .intro {
+    background-color: var(--color-background-2);
+    padding: 2rem;
+    margin: 3rem;
+    border-radius: 6px;
+    /* border: 3px solid var(--color-highlight); */
+  }
+</style>
