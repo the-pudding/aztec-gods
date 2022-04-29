@@ -22,21 +22,9 @@
 
 <Section id="iconography">
   <Heading>{@html doc.iconography_title}</Heading>
-  {#each doc.iconography as p, i}
-    <Paragraph hasCap={i === 0}>{@html p.text}</Paragraph>
-  {/each}
-</Section>
 
-<ScrollyTlalte />
-
-<ScrollyTezca />
-
-<!-- LIBRARY -->
-<Heading>{@html doc.library_title}</Heading>
-<Section id="transition-to-pantheon">
-  {#each doc.library as p, i}
-    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
-  {/each}
+  <Paragraph hasCap={true}>{@html doc.iconography_intro}</Paragraph>
+  <Paragraph>{@html doc.iconography_imaginarygods}</Paragraph>
 </Section>
 
 <VisualLibrary />
@@ -44,10 +32,15 @@
 <!-- PANTHEON -->
 <Section id="pantheon">
   <Heading>{@html doc.pantheon_title}</Heading>
-  {#each doc.pantheon_intro as p, i}
-    <Paragraph hasCap={i === 0}>{@html p}</Paragraph>
-  {/each}
+  <Paragraph hasCap={true}>{@html doc.pantheon_intro}</Paragraph>
+
+  <Paragraph>{@html doc.pantheon_duality}</Paragraph>
+  <Paragraph>{@html doc.pantheon_tlalte_intro}</Paragraph>
 </Section>
+
+<ScrollyTlalte />
+
+<ScrollyTezca />
 
 <Pantheon />
 
