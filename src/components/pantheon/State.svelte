@@ -142,14 +142,12 @@
     >
       {#if $width > 0}
         <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
-          <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
           <slot name="chart-svg" />
         </svg>
         <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
           <slot name="chart-html" />
         </div>
         <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
-          <!-- <rect x={0} y={0} width={$bounds.width} height={$bounds.height} fill="#efefef" /> -->
           <slot name="chart-svg-overlay" />
         </svg>
       {/if}
@@ -196,12 +194,6 @@
     z-index: 300;
   }
 
-  .reset-button {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 1rem;
-  }
   @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;

@@ -207,13 +207,6 @@ button.selected {
 
 @media only screen and (min-width: 30em) {
   button {
-    font-size: 0.825rem;
-    padding: 0.3rem 0.6rem;
-  }
-}
-@media only screen and (min-width: 50em) {
-  button {
-    font-size: 1rem;
     padding: 0.3rem 0.6rem;
   }
 }
