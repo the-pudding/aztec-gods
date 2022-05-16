@@ -28,7 +28,6 @@
     border-bottom: 1px solid var(--color-highlight);
     background-color: var(--color-background);
     color: var(--color-gray-dark);
-    border-radius: 2px;
     font-size: 1rem;
     padding: 0.3rem 0.6rem;
   }
