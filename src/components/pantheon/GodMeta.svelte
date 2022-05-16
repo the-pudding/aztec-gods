@@ -14,8 +14,8 @@
       {getFieldLabel(field)}
     </button>
   {/each}
-
-  <TextButton disabled={!$keyword} buttonLabel="Reset" handleClick={() => keyword.lowlight()} />
+  <button class="text-button" disabled={!$keyword} on:click={() => keyword.lowlight()}>Reset</button
+  >
 </fieldset>
 
 <style>
@@ -23,20 +23,39 @@
     position: relative;
     padding: 1rem;
     margin: 0;
-    height: 100%;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   button {
-    margin: 0 0.5rem 0 0;
+    margin: 0 0.5rem 0.5rem 0;
   }
+  button.text-button {
+    display: inline-block;
 
-  @media only screen and (min-width: 50em) {
-    .wrapper {
-      grid-template-columns: 2fr 1fr;
-    }
+    background: transparent;
+    border: none;
+
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+
+    color: currentColor;
+
+    margin: 0;
+    padding: 0;
+  }
+  button.text-button:hover,
+  button.text-button:focus {
+    text-decoration-thickness: 2px;
+    box-shadow: none;
+  }
+  button.text-button:disabled {
+    cursor: unset;
+    pointer-events: none;
+    text-decoration-thickness: 1px;
+    opacity: 0.2;
   }
 </style>
