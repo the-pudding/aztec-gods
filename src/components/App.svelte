@@ -51,13 +51,14 @@
 <style>
   .intro {
     background-color: var(--color-background-2);
-    padding: 2rem;
-    margin: 1rem;
+    padding: 1rem;
+    margin: 0;
     border-radius: 6px;
   }
   @media only screen and (min-width: 30em) {
     .intro {
       margin: 2rem;
+      padding: 2rem;
     }
   }
   @media only screen and (min-width: 50em) {

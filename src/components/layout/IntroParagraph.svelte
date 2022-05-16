@@ -9,7 +9,7 @@
     margin-bottom: 1rem;
     font-family: var(--serif);
     text-align: left;
-    font-size: 0.825rem;
+    font-size: 1rem;
     line-height: 1.65;
     /* font-style: italic; */
   }
