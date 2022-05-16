@@ -1,7 +1,10 @@
 {
   "color": {
     "background": {
-      "value": "#FDEDC6"
+      "value": "#FFE198"
+    },
+    "background-transparent": {
+      "value": "rgba(255, 225, 152, 0.8)"
     },
     "background-2": {
       "value": "#FDF4DD"
@@ -14,7 +17,7 @@
     },
 
     "highlight": {
-      "value": "#B70000"
+      "value": "#D90B0B"
     },
     "highlight-lighter": {
       "value": "#FBF2F2"

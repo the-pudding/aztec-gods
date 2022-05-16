@@ -117,7 +117,7 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 500;
-    background-color: rgba(253, 237, 198, 0.5);
+    background-color: var(--color-background-transparent);
     border-radius: 2px;
     padding: 1rem;
     z-index: 2;
@@ -135,7 +135,7 @@
 
     pointer-events: all;
 
-    background-color: rgba(253, 237, 198, 0.8);
+    background-color: var(--color-background-transparent);
     border-radius: 2px;
   }
   .step:first-child {
