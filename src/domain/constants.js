@@ -21,7 +21,6 @@ export const KEYWORDS = [
   "pleasure"
 ];
 
-export const FIELDS = ["life", "death", "spiritual", "material"];
 // export const LINK_TYPES = ["aspect"];
 
 // Scales
@@ -35,6 +34,7 @@ export const FIELDS = ["life", "death", "spiritual", "material"];
 //     "white"
 //   ]);
 // export const FADE_SCALE = scaleLinear().range([0.1, 1]).domain([0, 5]);
+export const FIELDS = ["death", "life", "spiritual", "material"];
 
 // Accessors
 export const getRelationType = (d) => d.relation;
