@@ -16,17 +16,6 @@ import {
 
 // Layout
 const PADDING = 1;
-const GR = 1.62;
-
-let BASE = 62;
-
-// Domains
-const TYPE_SCALE = ["primordial", "creation", "elemental", "human", "secondary"];
-
-const radiusScale = scaleOrdinal().domain(TYPE_SCALE).range([BASE]);
-// .range([BASE * (GR * 4), BASE * (GR * 3), BASE * (GR * 2), BASE * 1, BASE]);
-
-const getName = (d) => d.name;
 
 /////
 const rectCollide = (padding) => {
@@ -78,9 +67,6 @@ const rectCollide = (padding) => {
   }
 
   force.initialize = (_) => (nodes = _);
-  // force.strength = (_) => {
-  //   return arguments.length ? ((strength = +_), force) : strength;
-  // };
 
   return force;
 };
@@ -127,25 +113,8 @@ const calculateForceLayout = async () => {
           : 0
     });
 
-  const godNames = [...gods.array("name")];
-
-  // relations (links)
-  const relations = gods
-    .select({ name: "source" }, "aspect", "importance")
-    .derive({ aspect: (d) => op.trim(d.aspect) })
-    .derive({ target: (d) => op.split(d.aspect, ", ") })
-    .unroll("target")
-    .select("source", "target", "importance");
-  // .derive({ is_unique: (d) => op.includes(godNames, d.target) })
-
-  const unique_relations = [...relations.objects()].filter((d) => godNames.includes(d.target));
-
-  fs.writeFileSync(`${CWD}/src/data/gods/tidy/gods.json`, JSON.stringify(gods.objects()));
-  fs.writeFileSync(`${CWD}/src/data/gods/tidy/relations.json`, JSON.stringify(unique_relations));
-
   // Layout
   let nodes = [...gods.objects()];
-  let links = [...unique_relations];
 
   const simulation = forceSimulation(nodes);
 
@@ -194,12 +163,7 @@ const calculateForceLayout = async () => {
     ...god
   }));
   return {
-    god_nodes,
-    links: links.map((l) => ({
-      source: { x: l.source.x, y: l.source.y, name: l.source.name },
-      target: { x: l.target.x, y: l.target.y, name: l.target.name },
-      index: l.index
-    }))
+    god_nodes
   };
 };
 
@@ -207,10 +171,8 @@ const getLayoutCoordinates = async () => {
   const aspect = await calculateForceLayout();
 
   const nodes = aspect.god_nodes;
-  const linksCoord = aspect.links;
 
   fs.writeFileSync(`${CWD}/src/data/gods/tidy/nodes.json`, JSON.stringify(nodes));
-  fs.writeFileSync(`${CWD}/src/data/gods/tidy/links.json`, JSON.stringify(linksCoord));
 };
 
 (async () => {
