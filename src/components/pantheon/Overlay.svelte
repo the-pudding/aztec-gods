@@ -7,17 +7,8 @@
 
   let overlay; // ref
 
-  const {
-    bounds,
-    xScale,
-    yScale,
-    getName,
-    nodes,
-    interaction,
-    selection,
-    currentLinks,
-    linkHighlight
-  } = getContext("chart-state");
+  const { bounds, xScale, yScale, getName, nodes, interaction, selection, currentLinks } =
+    getContext("chart-state");
 
   // Overlay Logic
   $: delaunay = Delaunay.from(

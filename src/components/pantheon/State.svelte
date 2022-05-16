@@ -131,7 +131,6 @@
     interaction,
     selection,
     keyword
-    // linkHighlight
   };
   $: setContext("chart-state", context);
 </script>
