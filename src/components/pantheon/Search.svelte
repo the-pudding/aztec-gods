@@ -23,6 +23,9 @@
 </div>
 
 <style>
+  .search :global(.autocomplete) {
+    display: block;
+  }
   .search :global(.autocomplete-input) {
     border: 0px solid var(--color-highlight);
     border-bottom: 1px solid var(--color-highlight);

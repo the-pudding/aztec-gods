@@ -122,10 +122,6 @@
   }
   .search {
     height: 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: red; */
   }
   .illustration {
     height: 45%;
