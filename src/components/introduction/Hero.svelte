@@ -51,13 +51,12 @@
     {/await}
   </div>
   <div class="credits">
-    <div class="credits-role">
+    <div class="credits-line">
       <div>Story & Illustrations</div>
-      <div>Code</div>
-    </div>
-
-    <div class="credits-name">
       <div><a href="https://pudding.cool/author/gwendal-uguen/">Gwendal Uguen</a></div>
+    </div>
+    <div class="credits-line">
+      <div>Code</div>
       <div><a href="https://pudding.cool/author/luc-guillemot/">Luc Guillemot</a></div>
     </div>
   </div>
@@ -90,20 +89,26 @@
     font-size: 1rem;
     padding: 1rem;
     display: flex;
+    flex-direction: column;
   }
-  .credits-role {
-    flex: 1;
+  .credits-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 0.2rem;
+  }
+  .credits-line > div {
+    width: 50%;
+  }
+  .credits-line > div:first-of-type {
+    margin-right: 0.5rem;
     text-align: right;
-    margin-right: 0.2rem;
   }
-  .credits-name {
-    flex: 1;
+  .credits-line > div:last-of-type {
+    margin-left: 0.5rem;
     text-align: left;
-    margin-left: 0.2rem;
   }
-  .credits-name > a {
-    display: block;
-  }
+
   /* .title::before {
     display: block;
     content: "";
