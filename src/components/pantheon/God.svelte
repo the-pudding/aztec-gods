@@ -20,7 +20,6 @@
     getImportance,
     interaction,
     selection,
-    linkHighlight,
     radiusScale,
     currentLinks,
     keyword

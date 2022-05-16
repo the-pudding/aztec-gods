@@ -5,14 +5,7 @@
   import viewport from "$stores/viewport";
   import TextButton from "$components/layout/TextButton.svelte";
 
-  import {
-    getImportance,
-    getName,
-    getRelationType,
-    GR,
-    KEYWORDS,
-    TYPE_SCALE
-  } from "$domain/constants.js";
+  import { getImportance, getName, GR, KEYWORDS, TYPE_SCALE } from "$domain/constants.js";
   import { max, scaleLinear, scaleOrdinal } from "d3";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
@@ -120,7 +113,7 @@
     xScale,
     yScale,
     getName,
-    getRelationType,
+
     getImportance,
     keywords: KEYWORDS,
 
@@ -142,9 +135,7 @@
 
   <div class="chart-wrapper" bind:clientWidth={$width}>
     <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
-    <!-- <div class="reset-button">
-      
-    </div> -->
+
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"

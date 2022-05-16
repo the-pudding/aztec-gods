@@ -1,8 +1,5 @@
 <script context="module">
-  import Pantheon from "./../pantheon/Pantheon.svelte";
-  import doc from "$data/doc.json";
   import Section from "$components/layout/Section.svelte";
-  import Image from "$components/layout/Image.svelte";
   import loadImage from "$utils/loadImage";
 
   const icons = [
@@ -101,11 +98,11 @@
     width: 50%;
   }
   .credits-line > div:first-of-type {
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
     text-align: right;
   }
   .credits-line > div:last-of-type {
-    margin-left: 0.5rem;
+    margin-left: 0.25rem;
     text-align: left;
   }
 

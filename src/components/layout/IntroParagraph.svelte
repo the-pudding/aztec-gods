@@ -11,7 +11,6 @@
     text-align: left;
     font-size: 1rem;
     line-height: 1.65;
-    /* font-style: italic; */
   }
 
   p:last-of-type {

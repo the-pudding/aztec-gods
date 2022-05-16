@@ -21,6 +21,5 @@ export const KEYWORDS = [
 export const FIELDS = ["death", "life", "spiritual", "material"];
 
 // Accessors
-export const getRelationType = (d) => d.relation;
 export const getName = (d) => d.name;
 export const getImportance = (d) => d.importance;
