@@ -7,15 +7,8 @@
       "value": "rgba(255, 225, 152, 0.8)"
     },
     "background-2": {
-      "value": "#FDF4DD"
+      "value": "#FEF1D0"
     },
-    "background-3": {
-      "value": "#FFFAE4"
-    },
-    "background-4": {
-      "value": "#FFFDF3"
-    },
-
     "highlight": {
       "value": "#D90B0B"
     },

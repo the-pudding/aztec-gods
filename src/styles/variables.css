@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 16 May 2022 09:53:05 GMT
+ * Generated on Mon, 16 May 2022 11:21:44 GMT
  */
 
 :root {
@@ -16,9 +16,7 @@
   --category-secondary-light: #FFEDED;
   --color-background: #ffe198;
   --color-background-transparent: rgba(255, 225, 152, 0.8);
-  --color-background-2: #fdf4dd;
-  --color-background-3: #fffae4;
-  --color-background-4: #fffdf3;
+  --color-background-2: #fde7b2;
   --color-highlight: #d90b0b;
   --color-highlight-lighter: #fbf2f2;
   --color-secondary: #000000;

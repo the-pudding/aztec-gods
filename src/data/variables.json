@@ -14,9 +14,7 @@
   "color": {
     "background": "#FFE198",
     "background-transparent": "rgba(255, 225, 152, 0.8)",
-    "background-2": "#FDF4DD",
-    "background-3": "#FFFAE4",
-    "background-4": "#FFFDF3",
+    "background-2": "#FDE7B2",
     "highlight": "#D90B0B",
     "highlight-lighter": "#FBF2F2",
     "secondary": "#000000",
