@@ -81,6 +81,9 @@
   path {
     cursor: pointer;
   }
+  path:focus {
+    outline: none;
+  }
   path.no-event {
     pointer-events: none;
   }
