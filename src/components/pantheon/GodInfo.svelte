@@ -32,91 +32,88 @@
   }
 </script>
 
-<div>
-  <div class="wrapper">
-    <div class="search-close">
-      {#if !$selection}
-        <Search />
-      {:else}
-        <button on:click={() => selection.highlight(undefined)} style="margin-left:auto;"
-          >Hide</button
-        >
-      {/if}
-    </div>
-
-    {#if $selection}
-      <div class="illu-info-wrapper">
-        <div class="illustration">
-          {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
-            <span>Loading...</span>
-          {:then img}
-            <img src={img.src} alt="Image of {getName($selection)}." />
-          {:catch}
-            <span>Sorry no image for {getName($selection)}</span>
-          {/await}
-        </div>
-        <div class="god-info-details">
-          {#if visible === "main-info"}
-            <div class="scrollable">
-              <div class="type">
-                {getGodImportanceLabel(getImportance($selection))}
-              </div>
-              <h3 class="name">{@html getName($selection)}</h3>
-              <p class="minibio">{@html $selection.bio}</p>
-              {#if content}
-                {#each content as c}
-                  <h4>{@html c.subtitle}</h4>
-                  {#each c.subcontent as p}
-                    <p>{@html p}</p>
-                  {/each}
-                {/each}
-              {/if}
-            </div>
-            <div class="scrollable-fade" />
-            <TextButton
-              iconName="chevron-right"
-              position="end"
-              buttonLabel="sources"
-              handleClick={() => (visible = "details")}
-            />
-          {:else}
-            <!-- SOURCES -->
-            <div class="scrollable">
-              <div class="type">
-                {getGodImportanceLabel(getImportance($selection))}
-              </div>
-              <h3 class="name">{@html getName($selection)}</h3>
-              <div>
-                <h4>Source of illustration</h4>
-                <p>{@html $selection.source}</p>
-              </div>
-
-              {#if sources}
-                <h4>Sources</h4>
-                {#each sources as s}
-                  <SourceItem author={s.author} title={s.title} url={s.url} />
-                {/each}
-              {/if}
-              <div>
-                {#if $selection.spellings}
-                  <h4>Other spellings</h4>
-                  <p>{@html $selection.spellings}</p>
-                {/if}
-              </div>
-            </div>
-            <div class="scrollable-fade" />
-
-            <TextButton
-              iconName="chevron-left"
-              position="start"
-              buttonLabel="bio"
-              handleClick={() => (visible = "main-info")}
-            />
-          {/if}
-        </div>
-      </div>
+<div class="wrapper">
+  <div class="search-close">
+    {#if !$selection}
+      <Search />
+    {:else}
+      <button on:click={() => selection.highlight(undefined)} style="margin-left:auto;">Hide</button
+      >
     {/if}
   </div>
+
+  {#if $selection}
+    <div class="illu-info-wrapper">
+      <div class="illustration">
+        {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
+          <span>Loading...</span>
+        {:then img}
+          <img src={img.src} alt="Image of {getName($selection)}." />
+        {:catch}
+          <span>Sorry no image for {getName($selection)}</span>
+        {/await}
+      </div>
+      <div class="god-info-details">
+        {#if visible === "main-info"}
+          <div class="scrollable">
+            <div class="type">
+              {getGodImportanceLabel(getImportance($selection))}
+            </div>
+            <h3 class="name">{@html getName($selection)}</h3>
+            <p class="minibio">{@html $selection.bio}</p>
+            {#if content}
+              {#each content as c}
+                <h4>{@html c.subtitle}</h4>
+                {#each c.subcontent as p}
+                  <p>{@html p}</p>
+                {/each}
+              {/each}
+            {/if}
+          </div>
+          <div class="scrollable-fade" />
+          <TextButton
+            iconName="chevron-right"
+            position="end"
+            buttonLabel="sources"
+            handleClick={() => (visible = "details")}
+          />
+        {:else}
+          <!-- SOURCES -->
+          <div class="scrollable">
+            <div class="type">
+              {getGodImportanceLabel(getImportance($selection))}
+            </div>
+            <h3 class="name">{@html getName($selection)}</h3>
+            <div>
+              <h4>Source of illustration</h4>
+              <p>{@html $selection.source}</p>
+            </div>
+
+            {#if sources}
+              <h4>Sources</h4>
+              {#each sources as s}
+                <SourceItem author={s.author} title={s.title} url={s.url} />
+              {/each}
+            {/if}
+            <div>
+              {#if $selection.spellings}
+                <h4>Other spellings</h4>
+                <p>{@html $selection.spellings}</p>
+              {/if}
+            </div>
+          </div>
+          <div class="scrollable-fade" />
+
+          <TextButton
+            iconName="chevron-left"
+            position="start"
+            buttonLabel="bio"
+            handleClick={() => (visible = "main-info")}
+          />
+        {/if}
+      </div>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -132,9 +129,11 @@
     width: 100vw;
   }
   .search-close {
-    height: 5vh;
+    /* height: 5vh; */
+    /* height: 40px; */
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     /* display: none; */
   }
   .illu-info-wrapper {
@@ -208,17 +207,13 @@
       width: 100%;
     }
     .search-close {
-      display: block;
-      height: 5%;
+      height: 3.5rem;
     }
     .type {
       font-size: 1.2rem;
     }
     .name {
       font-size: 2.2rem;
-    }
-    .illustration {
-      /* height: 45%; */
     }
   }
 </style>

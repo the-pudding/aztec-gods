@@ -134,9 +134,8 @@
     <slot name="info" />
   </div>
 
+  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
   <div class="chart-wrapper" bind:clientWidth={$width}>
-    <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
-
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
@@ -161,7 +160,7 @@
     /* background-color: forestgreen; */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 5fr;
+    grid-template-rows: 3.5rem 4.5rem 1fr;
     grid-template-areas:
       "info-area"
       "meta-area"
@@ -179,11 +178,12 @@
   }
   .chart-wrapper {
     grid-area: viz-area;
+    z-index: 20;
   }
   .chart-centered-container {
     /* margin: auto; */
     position: relative;
-    background-color: aqua;
+    /* background-color: aqua; */
   }
   .chart-html,
   .chart-svg {
@@ -202,9 +202,10 @@
   @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr;
+      grid-template-rows: 3.5rem 1fr;
       grid-template-areas:
-        /* "viz-area info-area" */ "viz-area info-area";
+        "meta-area info-area"
+        "viz-area info-area";
     }
     .info {
       grid-area: info-area;
