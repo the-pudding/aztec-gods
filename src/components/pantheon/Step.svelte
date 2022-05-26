@@ -26,7 +26,7 @@
 
     pointer-events: all;
     position: relative;
-    z-index: 50;
+    z-index: 40;
   }
   .step:first-child {
     margin-top: -100%;

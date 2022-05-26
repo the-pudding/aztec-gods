@@ -12,7 +12,6 @@
   const { getName, getImportance, selection } = getContext("chart-state");
 
   let visible = "main-info";
-  let shown = false;
 
   $: content =
     $selection && doc.main_gods.find((d) => d.id === $selection.name)
@@ -23,8 +22,6 @@
     $selection && doc.main_gods.find((d) => d.id === $selection.name)
       ? doc.main_gods.find((d) => d.id === $selection.name).sources_group
       : undefined;
-
-  $: $selection && console.log(doc.main_gods.find((d) => d.id === $selection.name));
 
   $: {
     // reset to main info when a new God is selecetd

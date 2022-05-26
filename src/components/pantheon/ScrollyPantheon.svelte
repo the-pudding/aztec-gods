@@ -93,6 +93,8 @@
     grid-template-columns: 1fr;
 
     pointer-events: none;
+
+    z-index: 40;
   }
 
   .scroll-area {
