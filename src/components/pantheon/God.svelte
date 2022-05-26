@@ -98,6 +98,7 @@
   $: opacity = $keyword && !fieldIsSelected && !isHighlighted && !isSelected ? 0.1 : 1;
   // Geometric parameters
   $: rad = $radiusScale(getImportance(god));
+
   $: borderWidth = rad * 0.01; // isSelected ? rad * 0.1 : rad * 0.07;
   // $: borderWidth = !isMain ? 0 : rad * 0.07;
   $: borderColor = isSelected || isHighlighted ? "black" : variables.category.secondary;
@@ -127,8 +128,8 @@
   style="width:{rad}px; height:{rad}px; 
   left:{x}px; top:{y}px; 
   background-color: {backgroundColor};
-  transform: translate(-50%, -50%);
-  z-index: {isHighlighted ? 200 : 20};
+  transform: translate(-100%, -100%);
+  z-index: {isHighlighted ? 20 : 10};
   border: {borderWidth}px solid {borderColor};
   opacity:{opacity};
   "

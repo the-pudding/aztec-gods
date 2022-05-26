@@ -21,8 +21,8 @@
     background-color: var(--color-background);
 
     border: 1px solid var(--color-highlight);
-    opacity: 0.3;
-    transition: opacity 400ms;
+    opacity: 1;
+    /* transition: opacity 400ms; */
 
     pointer-events: all;
     position: relative;

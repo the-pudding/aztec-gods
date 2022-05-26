@@ -12,6 +12,7 @@
   const { getName, getImportance, selection } = getContext("chart-state");
 
   let visible = "main-info";
+  let shown = false;
 
   $: content =
     $selection && doc.main_gods.find((d) => d.id === $selection.name)
@@ -22,106 +23,122 @@
     $selection && doc.main_gods.find((d) => d.id === $selection.name)
       ? doc.main_gods.find((d) => d.id === $selection.name).sources_group
       : undefined;
+
   $: $selection && console.log(doc.main_gods.find((d) => d.id === $selection.name));
+
   $: {
-    // reset to main info when selected God changes
+    // reset to main info when a new God is selecetd
     if ($selection) visible = "main-info";
   }
 </script>
 
-<div class="wrapper">
-  <div class="search">
-    <Search />
-    <!-- <TextButton
-      disabled={!$selection}
-      buttonLabel="Reset selection"
-      handleClick={() => selection.lowlight()}
-    /> -->
-  </div>
-
-  {#if $selection}
-    <div class="illustration">
-      {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
-        <span>Loading...</span>
-      {:then img}
-        <img src={img.src} alt="Image of {getName($selection)}." />
-      {:catch}
-        <span>Sorry no image for {getName($selection)}</span>
-      {/await}
-    </div>
-    <div class="god-info-details">
-      {#if visible === "main-info"}
-        <div class="scrollable">
-          <div class="type">
-            {getGodImportanceLabel(getImportance($selection))}
-          </div>
-          <h3 class="name">{@html getName($selection)}</h3>
-          <p class="minibio">{@html $selection.bio}</p>
-          {#if content}
-            {#each content as c}
-              <h4>{@html c.subtitle}</h4>
-              {#each c.subcontent as p}
-                <p>{@html p}</p>
-              {/each}
-            {/each}
-          {/if}
-        </div>
-        <div class="scrollable-fade" />
-        <TextButton
-          iconName="chevron-right"
-          position="end"
-          buttonLabel="sources"
-          handleClick={() => (visible = "details")}
-        />
+<div>
+  <div class="wrapper">
+    <div class="search-close">
+      {#if !$selection}
+        <Search />
       {:else}
-        <!-- SOURCES -->
-        <div class="scrollable">
-          <div class="type">
-            {getGodImportanceLabel(getImportance($selection))}
-          </div>
-          <h3 class="name">{@html getName($selection)}</h3>
-          <div>
-            <h4>Source of illustration</h4>
-            <p>{@html $selection.source}</p>
-          </div>
-
-          {#if sources}
-            <h4>Sources</h4>
-            {#each sources as s}
-              <SourceItem author={s.author} title={s.title} url={s.url} />
-            {/each}
-          {/if}
-          <div>
-            {#if $selection.spellings}
-              <h4>Other spellings</h4>
-              <p>{@html $selection.spellings}</p>
-            {/if}
-          </div>
-        </div>
-        <div class="scrollable-fade" />
-
-        <TextButton
-          iconName="chevron-left"
-          position="start"
-          buttonLabel="bio"
-          handleClick={() => (visible = "main-info")}
-        />
+        <button on:click={() => selection.highlight(undefined)} style="margin-left:auto;"
+          >Hide</button
+        >
       {/if}
     </div>
-  {/if}
+
+    {#if $selection}
+      <div class="illu-info-wrapper">
+        <div class="illustration">
+          {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
+            <span>Loading...</span>
+          {:then img}
+            <img src={img.src} alt="Image of {getName($selection)}." />
+          {:catch}
+            <span>Sorry no image for {getName($selection)}</span>
+          {/await}
+        </div>
+        <div class="god-info-details">
+          {#if visible === "main-info"}
+            <div class="scrollable">
+              <div class="type">
+                {getGodImportanceLabel(getImportance($selection))}
+              </div>
+              <h3 class="name">{@html getName($selection)}</h3>
+              <p class="minibio">{@html $selection.bio}</p>
+              {#if content}
+                {#each content as c}
+                  <h4>{@html c.subtitle}</h4>
+                  {#each c.subcontent as p}
+                    <p>{@html p}</p>
+                  {/each}
+                {/each}
+              {/if}
+            </div>
+            <div class="scrollable-fade" />
+            <TextButton
+              iconName="chevron-right"
+              position="end"
+              buttonLabel="sources"
+              handleClick={() => (visible = "details")}
+            />
+          {:else}
+            <!-- SOURCES -->
+            <div class="scrollable">
+              <div class="type">
+                {getGodImportanceLabel(getImportance($selection))}
+              </div>
+              <h3 class="name">{@html getName($selection)}</h3>
+              <div>
+                <h4>Source of illustration</h4>
+                <p>{@html $selection.source}</p>
+              </div>
+
+              {#if sources}
+                <h4>Sources</h4>
+                {#each sources as s}
+                  <SourceItem author={s.author} title={s.title} url={s.url} />
+                {/each}
+              {/if}
+              <div>
+                {#if $selection.spellings}
+                  <h4>Other spellings</h4>
+                  <p>{@html $selection.spellings}</p>
+                {/if}
+              </div>
+            </div>
+            <div class="scrollable-fade" />
+
+            <TextButton
+              iconName="chevron-left"
+              position="start"
+              buttonLabel="bio"
+              handleClick={() => (visible = "main-info")}
+            />
+          {/if}
+        </div>
+      </div>
+    {/if}
+  </div>
 </div>
 
 <style>
   .wrapper {
-    /* background-color: orange; */
-    height: calc(100vh);
-    padding: 1rem 2rem;
-    display: none;
-
-    margin-bottom: 1rem;
+    background-color: var(--color-background);
+    /* height: 100vh; */
+    padding: 1rem 1.5rem;
+    /* display: none; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    width: 100vw;
   }
-  .search {
-    height: 5%;
+  .search-close {
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    /* display: none; */
+  }
+  .illu-info-wrapper {
+    height: 95vh;
   }
   .illustration {
     height: 45%;
@@ -187,12 +204,21 @@
   @media only screen and (min-width: 50em) {
     .wrapper {
       display: block;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    .search-close {
+      display: block;
+      height: 5%;
     }
     .type {
       font-size: 1.2rem;
     }
     .name {
       font-size: 2.2rem;
+    }
+    .illustration {
+      /* height: 45%; */
     }
   }
 </style>

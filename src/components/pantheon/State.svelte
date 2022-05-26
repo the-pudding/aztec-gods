@@ -84,6 +84,7 @@
     return scaleLinear().domain(domain).range([$bounds.chartHeight, 0]);
   });
 
+  // FIXME: radiusScale can be removes everywhere is is used
   $: radiusScale = derived([bounds], ([$bounds]) => {
     let base = $bounds.chartWidth * 0.06;
     return scaleOrdinal().domain(TYPE_SCALE).range([base]);
@@ -164,12 +165,13 @@
       "meta-area"
       "viz-area";
 
-    position: relative;
-    /* height: 100vh; */
+    /* position: relative; */
+    height: 100vh;
 
     /* border-bottom: 3px solid var(--color-highlight); */
   }
   .info {
+    /* grid-area: info-area; */
     position: relative;
     z-index: 50;
   }
@@ -177,7 +179,7 @@
     grid-area: viz-area;
   }
   .chart-centered-container {
-    margin: auto;
+    /* margin: auto; */
     position: relative;
   }
   .chart-html,
@@ -191,7 +193,7 @@
   .meta {
     grid-area: meta-area;
     position: relative;
-    z-index: 300;
+    z-index: 30;
   }
 
   @media only screen and (min-width: 50em) {
@@ -199,6 +201,12 @@
       grid-template-columns: 2fr 1fr;
       grid-template-areas:
         /* "viz-area info-area" */ "viz-area info-area";
+    }
+    .info {
+      grid-area: info-area;
+    }
+    .chart-wrapper {
+      /* height: auto; */
     }
   }
 </style>
