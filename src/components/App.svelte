@@ -41,9 +41,9 @@
   <Paragraph>{@html doc.pantheon_duality}</Paragraph>
 </Section>
 
-<!-- <ScrollyTlalte />
+<ScrollyTlalte />
 
-<ScrollyTezca /> -->
+<ScrollyTezca />
 
 <Pantheon />
 
