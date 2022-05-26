@@ -142,9 +142,9 @@
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
     >
       {#if $width > 0}
-        <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+        <!-- <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
           <slot name="chart-svg" />
-        </svg>
+        </svg> -->
         <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
           <slot name="chart-html" />
         </div>
