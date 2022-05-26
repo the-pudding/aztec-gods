@@ -161,7 +161,9 @@
     /* background-color: forestgreen; */
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 5fr;
     grid-template-areas:
+      "info-area"
       "meta-area"
       "viz-area";
 
@@ -171,7 +173,7 @@
     /* border-bottom: 3px solid var(--color-highlight); */
   }
   .info {
-    /* grid-area: info-area; */
+    grid-area: info-area;
     position: relative;
     z-index: 50;
   }
@@ -181,6 +183,7 @@
   .chart-centered-container {
     /* margin: auto; */
     position: relative;
+    background-color: aqua;
   }
   .chart-html,
   .chart-svg {
@@ -192,13 +195,14 @@
 
   .meta {
     grid-area: meta-area;
-    position: relative;
+    /* position: relative; */
     z-index: 30;
   }
 
   @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr;
       grid-template-areas:
         /* "viz-area info-area" */ "viz-area info-area";
     }
