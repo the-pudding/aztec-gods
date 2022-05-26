@@ -142,7 +142,7 @@
     margin-top: 15rem;
   }
   .step:last-child {
-    margin-bottom: 100vh;
+    margin-bottom: 1000px;
   }
   .selected {
     opacity: 1;
