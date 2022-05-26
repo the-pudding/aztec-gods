@@ -1,17 +1,13 @@
 <script>
-  import doc from "$data/doc.json";
-
   import { getContext } from "svelte";
   import loadImage from "$utils/loadImage";
   import { getMainGodColor } from "$domain/getters";
   import variables from "$data/variables.json";
 
   export let god;
-  export let activeStep = doc.pantheon[0];
 
   const dev = process.env.NODE_ENV === "development";
 
-  const FACTOR = 0.75;
   const {
     bounds,
     xScale,
@@ -21,101 +17,29 @@
     interaction,
     selection,
     radiusScale,
-    currentLinks,
     keyword
   } = getContext("chart-state");
-
-  $: selectionRelatedGods = [
-    ...new Set(
-      currentLinks
-        .filter((link) => $selection && getName(link.source) === getName($selection))
-        .map((d) => d.target.name)
-    )
-  ];
-  $: highlightRelatedGods = [
-    ...new Set(
-      currentLinks
-        .filter((link) => $interaction && getName(link.source) === $interaction)
-        .map((d) => d.target.name)
-    )
-  ];
-
-  // Steps
-  $: explanatoryMode = activeStep.type === "explanatory-mode";
-  $: exploratoryMode = activeStep.type === "exploratory-mode";
-  $: storyMode = explanatoryMode == exploratoryMode;
-
-  // God parameters
-  $: isMain = ["primordial", "creation", "elemental", "human"].includes(getImportance(god));
 
   // Interaction Parameters
   // Highlight = hover
   // Selection = selected
   $: highlightExists = $interaction !== undefined;
   $: isHighlighted = highlightExists && $interaction === god.name;
-  $: isHighlightRelated = highlightExists && highlightRelatedGods.includes(god.name);
-  $: isBigger = $selection && isHighlighted;
 
   $: selectionExists = $selection !== undefined;
   $: isSelected = selectionExists && getName($selection) === god.name;
-  $: isSelectionRelated = selectionExists && selectionRelatedGods.includes(god.name);
-  $: isRelated = isHighlightRelated || isSelectionRelated;
 
   $: fieldIsSelected = god[$keyword] === 1;
-
-  // const getOpacity = (
-  //   storyMode,
-  //   isMain,
-  //   selectionExists,
-  //   isSelected,
-  //   isRelated,
-  //   highlightExists,
-  //   isHighlighted
-  // ) => {
-  //   if (storyMode && isMain) {
-  //     return 1;
-  //   } else if (!storyMode && !selectionExists && !highlightExists) {
-  //     // No interaction
-  //     return 1;
-  //   } else if (!storyMode && (isSelected || isRelated || isHighlighted)) {
-  //     return 1;
-  //   } else if (!storyMode && !isSelected) {
-  //     return 0.1;
-  //   } else {
-  //     return 0;
-  //   }
-  // };
-  // $: opacity = getOpacity(
-  //   storyMode,
-  //   isMain,
-  //   selectionExists,
-  //   isSelected,
-  //   isRelated,
-  //   highlightExists,
-  //   isHighlighted
-  // );
 
   $: opacity = $keyword && !fieldIsSelected && !isHighlighted && !isSelected ? 0.1 : 1;
   // Geometric parameters
   $: rad = $radiusScale(getImportance(god));
 
   $: borderWidth = rad * 0.01; // isSelected ? rad * 0.1 : rad * 0.07;
-  // $: borderWidth = !isMain ? 0 : rad * 0.07;
+
   $: borderColor = isSelected || isHighlighted ? "black" : variables.category.secondary;
   $: color = getMainGodColor(god.importance);
-  $: backgroundColor = isSelected
-    ? "black"
-    : isHighlighted
-    ? variables.color["gray-light"]
-    : // ? variables.category.secondaryLight
-      color; // selectionExists && (isSelected || isSelectionRelated)
-  // background-color: {isHighlighted || isSelected || (isMain && isSelectionRelated)
-  //   ? variables.color.white
-  //   : color};
-  //   ? variables.color.secondary
-  //   : !isMain
-  //   ? variables.category.secondary
-  //   : getMainGodColor(god.importance);
+  $: backgroundColor = isSelected ? "black" : isHighlighted ? variables.color["gray-light"] : color;
 
   $: x = $xScale(god.x) + $bounds.margins.left;
   $: y = $yScale(god.y) + $bounds.margins.top;
@@ -134,7 +58,6 @@
   opacity:{opacity};
   "
 >
-  <!-- {#if isMain || isHighlighted || isSelected} -->
   {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id.toLowerCase()}.svg`)}
     <span />
   {:then img}
@@ -142,10 +65,8 @@
   {:catch}
     <span>No image</span>
   {/await}
-  <!-- {/if} -->
 </div>
 
-<!-- background-color: {!isMain && !isBigger && !isSelected ? color : variables.color.white}; -->
 <style>
   .god {
     position: absolute;
@@ -155,8 +76,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transition: opacity 500ms, transform 500ms, border-width 500ms, left 500ms, top 500ms,
-      width 500ms, height 500ms; */
 
     pointer-events: none;
   }
