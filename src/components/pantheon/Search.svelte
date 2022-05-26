@@ -23,6 +23,9 @@
 </div>
 
 <style>
+  .search {
+    width: 100%;
+  }
   .search :global(.autocomplete) {
     display: block;
   }
