@@ -1,5 +1,4 @@
 <script>
-  import TextButton from "$components/layout/TextButton.svelte";
   import doc from "$data/doc.json";
   import { getFieldLabel } from "$domain/getters";
   import { getContext } from "svelte";
