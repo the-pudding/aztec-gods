@@ -120,7 +120,7 @@
   .wrapper {
     background-color: var(--color-background);
     /* height: 100vh; */
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
     /* display: none; */
     position: absolute;
     left: 0;

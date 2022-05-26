@@ -32,7 +32,7 @@
     margin-top: -100%;
   }
   .step:last-child {
-    margin-bottom: 150vh;
+    margin-bottom: 1200px;
   }
   .selected {
     opacity: 1;
