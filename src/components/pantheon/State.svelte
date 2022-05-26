@@ -157,7 +157,7 @@
 
 <style>
   .wrapper {
-    background-color: forestgreen;
+    /* background-color: forestgreen; */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3.5rem 4.5rem 1fr;
