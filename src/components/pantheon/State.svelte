@@ -179,9 +179,10 @@
   .chart-wrapper {
     grid-area: viz-area;
     z-index: 20;
+    /* background-color: aquamarine; */
   }
   .chart-centered-container {
-    /* margin: auto; */
+    margin: auto;
     position: relative;
     /* background-color: aqua; */
   }

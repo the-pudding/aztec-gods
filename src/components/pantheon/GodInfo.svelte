@@ -119,9 +119,9 @@
 <style>
   .wrapper {
     background-color: var(--color-background);
-    /* height: 100vh; */
+
     padding: 1rem 1rem;
-    /* display: none; */
+
     position: absolute;
     left: 0;
     top: 0;
@@ -137,7 +137,7 @@
     /* display: none; */
   }
   .illu-info-wrapper {
-    height: 95vh;
+    height: 90vh;
   }
   .illustration {
     height: 45%;
