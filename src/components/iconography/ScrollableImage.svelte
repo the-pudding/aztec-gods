@@ -55,7 +55,7 @@
 
     <div class="scroll-area">
       {#each steps as step, i}
-        <div class="step step-{title}" class:selected={selected === i}>
+        <div class="step step-{title}">
           {#if step.title}
             <div class="step-title">
               {@html step.title}
@@ -102,6 +102,7 @@
 
   .scroll-area {
     position: relative;
+    z-index: 10;
   }
 
   .illustration-source {
@@ -130,13 +131,16 @@
     margin: 30rem auto 2rem auto;
     padding: 1rem 1rem;
 
-    opacity: 0.3;
+    opacity: 1;
     transition: opacity 400ms;
 
     pointer-events: all;
 
     background-color: var(--color-background-transparent);
     border-radius: 2px;
+
+    position: relative;
+    z-index: 10;
   }
   .step:first-child {
     margin-top: 15rem;
@@ -144,9 +148,7 @@
   .step:last-child {
     margin-bottom: 1000px;
   }
-  .selected {
-    opacity: 1;
-  }
+
   .step-title {
     text-transform: uppercase;
     letter-spacing: 0.08em;
