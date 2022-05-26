@@ -20,7 +20,9 @@
   xml:space="preserve"
   style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;overflow:visible"
 >
-  <g mask={`url(#mask-${name})`}>{@html imgPath}</g>
+  <g mask={`url(#mask-${name})`}>
+    <image href="/assets/img/{imgPath}" x="0" y="0" height="100%" width="100%" />
+  </g>
 
   <mask transition:fade id={`mask-${name}`}>
     <rect
