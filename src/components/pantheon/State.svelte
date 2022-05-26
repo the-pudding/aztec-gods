@@ -167,7 +167,7 @@
       "viz-area";
 
     /* position: relative; */
-    /* height: 100vh; */
+    min-height: 95vh;
 
     /* border-bottom: 3px solid var(--color-highlight); */
   }
