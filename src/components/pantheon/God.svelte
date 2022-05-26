@@ -129,7 +129,7 @@
   left:{x}px; top:{y}px; 
   background-color: {backgroundColor};
   transform: translate(-100%, -100%);
-  z-index: {isHighlighted ? 200 : 20};
+  z-index: {isHighlighted ? 20 : 10};
   border: {borderWidth}px solid {borderColor};
   opacity:{opacity};
   "
