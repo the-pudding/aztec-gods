@@ -28,10 +28,12 @@
   }
   .search :global(.autocomplete) {
     display: block;
+    border-radius: 0;
   }
   .search :global(.autocomplete-input) {
     border: 0px solid var(--color-highlight);
     border-bottom: 1px solid var(--color-highlight);
+    border-radius: 0;
     background-color: var(--color-background);
     color: var(--color-gray-dark);
     font-size: 1rem;
