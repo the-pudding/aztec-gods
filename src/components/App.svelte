@@ -13,7 +13,6 @@
   import doc from "$data/doc.json";
 </script>
 
-<!-- 
 <Hero />
 
 <Section id="intro">
@@ -29,9 +28,9 @@
 
   <Paragraph hasCap={true}>{@html doc.iconography_intro}</Paragraph>
   <Paragraph>{@html doc.iconography_imaginarygods}</Paragraph>
-</Section> -->
+</Section>
 
-<!-- <VisualLibrary /> -->
+<VisualLibrary />
 
 <!-- PANTHEON -->
 <Section id="pantheon">
