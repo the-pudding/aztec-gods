@@ -134,17 +134,16 @@
     <slot name="info" />
   </div>
 
+  <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
   <div class="chart-wrapper" bind:clientWidth={$width}>
-    <div class="meta" data-name="meta-in-state"><slot name="meta" /></div>
-
     <div
       class="chart-centered-container"
       style="width:{$bounds.width}px; height:{$bounds.height}px;"
     >
       {#if $width > 0}
-        <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
+        <!-- <svg class="chart-svg" width={$bounds.width} height={$bounds.height}>
           <slot name="chart-svg" />
-        </svg>
+        </svg> -->
         <div class="chart-html" style="width:{$bounds.width}px; height:{$bounds.height}px;">
           <slot name="chart-html" />
         </div>
@@ -161,7 +160,9 @@
     /* background-color: forestgreen; */
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 3.5rem 4.5rem 1fr;
     grid-template-areas:
+      "info-area"
       "meta-area"
       "viz-area";
 
@@ -171,16 +172,18 @@
     /* border-bottom: 3px solid var(--color-highlight); */
   }
   .info {
-    /* grid-area: info-area; */
+    grid-area: info-area;
     position: relative;
     z-index: 50;
   }
   .chart-wrapper {
     grid-area: viz-area;
+    z-index: 20;
   }
   .chart-centered-container {
     /* margin: auto; */
     position: relative;
+    /* background-color: aqua; */
   }
   .chart-html,
   .chart-svg {
@@ -192,15 +195,17 @@
 
   .meta {
     grid-area: meta-area;
-    position: relative;
+    /* position: relative; */
     z-index: 30;
   }
 
   @media only screen and (min-width: 50em) {
     .wrapper {
       grid-template-columns: 2fr 1fr;
+      grid-template-rows: 3.5rem 1fr;
       grid-template-areas:
-        /* "viz-area info-area" */ "viz-area info-area";
+        "meta-area info-area"
+        "viz-area info-area";
     }
     .info {
       grid-area: info-area;
