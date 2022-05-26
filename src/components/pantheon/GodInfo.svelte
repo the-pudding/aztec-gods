@@ -157,7 +157,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    font-size: 1rem;
     /* border: 1px solid greenyellow; */
   }
   .scrollable {
@@ -178,7 +178,7 @@
     padding-top: 0.5rem;
   }
   .type {
-    font-size: 0.7rem;
+    font-size: 0.825rem;
     line-height: 1.2;
     /* letter-spacing: 0.06em; */
     text-align: center;
@@ -186,7 +186,7 @@
     color: var(--color-gray-dark);
   }
   .name {
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 1.2;
     letter-spacing: 0.06em;
     text-align: center;
