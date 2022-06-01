@@ -1,6 +1,6 @@
 <script>
-  export let title = "Aztec Gods Pantheon";
-  export let description = "A data story about Aztec Gods";
+  export let title = "A Visual Guide to the Aztec Pantheon";
+  export let description = "A Visual Guide to the Aztec Pantheon: An Introduction to Aztec Gods";
   export let url = "https://pudding.cool";
 </script>
 
