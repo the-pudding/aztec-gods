@@ -1,9 +1,6 @@
 <script>
-  import Section from "$components/layout/Section.svelte";
-  import Paragraph from "$components/layout/Paragraph.svelte";
-  import Heading from "$components/layout/Heading.svelte";
-
   import SourceItem from "$components/colophon/SourceItem.svelte";
+  import Section from "$components/layout/Section.svelte";
   import doc from "$data/doc.json";
 </script>
 
@@ -39,10 +36,6 @@
       {/each}
     </ul>
   {/each}
-  <!-- </Section>
-
-<Section id="article-mentions"> -->
-  <!-- <h2>{doc.cta_title}</h2> -->
 
   <h3>
     {doc.cta_wip_title}
@@ -85,7 +78,6 @@
     margin-top: 1rem;
     margin-bottom: 0.2rem;
     font-weight: 100;
-    /* text-transform: uppercase; */
 
     color: var(--color-fg);
   }
