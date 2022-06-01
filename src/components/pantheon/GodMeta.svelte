@@ -2,11 +2,14 @@
   import doc from "$data/doc.json";
   import { getFieldLabel } from "$domain/getters";
   import { getContext } from "svelte";
-  const { keyword } = getContext("chart-state");
   import { FIELDS } from "$domain/constants";
+
+  export let preventInteraction = false;
+
+  const { keyword } = getContext("chart-state");
 </script>
 
-<fieldset class="wrapper">
+<fieldset class="wrapper" style="pointer-events:{preventInteraction ? 'none' : 'all'};">
   <legend class="hidden">{@html doc.pantheon_control_map}</legend>
   {#each FIELDS as field}
     <button class:selected={$keyword === field} on:click={() => keyword.highlight(field)}>

@@ -37,7 +37,7 @@
       .onStepEnter(handleStepEnter);
   });
 
-  $: allowInteraction = activeStep.type === "exploratory-mode";
+  $: preventInteraction = activeStep.type === "explanatory-mode";
 </script>
 
 <svelte:window />
@@ -46,13 +46,13 @@
   <div id="scrolly">
     <figure>
       <State {activeStep}>
-        <GodInfo slot="info" {activeStep} {allowInteraction} />
+        <GodInfo slot="info" {preventInteraction} />
 
-        <GodMeta slot="meta" {activeStep} />
+        <GodMeta slot="meta" {preventInteraction} />
 
-        <Gods slot="chart-html" {activeStep} />
+        <Gods slot="chart-html" />
         <g slot="chart-svg-overlay">
-          <Overlay noPointerEvents={!allowInteraction} />
+          <Overlay noPointerEvents={preventInteraction} />
         </g>
       </State>
     </figure>

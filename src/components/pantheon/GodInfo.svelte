@@ -9,6 +9,8 @@
 
   const dev = process.env.NODE_ENV === "development";
 
+  export let preventInteraction = false;
+
   const { getName, getImportance, selection } = getContext("chart-state");
 
   let visible = "main-info";
@@ -31,11 +33,14 @@
 
 <div class="wrapper">
   <div class="search-close">
-    {#if !$selection}
-      <Search />
-    {:else}
-      <button on:click={() => selection.highlight(undefined)} style="margin-left:auto;">Hide</button
-      >
+    {#if !preventInteraction}
+      {#if !$selection}
+        <Search />
+      {:else}
+        <button on:click={() => selection.highlight(undefined)} style="margin-left:auto;"
+          >Hide</button
+        >
+      {/if}
     {/if}
   </div>
 
