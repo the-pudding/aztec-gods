@@ -24,7 +24,7 @@
     <div class="grid">
       {#each icons as icon, i}
         <div style="grid-area: i{i}">
-          {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${icon}.svg`)}
+          {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/svg/${icon}.svg`)}
             <span />
           {:then img}
             <img src={img.src} alt={"icon"} />
@@ -39,7 +39,7 @@
   <h1 class="title">A Visual Guide to the Aztec Pantheon</h1>
 
   <div class="hero-image">
-    {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/ometeotl.svg`)}
+    {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/svg/ometeotl.svg`)}
       <span />
     {:then img}
       <img src={img.src} alt={"icon"} />
