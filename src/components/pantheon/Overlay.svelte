@@ -22,6 +22,7 @@
 <g data-name="overlay" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>
   {#each $nodes as node, i}
     <path
+      tabindex="-1"
       d={voronoi.renderCell(i)}
       class:no-event={noPointerEvents}
       fill="hotpink"
