@@ -15,7 +15,7 @@
     "ahkinshok",
     "ometeotl"
   ];
-  const icons_simpler = ["ahuitzotl", "azcatl", "ce_ozomatli", "ahkinshok", "ometeotl"];
+  // const icons_simpler = ["ahuitzotl", "azcatl", "ce_ozomatli", "ahkinshok", "ometeotl"];
   const dev = process.env.NODE_ENV === "development";
 </script>
 
@@ -59,19 +59,6 @@
   </div>
 </Section>
 
-<!-- <Section>
-  <div class="grid">
-    {#each icons_simpler as icon}
-      {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${icon}.svg`)}
-        <span />
-      {:then img}
-        <img src={img.src} alt={"icon"} />
-      {:catch}
-        <span />
-      {/await}
-    {/each}
-  </div>
-</Section> -->
 <style>
   .title {
     max-width: 10em;
@@ -106,24 +93,6 @@
     text-align: left;
   }
 
-  /* .title::before {
-    display: block;
-    content: "";
-    background: var(--color-highlight);
-    height: 3px;
-    width: 100%;
-    margin: 2.5rem auto;
-    border-radius: 2px;
-  } */
-  /* .title::after {
-    display: block;
-    content: "";
-    background: var(--color-highlight);
-    height: 3px;
-    width: 120px;
-    margin: 2.5rem auto;
-    border-radius: 2px;
-  } */
   .hero-image {
     width: 100%;
     padding: 0 1rem;
@@ -141,10 +110,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "i0 i1 i2 i3 i4";
-    /* border-top: 3px solid var(--color-highlight); */
     border-bottom: 3px solid var(--color-highlight);
 
-    /* min-height: calc(1 / 6 * 100vw); */
     max-width: 85em;
     margin: auto;
 
