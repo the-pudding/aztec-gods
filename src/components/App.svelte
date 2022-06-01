@@ -11,40 +11,8 @@
   import Pantheon from "$components/pantheon/Pantheon.svelte";
   import VisualLibrary from "$components/visual-library/VisualLibrary.svelte";
   import doc from "$data/doc.json";
-
-  import nodes from "$data/gods/tidy/nodes.json";
-
-  /**
-   * SPRITE DIMENSIONS AND POSITION
-   *
-   * Add 3 px to single sprite image (for some reason)
-   *
-   * sprite full width = 54800px
-   * width of single sprite images = 400px
-   *
-   * bg-size: 54800px / 400px = 13700%
-   *
-   * bg-position: x: 400px * index / 54800px * 100
-   *
-   */
 </script>
 
-<Section id="sprite">
-  <div>Test Sprite</div>
-  <div class="pantheon-container">
-    {#each nodes as god, i}
-      <figure
-        class="god-sprite-container"
-        style="background-position: {((403 * i) / 54800) *
-          100}% {0}%; background-size: 13700% 100%;"
-      >
-        <!-- {god.name} -->
-        <!-- <figure class="god-sprite-image" /> -->
-      </figure>
-    {/each}
-  </div>
-</Section>
-<!-- 
 <Hero />
 
 <Section id="intro">
@@ -60,9 +28,9 @@
 
   <Paragraph hasCap={true}>{@html doc.iconography_intro}</Paragraph>
   <Paragraph>{@html doc.iconography_imaginarygods}</Paragraph>
-</Section> -->
+</Section>
 
-<!-- <VisualLibrary /> -->
+<VisualLibrary />
 
 <!-- PANTHEON -->
 <Section id="pantheon">
@@ -71,43 +39,16 @@
 
   <Paragraph>{@html doc.pantheon_duality}</Paragraph>
 </Section>
-<!-- 
-<div class="sprite-container">
-  <figure class="sprite-image" />
-</div>
 
 <ScrollyTlalte />
 
 <ScrollyTezca />
 
-<Pantheon /> -->
+<Pantheon />
 
 <Sources />
 
 <style>
-  .pantheon-container {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    width: 100%;
-  }
-  .god-sprite-container {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    background-color: antiquewhite;
-    margin: 0.2rem;
-    font-size: 0.6rem;
-
-    background-image: url("/assets/gods/spritesheet.png");
-    display: inline-block;
-    background-repeat: no-repeat;
-
-    border: 3px solid magenta;
-    /* background-position: 0 -1280px; */
-    /* background-size: 400px; */
-  }
-
   .intro {
     background-color: var(--color-background-2);
     padding: 1rem;
