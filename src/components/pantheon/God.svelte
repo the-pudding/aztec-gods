@@ -3,6 +3,8 @@
   import { getMainGodColor } from "$domain/getters";
   import variables from "$data/variables.json";
 
+  const dev = process.env.NODE_ENV === "development";
+
   export let god;
   export let godIndex = 0;
 
@@ -67,9 +69,9 @@
 
 <figure
   class="god-image"
-  style="width:{rad}px; height: {rad}px; left:{x}px; top:{y}px; background-color: {backgroundColor}; border: {borderWidth}px solid {borderColor}; transform: translate(-50%, -50%); z-index: {isHighlighted
-    ? 20
-    : 10};
+  style="width:{rad}px; height: {rad}px; left:{x}px; top:{y}px; background-color: {backgroundColor}; border: {borderWidth}px solid {borderColor}; 
+  background-image: url({`${dev ? '/' : '/aztec-gods/'}assets/gods/sprite/gods.sprite.png`});
+  transform: translate(-50%, -50%); z-index: {isHighlighted ? 20 : 10};
   opacity:{opacity}; background-position: 0% {(((SINGLE_IMAGE_WIDTH + WEIRD_OFFSET) * godIndex) /
     FULL_SPRITE_WIDTH) *
     100}%; background-size: 100% 13700%;"
@@ -82,7 +84,6 @@
     border-radius: 2px;
     pointer-events: none;
 
-    background-image: url("/assets/gods/sprite/gods.sprite.png");
     display: inline-block;
     background-repeat: no-repeat;
   }
