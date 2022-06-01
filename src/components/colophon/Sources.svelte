@@ -8,7 +8,9 @@
 </script>
 
 <Section id="article-sources">
-  <h2>{doc.sources_title}</h2>
+  {#if doc.sources_title}
+    <h2>{doc.sources_title}</h2>
+  {/if}
   {#each doc.codices as p}
     <p>{@html p}</p>
   {/each}
