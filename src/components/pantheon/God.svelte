@@ -1,12 +1,10 @@
 <script>
   import { getContext } from "svelte";
-  import loadImage from "$utils/loadImage";
   import { getMainGodColor } from "$domain/getters";
   import variables from "$data/variables.json";
 
   export let god;
-
-  const dev = process.env.NODE_ENV === "development";
+  export let godIndex = 0;
 
   const {
     bounds,
@@ -35,7 +33,7 @@
   // Geometric parameters
   $: rad = $radiusScale(getImportance(god));
 
-  $: borderWidth = rad * 0.01; // isSelected ? rad * 0.1 : rad * 0.07;
+  $: borderWidth = rad * 0.01;
 
   $: borderColor = isSelected || isHighlighted ? "black" : variables.category.secondary;
   $: color = getMainGodColor(god.importance);
@@ -44,39 +42,48 @@
   $: x = $xScale(god.x) + $bounds.margins.left;
   $: y = $yScale(god.y) + $bounds.margins.top;
 
-  // const biggerSize = 70;
+  /**
+   * SPRITE DIMENSIONS AND POSITION
+   *
+   * Add 3 px to single sprite image (for some reason)
+   *
+   * sprite full width = 54800px
+   * width of single sprite images = 403px
+   *
+   * bg-size:
+   *  width: 100%
+   *  height: 54800px / 400px = 13700%
+   *
+   * bg-position:
+   *  y: 0
+   *  x: 400px * index / 54800px * 100
+   *
+   */
+
+  const FULL_SPRITE_WIDTH = 54800;
+  const SINGLE_IMAGE_WIDTH = 400;
+  const WEIRD_OFFSET = 3;
 </script>
 
-<div
-  class="god"
-  style="width:{rad}px; height:{rad}px; 
-  left:{x}px; top:{y}px; 
-  background-color: {backgroundColor};
-  transform: translate(-100%, -100%);
-  z-index: {isHighlighted ? 20 : 10};
-  border: {borderWidth}px solid {borderColor};
-  opacity:{opacity};
-  "
->
-  {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${god.id.toLowerCase()}.svg`)}
-    <span />
-  {:then img}
-    <img src={img.src} alt={god.id} />
-  {:catch}
-    <span>No image</span>
-  {/await}
-</div>
+<figure
+  class="god-image"
+  style="width:{rad}px; height: {rad}px; left:{x}px; top:{y}px; background-color: {backgroundColor}; border: {borderWidth}px solid {borderColor}; transform: translate(-50%, -50%); z-index: {isHighlighted
+    ? 20
+    : 10};
+  opacity:{opacity}; background-position: 0% {(((SINGLE_IMAGE_WIDTH + WEIRD_OFFSET) * godIndex) /
+    FULL_SPRITE_WIDTH) *
+    100}%; background-size: 100% 13700%;"
+/>
 
 <style>
-  .god {
+  .god-image {
     position: absolute;
 
     border-radius: 2px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     pointer-events: none;
+
+    background-image: url("/assets/gods/sprite/gods.sprite.png");
+    display: inline-block;
+    background-repeat: no-repeat;
   }
 </style>
