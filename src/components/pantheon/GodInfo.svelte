@@ -42,7 +42,7 @@
   {#if $selection}
     <div class="illu-info-wrapper">
       <div class="illustration">
-        {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/${$selection.id}.svg`)}
+        {#await loadImage(`${dev ? "/" : "/aztec-gods/"}assets/gods/svg/${$selection.id}.svg`)}
           <span>Loading...</span>
         {:then img}
           <img src={img.src} alt="Image of {getName($selection)}." />

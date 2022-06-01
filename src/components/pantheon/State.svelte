@@ -77,11 +77,15 @@
   // Scales
   $: xScale = derived([bounds], ([$bounds]) => {
     let domain = [-mapOuterDomain, mapOuterDomain];
-    return scaleLinear().domain(domain).range([0, $bounds.chartWidth]);
+    return scaleLinear()
+      .domain(domain)
+      .range([0, $bounds.chartWidth - 20]);
   });
   $: yScale = derived([bounds], ([$bounds]) => {
     let domain = [-mapOuterDomain, mapOuterDomain];
-    return scaleLinear().domain(domain).range([$bounds.chartHeight, 0]);
+    return scaleLinear()
+      .domain(domain)
+      .range([$bounds.chartHeight - 20, 0]);
   });
 
   // FIXME: radiusScale can be removes everywhere is is used

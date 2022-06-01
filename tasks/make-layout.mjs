@@ -154,7 +154,7 @@ const calculateForceLayout = async () => {
 
   const coord = [
     ...nodes.map((n) => ({
-      x: n.x,
+      x: n.x - 0.5,
       y: n.y
     }))
   ];
