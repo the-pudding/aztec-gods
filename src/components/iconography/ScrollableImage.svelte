@@ -82,9 +82,9 @@
     position: sticky;
 
     width: 100%;
-    height: clamp(20em, 100vh, 80em);
+    height: clamp(20em, 90vh, 80em);
 
-    padding: 1rem;
+    padding: 3rem;
 
     display: flex;
     flex-direction: column;
