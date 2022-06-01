@@ -17,35 +17,9 @@
     (d) => $yScale(d.y)
   );
   $: voronoi = delaunay.voronoi([0, 0, $bounds.chartWidth, $bounds.chartHeight]);
-
-  // Manage interaction on overlay rectangle
-  // const findLocation = (e) => {
-  //   const [x, y] = pointer(e, overlay);
-  //   const location = delaunay.find(x, y);
-  //   const god = $nodes[location];
-  //   interaction.highlight(getName(god));
-  // };
-  // const select = (e) => {
-  //   const [x, y] = pointer(e, overlay);
-  //   const location = delaunay.find(x, y);
-  //   const god = $nodes[location];
-  //   selection.highlight(god);
-  // };
-
-  // Manage interaction on overlay paths
-
-  $: selectionRelatedGods = [
-    ...new Set(
-      currentLinks
-        .filter((link) => $selection && getName(link.source) === getName($selection))
-        .map((d) => d.target.name)
-    )
-  ];
 </script>
 
 <g data-name="overlay" transform={`translate(${$bounds.margins.left}, ${$bounds.margins.top})`}>
-  <!-- class:no-event={noPointerEvents ||
-        ($selection && !selectionRelatedGods.includes(getName(node)))} -->
   {#each $nodes as node, i}
     <path
       d={voronoi.renderCell(i)}
@@ -62,19 +36,6 @@
       on:blur={() => interaction.highlight(undefined)}
     />
   {/each}
-  <!-- <rect
-    style="pointer-events: {noPointerEvents ? 'none' : 'auto'}"
-    bind:this={overlay}
-    fill-opacity={0}
-    width={$bounds.chartWidth}
-    height={$bounds.chartHeight}
-    on:click={select}
-    on:mousemove={findLocation}
-    on:mouseenter={findLocation}
-    on:focus={findLocation}
-    on:mouseout={() => interaction.highlight(undefined)}
-    on:blur={() => interaction.highlight(undefined)}
-  /> -->
 </g>
 
 <style>
@@ -88,7 +49,6 @@
     pointer-events: none;
   }
   rect {
-    /* cursor: url("/aztec-gods/assets/design-elements/pokeball.png") 12 12, auto; */
     cursor: pointer;
   }
 </style>
