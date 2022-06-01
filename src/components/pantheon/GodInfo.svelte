@@ -126,12 +126,9 @@
     width: 100vw;
   }
   .search-close {
-    /* height: 5vh; */
-    /* height: 40px; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* display: none; */
   }
   .illu-info-wrapper {
     height: 90vh;
@@ -142,8 +139,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* border: 2px solid aliceblue; */
   }
   .illustration img {
     height: 100%;
@@ -154,7 +149,6 @@
     flex-direction: column;
     justify-content: space-between;
     font-size: 1rem;
-    /* border: 1px solid greenyellow; */
   }
   .scrollable {
     overflow-y: scroll;
@@ -176,7 +170,6 @@
   .type {
     font-size: 0.825rem;
     line-height: 1.2;
-    /* letter-spacing: 0.06em; */
     text-align: center;
     text-transform: uppercase;
     color: var(--color-gray-dark);
