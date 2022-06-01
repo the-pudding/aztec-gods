@@ -157,7 +157,7 @@
     /* border: 1px solid greenyellow; */
   }
   .scrollable {
-    overflow: scroll;
+    overflow-y: scroll;
     position: relative;
     height: 100%;
     padding-bottom: 40px;
