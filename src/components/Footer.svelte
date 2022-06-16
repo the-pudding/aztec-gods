@@ -28,16 +28,7 @@
     const data = await response.json();
     const story = data.find((d) => localURL.includes(d.url));
     const topic = story ? story.topic : "culture";
-    const others = data.filter((d) => !localURL.includes(d.url));
-
-    const diff = others.filter((d) => d.topic !== topic);
-    const same = others.filter((d) => d.topic === topic);
-
-    if (same.length > 1) {
-      stories.push(same[0]);
-      stories.push(same[Math.ceil(Math.random() * (same.length - 1))]);
-    } else stories.push(...diff.slice(2, 4));
-    stories = stories;
+    const stories = data.filter((d) => !localURL.includes(d.url)).slice(0, 4);
   });
 </script>
 
