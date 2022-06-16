@@ -28,7 +28,7 @@
     const data = await response.json();
     const story = data.find((d) => localURL.includes(d.url));
     const topic = story ? story.topic : "culture";
-    const stories = data.filter((d) => !localURL.includes(d.url)).slice(0, 4);
+    stories = data.filter((d) => !localURL.includes(d.url)).slice(0, 4);
   });
 </script>
 
@@ -104,6 +104,7 @@
     display: block;
     font-weight: 700;
     text-decoration: none;
+    border: none;
   }
 
   .story span {
