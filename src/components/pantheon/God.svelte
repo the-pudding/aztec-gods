@@ -64,7 +64,7 @@
 
   const FULL_SPRITE_WIDTH = 54800;
   const SINGLE_IMAGE_WIDTH = 400;
-  const WEIRD_OFFSET = 3;
+  const OFFSET = 3;
 </script>
 
 <figure
@@ -75,7 +75,7 @@
     dev ? '/' : '/2022/06/aztec-gods/'
   }assets/gods/sprite/gods.sprite.png`});
   transform: translate(-50%, -50%); z-index: {isHighlighted ? 20 : 10};
-  opacity:{opacity}; background-position: 0% {(((SINGLE_IMAGE_WIDTH + WEIRD_OFFSET) * godIndex) /
+  opacity:{opacity}; background-position: 0% {(((SINGLE_IMAGE_WIDTH + OFFSET) * godIndex) /
     FULL_SPRITE_WIDTH) *
     100}%; background-size: 100% 13700%;"
 />
