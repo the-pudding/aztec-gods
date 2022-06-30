@@ -1,26 +1,13 @@
 const CWD = process.cwd();
-import fs from "fs";
 import aq, { op } from "arquero";
+import fs from "fs";
 
-import {
-  forceManyBody,
-  forceLink,
-  forceSimulation,
-  forceCenter,
-  quadtree,
-  scaleOrdinal,
-  forceCollide,
-  forceX,
-  forceY
-} from "d3";
+import { forceSimulation, forceX, forceY, quadtree } from "d3";
 
-// Layout
 const PADDING = 1;
 
-/////
 const rectCollide = (padding) => {
   let nodes;
-  // let padding = 2;
   function force(alpha) {
     const quad = quadtree(
       nodes,
@@ -33,8 +20,8 @@ const rectCollide = (padding) => {
         if (q.data && q.data !== d) {
           let x = d.x - q.data.x,
             y = d.y - q.data.y,
-            xSpacing = padding, // + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
-            ySpacing = padding, // + (radiusScale(q.data.importance) + radiusScale(d.importance)) / 2,
+            xSpacing = padding,
+            ySpacing = padding,
             absX = Math.abs(x),
             absY = Math.abs(y),
             l,
@@ -75,7 +62,6 @@ const rectCollide = (padding) => {
 
 const calculateForceLayout = async () => {
   const raw = await aq.loadCSV(`${CWD}/src/data/gods/raw/light-db.csv`, {
-    // delimiter: "\t",
     autoType: false,
     parse: { Text: String }
   });
@@ -119,13 +105,7 @@ const calculateForceLayout = async () => {
   const simulation = forceSimulation(nodes);
 
   simulation
-    // .force(
-    //   "collide",
-    //   forceCollide()
-    //     .radius((d) => radiusScale(d.importance))
-    //     .strength(0.00015)
-    //     .iterations(2)
-    // )
+
     .force(
       "x",
       forceX()
@@ -139,16 +119,6 @@ const calculateForceLayout = async () => {
         .strength(0.7)
     )
     .force("collide", rectCollide(PADDING));
-  // .force("center", forceCenter().strength(1.992));
-  // .force(
-  //   "many-body",
-  //   forceManyBody().strength((d) => (d.importance !== "secondary" ? 100 : -10))
-  // )
-  // .force(
-  //   "link",
-  //   forceLink(links).id((d) => getName(d))
-  // );
-  // .alpha(1);
 
   for (let i = 0; i < 1000; i++) simulation.tick();
 
