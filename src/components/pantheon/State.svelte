@@ -1,5 +1,4 @@
 <script>
-  import links from "$data/gods/tidy/links.json";
   import nodes from "$data/gods/tidy/nodes.json";
   import doc from "$data/doc.json";
   import viewport from "$stores/viewport";
@@ -125,7 +124,6 @@
     godDomain,
     radiusScale,
 
-    currentLinks: links,
     interaction,
     selection,
     keyword

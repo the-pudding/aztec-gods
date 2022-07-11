@@ -7,7 +7,7 @@
 
   let overlay; // ref
 
-  const { bounds, xScale, yScale, getName, nodes, interaction, selection, currentLinks } =
+  const { bounds, xScale, yScale, getName, nodes, interaction, selection } =
     getContext("chart-state");
 
   // Overlay Logic
