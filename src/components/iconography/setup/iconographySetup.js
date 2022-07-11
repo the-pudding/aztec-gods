@@ -35,7 +35,7 @@ export const tezcaPositions = {
       ry: 0.085
     }
   ],
-  mirror: [
+  shield: [
     {
       cx: 0.768,
       cy: 0.44,
@@ -59,7 +59,7 @@ export const tezcaPositions = {
       ry: 0.085
     }
   ],
-  skin: [
+  satchel: [
     {
       cx: 0.17,
       cy: 0.73,
