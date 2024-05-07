@@ -100,6 +100,7 @@
   .scroll-area {
     max-width: 24rem;
     margin: 0 auto;
+    z-index: 1;
   }
   @media only screen and (min-width: 50em) {
     .scroll-wrapper {

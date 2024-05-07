@@ -102,7 +102,7 @@
 
   .scroll-area {
     position: relative;
-    z-index: 10;
+    z-index: 1;
   }
 
   .illustration-source {
